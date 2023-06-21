@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GooseTrack-Frontend/static/css/main.7acaea2f.css",
+    "main.js": "/GooseTrack-Frontend/static/js/main.a70075f4.js",
+    "index.html": "/GooseTrack-Frontend/index.html",
+    "main.7acaea2f.css.map": "/GooseTrack-Frontend/static/css/main.7acaea2f.css.map",
+    "main.a70075f4.js.map": "/GooseTrack-Frontend/static/js/main.a70075f4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.a70075f4.js"
+  ]
+}
