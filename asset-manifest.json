@@ -1,13 +1,37 @@
 {
   "files": {
-    "main.css": "/GooseTrack-Frontend/static/css/main.7acaea2f.css",
+    "main.css": "/GooseTrack-Frontend/static/css/main.0ba4b21f.css",
     "main.js": "/GooseTrack-Frontend/static/js/main.a70075f4.js",
+    "static/media/Inter-Bold.eot": "/GooseTrack-Frontend/static/media/Inter-Bold.7e9fff4114e0ea385c94.eot",
+    "static/media/Inter-Bold.ttf": "/GooseTrack-Frontend/static/media/Inter-Bold.44e2216a9e0d20ee04b6.ttf",
+    "static/media/Inter-SemiBold.eot": "/GooseTrack-Frontend/static/media/Inter-SemiBold.d7ced04b4dc4d21fd205.eot",
+    "static/media/Inter-SemiBold.ttf": "/GooseTrack-Frontend/static/media/Inter-SemiBold.62b226e9a47209d1bb66.ttf",
+    "static/media/Inter-Medium.eot": "/GooseTrack-Frontend/static/media/Inter-Medium.2417569c705e8200aae0.eot",
+    "static/media/Inter-Medium.ttf": "/GooseTrack-Frontend/static/media/Inter-Medium.dd13fe7e850bb701d163.ttf",
+    "static/media/Inter-Regular.eot": "/GooseTrack-Frontend/static/media/Inter-Regular.66c354028831375b8176.eot",
+    "static/media/Inter-Regular.ttf": "/GooseTrack-Frontend/static/media/Inter-Regular.9782abbb49bf3aaf986a.ttf",
+    "static/media/Inter-Bold.woff": "/GooseTrack-Frontend/static/media/Inter-Bold.d863298c035ae887b7d6.woff",
+    "static/media/Inter-SemiBold.woff": "/GooseTrack-Frontend/static/media/Inter-SemiBold.133ad17891ba17ce4b7e.woff",
+    "static/media/Inter-Medium.woff": "/GooseTrack-Frontend/static/media/Inter-Medium.5aebe1f6c4605768582d.woff",
+    "static/media/Inter-Regular.woff": "/GooseTrack-Frontend/static/media/Inter-Regular.16cbea275b2ab28453af.woff",
+    "static/media/Inter-Bold.woff2": "/GooseTrack-Frontend/static/media/Inter-Bold.33a5a4566bb3413901e3.woff2",
+    "static/media/Inter-SemiBold.woff2": "/GooseTrack-Frontend/static/media/Inter-SemiBold.f8f55aa9d497b7683ed5.woff2",
+    "static/media/Inter-Medium.woff2": "/GooseTrack-Frontend/static/media/Inter-Medium.3b9cdcf0bbb18875523f.woff2",
+    "static/media/CoolveticaRg-Italic.eot": "/GooseTrack-Frontend/static/media/CoolveticaRg-Italic.01ce5bf9a3740f07644f.eot",
+    "static/media/CoolveticaRg-Italic.ttf": "/GooseTrack-Frontend/static/media/CoolveticaRg-Italic.1b391ccf4bb030c85a18.ttf",
+    "static/media/Inter-Regular.woff2": "/GooseTrack-Frontend/static/media/Inter-Regular.582d8a8e254ad87ea376.woff2",
+    "static/media/CoolveticaRg-Regular.eot": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.110b9f849bd56dba90bf.eot",
+    "static/media/CoolveticaRg-Regular.ttf": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.519cfb32aa9363facf70.ttf",
+    "static/media/CoolveticaRg-Italic.woff": "/GooseTrack-Frontend/static/media/CoolveticaRg-Italic.d2afb6348017cacb5a92.woff",
+    "static/media/CoolveticaRg-Regular.woff": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.d7bc4174b8f5b1d10a2d.woff",
+    "static/media/CoolveticaRg-Italic.woff2": "/GooseTrack-Frontend/static/media/CoolveticaRg-Italic.354b20eb1b8d25af62a1.woff2",
+    "static/media/CoolveticaRg-Regular.woff2": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.3829e81cd606bef6e1e9.woff2",
     "index.html": "/GooseTrack-Frontend/index.html",
-    "main.7acaea2f.css.map": "/GooseTrack-Frontend/static/css/main.7acaea2f.css.map",
+    "main.0ba4b21f.css.map": "/GooseTrack-Frontend/static/css/main.0ba4b21f.css.map",
     "main.a70075f4.js.map": "/GooseTrack-Frontend/static/js/main.a70075f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
+    "static/css/main.0ba4b21f.css",
     "static/js/main.a70075f4.js"
   ]
 }
