@@ -10,7 +10,7 @@ let userValidSchema = object({
   rating: string().required(),
   text: string().required(),
 });
-export const FedbackForm = ({
+export const FeedbackForm = ({
   isEditReview,
   editedRating,
   editedMessage,
