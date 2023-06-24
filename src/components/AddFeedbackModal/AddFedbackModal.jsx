@@ -4,10 +4,10 @@ export const AddFeedbackModal = ({ onCloseModal }) => {
   const [redactedReview, setRedactedReview] = useState(null);
   const [isRedactReview, setIsRedactReview] = useState(false);
 
-  const onEditReview = (id, rating, message) => {
-    setRedactedReview({ id, rating, message });
-    setIsRedactReview(true);
-  };
+  //   const onEditReview = (id, rating, message) => {
+  //     setRedactedReview({ id, rating, message });
+  //     setIsRedactReview(true);
+  //   };
 
   const handleCloseModal = () => {
     setRedactedReview(null);
@@ -44,7 +44,6 @@ export const AddFeedbackModal = ({ onCloseModal }) => {
           editedId={redactedReview ? redactedReview.id : ''}
           handleEditReview={handleRedactReview}
         />
-        <FeedbackList onEditReview={onEditReview} />
       </div>
     </div>
   );
