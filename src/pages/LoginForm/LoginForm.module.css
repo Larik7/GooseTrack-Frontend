@@ -1,129 +1,37 @@
-@media (max-width: 375px) {
-  .main_container {
-    display: flex;
-    width: 100%;
-    height: 800px;
-    background: #dcebf7;
-
-    justify-content: center;
-    align-items: center;
-  }
-
-  .inside_container {
-    background: #fff;
-    border-radius: 8px;
-    width: 375px;
-    height: 376px;
-    padding: 0 24px;
-    margin: 0 20px;
-  }
-
-  .title {
-    margin-top: 40px;
-
-    margin-bottom: 32px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 133%;
-
-    color: #3e85f3;
-
-    text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
-      0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
-  }
-
-  .email_box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-    isolation: isolate;
-    margin-bottom: 24px;
-  }
-
-  .password_box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-    isolation: isolate;
-  }
-
-  .label_email {
-    width: 32px;
-    height: 15px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-
-    color: #111111;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    z-index: 0;
-  }
-
-  .field {
-    box-sizing: border-box;
-
-    width: 100%;
-    height: 46px;
-
-    background: #ffffff;
-    border: 1px solid rgba(220, 227, 229, 0.6);
-    border-radius: 8px;
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    z-index: 1;
-
+@media (max-width: 767px) {
+  .error_message {
+    position: absolute;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 129%;
-
-    color: #111111;
-
-    padding-left: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #da1414;
+    top: 72px;
+    left: 26px;
+    z-index: 10;
   }
 
-  .button {
-    gap: 10px;
-
-    border-style: none;
-    margin-top: 32px;
-
-    width: 100%;
-    height: 46px;
-
-    background: #3e85f3;
-    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
-    border-radius: 16px;
-
+  .success_message {
+    position: absolute;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 129%;
-
-    letter-spacing: -0.02em;
-
-    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: green;
+    top: 72px;
+    left: 26px;
+    z-index: 10;
   }
-}
-
-@media (max-width: 767px) {
   .main_container {
     display: flex;
     width: 100%;
@@ -161,6 +69,7 @@
   }
 
   .email_box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -171,6 +80,7 @@
   }
 
   .password_box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -195,6 +105,13 @@
     order: 0;
     flex-grow: 0;
     z-index: 0;
+  }
+  .label_email.error_label {
+    color: red;
+  }
+
+  .label_email.success_label {
+    color: green;
   }
 
   .field {
@@ -221,9 +138,22 @@
     color: #111111;
 
     padding-left: 14px;
+
+    outline-color: black;
+  }
+
+  .field.error {
+    border: 1px solid red;
+  }
+
+  .field.success {
+    border: 1px solid green;
   }
 
   .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 
     border-style: none;
@@ -246,9 +176,72 @@
 
     color: #fff;
   }
+  .logIn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sign {
+    position: absolute;
+    font-weight: 600;
+    color: #3e85f3;
+    font-size: 14px;
+    line-height: 129%;
+
+    top: 740px;
+    text-decoration: underline;
+  }
+  .iconOk {
+    position: absolute;
+    left: 80%;
+    top: 36px;
+    z-index: 10;
+    fill: green;
+  }
+
+  .iconError {
+    position: absolute;
+    left: 80%;
+    top: 36px;
+    z-index: 10;
+    fill: #da1414;
+  }
 }
 
 @media (min-width: 768px) {
+  .error_message {
+    position: absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #da1414;
+    top: 72px;
+    left: 26px;
+    z-index: 10;
+  }
+
+  .success_message {
+    position: absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: green;
+    top: 72px;
+    left: 26px;
+    z-index: 10;
+  }
   .main_container {
     display: flex;
     width: 100%;
@@ -294,6 +287,7 @@
   }
 
   .email_box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -304,6 +298,7 @@
   }
 
   .password_box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -323,6 +318,14 @@
     line-height: 17px;
 
     color: #111111;
+  }
+
+  .label_email.error_label {
+    color: red;
+  }
+
+  .label_email.success_label {
+    color: green;
   }
 
   .field {
@@ -349,9 +352,22 @@
     color: #111111;
 
     padding-left: 14px;
+
+    outline-color: black;
+  }
+
+  .field.error {
+    border: 1px solid red;
+  }
+
+  .field.success {
+    border: 1px solid green;
   }
 
   .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 
     border-style: none;
@@ -374,9 +390,56 @@
 
     color: #fff;
   }
+  .logIn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sign {
+    position: absolute;
+    font-weight: 600;
+    color: #3e85f3;
+    font-size: 14px;
+    line-height: 129%;
+
+    top: 740px;
+    text-decoration: underline;
+  }
+
+  .iconError {
+    position: absolute;
+    left: 80%;
+    top: 36px;
+    z-index: 10;
+    fill: #da1414;
+  }
+
+  .iconOk {
+    position: absolute;
+    left: 80%;
+    top: 36px;
+    z-index: 10;
+    fill: green;
+  }
 }
 
 @media (min-width: 1440px) {
+  .error_message {
+    position: absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #da1414;
+    top: 72px;
+    left: 26px;
+    z-index: 10;
+  }
   .main_container {
     display: flex;
     width: 100%;
@@ -426,6 +489,7 @@
   }
 
   .email_box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -436,6 +500,7 @@
   }
 
   .password_box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -455,6 +520,13 @@
     line-height: 17px;
 
     color: #111111;
+  }
+  .label_email.error_label {
+    color: red;
+  }
+
+  .label_email.success_label {
+    color: green;
   }
 
   .field {
@@ -481,9 +553,22 @@
     color: #111111;
 
     padding-left: 14px;
+
+    outline-color: black;
+  }
+
+  .field.error {
+    border: 1px solid red;
+  }
+
+  .field.success {
+    border: 1px solid green;
   }
 
   .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 
     border-style: none;
@@ -506,9 +591,54 @@
 
     color: #fff;
   }
+  .logIn {
+    width: 20px;
+    height: 20px;
+  }
+  .sign {
+    position: absolute;
+    font-weight: 600;
+    color: #3e85f3;
+    font-size: 14px;
+    line-height: 129%;
+
+    top: 740px;
+    text-decoration: underline;
+  }
+  .iconOk {
+    position: absolute;
+    left: 80%;
+    top: 36px;
+    z-index: 10;
+    fill: green;
+  }
+
+  .iconError {
+    position: absolute;
+    left: 80%;
+    top: 36px;
+    z-index: 10;
+    fill: #da1414;
+  }
 }
 
 @media (min-width: 1680px) {
+  .error_message {
+    position: absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #da1414;
+    top: 72px;
+    left: 26px;
+    z-index: 10;
+  }
   .main_container {
     display: flex;
     width: 100%;
