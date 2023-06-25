@@ -1,0 +1,30 @@
+.linksConteiner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: auto;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 185px;
+  padding: 10px 12px;
+
+  color: rgba(52, 52, 52, 0.5);
+  font-size: 14px;
+  font-family: 'Inter';
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.link:hover,
+.link:focus {
+    color: #3E85F3;
+    background-color: #E3F3FF;
+}
+
+
+
