@@ -7,6 +7,7 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<AuthSection />}></Route>
       <Route path="/login" element={<LoginForm />}></Route>
+      <Route path="/authSection" element={<button>open AuthSection</button>}></Route>
     </Routes>
   );
 };
