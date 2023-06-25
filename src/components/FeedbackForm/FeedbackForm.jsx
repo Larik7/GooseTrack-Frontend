@@ -21,7 +21,7 @@ export const FeedbackForm = ({
   const [rating, setRating] = useState(editedRating || 0);
   const [message, setMessage] = useState(editedMessage || '');
   const [hover, setHover] = useState(null);
-  const [id, setId] = useState('');
+  // const [id, setId] = useState('');
   useEffect(() => {
     if (isEditReview) {
       setRating(editedRating);
