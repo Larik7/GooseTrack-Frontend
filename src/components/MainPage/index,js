@@ -1,2 +1,1 @@
-export * from 'components/MainPageComponents/Description/Description';
-export * from 'components/MainPageComponents/ReviewsSlider/ReviewsSlider';
+export * from './Description/Description';

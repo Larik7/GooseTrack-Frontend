@@ -14,6 +14,7 @@ import {
   Text,
 } from './Description.styled';
 
+
 // Images
 //desktop_images
 import d_calendar from 'images/mainPage/desktop/desktop_calendar.png';
@@ -40,6 +41,7 @@ import m_all from 'images/mainPage/mobile/mobile_all.png';
 import m_all2 from 'images/mainPage/mobile/mobile_all@2x.png';
 
 
+// Export
 export const Description = () => {
     const { isDesktop, isTablet, isMobile } = useResponse();
 
