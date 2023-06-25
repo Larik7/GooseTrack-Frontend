@@ -18,7 +18,7 @@ export const AuthSection = () => {
       </div>
       <div className={css.nav}>
         {/* <NavLink to="/login">Sign up</NavLink> */}
-        <a >
+        <a href="##">
           <button className={css.btnLogin}>
             {/* Log in */}
             {/* <FiLogIn /> */}
@@ -28,7 +28,7 @@ export const AuthSection = () => {
           </button>
         </a>
         {/* <NavLink to="/register">Sign up</NavLink> */}
-        <a className={css.link} >
+        <a className={css.link} href="##">
           Sing up
         </a>
       </div>
