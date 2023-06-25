@@ -28,7 +28,7 @@ export const FeedbackForm = ({
     if (isEditReview) {
       setRating(editedRating);
       setMessage(editedMessage);
-      // setId(editedId);
+      setId(editedId);
     }
   }, [editedMessage, editedRating, editedId, isEditReview]);
   const reset = () => {
