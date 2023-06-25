@@ -52,6 +52,9 @@
 }
 
 .btnLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 131px;
   height: 46px;
   color: #3e85f3;

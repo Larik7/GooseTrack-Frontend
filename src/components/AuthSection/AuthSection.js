@@ -1,6 +1,6 @@
 import Goose from '../../images/Goose.png';
-import iconLogin from '../../images/iconLogin.svg';
-//import { FiLogIn } from 'react-icons/fi';
+import { FiLogIn } from 'react-icons/fi';
+import {ButtonNavigation} from '../AuthNavigate/AuthNavigate'
 import css from './AuthSection.module.css';
 
 export const AuthSection = () => {
@@ -17,20 +17,10 @@ export const AuthSection = () => {
         G<i>oo</i>seTrack
       </div>
       <div className={css.nav}>
-        {/* <NavLink to="/login">Sign up</NavLink> */}
-        <a href="##">
-          <button className={css.btnLogin}>
-            {/* Log in */}
-            {/* <FiLogIn /> */}
-            <svg width="67" height="18">
-              <use href={iconLogin}></use>
-            </svg>
-          </button>
-        </a>
-        {/* <NavLink to="/register">Sign up</NavLink> */}
-        <a className={css.link} href="##">
-          Sing up
-        </a>
+        <ButtonNavigation className={css.btnLogin} route="/login" btnText="Log in">
+            <FiLogIn size={18}/>
+        </ButtonNavigation>
+        <ButtonNavigation className={css.link} route="/register" btnText="Sing up"/>
       </div>
     </section>
   );
