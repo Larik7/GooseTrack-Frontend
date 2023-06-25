@@ -10,7 +10,7 @@ let userValidSchema = object({
   rating: string().required(),
   text: string().required(),
 });
-export const FedbackForm = ({
+export const FeedbackForm = ({
   isEditReview,
   editedRating,
   editedMessage,
@@ -22,6 +22,8 @@ export const FedbackForm = ({
   const [message, setMessage] = useState(editedMessage || '');
   const [hover, setHover] = useState(null);
   const [id, setId] = useState('');
+
+  console.log(id);
   useEffect(() => {
     if (isEditReview) {
       setRating(editedRating);
