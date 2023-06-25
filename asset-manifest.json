@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/GooseTrack-Frontend/static/css/main.9644ed80.css",
-    "main.js": "/GooseTrack-Frontend/static/js/main.fba64bb0.js",
+    "main.css": "/GooseTrack-Frontend/static/css/main.6855dc42.css",
+    "main.js": "/GooseTrack-Frontend/static/js/main.7d501033.js",
     "static/media/Inter-Bold.eot": "/GooseTrack-Frontend/static/media/Inter-Bold.7e9fff4114e0ea385c94.eot",
     "static/media/Inter-Bold.ttf": "/GooseTrack-Frontend/static/media/Inter-Bold.44e2216a9e0d20ee04b6.ttf",
     "static/media/Inter-SemiBold.eot": "/GooseTrack-Frontend/static/media/Inter-SemiBold.d7ced04b4dc4d21fd205.eot",
@@ -23,17 +23,18 @@
     "static/media/CoolveticaRg-Regular.eot": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.110b9f849bd56dba90bf.eot",
     "static/media/CoolveticaRg-Regular.ttf": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.519cfb32aa9363facf70.ttf",
     "static/media/CoolveticaRg-Italic.woff": "/GooseTrack-Frontend/static/media/CoolveticaRg-Italic.d2afb6348017cacb5a92.woff",
+    "static/media/avatarShev.jpg": "/GooseTrack-Frontend/static/media/avatarShev.ba72e73b9ac9458ac7fc.jpg",
     "static/media/CoolveticaRg-Regular.woff": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.d7bc4174b8f5b1d10a2d.woff",
     "static/media/elements.png": "/GooseTrack-Frontend/static/media/elements.e7e929f2404e1cb175d0.png",
     "static/media/CoolveticaRg-Italic.woff2": "/GooseTrack-Frontend/static/media/CoolveticaRg-Italic.354b20eb1b8d25af62a1.woff2",
     "static/media/CoolveticaRg-Regular.woff2": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.3829e81cd606bef6e1e9.woff2",
     "static/media/Goose.png": "/GooseTrack-Frontend/static/media/Goose.cf97a81d5acf2bc6829f.png",
     "index.html": "/GooseTrack-Frontend/index.html",
-    "main.9644ed80.css.map": "/GooseTrack-Frontend/static/css/main.9644ed80.css.map",
-    "main.fba64bb0.js.map": "/GooseTrack-Frontend/static/js/main.fba64bb0.js.map"
+    "main.6855dc42.css.map": "/GooseTrack-Frontend/static/css/main.6855dc42.css.map",
+    "main.7d501033.js.map": "/GooseTrack-Frontend/static/js/main.7d501033.js.map"
   },
   "entrypoints": [
-    "static/css/main.9644ed80.css",
-    "static/js/main.fba64bb0.js"
+    "static/css/main.6855dc42.css",
+    "static/js/main.7d501033.js"
   ]
 }
