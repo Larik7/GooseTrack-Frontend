@@ -1,11 +1,11 @@
 import { AuthSection } from 'components/AuthSection/AuthSection';
 
-const MainPage = () => {
+export const MainPage = () => {
   return (
     <>
       <AuthSection />
-      <Description />
-      <PageReviewsSlider />
+      {/* <Description />
+      <PageReviewsSlider /> */}
     </>
   );
 };
