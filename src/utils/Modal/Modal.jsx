@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 const rootModal = document.querySelector('#modal');
 
-const Modal = ({ children, onClose }) => {
+export const Modal = ({ children, onClose }) => {
   useEffect(() => {
     const handleEscape = e => {
       if (e.code === `Escape`) {
