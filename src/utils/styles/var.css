@@ -6,8 +6,13 @@
     
     --primary-background-color: #F7F6F9;
     --secondary-background-color: #EAEAEA;
-    --primary-text-color: #111111;
+    
     --sidebar-background-color: #FFFFFF;
+
+    /* text colors */
+   --primary-text-color: #111111;
+   --secondary-text-color: #343434;
+
 
     /* icon month-day */
     --toggle-button-color: #DCEBF7;
@@ -17,7 +22,7 @@
 
     --user-nav-button-color:  rgba(52, 52, 52, 0.5);
      --nav-button-color-hover: #3E85F3;
-    --nav-background-hover: #E3F3FF;
+    --nav-button-background-hover: #E3F3FF;
 
 }
 
@@ -28,6 +33,11 @@
     --primary-text-color: #FFFFFF;
     --sidebar-background-color: #13151A;
 
+
+    /* text colors */
+    --primary-text-color: #FFFFFF;
+    --secondary-text-color:#FFFFFF;
+
     /* icon month-day */
     --toggle-button-color: #ffffff;
     --toggle-button-color-active: #21222C;
@@ -35,6 +45,6 @@
      /* Nav colors */  
     --user-nav-button-color: #FFFFFF;
     --nav-button-color-hover:#FFFFFF;
-    --nav-background-hover: #3E85F3;
+    --nav-button-background-hover: #3E85F3;
    
 }

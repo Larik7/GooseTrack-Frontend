@@ -23,7 +23,7 @@
 .link:hover,
 .link:focus {
     color: var(--nav-button-color-hover);
-    background-color:var(--nav-background-hover);
+    background-color:var(--nav-button-background-hover);
 }
 
 
