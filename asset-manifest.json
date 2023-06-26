@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/GooseTrack-Frontend/static/css/main.9151a140.css",
+    "main.css": "/GooseTrack-Frontend/static/css/main.b4a40e73.css",
     "main.js": "/GooseTrack-Frontend/static/js/main.025e98bb.js",
     "static/media/Inter-Bold.eot": "/GooseTrack-Frontend/static/media/Inter-Bold.7e9fff4114e0ea385c94.eot",
     "static/media/Inter-Bold.ttf": "/GooseTrack-Frontend/static/media/Inter-Bold.44e2216a9e0d20ee04b6.ttf",
@@ -30,11 +30,11 @@
     "static/media/CoolveticaRg-Regular.woff2": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.3829e81cd606bef6e1e9.woff2",
     "static/media/Goose.png": "/GooseTrack-Frontend/static/media/Goose.cf97a81d5acf2bc6829f.png",
     "index.html": "/GooseTrack-Frontend/index.html",
-    "main.9151a140.css.map": "/GooseTrack-Frontend/static/css/main.9151a140.css.map",
+    "main.b4a40e73.css.map": "/GooseTrack-Frontend/static/css/main.b4a40e73.css.map",
     "main.025e98bb.js.map": "/GooseTrack-Frontend/static/js/main.025e98bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.9151a140.css",
+    "static/css/main.b4a40e73.css",
     "static/js/main.025e98bb.js"
   ]
 }
