@@ -1,5 +1,4 @@
 .conteinerMainLayout {
-
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -23,8 +22,6 @@
 .main {
   display: flex;
 }
-
-
 
 @media (min-width: 375px) {
   .component {
