@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { BtnCloseModal } from './Modal.steled';
+import css from './modal.module.css';
 
 const rootModal = document.querySelector('#modal');
 
@@ -23,9 +25,9 @@ export const Modal = ({ children, onClose }) => {
   };
 
   return createPortal(
-    <div onMouseDown={handleClose}>
-      <div>
-        <button type="button" onClick={onClose}></button>
+    <div className={css.modalBackdrop} onMouseDown={handleClose}>
+      <div className={css.modalContainer}>
+        <BtnCloseModal onClick={onClose} />
         {children}
       </div>
     </div>,

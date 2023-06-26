@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
 import { object, string } from 'yup';
-import { AiFillStar as Star } from 'react-icons/ai';
-import { BiPencil as Pencil, BiTrash as Trash } from 'react-icons/bi';
+import { StarRating } from './FeedbackForm.styled';
+import { PencilBtn, TrashBn } from './FeedbackForm.styled';
+import css from './feedbackForm.module.css';
 
 // import { useDispatch } from 'react-redux';
 
@@ -10,13 +11,7 @@ let userValidSchema = object({
   rating: string().required(),
   text: string().required(),
 });
-export const FeedbackForm = ({
-  isEditReview,
-  editedRating,
-  editedMessage,
-  editedId,
-  handleEditReview,
-}) => {
+export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
   //   const dispatch = useDispatch();
   const [rating, setRating] = useState(editedRating || 0);
   const [message, setMessage] = useState(editedMessage || '');
@@ -25,12 +20,12 @@ export const FeedbackForm = ({
 
   console.log(id);
   useEffect(() => {
-    if (isEditReview) {
-      setRating(editedRating);
-      setMessage(editedMessage);
-      setId(editedId);
-    }
-  }, [editedMessage, editedRating, editedId, isEditReview]);
+    // if (isEditReview) {
+    //   setRating(editedRating);
+    //   setMessage(editedMessage);
+    //   setId(editedId);
+    // }
+  }, [editedMessage, editedRating, editedId]);
   const reset = () => {
     setMessage('');
     setRating(0);
@@ -48,15 +43,14 @@ export const FeedbackForm = ({
     if (message.length >= 300) {
       return;
     }
-    if (isEditReview) {
-      if (editedMessage === currentMessage && editedRating === rating) {
-        return;
-      }
-      reset();
-    } else {
-      reset();
-    }
-    handleEditReview();
+    // if (isEditReview) {
+    //   if (editedMessage === currentMessage && editedRating === rating) {
+    //     return;
+    //   }
+    //   reset();
+    // } else {
+    //   reset();
+    // }
   };
   return (
     <Formik
@@ -64,19 +58,21 @@ export const FeedbackForm = ({
       validationSchema={userValidSchema}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <div>
+      <Form className={css.feedbackForm}>
+        <label className={css.feedbackFormLabel}>Rating</label>
+        <div className={css.starContainerWrap}>
           {[...Array(5)].map((star, i) => {
             const ratingValue = 1 + i;
             return (
               <label key={i}>
                 <Field
+                  className={css.feedbackFormStarInput}
                   type="radio"
                   name="rating"
                   value={ratingValue}
                   onClick={() => setRating(ratingValue)}
                 />
-                <Star
+                <StarRating
                   fill={
                     ratingValue <= (hover || rating) ? '#FFAC33' : '#CEC9C1'
                   }
@@ -91,37 +87,43 @@ export const FeedbackForm = ({
           })}
         </div>
         <div>
-          <label>
-            <Field
-              type="text"
-              required
-              value={message}
-              onChange={event => setMessage(event.currentTarget.value)}
-              id="FBId"
-              name="message"
-              placeholder="Enter text"
-            />
-          </label>
-          {editedRating ? (
-            <div>
-              <button type="button">
-                <Pencil />
-              </button>
-              <button type="button">
-                <Trash />
-              </button>
-            </div>
-          ) : (
-            <div></div>
-          )}
+          <div className={css.labelandBtn}>
+            <label htmlFor="FBId" className={css.feedbackFormLabel}>
+              Review
+            </label>
+            {!editedRating ? (
+              <div className={css.btnWrap}>
+                <PencilBtn />
+                <TrashBn />
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
+          <Field
+            className={css.textInput}
+            type="text"
+            required
+            value={message}
+            onChange={event => setMessage(event.currentTarget.value)}
+            id="FBId"
+            name="message"
+            placeholder="Enter text"
+          />
         </div>
-        <div>
+        <div className={css.btnWrap}>
           {editedRating === rating && editedMessage === message ? (
-            <button type="button">Edit</button>
+            <button className={css.btnSaveOrEdit} type="button">
+              Edit
+            </button>
           ) : (
-            <button type="submit">Save</button>
+            <button className={css.btnSaveOrEdit} type="submit">
+              Save
+            </button>
           )}
-          <button type="button">Cancel</button>
+          <button className={css.btnCancel} type="button">
+            Cancel
+          </button>
         </div>
       </Form>
     </Formik>

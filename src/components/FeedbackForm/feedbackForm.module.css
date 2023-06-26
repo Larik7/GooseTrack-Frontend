@@ -1,0 +1,114 @@
+.feedbackForm {
+  max-width: 404px;
+  height: 285px;
+}
+.feedbackFormLabel {
+  display: block;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  color: rgba(52, 52, 52, 0.8);
+}
+.feedbackFormStarInput {
+  display: none;
+}
+.starContainerWrap {
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .starContainerWrap {
+    margin-bottom: 24px;
+  }
+}
+.textInput {
+  padding: 14px 18px;
+  width: 100%;
+  height: 130px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  margin-top: 8px;
+  border: none;
+  resize: none;
+  background-color: #f6f6f6;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29;
+  color: #343434;
+  outline: none;
+}
+.textInput:focus {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+@media screen and (min-width: 768px) {
+  .textInput {
+    width: 100%;
+    height: 127px;
+    margin-bottom: 10px;
+  }
+}
+.btnWrap {
+  display: flex;
+  gap: 8px;
+}
+.btnSaveOrEdit {
+  position: relative;
+  margin-left: auto;
+  padding: 0;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  background: #3e85f3;
+  color: #ffffff;
+  cursor: pointer;
+  width: 198px;
+  height: 42px;
+}
+.btnSaveOrEdit:hover,
+.btnSaveOrEdit:focus {
+  background-color: #2b78ef;
+}
+@media screen and (min-width: 768px) {
+  .btnSaveOrEdit {
+    height: 48px;
+  }
+}
+.btnCancel {
+  position: relative;
+  margin-left: auto;
+  padding: 0;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  background: #dcebf7;
+  color: #343434;
+  cursor: pointer;
+  width: 198px;
+  height: 42px;
+}
+.btnCancel:hover,
+.btnCancel:focus {
+  background: #2b78ef;
+}
+@media screen and (min-width: 768px) {
+  .btnCancel {
+    height: 48px;
+  }
+}
+.labelandBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
