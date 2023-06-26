@@ -1,14 +1,18 @@
-import React from 'react';
+import { Header } from 'components/Header/Header';
+import { SideBar } from 'components/SideBar/SideBar';
+import css from './mainlayout.module.css';
+// import React, { useState, useEffect } from 'react';
 
-import { AuthSection } from 'components/AuthSection/AuthSection';
-import { Description } from 'components/MainPage';
+export const MainLayout = () => {
+  // const isViewportWideEnough = window.innerWidth >= 1440;
 
-export const MainPage = () => {
   return (
-    <>
-      <AuthSection />
-      <Description />
-      {/* <PageReviewsSlider /> */}
-    </>
+    <div className={css.conteinerMainLayout}>
+      <Header />
+      <main className={css.main}>
+        <SideBar />
+        <div className={css.component}> Some component</div>
+      </main>
+    </div>
   );
 };
