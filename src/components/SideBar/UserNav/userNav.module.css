@@ -4,6 +4,13 @@
   gap: 18px;
   margin-bottom: auto;
 }
+@media (max-width: 1439px) {
+  .linksConteiner {margin-bottom: 450px;
+}}
+
+
+
+
 
 .link {
   display: flex;

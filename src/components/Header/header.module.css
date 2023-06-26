@@ -1,4 +1,5 @@
 .header {
+  position: relative;
    display: flex;
   align-items: center;
   height: 115px;
@@ -94,7 +95,7 @@
   font-family: 'Inter';
   font-weight: 600;
   font-size: 12px;
-  line-height: 16px;
+  line-height: calc(16/12);
   letter-spacing: -0.02em;
   color: #fff;
   text-align: center;
@@ -157,3 +158,13 @@
 .imgBox {
   overflow: hidden;
 }
+
+
+
+.sideBar{
+
+position:absolute
+
+}
+
+

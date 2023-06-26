@@ -9,6 +9,8 @@
   box-sizing: border-box;
 }
 
+
+
 .logoBox {
   display: flex;
   align-items: center;
@@ -37,6 +39,16 @@
     gap: 6px;
   }
 }
+@media (max-width: 1439px) {
+  .conteinerSideBar {
+    display: none;
+  }
+ .open {
+    display: block;
+  }
+
+}
+
 @media (min-width: 1440px) {
   .logoImg {
     width: 71px;
@@ -46,11 +58,13 @@
     line-height: 24px;
   }
   .logoBox {
-    display:none;
+    display: none;
   }
+
   .conteinerSideBar {
-      border-right: 1px solid rgba(220, 227, 229, 0.5);
-      }
+    border-right: 1px solid rgba(220, 227, 229, 0.5);
+  }
+  
 }
 
 .logoTitle {
@@ -70,16 +84,13 @@
   font-weight: 600;
   margin-bottom: 24px;
 }
-@media (min-width: 1440px){
-  .titleNav{
+@media (min-width: 1440px) {
+  .titleNav {
     margin-top: 0;
   }
-
-  
 }
 
 .btnClose {
-  /* display: contents; */
   padding: 5px;
   background-color: #ffffff;
   border-color: transparent;
