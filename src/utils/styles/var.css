@@ -6,4 +6,15 @@
     
     --primary-background-color: #ffffff;
     --secondary-background-color: #EAEAEA;
+    --primary-text-color: #111111;
+    --sidebar-background-color: #fff;
+    --icon-color: #000000;
+}
+
+[data-theme='dark'] {
+    --secondary-background-color: #171820;
+    --primary-background-color: #21222c;  
+    --primary-text-color: #FFFFFF;
+    --sidebar-background-color: #000000;
+    --icon-color: #3E85F3;
 }
