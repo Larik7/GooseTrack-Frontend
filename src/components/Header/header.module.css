@@ -1,3 +1,4 @@
+
 .header {
    display: flex;
   align-items: center;
@@ -113,6 +114,8 @@
   margin-left: auto;
 }
 
+
+
 .imgBox {
   height: 44px;
   width: 44px;
@@ -126,6 +129,8 @@
   font-weight: 700;
   line-height: 18px;
 }
+
+
 
 @media (min-width: 1440px) {
   .burgerMenu {
@@ -154,6 +159,7 @@
   padding: 10px;
   cursor: pointer;
 }
+
 .imgBox {
   overflow: hidden;
 }
