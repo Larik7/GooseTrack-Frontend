@@ -20,7 +20,7 @@
     
     /* Nav colors */
 
-    --user-nav-button-color:  rgba(52, 52, 52, 0.5);
+    --nav-button-color:  rgba(52, 52, 52, 0.5);
      --nav-button-color-hover: #3E85F3;
     --nav-button-background-hover: #E3F3FF;
 
@@ -43,7 +43,7 @@
     --toggle-button-color-active: #21222C;
 
      /* Nav colors */  
-    --user-nav-button-color: #FFFFFF;
+    --nav-button-color: #FFFFFF;
     --nav-button-color-hover:#FFFFFF;
     --nav-button-background-hover: #3E85F3;
    
