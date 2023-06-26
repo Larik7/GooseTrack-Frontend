@@ -30,3 +30,16 @@
     padding: 40px 28px;
   }
 }
+.cross {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  width: 24px;
+  height: 24px;
+  stroke: #000;
+  cursor: pointer;
+}
+.cross:hover,
+.cross:focus {
+  stroke: #2b78ef;
+}

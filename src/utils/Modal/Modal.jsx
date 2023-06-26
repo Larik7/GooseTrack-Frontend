@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { BtnCloseModal } from './Modal.steled';
+import { HiOutlineXMark as Cross } from 'react-icons/hi2';
 import css from './modal.module.css';
 
 const rootModal = document.querySelector('#modal');
@@ -27,7 +27,7 @@ export const Modal = ({ children, onClose }) => {
   return createPortal(
     <div className={css.modalBackdrop} onMouseDown={handleClose}>
       <div className={css.modalContainer}>
-        <BtnCloseModal onClick={onClose} />
+        <Cross className={css.cross} onClick={onClose} />
         {children}
       </div>
     </div>,

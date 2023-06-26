@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
 import { object, string } from 'yup';
-import { StarRating } from './FeedbackForm.styled';
-import { PencilBtn, TrashBn } from './FeedbackForm.styled';
 import css from './feedbackForm.module.css';
+import { BiPencil as Pencil, BiTrash as Trash } from 'react-icons/bi';
+import { AiFillStar as Star } from 'react-icons/ai';
 
 // import { useDispatch } from 'react-redux';
 
@@ -17,8 +17,6 @@ export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
   const [message, setMessage] = useState(editedMessage || '');
   const [hover, setHover] = useState(null);
   const [id, setId] = useState('');
-
-  console.log(id);
   useEffect(() => {
     // if (isEditReview) {
     //   setRating(editedRating);
@@ -72,7 +70,8 @@ export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
                   value={ratingValue}
                   onClick={() => setRating(ratingValue)}
                 />
-                <StarRating
+                <Star
+                  className={css.starBtn}
                   fill={
                     ratingValue <= (hover || rating) ? '#FFAC33' : '#CEC9C1'
                   }
@@ -93,8 +92,8 @@ export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
             </label>
             {!editedRating ? (
               <div className={css.btnWrap}>
-                <PencilBtn />
-                <TrashBn />
+                <Pencil className={css.editBtn} />
+                <Trash className={css.cancelMiniBtn} />
               </div>
             ) : (
               <div></div>

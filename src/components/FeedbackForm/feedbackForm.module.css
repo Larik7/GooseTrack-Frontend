@@ -112,3 +112,35 @@
   justify-content: space-between;
   align-items: center;
 }
+.editBtn {
+  fill: #3e85f3;
+  width: 30px;
+  height: 30px;
+  border: 8px #e3f3ff solid;
+  background: #e3f3ff;
+  border-radius: 50%;
+}
+.editBtn:hover,
+.editBtn:focus {
+  fill: #ffffff;
+  background: #3e85f3;
+  border: 8px #3e85f3 solid;
+}
+.cancelMiniBtn {
+  fill: #ea3d65;
+  width: 30px;
+  height: 30px;
+  border: 8px #facedd solid;
+  background: #facedd;
+  border-radius: 50%;
+}
+.cancelMiniBtn:hover,
+.cancelMiniBtn:focus {
+  fill: #ffffff;
+  background: #ea3d65;
+  border: 8px #ea3d65 solid;
+}
+.starBtn {
+  width: 24px;
+  height: 24px;
+}
