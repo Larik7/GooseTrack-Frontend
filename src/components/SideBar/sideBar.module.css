@@ -1,7 +1,7 @@
 .conteinerSideBar {
   width: 290px;
   /* outline: 1px solid red; */
-  background-color: #fff;
+  background-color: var(--sidebar-background-color);
   height: 900px;
   display: flex;
   flex-direction: column;
@@ -48,9 +48,9 @@
   .logoBox {
     display:none;
   }
-  .conteinerSideBar {
+  /* .conteinerSideBar {
       border-right: 1px solid rgba(220, 227, 229, 0.5);
-      }
+      } */
 }
 
 .logoTitle {
