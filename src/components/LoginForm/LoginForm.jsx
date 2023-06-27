@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { MdOutlineLogin } from 'react-icons/md';
 import { BiErrorCircle } from 'react-icons/bi';
 import { FcOk } from 'react-icons/fc';
+import { ButtonNavigation } from 'components/AuthNavigate/AuthNavigate';
 
 import css from './LoginForm.module.css';
 
@@ -120,9 +121,11 @@ export const LoginForm = ({ handleSumbit }) => {
           )}
         </Formik>
       </div>
-      <a href="/" className={css.sign}>
-        Sign up
-      </a>
+      <ButtonNavigation
+        route="/register"
+        btnText="Sign Up"
+        className={css.sign}
+      ></ButtonNavigation>
     </div>
   );
 };

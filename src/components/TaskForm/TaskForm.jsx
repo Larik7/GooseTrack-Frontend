@@ -3,6 +3,7 @@ import css from './TaskForm.module.css';
 import { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
 import { IoMdClose } from 'react-icons/io';
+import { SlPencil } from 'react-icons/sl';
 
 export const TaskForm = ({ initialData, onClose }) => {
   const [task, setTask] = useState({});
@@ -121,6 +122,7 @@ export const TaskForm = ({ initialData, onClose }) => {
               {<IoMdClose className={css.icon} />}
             </button>
             <button className={css.button} type="submit">
+              {<SlPencil className={css.icon_pencil} />}
               Edit
             </button>
           </Form>

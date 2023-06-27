@@ -1,9 +1,7 @@
 @media (max-width: 767px) {
   .error_message {
     position: absolute;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
+
     font-size: 12px;
     line-height: 14px;
     padding: 0;
@@ -18,9 +16,7 @@
 
   .success_message {
     position: absolute;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
+
     font-size: 12px;
     line-height: 14px;
     padding: 0;
@@ -56,13 +52,11 @@
 
     margin-bottom: 32px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 100%;
 
-    color: #3e85f3;
+    color: var(--nav-button-color-hover);
 
     text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
       0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
@@ -93,13 +87,11 @@
     width: 32px;
     height: 15px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 12px;
     line-height: 15px;
 
-    color: #111111;
+    color: var(--primary-text-color);
 
     flex: none;
     order: 0;
@@ -129,13 +121,10 @@
     flex-grow: 0;
     z-index: 1;
 
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 129%;
 
-    color: #111111;
+    color: var(--primary-text-color);
 
     padding-left: 14px;
 
@@ -151,6 +140,7 @@
   }
 
   .button {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,19 +152,21 @@
     width: 100%;
     height: 46px;
 
-    background: #3e85f3;
+    background: var(--nav-button-color-hover);
     box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
     border-radius: 16px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 129%;
 
     letter-spacing: -0.02em;
 
-    color: #fff;
+    color: var(--sidebar-background-color);
+  }
+
+  .button:hover {
+    background: var(--button-color-hover);
   }
   .logIn {
     width: 20px;
@@ -184,7 +176,7 @@
   .sign {
     position: absolute;
     font-weight: 600;
-    color: #3e85f3;
+    color: var(--nav-button-color-hover);
     font-size: 14px;
     line-height: 129%;
 
@@ -211,9 +203,7 @@
 @media (min-width: 768px) {
   .error_message {
     position: absolute;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
+
     font-size: 12px;
     line-height: 14px;
     padding: 0;
@@ -228,9 +218,7 @@
 
   .success_message {
     position: absolute;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
+
     font-size: 12px;
     line-height: 14px;
     padding: 0;
@@ -266,14 +254,12 @@
 
     margin-bottom: 40px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 24px;
 
     line-height: 100%;
 
-    color: #3e85f3;
+    color: var(--nav-button-color-hover);
 
     text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
       0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
@@ -311,13 +297,11 @@
     width: 32px;
     height: 15px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
 
-    color: #111111;
+    color: var(--primary-text-color);
   }
 
   .label_email.error_label {
@@ -343,13 +327,10 @@
     flex-grow: 0;
     z-index: 1;
 
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 129%;
 
-    color: #111111;
+    color: var(--primary-text-color);
 
     padding-left: 14px;
 
@@ -365,6 +346,7 @@
   }
 
   .button {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -376,19 +358,20 @@
     width: 400px;
     height: 46px;
 
-    background: #3e85f3;
+    background: var(--nav-button-color-hover);
     box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
     border-radius: 16px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 129%;
 
     letter-spacing: -0.02em;
 
-    color: #fff;
+    color: var(--sidebar-background-color);
+  }
+  .button:hover {
+    background: var(--button-color-hover);
   }
   .logIn {
     width: 20px;
@@ -398,7 +381,7 @@
   .sign {
     position: absolute;
     font-weight: 600;
-    color: #3e85f3;
+    color: var(--nav-button-color-hover);
     font-size: 14px;
     line-height: 129%;
 
@@ -426,9 +409,7 @@
 @media (min-width: 1440px) {
   .error_message {
     position: absolute;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
+
     font-size: 12px;
     line-height: 14px;
     padding: 0;
@@ -465,17 +446,15 @@
 
   .title {
     margin-top: 40px;
-    margin-left: 40px;
+
     margin-bottom: 40px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 24px;
 
     line-height: 100%;
 
-    color: #3e85f3;
+    color: var(--nav-button-color-hover);
 
     text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
       0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
@@ -513,13 +492,11 @@
     width: 32px;
     height: 15px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
 
-    color: #111111;
+    color: var(--primary-text-color);
   }
   .label_email.error_label {
     color: red;
@@ -544,13 +521,10 @@
     flex-grow: 0;
     z-index: 1;
 
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 129%;
 
-    color: #111111;
+    color: var(--primary-text-color);
 
     padding-left: 14px;
 
@@ -566,6 +540,7 @@
   }
 
   .button {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -577,19 +552,20 @@
     width: 400px;
     height: 46px;
 
-    background: #3e85f3;
+    background: var(--nav-button-color-hover);
     box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
     border-radius: 16px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 129%;
 
     letter-spacing: -0.02em;
 
-    color: #fff;
+    color: var(--sidebar-background-color);
+  }
+  .button:hover {
+    background: var(--button-color-hover);
   }
   .logIn {
     width: 20px;
@@ -598,7 +574,8 @@
   .sign {
     position: absolute;
     font-weight: 600;
-    color: #3e85f3;
+    color: var(--nav-button-color-hover);
+
     font-size: 14px;
     line-height: 129%;
 
@@ -625,9 +602,7 @@
 @media (min-width: 1680px) {
   .error_message {
     position: absolute;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
+
     font-size: 12px;
     line-height: 14px;
     padding: 0;
