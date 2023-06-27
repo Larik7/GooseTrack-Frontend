@@ -60,13 +60,28 @@
   padding: 5px;
   cursor: pointer;
   border: none;
-  margin-right: 80px;
 }
+
+@media (min-width: 375px) {
+  .burgerMenu {
+    margin-right: 80px;
+  }
+  .imgBox {
+    height: 32px;
+    width: 32px;
+   
+  }
+}
+
 
 @media (min-width: 768px) {
   .burgerMenu {
     margin-right: 355px;
   }
+  .feedbackBtn{
+    margin-right: 24px;
+  }
+
 }
 
 
@@ -103,7 +118,7 @@
 
   padding: 8px 20px;
   cursor: pointer;
-  margin-right: 24px;
+  margin-right: 18px;
 }
 
 .infoMenu {
@@ -115,12 +130,12 @@
 }
 
 
-
 .imgBox {
   height: 44px;
   width: 44px;
   border: 1.8px solid #3e85f3;
   border-radius: 50%;
+  overflow: hidden;
 }
 .userName {
   color: var(--secondary-text-color);
@@ -160,16 +175,5 @@
   cursor: pointer;
 }
 
-.imgBox {
-  overflow: hidden;
-}
-
-
-
-.sideBar{
-
-position:absolute
-
-}
 
 

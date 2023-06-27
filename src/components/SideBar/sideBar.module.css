@@ -45,6 +45,7 @@
   }
  .open {
     display: block;
+    position: absolute;
   }
 
 }

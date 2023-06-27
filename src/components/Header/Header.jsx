@@ -12,10 +12,11 @@ import { ThemeToggler } from './ThemeToggle/ThemeToggle';
 
 // import { HiOutlineSun } from "react-icons/hi"
 
-export const Header = ({ openMenu, setOpen }) => {
+export const Header = ({ openMenu, setOpen}) => {
+
   const handlerMenu = () => {
     setOpen(!openMenu);
-  };
+   };
 
   return (
     <header className={css.header}>
