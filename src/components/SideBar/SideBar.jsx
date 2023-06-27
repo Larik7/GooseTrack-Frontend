@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { UserNav } from './UserNav/UserNav';
 import { LogoutBtn } from './LogoutBtn/LogoutBtn ';
 import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
@@ -7,11 +7,6 @@ import css from './sideBar.module.css';
 import { MdClose } from 'react-icons/md';
 
 export const SideBar = ({ openMenu, onClose }) => {
-
-
-
-
-  
 
   return (
 <div
@@ -34,8 +29,5 @@ export const SideBar = ({ openMenu, onClose }) => {
       <UserNav />
       <LogoutBtn />
     </div>
- 
-   
-    
   );
 };
