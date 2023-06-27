@@ -9,8 +9,10 @@ import { Header } from "components/Header/Header"
 import { SideBar } from "components/SideBar/SideBar"
 import css from './mainlayout.module.css'
 
+
 import React, { useState, useEffect } from 'react';
 
+//   const [open, setOpen] = useState(false);
 
 export const MainLayout =()=>{
 const [openMenu, setOpen] = useState(true); 
@@ -29,14 +31,13 @@ const [openMenu, setOpen] = useState(true);
 </div>
 
 
-
   return (
     <div className={css.conteinerMainLayout}>
       <Header />
       <main className={css.main}>
         <SideBar />
         <div className={css.component}> Some component</div>
-        <button onClick={onClose}>open</button>
+
         {open && <CreateTaskModal onClose={onClose} />}
       </main>
     </div>
