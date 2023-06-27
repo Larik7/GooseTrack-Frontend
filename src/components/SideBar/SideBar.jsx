@@ -6,19 +6,17 @@ import css from './sideBar.module.css';
 
 import { MdClose } from 'react-icons/md';
 
-export const SideBar = ({ openMenu }) => {
+export const SideBar = ({ openMenu, onClose }) => {
 
 
-  const [closeMenu, setCloseMenu] = useState(false);
-  const handlerMenu = () => {
-    setCloseMenu(!closeMenu);
+
+
   
-  };
 
   return (
 <div
       className={
-        ((!openMenu)
+        (!openMenu
           ? `${css.conteinerSideBar} ${css.open}`
           : `${css.conteinerSideBar}`)
              }
@@ -27,7 +25,7 @@ export const SideBar = ({ openMenu }) => {
         <img className={css.logoImg} src={Logo} alt="Goose_logo" />
         <p className={css.logoTitle}>GooseTrack</p>
 
-        <button className={css.btnClose} onClick={handlerMenu}>
+        <button className={css.btnClose} onClick={onClose}>
           <MdClose size={32} />
         </button>
       </div>
