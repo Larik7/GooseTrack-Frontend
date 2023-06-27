@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { UserNav } from './UserNav/UserNav';
 import { LogoutBtn } from './LogoutBtn/LogoutBtn ';
 import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
