@@ -9,9 +9,10 @@ import { useState } from 'react';
 
 import {RxHamburgerMenu} from "react-icons/rx";
 // переключатели темы
-import { BiMoon } from "react-icons/bi";
-// import { HiOutlineSun } from "react-icons/hi"
+import { ThemeToggler } from './ThemeToggle/ThemeToggle';
 
+
+// import { HiOutlineSun } from "react-icons/hi"
 
 
 
@@ -41,7 +42,7 @@ setOpen(!openMenu)
 <div  className={css.conteinerBtn}>
           <button className={css.feedbackBtn}  >Feedback</button>
           <div className={css.infoMenu}>
-          <button className={css.themeBtn}>  <BiMoon size={32} color='#3E85F3'/> </button>
+          <ThemeToggler/>
           <p className={css.userName}> UserName </p>
           <div className={css.imgBox}>
             <img src={avatar}alt="userImg" />

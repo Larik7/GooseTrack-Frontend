@@ -1,19 +1,14 @@
-import css from './LoginForm.module.css';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { useState } from 'react';
 import * as Yup from 'yup';
 import { MdOutlineLogin } from 'react-icons/md';
 import { BiErrorCircle } from 'react-icons/bi';
 import { FcOk } from 'react-icons/fc';
 
-export const LoginForm = () => {
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const [loginForm, setLoginForm] = useState({});
+import css from './LoginForm.module.css';
 
-  const handleSumbit = (values, { resetForm }) => {
-    setLoginForm(values);
-    resetForm();
-  };
+// Компонент форми для входу
+export const LoginForm = ({ handleSumbit }) => {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -22,8 +17,6 @@ export const LoginForm = () => {
       .required('Email is required'),
     password: Yup.string().min(3).required('Password is required'),
   });
-
-  console.log(loginForm);
 
   return (
     <div className={css.main_container}>

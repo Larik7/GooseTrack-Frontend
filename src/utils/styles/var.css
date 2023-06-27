@@ -4,6 +4,47 @@
 
     /* background colors */
     
-    --primary-background-color: #ffffff;
+    --primary-background-color: #F7F6F9;
     --secondary-background-color: #EAEAEA;
+    
+    --sidebar-background-color: #FFFFFF;
+
+    /* text colors */
+   --primary-text-color: #111111;
+   --secondary-text-color: #343434;
+
+
+    /* icon month-day */
+    --toggle-button-color: #DCEBF7;
+    --toggle-button-color-active: #CAE8FF;
+    
+    /* Nav colors */
+
+    --nav-button-color:  rgba(52, 52, 52, 0.5);
+     --nav-button-color-hover: #3E85F3;
+    --nav-button-background-hover: #E3F3FF;
+
+}
+
+[data-theme='dark'] {
+    /* background colors */
+    --secondary-background-color: #171820;
+    --primary-background-color: #21222c;  
+    --primary-text-color: #FFFFFF;
+    --sidebar-background-color: #13151A;
+
+
+    /* text colors */
+    --primary-text-color: #FFFFFF;
+    --secondary-text-color:#FFFFFF;
+
+    /* icon month-day */
+    --toggle-button-color: #ffffff;
+    --toggle-button-color-active: #21222C;
+
+     /* Nav colors */  
+    --nav-button-color: #FFFFFF;
+    --nav-button-color-hover:#FFFFFF;
+    --nav-button-background-hover: #3E85F3;
+   
 }
