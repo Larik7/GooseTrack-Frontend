@@ -4,16 +4,14 @@ import cssLogo from '../SideBar/sideBar.module.css';
 import css from './header.module.css';
 import avatar from '../../images/avatars/avatarShev.jpg';
 
-import {RxHamburgerMenu} from "react-icons/rx";
+import { RxHamburgerMenu } from 'react-icons/rx';
 // переключатели темы
 import { ThemeToggler } from './ThemeToggle/ThemeToggle';
-
+import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 
 // import { HiOutlineSun } from "react-icons/hi"
 
-
 export const Header = () => {
-
   return (
     <header className={css.header}>
       <div className={css.logoConteiner}>
@@ -24,19 +22,22 @@ export const Header = () => {
       </div>
 
       <div className={css.headerInfoBox}>
-        <button className={css.burgerMenu}> <RxHamburgerMenu size={32}/></button>
+        <button className={css.burgerMenu}>
+          {' '}
+          <RxHamburgerMenu size={32} />
+        </button>
         <p className={css.infoTitle}>Info Title</p>
-       
-<div  className={css.conteinerBtn}>
-          <button className={css.feedbackBtn}  >Feedback</button>
+
+        <div className={css.conteinerBtn}>
+          <AddFeedbackBtn className={css.feedbackBtn} />
           <div className={css.infoMenu}>
-          <ThemeToggler/>
-          <p className={css.userName}> UserName </p>
-          <div className={css.imgBox}>
-            <img src={avatar}alt="userImg" />
+            <ThemeToggler />
+            <p className={css.userName}> UserName </p>
+            <div className={css.imgBox}>
+              <img src={avatar} alt="userImg" />
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </header>
   );
