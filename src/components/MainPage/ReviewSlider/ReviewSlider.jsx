@@ -2,8 +2,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
+<<<<<<< Updated upstream
 // import { fetchAllReviews } from 'redux/reviews/operations';
 // import { selectAllReviews } from 'redux/reviews/selectors';
+=======
+>>>>>>> Stashed changes
 import { ReviewCard } from './ReviewCard';
 import {
   ReviewsContainer,
@@ -12,7 +15,11 @@ import {
 } from './ReviewsSlider.styled';
 import sprite from 'icons/sprite.svg';
 
+<<<<<<< Updated upstream
 // Slide Right
+=======
+
+>>>>>>> Stashed changes
 const SlickRight = ({ currentSlide, slideCount, ...props }) => (
   <div
     {...props}
@@ -27,7 +34,10 @@ const SlickRight = ({ currentSlide, slideCount, ...props }) => (
   </div>
 );
 
+<<<<<<< Updated upstream
 // Slide Left
+=======
+>>>>>>> Stashed changes
 const SlickLeft = ({ currentSlide, slideCount, ...props }) => (
   <div
     {...props}
@@ -63,7 +73,10 @@ const settings = {
   prevArrow: <SlickLeft />,
 };
 
+<<<<<<< Updated upstream
 // Review Slider
+=======
+>>>>>>> Stashed changes
 export const ReviewsSlider = () => {
   const reviews = useSelector(selectAllReviews);
   const dispatch = useDispatch();
