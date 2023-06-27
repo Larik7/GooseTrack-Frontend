@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AddFeedbackModal } from '../AddFeedbackModal/AddFedbackModal';
 
-const AddFeedbackBtn = () => {
+const AddFeedbackBtn = ({ feedbackBtn }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleButtonClick = () => {
@@ -14,7 +14,7 @@ const AddFeedbackBtn = () => {
 
   return (
     <div>
-      <button className={css.feedbackBtn} onClick={handleButtonClick}>
+      <button className={feedbackBtn} onClick={handleButtonClick}>
         Feedback
       </button>
       {isModalOpen && <AddFeedbackModal onCloseModal={handleCloseModal} />}
