@@ -22,8 +22,13 @@
   --nav-button-color: rgba(52, 52, 52, 0.5);
   --nav-button-color-hover: #3e85f3;
   --nav-button-background-hover: #e3f3ff;
-
   --button-color-hover: #2b78ef;
+
+  /* Feedback modal */
+ --feedback-background-input: #F6F6F6;
+ --feedback-btnCancel-background: #dcebf7;
+ --feedback-editBtn-background: #e3f3ff;
+ --feedback-cancelMini-background: #facedd;
 }
 
 [data-theme='dark'] {
@@ -45,4 +50,10 @@
   --nav-button-color: #ffffff;
   --nav-button-color-hover: #ffffff;
   --nav-button-background-hover: #3e85f3;
+
+  /* Feedback modal */
+  --feedback-background-input: #353647;
+  --feedback-btnCancel-background: #21222C;
+  --feedback-editBtn-background: #353647;
+  --feedback-cancelMini-background: #c08297;
 }
