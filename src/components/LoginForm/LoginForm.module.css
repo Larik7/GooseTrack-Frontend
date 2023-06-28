@@ -147,7 +147,7 @@
     gap: 10px;
 
     border-style: none;
-    margin-top: 32px;
+    margin-top: 10px;
 
     width: 100%;
     height: 46px;
@@ -168,6 +168,39 @@
   .button:hover {
     background: var(--button-color-hover);
   }
+    .button_google {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+  
+      border-style: none;
+      margin-top: 10px;
+  
+      width: 100%;
+      height: 46px;
+  
+      background: #fff;
+      box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+      border-radius: 16px;
+      border: 1px solid #2b78ef;
+  
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 129%;
+  
+      letter-spacing: -0.02em;
+  
+      color: #111;
+    }
+  
+    .button_google:hover,
+    .button_google:focus {
+    color: #fff;
+      background-color: #2b78ef;
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
   .logIn {
     width: 20px;
     height: 20px;
@@ -353,7 +386,7 @@
     gap: 10px;
 
     border-style: none;
-    margin-top: 32px;
+    /* margin-top: 32px; */
 
     width: 400px;
     height: 46px;
@@ -373,6 +406,38 @@
   .button:hover {
     background: var(--button-color-hover);
   }
+     .button_google {
+       cursor: pointer;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 10px;
+  
+       border-style: none;
+         
+       width: 100%;
+       height: 46px;
+  
+       background: #fff;
+       box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+       border-radius: 16px;
+       border: 1px solid #2b78ef;
+  
+       font-weight: 600;
+       font-size: 14px;
+       line-height: 129%;
+  
+       letter-spacing: -0.02em;
+  
+       color: #111;
+     }
+  
+     .button_google:hover,
+     .button_google:focus {
+       color: #fff;
+       background-color: #2b78ef;
+       transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+     }
   .logIn {
     width: 20px;
     height: 20px;
@@ -547,7 +612,7 @@
     gap: 10px;
 
     border-style: none;
-    margin-top: 32px;
+    /* margin-top: 32px; */
 
     width: 400px;
     height: 46px;
