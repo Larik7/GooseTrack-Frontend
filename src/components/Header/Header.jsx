@@ -7,7 +7,7 @@ import avatar from '../../images/avatars/avatarShev.jpg';
 import { RxHamburgerMenu } from 'react-icons/rx';
 // переключатели темы
 import { ThemeToggler } from './ThemeToggle/ThemeToggle';
-import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
+// import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 
 // import { HiOutlineSun } from "react-icons/hi"
 
