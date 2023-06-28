@@ -4,11 +4,10 @@ import cssLogo from '../SideBar/sideBar.module.css';
 import css from './header.module.css';
 import avatar from '../../images/avatars/avatarShev.jpg';
 
-// import { useState } from 'react';
-
 import { RxHamburgerMenu } from 'react-icons/rx';
 // переключатели темы
 import { ThemeToggler } from './ThemeToggle/ThemeToggle';
+import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 
 // import { HiOutlineSun } from "react-icons/hi"
 
@@ -33,7 +32,6 @@ export const Header = ({ openMenu, setOpen}) => {
           <RxHamburgerMenu size={32} />
         </button>
         <p className={css.infoTitle}>Info Title</p>
-
         <div className={css.conteinerBtn}>
           <button className={css.feedbackBtn}>Feedback</button>
           <div className={css.infoMenu}>
