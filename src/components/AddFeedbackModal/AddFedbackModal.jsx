@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FeedbackForm } from 'components/FeedbackForm/FeedbackForm';
 import { Modal } from 'utils/Modal/Modal';
 export const AddFeedbackModal = ({ onCloseModal }) => {

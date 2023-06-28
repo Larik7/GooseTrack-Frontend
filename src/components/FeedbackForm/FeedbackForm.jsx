@@ -16,7 +16,7 @@ export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
   const [rating, setRating] = useState(editedRating || 0);
   const [message, setMessage] = useState(editedMessage || '');
   const [hover, setHover] = useState(null);
-  const [id, setId] = useState('');
+  // const [id, setId] = useState('');
   useEffect(() => {
     // if (isEditReview) {
     //   setRating(editedRating);
@@ -24,14 +24,14 @@ export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
     //   setId(editedId);
     // }
   }, [editedMessage, editedRating, editedId]);
-  const reset = () => {
-    setMessage('');
-    setRating(0);
-    setHover(null);
-  };
+  // const reset = () => {
+  //   setMessage('');
+  //   setRating(0);
+  //   setHover(null);
+  // };
   const handleSubmit = async e => {
     e.preventDefault();
-    const currentMessage = e.currentTarget.message.value;
+    // const currentMessage = e.currentTarget.message.value;
     if (!rating) {
       return;
     }
