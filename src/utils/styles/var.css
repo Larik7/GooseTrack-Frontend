@@ -29,6 +29,7 @@
  --feedback-btnCancel-background: #dcebf7;
  --feedback-editBtn-background: #e3f3ff;
  --feedback-cancelMini-background: #facedd;
+--feedback-border-color:  rgba(255, 255, 255, 0);
 }
 
 [data-theme='dark'] {
@@ -52,8 +53,9 @@
   --nav-button-background-hover: #3e85f3;
 
   /* Feedback modal */
-  --feedback-background-input: #353647;
+  --feedback-background-input: #13151A;
   --feedback-btnCancel-background: #21222C;
   --feedback-editBtn-background: #353647;
   --feedback-cancelMini-background: #c08297;
+  --feedback-border-color:   rgba(255, 255, 255, 0.15);
 }
