@@ -7,7 +7,7 @@ import avatar from '../../images/avatars/avatarShev.jpg';
 import { RxHamburgerMenu } from 'react-icons/rx';
 // переключатели темы
 import { ThemeToggler } from './ThemeToggle/ThemeToggle';
-// import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
+import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 
 // import { HiOutlineSun } from "react-icons/hi"
 
@@ -33,7 +33,7 @@ export const Header = ({ openMenu, setOpen}) => {
         </button>
         <p className={css.infoTitle}>Info Title</p>
         <div className={css.conteinerBtn}>
-          <button className={css.feedbackBtn}>Feedback</button>
+        <AddFeedbackBtn feedbackBtnStyle={css.feedbackBtn}/>
           <div className={css.infoMenu}>
             <ThemeToggler />
             <p className={css.userName}> UserName </p>
