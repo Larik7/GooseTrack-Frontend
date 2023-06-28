@@ -1,5 +1,5 @@
-import { Modal } from 'components/TaskModal/TaskModal';
-import { TaskForm } from 'components/TaskForm/TaskForm';
+import { Modal } from '../TaskModal/TaskModal';
+import { TaskForm } from '../TaskForm/TaskForm';
 
 export const CreateTaskModal = ({ initialData, onClose }) => {
   return (

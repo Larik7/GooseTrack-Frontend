@@ -557,8 +557,8 @@
     border-radius: 16px;
 
     font-weight: 600;
-    font-size: 14px;
-    line-height: 129%;
+    font-size: 18px;
+    line-height: 24px;
 
     letter-spacing: -0.02em;
 
@@ -576,8 +576,8 @@
     font-weight: 600;
     color: var(--nav-button-color-hover);
 
-    font-size: 14px;
-    line-height: 129%;
+    font-size: 18px;
+    line-height: 24px;
 
     top: 740px;
     text-decoration: underline;
