@@ -157,6 +157,7 @@ export const RegisterForm = () => {
               Sign Up
               <RxEnter className={css.signup_image} />
             </button>
+            <a href="https://goosetrackback.onrender.com/api/auth/google" className={css.register_button_google} type="submit"><img width="25"  src="https://img.icons8.com/3d-fluency/94/google-logo.png" alt="google-logo"/>Sign Up With Google</a>
           </Form>
         )}
       </Formik>
