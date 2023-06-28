@@ -11,7 +11,12 @@ import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 
 // import { HiOutlineSun } from "react-icons/hi"
 
-export const Header = () => {
+export const Header = ({ openMenu, setOpen}) => {
+
+  const handlerMenu = () => {
+    setOpen(!openMenu);
+   };
+
   return (
     <header className={css.header}>
       <div className={css.logoConteiner}>
@@ -22,14 +27,13 @@ export const Header = () => {
       </div>
 
       <div className={css.headerInfoBox}>
-        <button className={css.burgerMenu}>
+        <button className={css.burgerMenu} onClick={handlerMenu}>
           {' '}
           <RxHamburgerMenu size={32} />
         </button>
         <p className={css.infoTitle}>Info Title</p>
-
         <div className={css.conteinerBtn}>
-          <AddFeedbackBtn className={css.feedbackBtn} />
+          <button className={css.feedbackBtn}>Feedback</button>
           <div className={css.infoMenu}>
             <ThemeToggler />
             <p className={css.userName}> UserName </p>
