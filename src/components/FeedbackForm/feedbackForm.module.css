@@ -67,15 +67,15 @@
   font-weight: 600;
   font-size: 14px;
   line-height: calc(18 / 14);
-  background: #3e85f3;
-  color: #ffffff;
+  background: var(--nav-button-color);
+  color: var(--sidebar-background-color);
   cursor: pointer;
   width: 198px;
   height: 42px;
 }
 .btnSaveOrEdit:hover,
 .btnSaveOrEdit:focus {
-  background-color: #2b78ef;
+  background-color: var(--button-color-hover);
 }
 @media screen and (min-width: 768px) {
   .btnSaveOrEdit {
@@ -94,14 +94,16 @@
   font-size: 14px;
   line-height: calc(18 / 14);
   background: var(--feedback-btnCancel-background);
+
   color: var(--secondary-text-color);
+
   cursor: pointer;
   width: 198px;
   height: 42px;
 }
 .btnCancel:hover,
 .btnCancel:focus {
-  background: #2b78ef;
+  background: var(--button-color-hover);
 }
 @media screen and (min-width: 768px) {
   .btnCancel {
@@ -114,32 +116,36 @@
   align-items: center;
 }
 .editBtn {
-  fill: #3e85f3;
+  fill: var(--button-color-hover);
   width: 30px;
   height: 30px;
-  border: 8px var(--feedback-editBtn-background) solid;
+
+  padding: 8px;
   background: var(--feedback-editBtn-background);
+
   border-radius: 50%;
 }
 .editBtn:hover,
 .editBtn:focus {
-  fill: #ffffff;
-  background: #3e85f3;
-  border: 8px #3e85f3 solid;
+  fill: var(--primary-text-color);
+  background: var(--nav-button-color-hover);
+  padding: 8px;
 }
 .cancelMiniBtn {
   fill: #ea3d65;
   width: 30px;
   height: 30px;
-  border: 8px var(--feedback-cancelMini-background) solid;
+
+  padding: 8px;
   background: var(--feedback-cancelMini-background);
+
   border-radius: 50%;
 }
 .cancelMiniBtn:hover,
 .cancelMiniBtn:focus {
-  fill: #ffffff;
+  fill: var(--primary-text-color);
   background: #ea3d65;
-  border: 8px #ea3d65 solid;
+  padding: 8px;
 }
 .starBtn {
   width: 24px;

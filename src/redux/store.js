@@ -11,7 +11,11 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/auth-slice';
+
+import { reviewsReducer } from './reviews/reviewSlice';
+
 import taskReducer from './tasks/taskReducer';
+
 
 const persistConfig = {
   key: 'auth',
@@ -22,7 +26,11 @@ const persistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
+
+    reviews: persistReducer(persistConfig, reviewsReducer),
+
     task: persistReducer(persistConfig, taskReducer),
+
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
