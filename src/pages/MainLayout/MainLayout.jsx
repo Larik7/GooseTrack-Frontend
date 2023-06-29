@@ -1,6 +1,8 @@
 import { Header } from 'components/Header/Header';
 import { SideBar } from 'components/SideBar/SideBar';
 import css from './mainlayout.module.css';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
 // import { TasksColumnsList } from 'components/Task/TasksColumnsList/TasksColumnsList';
 
@@ -18,12 +20,18 @@ export const MainLayout = () => {
       <Header openMenu={openMenu} setOpen={setOpenMenu} />
       <main className={css.main}>
         <SideBar openMenu={openMenu} onClose={onCloseSideBar} />
-        <div className={css.component}>
-          {' '}
-          Some component
-          {/* <TasksColumnsList></TasksColumnsList> */}
+        <div>
+          <Suspense fallback={null}>
+            {}
+            <Outlet />
+          </Suspense>
         </div>
       </main>
     </div>
   );
 };
+
+// <div className={css.component}></div></div>
+// {' '}
+//           Some component
+//           {/* <TasksColumnsList></TasksColumnsList> */}

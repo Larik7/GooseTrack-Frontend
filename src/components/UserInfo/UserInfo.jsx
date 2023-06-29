@@ -1,7 +1,9 @@
+import { Formik } from "formik";
+
 export const UserInfo = () => {
   return (
-    <div>
-      <p>Some Text!!!!!!!!</p>
-    </div>
+    <Formik>
+      
+    </Formik>
   );
 };
