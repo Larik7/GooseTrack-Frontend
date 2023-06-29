@@ -8,19 +8,19 @@ export const AddFeedbackModal = ({ onCloseModal }) => {
   const [review, setReview] = useState({});
   const dispatch = useDispatch();
   const reviewOwn = useSelector(selectOwnReviews);
-  // (async function getOwnReview() {
-  //   if (!reviewOwn) {
-  //     const ownReview = await dispatch(fetchOwnReviews());
-  //     setReview(ownReview);
-  //     return;
-  //   } else {
-  //     setReview(reviewOwn);
-  //     return;
-  //   }
-  // })();
-  const handleCloseModal = () => {
+  useEffect(() => {
+    if (!reviewOwn) {
+      const ownReview = dispatch(fetchOwnReviews());
+      setReview(ownReview);
+      return;
+    } else {
+      setReview(reviewOwn);
+      return;
+    }
+  }, [reviewOwn, review]);
+  function handleCloseModal() {
     onCloseModal();
-  };
+  }
   return (
     <Modal onClose={handleCloseModal}>
       <FeedbackForm reviewOwn={review} onClose={handleCloseModal} />
