@@ -1,24 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FeedbackForm } from 'components/FeedbackForm/FeedbackForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchOwnReviews } from 'redux/reviews/reviewOperation';
 import { Modal } from 'utils/Modal/Modal';
+import { selectOwnReviews } from 'redux/reviews/reviewSelector';
 export const AddFeedbackModal = ({ onCloseModal }) => {
-  const [redactedReview, setRedactedReview] = useState(null);
-  //   const onEditReview = (id, rating, message) => {
-  //     setRedactedReview({ id, rating, message });
-  //     setIsRedactReview(true);
-  //   };
-
+  const [review, setReview] = useState({});
+  const dispatch = useDispatch();
+  const reviewOwn = useSelector(selectOwnReviews);
+  // (async function getOwnReview() {
+  //   if (!reviewOwn) {
+  //     const ownReview = await dispatch(fetchOwnReviews());
+  //     setReview(ownReview);
+  //     return;
+  //   } else {
+  //     setReview(reviewOwn);
+  //     return;
+  //   }
+  // })();
   const handleCloseModal = () => {
-    setRedactedReview(null);
     onCloseModal();
   };
   return (
     <Modal onClose={handleCloseModal}>
-      <FeedbackForm
-        editedRating={redactedReview ? redactedReview.rating : 0}
-        editedMessage={redactedReview ? redactedReview.message : ''}
-        editedId={redactedReview ? redactedReview.id : ''}
-      />
+      <FeedbackForm reviewOwn={review} onClose={handleCloseModal} />
     </Modal>
   );
 };
