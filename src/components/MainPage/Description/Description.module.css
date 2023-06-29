@@ -95,13 +95,12 @@
 .Number {
   margin-top: 0;
   margin-bottom: 22px;
-  font-family: ${p => p.theme.fonts.heading};
-  font-weight: ${p => p.theme.fontWeights.bold};
+  font-family: Inter;
+  font-weight: 700;
   font-size: 80px;
   line-height: 0.8;
   letter-spacing: -4px;
-
-  color: ${p => p.theme.colors.primary};
+  color: #3E85F3;
 
   @media screen and (min-width: 768px) {
     font-size: 104px;
@@ -115,35 +114,35 @@
   margin-top: 0;
   margin-bottom: 8px;
   padding: 8px 18px;
-  font-family: ${p => p.theme.fonts.heading};
-  font-weight: ${p => p.theme.fontWeights.bold};
+  font-family: Inter;
+  font-weight: 700;
   font-size: 32px;
-  line-height: ${p => p.theme.lineHeights.body};
+  line-height: 40px;
   text-align: center;
-  color: ${p => p.theme.colors.primary};
-  background-color: ${p => p.theme.colors.bgBlue};
+  color: #3E85F3;
+  background-color: #DCEBF7;
   border-radius: 44px;
 
   @media screen and (min-width: 768px) {
     padding: 6px 18px;
     font-size: 40px;
-    line-height: ${p => p.theme.lineHeights.heading};
+    line-height: 44px;
   }
 }
 
 .SubTitle {
   margin-top: 0;
   margin-bottom: 14px;
-  font-family: ${p => p.theme.fonts.heading};
-  font-weight: ${p => p.theme.fontWeights.bold};
+  font-family: Inter;
+  font-weight: 700;
   font-size: 32px;
-  line-height: ${p => p.theme.lineHeights.body};
-  color: ${p => p.theme.colors.blackTitle};
+  line-height: 40px;
+  color: #171820;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 24px;
-    font-size: ${p => p.theme.fontSizes.l};
-    line-height: ${p => p.theme.lineHeights.heading};
+    font-size: 40px;
+    line-height: 44px;
   }
 }
 
@@ -151,11 +150,11 @@
   margin-top: 0;
   margin-bottom: 0;
   max-width: 335px;
-  font-family: ${p => p.theme.fonts.text};
-  font-weight: ${p => p.theme.fontWeights.normal};
-  font-size: ${p => p.theme.fontSizes.s};
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 14;
   line-height: 1.29;
-  color: ${p => p.theme.colors.text};
+  color: #111111;
 
   @media screen and (min-width: 768px) {
     width: 275px;
