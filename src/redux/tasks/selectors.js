@@ -1,6 +1,6 @@
-// export const getAllIssues = state => state.issues.issues.allIssues;
-// export const getIsLoading = state => state.issues.issues.isLoading;
-// export const getError = state => state.issues.issues.error;
+export const getAllIssues = state => state.task.tasks.allIssues;
+export const getIsLoading = state => state.task.tasks.isLoading;
+export const getError = state => state.task.tasks.error;
 
-// export const getUserRepo = state => state.issues.userRepo;
-// export const getColumns = state => state.issues.columns;
+export const getUserRepo = state => state.task.userRepo;
+export const getColumns = state => state.task.columns;

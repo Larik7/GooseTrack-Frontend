@@ -6,6 +6,9 @@ import { VscPass } from 'react-icons/vsc';
 import css from './RegisterForm.module.css';
 import { useState } from 'react';
 
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/authOperation';
+
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Name must be at least 2 characters')
@@ -20,9 +23,17 @@ const SignupSchema = Yup.object().shape({
 
 export const RegisterForm = () => {
   const [dataForm, setDataForm] = useState({});
+  const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
     setDataForm({ values });
+    dispatch(
+      register({
+        name: values.name,
+        email: values.email,
+        password: values.password,
+      })
+    );
     resetForm();
   };
 
@@ -157,7 +168,18 @@ export const RegisterForm = () => {
               Sign Up
               <RxEnter className={css.signup_image} />
             </button>
-            <a href="https://goosetrackback.onrender.com/api/auth/google" className={css.register_button_google} type="submit"><img width="25"  src="https://img.icons8.com/3d-fluency/94/google-logo.png" alt="google-logo"/>Sign Up With Google</a>
+            <a
+              href="https://goosetrackback.onrender.com/api/auth/google"
+              className={css.register_button_google}
+              type="submit"
+            >
+              <img
+                width="25"
+                src="https://img.icons8.com/3d-fluency/94/google-logo.png"
+                alt="google-logo"
+              />
+              Sign Up With Google
+            </a>
           </Form>
         )}
       </Formik>
