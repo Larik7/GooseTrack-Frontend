@@ -32,14 +32,15 @@
   margin-top: 8px;
   border: none;
   resize: none;
-  background-color: #f6f6f6;
+  background-color: var(--feedback-background-input);
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.29;
-  color: #343434;
+  color: var(--secondary-text-color);
   outline: none;
+  border: 1px solid var(--feedback-border-color);
 }
 .textInput:focus {
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -92,8 +93,8 @@
   font-weight: 600;
   font-size: 14px;
   line-height: calc(18 / 14);
-  background: #dcebf7;
-  color: #343434;
+  background: var(--feedback-btnCancel-background);
+  color: var(--secondary-text-color);
   cursor: pointer;
   width: 198px;
   height: 42px;
@@ -116,8 +117,8 @@
   fill: #3e85f3;
   width: 30px;
   height: 30px;
-  border: 8px #e3f3ff solid;
-  background: #e3f3ff;
+  border: 8px var(--feedback-editBtn-background) solid;
+  background: var(--feedback-editBtn-background);
   border-radius: 50%;
 }
 .editBtn:hover,
@@ -130,8 +131,8 @@
   fill: #ea3d65;
   width: 30px;
   height: 30px;
-  border: 8px #facedd solid;
-  background: #facedd;
+  border: 8px var(--feedback-cancelMini-background) solid;
+  background: var(--feedback-cancelMini-background);
   border-radius: 50%;
 }
 .cancelMiniBtn:hover,
