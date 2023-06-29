@@ -94,7 +94,9 @@
   font-size: 14px;
   line-height: calc(18 / 14);
   background: var(--feedback-btnCancel-background);
-  color: var(--s--nav-button-color);
+
+  color: var(--secondary-text-color);
+
   cursor: pointer;
   width: 198px;
   height: 42px;
@@ -117,8 +119,10 @@
   fill: var(--button-color-hover);
   width: 30px;
   height: 30px;
+
   padding: 8px;
-  background: var(--nav-button-background-hover);
+  background: var(--feedback-editBtn-background);
+
   border-radius: 50%;
 }
 .editBtn:hover,
@@ -131,8 +135,10 @@
   fill: #ea3d65;
   width: 30px;
   height: 30px;
+
   padding: 8px;
-  background: #facedd;
+  background: var(--feedback-cancelMini-background);
+
   border-radius: 50%;
 }
 .cancelMiniBtn:hover,

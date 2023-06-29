@@ -4,17 +4,52 @@ import { AuthSection } from '../components/AuthSection/AuthSection';
 import { MainLayout } from '../pages/MainLayout/MainLayout';
 import { RegisterPage } from 'pages/Register/RegisterPage';
 import { UserInfo } from './UserInfo/UserInfo';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { currentPage } from 'redux/auth/authOperation';
+import { selectIsRefreshing } from 'redux/auth/selectors';
+import { RestrictedRoute } from 'helpers/RestrictedRoute';
+import { PrivateRoute } from 'helpers/PrivetRoute';
+
 export const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    dispatch(currentPage());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <p style={{ textAlign: 'center' }}>Loading ...</p>
+  ) : (
     <Routes>
       <Route path="/" element={<AuthSection />}></Route>
-      <Route path="/login" element={<LoginPage />}></Route>
-      <Route path="/register" element={<RegisterPage />}></Route>
-      {
-        <Route path="/mainLayout" element={<MainLayout />}>
-          <Route path="userInfo" element={<UserInfo />}></Route>
-        </Route>
-      }
+
+      <Route
+        path="/login"
+        element={
+          <RestrictedRoute redirectTo="/mainLayout" component={<LoginPage />} />
+        }
+      />
+      <Route
+        path="/register"
+        element={
+          <RestrictedRoute
+            redirectTo="/mainLayout"
+            component={<RegisterPage />}
+          />
+        }
+      />
+      <Route
+        path="/mainLayout"
+        element={
+          <PrivateRoute redirectTo="/login" component={<MainLayout />} />
+        }
+      >
+        {' '}
+        <Route path="userInfo" element={<UserInfo />} />
+      </Route>
     </Routes>
   );
 };

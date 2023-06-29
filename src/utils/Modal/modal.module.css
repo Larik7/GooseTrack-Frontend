@@ -18,7 +18,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffffff;
+  background-color: var(--sidebar-background-color);
 
   @media (min-width: 375px) {
     width: 300px;
@@ -36,7 +36,7 @@
   right: 19px;
   width: 24px;
   height: 24px;
-  stroke: #000;
+  stroke: var(--primary-text-color);
   cursor: pointer;
 }
 .cross:hover,

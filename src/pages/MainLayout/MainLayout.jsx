@@ -20,7 +20,7 @@ export const MainLayout = () => {
         <SideBar openMenu={openMenu} onClose={onCloseSideBar} />
         <div className={css.component}>
           {' '}
-          Some component
+          {/* Some component */}
           {/* <TasksColumnsList></TasksColumnsList> */}
         </div>
       </main>
