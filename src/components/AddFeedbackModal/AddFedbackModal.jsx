@@ -17,7 +17,7 @@ export const AddFeedbackModal = ({ onCloseModal }) => {
       setReview(reviewOwn);
       return;
     }
-  }, [reviewOwn, review]);
+  }, [reviewOwn, review, dispatch]); // добавил dispatch
   function handleCloseModal() {
     onCloseModal();
   }
