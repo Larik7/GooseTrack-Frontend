@@ -1,10 +1,8 @@
-import styled from 'styled-components';
-
-export const Main = styled.div`
+#MainPage {
   background-color: #fff;
-`;
+}
 
-export const Wrapper = styled.div`
+.Wrapper {
   max-width: 335px;
   margin-left: auto;
   margin-right: auto;
@@ -26,9 +24,9 @@ export const Wrapper = styled.div`
     max-width: 1184px;
     padding-bottom: 100px;
   }
-`;
+}
 
-export const Section = styled.section`
+.Section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,9 +52,9 @@ export const Section = styled.section`
     flex-direction: row-reverse;
     }
   }
-`;
+}
 
-export const InfoBox = styled.div`
+.InfoBox {
   max-width: 335px;
   margin-left: auto;
   margin-right: auto;
@@ -73,9 +71,9 @@ export const InfoBox = styled.div`
     margin-left: 77px;
     margin-bottom: 0;
   }
-`;
+}
 
-export const InfoBoxReverse = styled.div`
+.InfoBoxReverse {
   max-width: 335px;
   margin-left: auto;
   margin-right: auto;
@@ -92,9 +90,9 @@ export const InfoBoxReverse = styled.div`
     margin-right: 77px;
     margin-bottom: 0;
   }
-`;
+}
 
-export const Number = styled.h1`
+.Number {
   margin-top: 0;
   margin-bottom: 22px;
   font-family: ${p => p.theme.fonts.heading};
@@ -110,9 +108,9 @@ export const Number = styled.h1`
     line-height: 1.04;
     margin-bottom: 20px;
   }
-`;
+}
 
-export const ColorTitle = styled.h1`
+.ColorTitle {
   display: inline-block;
   margin-top: 0;
   margin-bottom: 8px;
@@ -131,9 +129,9 @@ export const ColorTitle = styled.h1`
     font-size: 40px;
     line-height: ${p => p.theme.lineHeights.heading};
   }
-`;
+}
 
-export const SubTitle = styled.h2`
+.SubTitle {
   margin-top: 0;
   margin-bottom: 14px;
   font-family: ${p => p.theme.fonts.heading};
@@ -147,9 +145,9 @@ export const SubTitle = styled.h2`
     font-size: ${p => p.theme.fontSizes.l};
     line-height: ${p => p.theme.lineHeights.heading};
   }
-`;
+}
 
-export const Text = styled.p`
+.Text {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 335px;
@@ -163,9 +161,9 @@ export const Text = styled.p`
     width: 275px;
     max-width: 275px;
   }
-`;
+}
 
-export const ImageWrapper = styled.div`
+.ImageWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,4 +173,4 @@ export const ImageWrapper = styled.div`
     max-width: 100%;
     height: auto;
   }
-`;
+}

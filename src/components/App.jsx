@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { LoginForm } from '../pages/LoginForm/LoginForm';
+// import { Description } from './MainPage/Description/Description';
 
 export const App = () => {
   const [open, setOpen] = useState(false);
@@ -17,3 +18,4 @@ export const App = () => {
     </div>
   );
 };
+

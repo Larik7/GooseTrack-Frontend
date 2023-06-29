@@ -1,18 +1,19 @@
 // Import
 import React from 'react';
 import { useResponse } from 'hooks';
-import {
-  Main,
-  Wrapper,
-  Section,
-  InfoBox,
-  InfoBoxReverse,
-  ImageWrapper,
-  Number,
-  ColorTitle,
-  SubTitle,
-  Text,
-} from './Description.styled';
+// import {
+//   Main,
+//   Wrapper,
+//   Section,
+//   InfoBox,
+//   InfoBoxReverse,
+//   ImageWrapper,
+//   Number,
+//   ColorTitle,
+//   SubTitle,
+//   Text,
+// } from './Description.styled';
+import './Description.module.css';
 
 
 // Images
@@ -46,20 +47,20 @@ export const Description = () => {
     const { isDesktop, isTablet, isMobile } = useResponse();
 
     return (
-        <Main id="mainPage">
-          <Wrapper>
-            <Section>
-              <InfoBox>
-                <Number>1.</Number>
-                <ColorTitle>CALENDAR</ColorTitle>
-                <SubTitle>VIEW</SubTitle>
-                <Text>
+        <div id="mainPage">
+          <div className="Wrapper">
+            <section className="Section">
+              <div className="InfoBox">
+                <h1 className="Number">1.</h1>
+                <h1 className="ColorTitle">CALENDAR</h1>
+                <h2 className="SubTitle">VIEW</h2>
+                <p className="Text">
                   GooseTrack's Calendar view provides a comprehensive overview of
                   your schedule, displaying all your tasks, events, and appointments
                   in a visually appealing and intuitive layout.
-                </Text>
-              </InfoBox>
-              <ImageWrapper>
+                </p>
+              </div>
+              <div className="ImageWrapper">
                 {isMobile && (
                   <img
                     srcSet={`${m_calendar} 1x, ${m_calendar2} 2x`}
@@ -87,21 +88,21 @@ export const Description = () => {
                     height="700"
                   />
                 )}
-              </ImageWrapper>
-            </Section>
+              </div>
+            </section>
     
-            <Section>
-              <InfoBoxReverse>
-                <Number>2.</Number>
-                <SubTitle>SIDEBAR</SubTitle>
-                <Text>
+            <section className="Section">
+              <div className="InfoBoxReverse">
+                <h1 className="Number">2.</h1>
+                <h2 className="SubTitle">SIDEBAR</h2>
+                <p className="Text">
                   GooseTrack offers easy access to your account settings, calendar,
                   and filters. The "My Account" section allows you to manage your
                   profile information and preferences, while the calendar provides a
                   quick and convenient way to view your upcoming events and tasks.
-                </Text>
-              </InfoBoxReverse>
-              <ImageWrapper>
+                </p>
+              </div>
+              <div className="ImageWrapper">
                 {isMobile && (
                   <img
                     srcSet={`${m_sidebar} 1x, ${m_sidebar2} 2x`}
@@ -129,22 +130,22 @@ export const Description = () => {
                     height="700"
                   />
                 )}
-              </ImageWrapper>
-            </Section>
+              </div>
+            </section>
     
-            <Section>
-              <InfoBox>
-                <Number>3.</Number>
-                <ColorTitle>ALL IN</ColorTitle>
-                <SubTitle>ONE</SubTitle>
-                <Text>
+            <section className="Section">
+              <div className="InfoBox">
+                <h1 className="Number">3.</h1>
+                <h1 className="ColorTitle">ALL IN</h1>
+                <h2 className="SubTitle">ONE</h2>
+                <p className="Text">
                   GooseTrack is an all-in-one productivity tool that helps you stay
                   on top of your tasks, events, and deadlines. Say goodbye to
                   scattered to-do lists and hello to streamlined productivity with
                   GooseTrack.
-                </Text>
-              </InfoBox>
-              <ImageWrapper>
+                </p>
+              </div>
+              <div className="ImageWrapper">
                 {isMobile && (
                   <img
                     srcSet={`${m_all} 1x, ${m_all2} 2x`}
@@ -172,9 +173,9 @@ export const Description = () => {
                     height="700"
                   />
                 )}
-              </ImageWrapper>
-            </Section>
-          </Wrapper>
-        </Main>
+              </div>
+              </section>
+          </div>
+        </div>
       );
     };
