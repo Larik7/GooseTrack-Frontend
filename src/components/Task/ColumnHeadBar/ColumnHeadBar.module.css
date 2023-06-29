@@ -1,0 +1,15 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 18px;
+  align-items: center;
+}
+
+.title {
+  color: var(--primary-text-color);
+
+  font-size: 18px;
+
+  font-weight: 700;
+  line-height: 20px;
+}
