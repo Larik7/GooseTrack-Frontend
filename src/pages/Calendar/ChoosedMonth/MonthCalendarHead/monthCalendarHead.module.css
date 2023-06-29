@@ -1,0 +1,64 @@
+.monthHeadList {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(220, 227, 229, 0.8);
+  background-color: #dce3e5cc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 14px;
+}
+@media screen and (min-width: 768px) {
+  .monthHeadList {
+    margin-bottom: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .monthHeadList {
+    margin-bottom: 15px;
+  }
+}
+.monthHeadItem {
+  overflow: hidden;
+  text-transform: uppercase;
+  @media screen and (min-width: 1024px) {
+    width: 10px;
+    width: $ {
+      ({ day }) => {
+        switch (day) {
+          case'mon': return '15px';
+          case'tue': return '10px';
+          case'wed': return '16px';
+          case'thu': return '11px';
+          case'fri': return '10px';
+          case'sat': return '10px';
+          case'sun': return '10px';
+          default: return '10px';
+        }
+      }
+    }
+  }
+}
+.monthHeadNamed {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  padding: 16px 0px;
+  border: none;
+  background-color: transparent;
+  @media screen and (min-width: 768px) {
+    padding: 14px 0px;
+  }
+}
+.sunday,
+.suterday {
+  color: var(--nav-button-color-hover);
+}
+.monday,
+.tuesday,
+.wednesday,
+.thursday,
+.friday {
+  color: var(--primary-text-color);
+}
