@@ -6,13 +6,17 @@ import { Provider } from 'react-redux';
 import { store, persistor } from './redux/store';
 import './index.css';
 import { PersistGate } from 'redux-persist/integration/react';
+import { TourProvider } from '@reactour/tour'
+import {steps} from './components/Tour/steps'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store} >
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="/GooseTrack-Frontend">
-          <App />
+          <TourProvider steps={steps}>
+            <App />
+          </TourProvider>
         </BrowserRouter>
       </PersistGate>
     </Provider>

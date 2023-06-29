@@ -4,6 +4,7 @@ import { AuthSection } from '../components/AuthSection/AuthSection';
 import { MainLayout } from '../pages/MainLayout/MainLayout';
 import { RegisterPage } from 'pages/Register/RegisterPage';
 import { UserInfo } from './UserInfo/UserInfo';
+
 export const App = () => {
   return (
     <Routes>

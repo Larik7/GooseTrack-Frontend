@@ -16,6 +16,7 @@
 .button svg {
     width: 26px;
     height: auto;
-   color: #3E85F3;;
+   color: #3E85F3;
+   border: none;
 
 }

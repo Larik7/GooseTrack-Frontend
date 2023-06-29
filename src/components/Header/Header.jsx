@@ -9,6 +9,8 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { ThemeToggler } from './ThemeToggle/ThemeToggle';
 import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 
+import {Tour} from '../Tour/Tour'
+
 // import { HiOutlineSun } from "react-icons/hi"
 
 export const Header = ({ openMenu, setOpen}) => {
@@ -36,6 +38,7 @@ export const Header = ({ openMenu, setOpen}) => {
         <AddFeedbackBtn feedbackBtnStyle={css.feedbackBtn}/>
           <div className={css.infoMenu}>
             <ThemeToggler />
+            <Tour/>
             <p className={css.userName}> UserName </p>
             <div className={css.imgBox}>
               <img src={avatar} alt="userImg" />
