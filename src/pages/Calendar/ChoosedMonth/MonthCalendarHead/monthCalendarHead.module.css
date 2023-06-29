@@ -23,7 +23,7 @@
   text-transform: uppercase;
   @media screen and (min-width: 1024px) {
     width: 10px;
-    width: $ {
+    /* width: $ {
       ({ day }) => {
         switch (day) {
           case'mon': return '15px';
@@ -37,6 +37,7 @@
         }
       }
     }
+  } */
   }
 }
 .monthHeadNamed {

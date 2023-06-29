@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 axios.defaults.baseURL = 'https://goosetrackback.onrender.com/';
-const setToken = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
+// const setToken = token => {
+//   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+// };
 export const fetchReviews = createAsyncThunk(
   'reviews/fetchAll',
   async ({ page, limit }, thunkAPI) => {
