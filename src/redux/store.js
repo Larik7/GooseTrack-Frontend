@@ -16,9 +16,14 @@ import { reviewsReducer } from './reviews/reviewSlice';
 
 import taskReducer from './tasks/taskReducer';
 
-
 const persistConfig = {
   key: 'auth',
+  storage,
+  // whitelist: ['token'],
+};
+
+const persistConfigTask = {
+  key: 'task',
   storage,
   // whitelist: ['token'],
 };
@@ -29,8 +34,7 @@ export const store = configureStore({
 
     reviews: persistReducer(persistConfig, reviewsReducer),
 
-    task: persistReducer(persistConfig, taskReducer),
-
+    task: persistReducer(persistConfigTask, taskReducer),
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({

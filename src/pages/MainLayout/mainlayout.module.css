@@ -22,6 +22,7 @@
 
 .main {
   display: flex;
+  background-color: var(--primary-background-color);
 }
 
 @media (min-width: 375px) {
