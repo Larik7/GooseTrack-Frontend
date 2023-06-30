@@ -1,0 +1,101 @@
+.conteinerSideBar {
+  width: 290px;
+  /* outline: 1px solid red; */
+  background-color: var(--sidebar-background-color);
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  box-sizing: border-box;
+}
+
+
+
+.logoBox {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .logoImg {
+    width: 36px;
+  }
+  .logoTitle {
+    font-size: 16px;
+    line-height: 22px;
+    margin-right: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .logoImg {
+    width: 60px;
+  }
+  .logoTitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .logoBox {
+    gap: 6px;
+  }
+}
+@media (max-width: 1439px) {
+  .conteinerSideBar {
+    display: none;
+  }
+ .open {
+    display: block;
+    position: absolute;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  .logoImg {
+    width: 71px;
+  }
+  .logoTitle {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .logoBox {
+    display: none;
+  }
+
+
+  .conteinerSideBar {
+    border-right: 1px solid rgba(220, 227, 229, 0.5);
+  }
+  
+
+}
+
+.logoTitle {
+  color: #3e85f3;
+  text-shadow: 0px 9.399999618530273px 57.6875px 0px rgba(0, 0, 0, 0.04),
+    0px 47px 355px 0px rgba(0, 0, 0, 0.07);
+  font-size: 16px;
+  font-family: 'Coolvetica';
+  line-height: 22px;
+}
+
+.titleNav {
+  margin-top: 64px;
+  color: rgba(52, 52, 52, 0.5);
+  font-size: 12px;
+  font-family: 'Inter';
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+@media (min-width: 1440px) {
+  .titleNav {
+    margin-top: 0;
+  }
+}
+
+.btnClose {
+  padding: 5px;
+  background-color: #ffffff;
+  border-color: transparent;
+  cursor: pointer;
+}

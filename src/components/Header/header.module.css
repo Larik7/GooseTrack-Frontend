@@ -1,0 +1,179 @@
+
+.header {
+  position: relative;
+   display: flex;
+  align-items: center;
+  height: 115px;
+  width: 100%;
+  padding: 24px 20px;
+  background: var(--secondary-background-color);
+}
+.headerInfoBox {
+  display: block;
+  display: flex;
+  align-items: center;
+  
+}
+
+.conteinerBtn{
+  display: flex;
+
+
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 25px 32px;
+  }
+}
+@media (max-width: 1439px) {
+  .logoConteiner {
+    display: none;
+  }
+}
+@media (min-width: 1440px) {
+  .header {
+    padding: 32px 32px 32px 0;
+  }
+  .logoConteiner {
+    padding: 32px 24px;
+    background: var(--sidebar-background-color);
+    height: 115px;
+    width: 290px;
+  }
+  .logoBox {
+    display: flex;
+    align-items: center;
+   
+  }
+  .headerInfoBox {
+    padding: 0 32px; 
+}}
+
+@media (max-width: 1439px) {
+  .infoTitle {
+    display: none;
+  }
+}
+
+.burgerMenu {
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+@media (min-width: 375px) {
+  .burgerMenu {
+    margin-right: 80px;
+  }
+  .imgBox {
+    height: 32px;
+    width: 32px;
+   
+  }
+}
+
+
+@media (min-width: 768px) {
+  .burgerMenu {
+    margin-right: 355px;
+  }
+  .feedbackBtn{
+    margin-right: 24px;
+  }
+
+}
+
+
+
+@media (min-width: 1440px) {
+  .infoTitle {
+    color: var(--primary-text-color);
+    font-size: 32px;
+    font-family: 'Inter';
+    font-weight: 700;
+    line-height: 32px;
+   
+  }
+  .conteinerBtn{
+    margin-left: 500px;
+  }
+  
+}
+
+
+
+.feedbackBtn {
+  border-style: none;
+  background: #3e85f3;
+  box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+  border-radius: 10px;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 12px;
+  line-height: calc(16/12);
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-align: center;
+
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-right: 18px;
+}
+
+.infoMenu {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+
+.imgBox {
+  height: 44px;
+  width: 44px;
+  border: 1.8px solid #3e85f3;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.userName {
+  color: var(--secondary-text-color);
+  font-size: 14px;
+  font-family: 'Inter';
+  font-weight: 700;
+  line-height: 18px;
+}
+
+
+
+@media (min-width: 1440px) {
+  .burgerMenu {
+    display: none;
+    margin: 0;
+  }
+
+  .feedbackBtn {
+    font-size: 14px;
+    padding: 12px 32px;
+    border-radius: 16px;
+  }
+  .userName {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .infoMenu {
+    gap: 14px;
+  }
+}
+
+.themeBtn {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+

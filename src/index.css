@@ -2,6 +2,8 @@
 @import './utils/styles/fonts.css';
 @import './utils/styles/var.css';
 
+
+
 body {
   color: var(--primary-text-color);
   background-color: var(--secondary-background-color);
@@ -10,7 +12,9 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
