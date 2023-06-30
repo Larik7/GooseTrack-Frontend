@@ -1,37 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react'; // useEffect
 import { Formik, Form, Field } from 'formik';
 import { object, string } from 'yup';
 import css from './feedbackForm.module.css';
 import { BiPencil as Pencil, BiTrash as Trash } from 'react-icons/bi';
 import { AiFillStar as Star } from 'react-icons/ai';
 
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+// import { nanoid } from 'nanoid'; // якщо не використовуєш краще в комент заганяй.
+import {
+  updateReview,
+  addReview,
+  deleteReview,
+} from '../../redux/reviews/reviewOperation';
 
 let userValidSchema = object({
   rating: string().required(),
-  text: string().required(),
+  comment: string().required(),
 });
-export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
-  //   const dispatch = useDispatch();
-  const [rating, setRating] = useState(editedRating || 0);
-  const [message, setMessage] = useState(editedMessage || '');
+export const FeedbackForm = ({ reviewOwn, onClose }) => {
+  const { _id: idUser } = reviewOwn;
+  const dispatch = useDispatch();
+  const [rating, setRating] = useState(reviewOwn.rating || 0);
+  const [message, setMessage] = useState(reviewOwn.comment || '');
   const [hover, setHover] = useState(null);
-  // const [id, setId] = useState('');
-  useEffect(() => {
-    // if (isEditReview) {
-    //   setRating(editedRating);
-    //   setMessage(editedMessage);
-    //   setId(editedId);
-    // }
-  }, [editedMessage, editedRating, editedId]);
-  // const reset = () => {
-  //   setMessage('');
-  //   setRating(0);
-  //   setHover(null);
-  // };
+  const [id] = useState(idUser || ''); // const [id, setID] = useState(idUser || ''); тут 'setID' is assigned a value but never used;
+  const [editReview, setEditReview] = useState(false);
+  // useEffect(() => {
+  //   // if (isEditReview) {
+  //   //   setRating(editedRating);
+  //   //   setMessage(editedMessage);
+  //   //   setId(editedId);
+  //   // }
+  // }, [editedMessage, editedRating, editedId]);
+  const reset = () => {
+    setMessage('');
+    setRating(0);
+    setHover(null);
+    setEditReview(false);
+  };
   const handleSubmit = async e => {
     e.preventDefault();
-    // const currentMessage = e.currentTarget.message.value;
+    const currentMessage = e.currentTarget.message.value;
     if (!rating) {
       return;
     }
@@ -41,14 +50,29 @@ export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
     if (message.length >= 300) {
       return;
     }
-    // if (isEditReview) {
-    //   if (editedMessage === currentMessage && editedRating === rating) {
-    //     return;
-    //   }
-    //   reset();
-    // } else {
-    //   reset();
-    // }
+    if (editReview) {
+      if (reviewOwn.comment === currentMessage && reviewOwn.rating === rating) {
+        return;
+      }
+      await dispatch(updateReview(id, { rating, comment: message }));
+      reset();
+      onClose();
+    } else {
+      await dispatch(addReview({ rating, comment: message }));
+      reset();
+      onClose();
+    }
+  };
+  const handleClickEdit = () => {
+    setEditReview(true);
+  };
+  const handleClickDelete = async () => {
+    if (rating === 0 && message === '') {
+      return;
+    }
+    await dispatch(deleteReview());
+    reset();
+    onClose();
   };
   return (
     <Formik
@@ -90,13 +114,16 @@ export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
             <label htmlFor="FBId" className={css.feedbackFormLabel}>
               Review
             </label>
-            {!editedRating ? (
+            {!reviewOwn.rating ? (
               <div className={css.btnWrap}>
-                <Pencil className={css.editBtn} />
-                <Trash className={css.cancelMiniBtn} />
+                <Pencil className={css.editBtn} onClick={handleClickEdit} />
+                <Trash
+                  className={css.cancelMiniBtn}
+                  onClick={handleClickDelete}
+                />
               </div>
             ) : (
-              <div></div>
+              <></>
             )}
           </div>
           <Field
@@ -111,7 +138,7 @@ export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
           />
         </div>
         <div className={css.btnWrap}>
-          {editedRating === rating && editedMessage === message ? (
+          {reviewOwn.rating === rating && reviewOwn.comment === message ? (
             <button className={css.btnSaveOrEdit} type="button">
               Edit
             </button>
@@ -120,7 +147,14 @@ export const FeedbackForm = ({ editedRating, editedMessage, editedId }) => {
               Save
             </button>
           )}
-          <button className={css.btnCancel} type="button">
+          <button
+            className={css.btnCancel}
+            type="button"
+            onClick={() => {
+              reset();
+              onClose();
+            }}
+          >
             Cancel
           </button>
         </div>

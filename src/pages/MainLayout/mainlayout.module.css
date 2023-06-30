@@ -1,9 +1,19 @@
 .conteinerMainLayout {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 100vh;
-  outline: 1px solid red;
+
+  /* width: 335px; */
+  /* outline: 1px solid red; */
+  background: var(--secondary-background-color);
+  padding: 0 15px;
+}
+
+@media screen and (min-width: 1158px) {
+  .conteinerMainLayout {
+
+    width: 100%;
+    height: 100vh
+  }
+
+
 }
 
 /* 
@@ -21,6 +31,9 @@
 
 .main {
   display: flex;
+  background-color: var(--primary-background-color);
+
+/*   display: block; */
 }
 
 @media (min-width: 375px) {
@@ -28,11 +41,23 @@
     width: 375px;
   }
 }
+
 @media (min-width: 768px) {
   .component {
     width: 768px;
   }
+
+  .main {
+    display: flex;
+  }
+
+    .conteinerMainLayout {
+
+      background: var(--primary-background-color);
+    }
 }
+
+
 @media (min-width: 1440px) {
   .component {
     width: 1150px;

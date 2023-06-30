@@ -1,77 +1,85 @@
-// import { createSlice } from '@reduxjs/toolkit';
-// import { nanoid } from 'nanoid';
-// // import { fetchIssues } from './issuesOperation';
+import { createSlice } from '@reduxjs/toolkit';
+import { nanoid } from 'nanoid';
+import { fetchTasks } from './taskOperation';
 
-// const taskReducer = createSlice({
-//   name: 'task',
-//   initialState: {
-//     issues: {
-//       allIssues: [],
-//       isLoading: false,
-//       error: null,
-//     },
-//     userRepo: [],
-//     columns: {
-//       [nanoid()]: {
-//         name: 'To do',
-//         items: [],
-//       },
-//       [nanoid()]: {
-//         name: 'In Progress',
-//         items: [],
-//       },
-//       [nanoid()]: {
-//         name: 'Done',
-//         items: [],
-//       },
-//     },
-//   },
-//   reducers: {
-//     updateColumns: (state, action) => {
-//       state.columns = action.payload;
-//     },
-//     setData: (state, action) => {
-//       state.issues = action.payload.issues;
-//       state.userRepo = action.payload.userRepo;
-//       state.columns = action.payload.columns;
-//     },
-//   },
-//   extraReducers: {
-//     // Fecth issues
-//     // [fetchIssues.pending]: state => {
-//     //   state.issues.isLoading = true;
-//     //   state.columns = {
-//     //     [nanoid()]: {
-//     //       name: 'To do',
-//     //       items: [],
-//     //     },
-//     //     [nanoid()]: {
-//     //       name: 'In Progress',
-//     //       items: [],
-//     //     },
-//     //     [nanoid()]: {
-//     //       name: 'Done',
-//     //       items: [],
-//     //     },
-//     //   };
-//     // },
-//     // [fetchIssues.fulfilled]: (state, { payload }) => {
-//     //   const toDoColumnKey = Object.keys(state.columns).find(
-//     //     key => state.columns[key].name === 'To do'
-//     //   );
-//     //   if (toDoColumnKey) {
-//     //     state.columns[toDoColumnKey].items = payload;
-//     //   }
-//     //   state.issues.allIssues = payload;
-//     //   state.issues.isLoading = false;
-//     // },
-//     // [fetchIssues.rejected]: (state, { payload }) => {
-//     //   state.issues.isLoading = false;
-//     //   state.issues.error = payload;
-//     // },
-//   },
-// });
+const taskReducer = createSlice({
+  name: 'task',
+  initialState: {
+    tasks: {
+      allTasks: [],
+      isLoading: false,
+      error: null,
+    },
+    userRepo: [],
+    columns: {
+      [nanoid()]: {
+        name: 'to-do',
+        items: [],
+      },
+      [nanoid()]: {
+        name: 'in-progress',
+        items: [],
+      },
+      [nanoid()]: {
+        name: 'done',
+        items: [],
+      },
+    },
+  },
+  reducers: {
+    updateColumns: (state, action) => {
+      state.columns = action.payload;
+    },
+    setData: (state, action) => {
+      state.tasks = action.payload.tasks;
+      state.userRepo = action.payload.userRepo;
+      state.columns = action.payload.columns;
+    },
+  },
+  extraReducers: {
+    // Fecth tasks
+    [fetchTasks.pending]: state => {
+      state.tasks.isLoading = true;
+      state.columns = {
+        [nanoid()]: {
+          name: 'to-do',
+          items: [],
+        },
+        [nanoid()]: {
+          name: 'in-progress',
+          items: [],
+        },
+        [nanoid()]: {
+          name: 'done',
+          items: [],
+        },
+      };
+    },
+    [fetchTasks.fulfilled]: (state, { payload }) => {
+      Object.keys(state.columns).forEach(key => {
+        state.columns[key].items = [];
+      });
 
-// export const { updateColumns, setData } = taskReducer.actions;
+      // Розподіляємо завдання за категоріями у відповідні колонки
+      payload.forEach(task => {
+        const category = task.category;
+        const columnKey = Object.keys(state.columns).find(
+          key => state.columns[key].name === category
+        );
+        if (columnKey) {
+          state.columns[columnKey].items.push(task);
+        }
+      });
+      state.tasks.allTasks = payload;
+      state.tasks.isLoading = false;
+    },
+    [fetchTasks.rejected]: (state, { payload }) => {
+      state.tasks.isLoading = false;
+      state.tasks.error = payload;
+    },
+  },
+});
 
-// export default taskReducer.reducer;
+export const { updateColumns, setData } = taskReducer.actions;
+
+export default taskReducer.reducer;

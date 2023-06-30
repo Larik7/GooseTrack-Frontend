@@ -11,18 +11,30 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/auth-slice';
-// import taskReducer from './tasks/taskReducer';
+
+import { reviewsReducer } from './reviews/reviewSlice';
+
+import taskReducer from './tasks/taskReducer';
 
 const persistConfig = {
   key: 'auth',
   storage,
-  //   whitelist: ['token'],
+  // whitelist: ['token'],
+};
+
+const persistConfigTask = {
+  key: 'task',
+  storage,
+  // whitelist: ['token'],
 };
 
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
-    // task: persistReducer(persistConfig, taskReducer),
+
+    reviews: persistReducer(persistConfig, reviewsReducer),
+
+    task: persistReducer(persistConfigTask, taskReducer),
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({

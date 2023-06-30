@@ -1,17 +1,22 @@
 import { LoginForm } from 'components/LoginForm/LoginForm';
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/auth/authOperation';
 
 export const LoginPage = () => {
-  const [loginData, setLoginData] = useState({});
+  const dispatch = useDispatch();
+
   const handleSumbit = (values, { resetForm }) => {
-    setLoginData(values);
-    // Опрацювання форми, як у вихідному коді
+    dispatch(
+      logIn({
+        email: values.email,
+        password: values.password,
+      })
+    );
     resetForm();
   };
-  console.log(loginData);
+
   return (
     <div>
-      {/* Інші елементи сторінки */}
       <LoginForm handleSumbit={handleSumbit} />
     </div>
   );

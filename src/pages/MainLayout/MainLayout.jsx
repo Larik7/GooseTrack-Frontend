@@ -4,7 +4,8 @@ import css from './mainlayout.module.css';
 
 // import { TasksColumnsList } from 'components/Task/TasksColumnsList/TasksColumnsList';
 
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
 export const MainLayout = () => {
   const [openMenu, setOpenMenu] = useState(true);
@@ -18,11 +19,10 @@ export const MainLayout = () => {
       <Header openMenu={openMenu} setOpen={setOpenMenu} />
       <main className={css.main}>
         <SideBar openMenu={openMenu} onClose={onCloseSideBar} />
-        <div className={css.component}>
-          {' '}
-          Some component
-          {/* <TasksColumnsList></TasksColumnsList> */}
-        </div>
+        <Suspense fallback={null}>
+          {}
+          <Outlet />
+        </Suspense>
       </main>
     </div>
   );

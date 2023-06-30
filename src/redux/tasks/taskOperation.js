@@ -1,29 +1,22 @@
 // import { Octokit } from 'octokit';
-// import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
 // const { TOKEN } = require('../config');
 
 // const octokit = new Octokit({
 //   TOKEN,
 // });
 
-// export const fetchIssues = createAsyncThunk(
-//   'issues/fetchAll',
-//   async ({ owner, repo, next = 1 }, { rejectWithValue }) => {
-//     try {
-//       const response = await octokit.request(
-//         'GET /repos/{owner}/{repo}/issues',
-//         {
-//           owner,
-//           repo,
-//           page: next,
-//           per_page: 10,
-//         }
-//       );
+export const fetchTasks = createAsyncThunk(
+  'task/fetchAll',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get('/tasks');
 
-//       return response.data;
-//     } catch (error) {
-//       alert('incorect url, example -> https://github.com/owner/repo');
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
