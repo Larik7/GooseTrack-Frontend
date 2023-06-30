@@ -6,7 +6,7 @@
   height: 115px;
   width: 100%;
   padding: 24px 20px;
-  background: var(--secondary-background-color);
+  background: var( --primary-background-color);
 }
 .headerInfoBox {
   display: block;
@@ -18,8 +18,10 @@
 .conteinerBtn{
   display: flex;
 
-
 }
+
+
+
 @media (min-width: 768px) {
   .header {
     padding: 25px 32px;
@@ -39,6 +41,7 @@
     background: var(--sidebar-background-color);
     height: 115px;
     width: 290px;
+    border-right: 1px solid rgba(220, 227, 229, 0.5);
   }
   .logoBox {
     display: flex;
@@ -100,8 +103,6 @@
   }
   
 }
-
-
 
 .feedbackBtn {
   border-style: none;

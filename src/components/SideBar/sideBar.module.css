@@ -1,12 +1,13 @@
 .conteinerSideBar {
-  width: 290px;
+  width: 225px;
   /* outline: 1px solid red; */
   background-color: var(--sidebar-background-color);
-  height: 900px;
+  border-right: 1px solid rgba(220, 227, 229, 0.50);
+  height: 1024px;
   display: flex;
   flex-direction: column;
   padding: 24px 20px;
-  box-sizing: border-box;
+ 
 }
 
 
@@ -14,6 +15,7 @@
 .logoBox {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 767px) {
@@ -28,6 +30,9 @@
 }
 
 @media (min-width: 768px) {
+  .conteinerSideBar {
+    width: 290px;
+  height: 1024px;}
   .logoImg {
     width: 60px;
   }
@@ -41,14 +46,20 @@
 }
 @media (max-width: 1439px) {
   .conteinerSideBar {
-    display: none;
+  transform: translateX(-130%);
+  transition: transform  500ms linear;
+  position: absolute;
+  top :0
   }
  .open {
-    display: block;
+  transform: translateX(0);
     position: absolute;
+    top :0;
+    z-index:10;
   }
 
 }
+
 
 @media (min-width: 1440px) {
   .logoImg {
@@ -62,9 +73,10 @@
     display: none;
   }
 
-
   .conteinerSideBar {
     border-right: 1px solid rgba(220, 227, 229, 0.5);
+    width: 290px;
+    height: 785px;
   }
   
 

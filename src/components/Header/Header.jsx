@@ -15,7 +15,7 @@ export const Header = ({ openMenu, setOpen}) => {
 
   const handlerMenu = () => {
     setOpen(!openMenu);
-   };
+       };
 
   return (
     <header className={css.header}>

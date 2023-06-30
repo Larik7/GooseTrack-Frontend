@@ -10,19 +10,33 @@ import { Outlet } from 'react-router-dom';
 export const MainLayout = () => {
   const [openMenu, setOpenMenu] = useState(true);
 
+ const hendelBackDropClick = e => {
+    if ( e.target=== e.currentTarget&& !openMenu) {
+      console.log('кликнули')
+      setOpenMenu(!openMenu);
+   
+    }
+  };
+
   const onCloseSideBar = () => {
     setOpenMenu(!openMenu);
   };
 
   return (
-    <div className={css.conteinerMainLayout}>
-      <Header openMenu={openMenu} setOpen={setOpenMenu} />
-      <main className={css.main}>
-        <SideBar openMenu={openMenu} onClose={onCloseSideBar} />
-        <Suspense fallback={null}>
+    
+    <div className={css.conteinerMainLayout} >
+<div className={!openMenu && css.backDrop} onClick={hendelBackDropClick}>   </div>
+            <Header openMenu={openMenu} setOpen={setOpenMenu} />
+
+        <aside className={css.aside}><SideBar openMenu={openMenu} onClose={onCloseSideBar} /></aside> 
+         
+      <main className={css.main} >
+        <div className={css.mainComponent} > 
+           <Suspense fallback={null}>
           {}
           <Outlet />
-        </Suspense>
+        </Suspense></div>
+        
       </main>
     </div>
   );
