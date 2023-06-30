@@ -3,8 +3,8 @@ import css from './ColumnTasksList.module.css';
 
 export const ColumnTasksList = ({ tasks }) => {
   return (
-    <div className={css.list_task}>
-      <div className="task-list">
+    <div className={css.column_list}>
+      <div className={css.task_list}>
         {tasks.map(task => (
           <TaskItem key={task._id} task={task} />
         ))}

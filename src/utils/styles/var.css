@@ -10,6 +10,8 @@
 
   --sidebar-background-color: #ffffff;
 
+  --task-item-background-color: #f0f0f0;
+
   /* text colors */
   --primary-text-color: #111111;
   --secondary-text-color: #343434;
@@ -23,14 +25,26 @@
   --nav-button-color: rgba(52, 52, 52, 0.5);
   --nav-button-color-hover: #3e85f3;
   --nav-button-background-hover: #e3f3ff;
+
   --button-color-hover: #2b78ef;
 
   /* Feedback modal */
-  --feedback-background-input: #F6F6F6;
+
+  --feedback-background-input: #f6f6f6;
   --feedback-btnCancel-background: #dcebf7;
   --feedback-editBtn-background: #e3f3ff;
   --feedback-cancelMini-background: #facedd;
   --feedback-border-color: rgba(255, 255, 255, 0);
+  
+  /* animation */
+  --animation-cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* task colors */
+
+  --high-color: #ea3d65;
+  --medium-color: #f3b249;
+  --low-color: #72c2f8;
+
 }
 
 [data-theme='dark'] {
@@ -54,9 +68,10 @@
   --nav-button-background-hover: #3e85f3;
 
   /* Feedback modal */
-  --feedback-background-input: #13151A;
-  --feedback-btnCancel-background: #21222C;
+  --feedback-background-input: #13151a;
+  --feedback-btnCancel-background: #21222c;
   --feedback-editBtn-background: #353647;
   --feedback-cancelMini-background: #c08297;
   --feedback-border-color: rgba(255, 255, 255, 0.15);
 }
+

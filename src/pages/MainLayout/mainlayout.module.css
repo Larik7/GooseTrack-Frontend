@@ -30,7 +30,10 @@
 } */
 
 .main {
-  display: block;
+  display: flex;
+  background-color: var(--primary-background-color);
+
+/*   display: block; */
 }
 
 @media (min-width: 375px) {
