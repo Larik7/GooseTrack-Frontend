@@ -27,5 +27,3 @@ export const MainLayout = () => {
     </div>
   );
 };
-
-

@@ -1,9 +1,9 @@
 .conteinerMainLayout {
 
-  width: 335px;
-  height: 653px;
+  /* width: 335px; */
   /* outline: 1px solid red; */
-  background: var(--primary-background-color);
+  background: var(--secondary-background-color);
+  padding: 0 15px;
 }
 
 @media screen and (min-width: 1158px) {
@@ -47,6 +47,11 @@
   .main {
     display: flex;
   }
+
+    .conteinerMainLayout {
+
+      background: var(--primary-background-color);
+    }
 }
 
 

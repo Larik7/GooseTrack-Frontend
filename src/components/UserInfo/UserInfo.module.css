@@ -4,6 +4,8 @@
 	flex-direction: column;
 	margin: 0 auto;
 	/* position: relative; */
+	background-color: var(--primary-background-color);
+	height: 653px;
 }
 
 .imgBox {
@@ -14,11 +16,11 @@
 	overflow: hidden;
 }
 
-.span {
-	/* position: absolute;
+/* .span {
+	position: absolute;
 	left: 169px;
-	top: 67px; */
-}
+	top: 67px;
+} */
 
 .updatePhoto {
 	display: none;
