@@ -2,4 +2,84 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	margin: 0 auto;
+	/* position: relative; */
 }
+
+.imgBox {
+	height: 72px;
+	width: 72px;
+	border: 1.8px solid #3e85f3;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.span {
+	/* position: absolute;
+	left: 169px;
+	top: 67px; */
+}
+
+.updatePhoto {
+	display: none;
+}
+
+.textInput {
+	width: 299px;
+	height: 42px;
+	flex-shrink: 0;
+	border: 1px solid rgba(17, 17, 17, 0.10);
+	border-radius: 8px;
+	outline: none;
+}
+
+.textInput:hover,
+.textInput:focus,
+.textInput:active {
+	border: 1px solid var(--primary-text-color)
+}
+
+.label {
+	color: var(--primary-text-color);
+	font-size: 12px;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 14px;
+	display: flex;
+	flex-direction: column;
+}
+
+.submitButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	background-color: var(--nav-button-color-hover);
+	border-radius: 16px;
+	width: 195px;
+	height: 46px;
+	color: var(--sidebar-background-color);
+	font-family: var(--button-font);
+	line-height: 18px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.submitButton:hover,
+.submitButton:focus {
+	background-color: var(--button-color-hover);
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+	.userInfoForm {
+
+		margin: 0;
+	}
+}
+
+@media screen and (min-width: 1200px) {}

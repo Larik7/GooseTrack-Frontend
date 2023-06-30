@@ -75,6 +75,11 @@
 
 
 @media (min-width: 768px) {
+  .imgBox {
+      height: 44px;
+      width: 44px;
+
+    }
   .burgerMenu {
     margin-right: 355px;
   }
@@ -131,8 +136,8 @@
 
 
 .imgBox {
-  height: 44px;
-  width: 44px;
+  height: 32px;
+  width: 32px;
   border: 1.8px solid #3e85f3;
   border-radius: 50%;
   overflow: hidden;
