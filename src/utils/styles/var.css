@@ -1,6 +1,7 @@
 :root {
   /* fonts */
   --secondary-font: 'Coolvetica', sans-serif;
+  --button-font: 'Inter', sans-serif;
 
   /* background colors */
 
@@ -25,11 +26,11 @@
   --button-color-hover: #2b78ef;
 
   /* Feedback modal */
- --feedback-background-input: #F6F6F6;
- --feedback-btnCancel-background: #dcebf7;
- --feedback-editBtn-background: #e3f3ff;
- --feedback-cancelMini-background: #facedd;
---feedback-border-color:  rgba(255, 255, 255, 0);
+  --feedback-background-input: #F6F6F6;
+  --feedback-btnCancel-background: #dcebf7;
+  --feedback-editBtn-background: #e3f3ff;
+  --feedback-cancelMini-background: #facedd;
+  --feedback-border-color: rgba(255, 255, 255, 0);
 }
 
 [data-theme='dark'] {
@@ -57,5 +58,5 @@
   --feedback-btnCancel-background: #21222C;
   --feedback-editBtn-background: #353647;
   --feedback-cancelMini-background: #c08297;
-  --feedback-border-color:   rgba(255, 255, 255, 0.15);
+  --feedback-border-color: rgba(255, 255, 255, 0.15);
 }
