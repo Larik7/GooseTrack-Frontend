@@ -4,40 +4,52 @@ import { RxEnter } from 'react-icons/rx';
 import { BiErrorCircle } from 'react-icons/bi';
 import { VscPass } from 'react-icons/vsc';
 import css from './RegisterForm.module.css';
-import { useState } from 'react';
-
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/authOperation';
+import { register, resendVerify } from 'redux/auth/authOperation';
+import { useState } from 'react';
+import RegisterVerifyModal from './RegisterVerifyModal/RegisterVerifyModal';
+import { Toaster } from 'react-hot-toast';
+import { Rings } from 'react-loader-spinner';
+
+const PASSWORD_REGEXP = /([a-zA-z_\d]){6,}/;
+const EMAIL_REGEXP = /(^[\w.]+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})$/;
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, 'Name must be at least 2 characters')
-    .max(15, 'Name must be at least 15 characters')
-    .required('Required'),
-  email: Yup.string().email('Invalid email').required('Required'),
+    .max(28, 'Name must be no more 28 characters')
+    .required('Name is Required'),
+  email: Yup.string()
+    .matches(EMAIL_REGEXP, 'Invalid email')
+    .email('Invalid email')
+    .required('Email is Required'),
   password: Yup.string()
-    .min(3, 'Password must be at least 3 characters!')
-    .max(15, 'Password must be no more 15 characters!')
-    .required('Required'),
+    .matches(PASSWORD_REGEXP, 'Password must be at least 6 characters')
+    .required('Password is Required'),
 });
 
 export const RegisterForm = () => {
-  const [dataForm, setDataForm] = useState({});
   const dispatch = useDispatch();
+  const [isOpened, setIsOpened] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
 
-  const handleSubmit = (values, { resetForm }) => {
-    setDataForm({ values });
-    dispatch(
-      register({
-        name: values.name,
-        email: values.email,
-        password: values.password,
-      })
-    );
-    resetForm();
+  const handleToggleModal = () => setIsOpened(!isOpened);
+
+  const handleSubmit = async (values, { resetForm }) => {
+    setUserEmail(values.email);
+
+    await dispatch(register({ ...values })).then(data => {
+      if (data.meta.requestStatus === 'fulfilled') {
+        setIsOpened(true);
+      }
+      return;
+    });
+
+    await resetForm();
   };
 
-  console.log(dataForm);
+  const handleResend = () => {
+    dispatch(resendVerify(userEmail));
+  };
 
   return (
     <div className={css.register_container}>
@@ -52,7 +64,7 @@ export const RegisterForm = () => {
         validationSchema={SignupSchema}
         validateOnChange={false}
       >
-        {({ errors, touched, values }) => (
+        {({ errors, touched, values, isSubmitting, dirty }) => (
           <Form className={css.register_form}>
             <label
               htmlFor="name"
@@ -164,7 +176,11 @@ export const RegisterForm = () => {
                 ''
               )}
             </label>
-            <button className={css.register_button} type="submit">
+            <button
+              className={css.register_button}
+              type="submit"
+              disabled={isSubmitting || !dirty}
+            >
               Sign Up
               <RxEnter className={css.signup_image} />
             </button>
@@ -180,9 +196,28 @@ export const RegisterForm = () => {
               />
               Sign Up With Google
             </a>
+            {isSubmitting && (
+              <Rings
+                height="80"
+                width="80"
+                color="#2b78ef"
+                radius="6"
+                wrapperStyle={{ display: 'flex', justifyContent: 'center' }}
+                wrapperClass=""
+                visible={true}
+                ariaLabel="rings-loading"
+              />
+            )}
+            {isOpened && (
+              <RegisterVerifyModal
+                onCloseModal={handleToggleModal}
+                handleResend={handleResend}
+              />
+            )}
           </Form>
         )}
       </Formik>
+      <Toaster />
     </div>
   );
 };
