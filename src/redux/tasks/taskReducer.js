@@ -29,7 +29,7 @@ const taskReducer = createSlice({
   },
   reducers: {
     setActivedDate(state, { payload }) {
-      state.activeData = payload;
+      state.activeDate = payload;
     },
     updateColumns: (state, action) => {
       state.columns = action.payload;
