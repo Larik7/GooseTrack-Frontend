@@ -2,8 +2,11 @@
   width: 100%;
   position: relative;
   min-height: 94px;
-  border-radius: 8px;
   border: 1px solid rgba(220, 227, 229, 0.5);
+}
+.dayContainer:hover,
+.dayContainer:focus {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 @media screen and (min-width: 768px) {
   .dayContainer {
@@ -59,4 +62,56 @@
   font-weight: 700;
   text-transform: uppercase;
   color: var(--sidebar-background-color);
+}
+.taskContainer {
+  width: 100%;
+  height: 72px;
+  position: absolute;
+  top: 48px;
+  overflow: scroll;
+}
+@media screen and (min-width: 768px) {
+  .taskContainer {
+    height: 100px;
+    top: 58px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .taskContainer {
+    top: 67px;
+  }
+}
+.taskList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.taskItem {
+  margin: 2px;
+  height: 22px;
+  padding: 4px 4px 4px 8px;
+  display: flex;
+  line-height: 1.4;
+  text-align: start;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 10px;
+}
+@media screen and (min-width: 768px) {
+  .taskItem {
+    font-size: 14px;
+  }
+}
+.low {
+  color: var(--nav-button-color-hover);
+  background-color: #ceeefd;
+}
+.medium {
+  color: #f3b249;
+  background-color: #fcf0d4;
+}
+.hard {
+  color: #ea3d65;
+  background-color: #ffd2dd;
 }

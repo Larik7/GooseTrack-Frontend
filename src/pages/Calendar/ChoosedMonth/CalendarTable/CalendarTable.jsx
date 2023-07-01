@@ -1,12 +1,10 @@
 import { getCalendaryFormat } from 'helpers/getCalendaryFormat';
 import { nanoid } from 'nanoid';
 import css from './callendarTable.module.css';
-import { useEffect } from 'react';
 import { CallendarDayBox } from './CallendarDayBox/CalendarDayBox';
 export const CalendarTable = () => {
   const date = new Date().toDateString().slice(0, 10);
   const callendaryBox = getCalendaryFormat(date);
-  console.log(callendaryBox);
   return (
     <div className={css.callendarContainer}>
       {callendaryBox.map(week => (
