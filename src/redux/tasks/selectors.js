@@ -5,4 +5,4 @@ export const getError = state => state.task.tasks.error;
 export const getUserRepo = state => state.task.userRepo;
 export const getColumns = state => state.task.columns;
 export const selectAllTasks = state => state.task.tasks.allTasks;
-export const selectActiveDate = state => state.activeDate;
+export const selectActiveDate = state => state.task.activeDate;

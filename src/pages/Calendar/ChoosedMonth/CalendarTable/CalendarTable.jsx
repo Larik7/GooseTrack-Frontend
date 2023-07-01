@@ -1,9 +1,11 @@
 import { getCalendaryFormat } from 'helpers/getCalendaryFormat';
+import { useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import css from './callendarTable.module.css';
 import { CallendarDayBox } from './CallendarDayBox/CalendarDayBox';
+import { selectActiveDate } from 'redux/tasks/selectors';
 export const CalendarTable = () => {
-  const date = new Date().toDateString().slice(0, 10);
+  const date = useSelector(selectActiveDate);
   const callendaryBox = getCalendaryFormat(date);
   return (
     <div className={css.callendarContainer}>

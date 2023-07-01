@@ -5,7 +5,7 @@ import { fetchTasks } from './taskOperation';
 const taskReducer = createSlice({
   name: 'task',
   initialState: {
-    activeDate: new Date().toISOString().slice(0, 10),
+    activeDate: new Date().toDateString().slice(0, 10),
     tasks: {
       allTasks: [],
       isLoading: false,
