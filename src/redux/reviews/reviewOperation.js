@@ -94,7 +94,7 @@ export const updateReview = createAsyncThunk(
     };
     try {
       const { data } = await axios.patch(
-        `api/reviews/own/${id}`,
+        `api/reviews/own`,
         axiosParams,
         review
       );
