@@ -54,6 +54,7 @@ const authSlice = createSlice({
     },
     [currentPage.fulfilled](state, action) {
       state.user = action.payload;
+
       state.isRefreshing = false;
       state.isLoggedIn = true;
     },

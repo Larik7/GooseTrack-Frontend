@@ -11,6 +11,8 @@ import { currentPage } from 'redux/auth/authOperation';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { RestrictedRoute } from 'helpers/RestrictedRoute';
 import { PrivateRoute } from 'helpers/PrivetRoute';
+// import { LoginForm } from '../pages/LoginForm/LoginForm';
+// import { Description } from './MainPage/Description/Description';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -35,10 +37,7 @@ export const App = () => {
       <Route
         path="/register"
         element={
-          <RestrictedRoute
-            redirectTo="/mainLayout"
-            component={<RegisterPage />}
-          />
+          <RestrictedRoute redirectTo="/login" component={<RegisterPage />} />
         }
       />
       <Route
@@ -53,3 +52,4 @@ export const App = () => {
     </Routes>
   );
 };
+

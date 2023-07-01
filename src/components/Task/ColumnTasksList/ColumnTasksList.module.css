@@ -1,4 +1,27 @@
-.list_task {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 767px) {
+  .column_list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .task_list {
+    padding-left: 18px;
+    padding-right: 18px;
+    height: 500px;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 767px) {
+  .column_list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .task_list {
+    padding-left: 18px;
+    padding-right: 18px;
+    height: 500px;
+    overflow-y: auto;
+  }
 }
