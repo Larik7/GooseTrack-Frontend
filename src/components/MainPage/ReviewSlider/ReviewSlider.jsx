@@ -5,12 +5,8 @@ import Slider from 'react-slick';
 import { fetchAllReviews } from 'redux/reviews/selectors';
 import { selectAllReviews } from 'redux/reviews/selectors';
 import { ReviewCard } from './ReviewCard';
-import {
-  ReviewsContainer,
-  Wrapper,
-  ArrowContainer,
-} from './ReviewsSlider.styled';
 import sprite from 'icons/sprite.svg';
+import './ReviewSlider.module.css';
 
 // Slide Right
 const SlickRight = ({ currentSlide, slideCount, ...props }) => (
@@ -75,8 +71,8 @@ export const ReviewsSlider = () => {
   const lastTenReviews = reviews?.data?.slice(-10);
 
   return (
-    <Wrapper>
-      <ReviewsContainer>
+    <section className="Wrapper">
+      <section className="ReviewsContainer">
         <h2>REVIEWS</h2>
         <Slider className="slider" {...settings}>
           {lastTenReviews?.map(review => (
@@ -100,8 +96,8 @@ export const ReviewsSlider = () => {
             Great for staying organized.
           </ReviewCard>
         </Slider>
-        <ArrowContainer />
-      </ReviewsContainer>
-    </Wrapper>
+        <div className="ArrowContainer" />
+      </section>
+    </section>
   );
 };
