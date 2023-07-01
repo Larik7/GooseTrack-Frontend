@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectAllTasks, selectActiveDate } from 'redux/tasks/selectors';
 import css from './callendarDayBox.module.css';
 import { nanoid } from 'nanoid';
+import { setActivedDate } from 'redux/tasks/taskReducer';
 
 export const CallendarDayBox = ({ date, month, picked = false }) => {
+  const dispatch = useDispatch();
   const dateForBox = `${month}-${date.toString().padStart(2, 0)}`;
   const allTasks = useSelector(selectAllTasks);
   const activeDate = useSelector(selectActiveDate);
@@ -17,8 +19,15 @@ export const CallendarDayBox = ({ date, month, picked = false }) => {
   const tasksForThisMonthsWeek = tasksForThisMonth.filter(
     task => task.date.slice(0, 7) === month
   );
+  const handleDayBox = () => {
+    dispatch(setActivedDate(dateForBox));
+  };
   return (
-    <Link className={css.link} to={`/calendar/day/${dateForBox}`}>
+    <Link
+      className={css.link}
+      to={`/calendar/day/${dateForBox}`}
+      onClick={handleDayBox}
+    >
       <div className={css.dayContainer}>
         <div className={picked ? `${css[picked]}` : `${css.numberContainer}`}>
           <p className={picked ? `${css.day}` : `${css[picked]}`}>{date}</p>
