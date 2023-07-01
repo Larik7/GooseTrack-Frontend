@@ -14,7 +14,7 @@ export const AddFeedbackBtn = ({ feedbackBtnStyle }) => {
 
   return (
     <div>
-      <button className={feedbackBtnStyle} onClick={handleButtonClick}>
+      <button className={feedbackBtnStyle} onClick={handleButtonClick} data-tour="step-1">
         Feedback
       </button>
       {isModalOpen && <AddFeedbackModal onCloseModal={handleCloseModal} />}

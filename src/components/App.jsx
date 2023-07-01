@@ -4,7 +4,6 @@ import { AuthSection } from '../components/AuthSection/AuthSection';
 import { MainLayout } from '../pages/MainLayout/MainLayout';
 import { RegisterPage } from 'pages/Register/RegisterPage';
 import { UserInfo } from './UserInfo/UserInfo';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { currentPage } from 'redux/auth/authOperation';
@@ -13,6 +12,7 @@ import { RestrictedRoute } from 'helpers/RestrictedRoute';
 import { PrivateRoute } from 'helpers/PrivetRoute';
 // import { LoginForm } from '../pages/LoginForm/LoginForm';
 // import { Description } from './MainPage/Description/Description';
+
 
 export const App = () => {
   const dispatch = useDispatch();

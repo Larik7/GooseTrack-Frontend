@@ -13,14 +13,15 @@ import css from './userNav.module.css';
 export const UserNav = () => {
   return (
     <div className={css.linksConteiner}>
-      <NavLink href="mainLayout/userInfo" to="/userInfo" className={css.link}>
+
+      <NavLink to="/userInfo" className={css.link} data-tour="step-2">
         <RiUserFollowLine size={24} /> My account
       </NavLink>
-      <NavLink href="##" to="/calendar" className={css.link}>
+      <NavLink to="/mainLayout" className={css.link} data-tour="step-3">
         <LuCalendarCheck2 size={24} />
         Calendar{' '}
       </NavLink>
-      <NavLink href="##" to="/statistics" className={css.link}>
+      <NavLink to="/statistics" className={css.link} data-tour="step-4">
         <BsBarChart size={24} /> Statistics
       </NavLink>
     </div>
