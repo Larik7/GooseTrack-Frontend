@@ -38,7 +38,6 @@ export const RegisterForm = () => {
     setUserEmail(values.email);
 
     await dispatch(register({ ...values })).then(data => {
-      console.log(data);
       if (data.meta.requestStatus === 'fulfilled') {
         setIsOpened(true);
       }
