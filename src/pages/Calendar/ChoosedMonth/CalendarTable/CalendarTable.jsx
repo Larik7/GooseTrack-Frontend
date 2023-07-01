@@ -1,3 +1,29 @@
+import { getCalendaryFormat } from 'helpers/getCalendaryFormat';
+import { nanoid } from 'nanoid';
+import css from './callendarTable.module.css';
+import { useEffect } from 'react';
+import { CallendarDayBox } from './CallendarDayBox/CalendarDayBox';
 export const CalendarTable = () => {
-  return <></>;
+  const date = new Date().toDateString().slice(0, 10);
+  const callendaryBox = getCalendaryFormat(date);
+  console.log(callendaryBox);
+  return (
+    <div className={css.callendarContainer}>
+      {callendaryBox.map(week => (
+        <div className={css.weekContainer} key={nanoid()}>
+          {week.map(day => (
+            <CallendarDayBox
+              key={nanoid()}
+              date={day.day}
+              month={day.month}
+              picked={
+                day.day === parseInt(date.slice(8, 10), 10) &&
+                day.month === date.slice(0, 7)
+              }
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  );
 };

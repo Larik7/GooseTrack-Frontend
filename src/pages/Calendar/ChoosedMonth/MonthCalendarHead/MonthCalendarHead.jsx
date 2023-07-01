@@ -2,13 +2,13 @@ import css from './monthCalendarHead.module.css';
 
 export const MonthCalendarHead = () => {
   const daysArray = [
-    'Sunday',
     'Monday',
     'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday',
     'Saturday',
+    'Sunday',
   ];
 
   return (

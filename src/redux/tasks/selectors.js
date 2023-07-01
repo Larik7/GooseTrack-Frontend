@@ -4,3 +4,4 @@ export const getError = state => state.task.tasks.error;
 
 export const getUserRepo = state => state.task.userRepo;
 export const getColumns = state => state.task.columns;
+export const selectMonthTasks = state => state.task.tasks.allTasks;
