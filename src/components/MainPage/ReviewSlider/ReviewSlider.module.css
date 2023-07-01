@@ -1,18 +1,16 @@
-import styled from 'styled-components';
-
-export const Wrapper = styled.section`
+.Wrapper {
   background-color: #fff;
-`;
+}
 
-export const ReviewsContainer = styled.section`
+.ReviewsContainer {
   position: relative;
   max-width: 335px;
   min-height: 324px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 64px;
-  font-family: ${p => p.theme.fonts.text};
-  background-color: ${p => p.theme.colors.background};
+  font-family: Inter;
+  background-color: var(--primary-background-color);
 
   @media screen and (min-width: 768px) {
     width: 704px;
@@ -34,12 +32,11 @@ export const ReviewsContainer = styled.section`
     text-align: center;
     margin-top: 0;
     margin-bottom: 40px;
-
-    color: ${p => p.theme.colors.primary};
+    color: #3E85F3;
 
     @media screen and (min-width: 768px) {
-      font-size: ${p => p.theme.fontSizes.l};
-      line-height: ${p => p.theme.lineHeights.heading};
+      font-size: 40px;
+      line-height: 44px;
       margin-bottom: 50px;
     }
   }
@@ -74,11 +71,12 @@ export const ReviewsContainer = styled.section`
     width: 39px;
     height: 50px;
     cursor: pointer;
-    fill: ${p => p.theme.colors.black};
+    fill: black;
 
     &:hover,
     &:focus {
-      fill: ${p => p.theme.colors.primary};
+      fill: #111111;
+      ;
     }
 
     @media screen and (min-width: 768px) {
@@ -94,9 +92,9 @@ export const ReviewsContainer = styled.section`
   & .slick-arrow.slick-next {
     right: calc(50% + 15px);
   }
-`;
+}
 
-export const ArrowContainer = styled.div`
+.ArrowContainer {
   margin-top: 8px;
   height: 50px;
 
@@ -108,4 +106,4 @@ export const ArrowContainer = styled.div`
   @media screen and (min-width: 1440px) {
     margin-top: 32px;
   }
-`;
+}
