@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
-import { fetchAllReviews } from 'redux';
-import { selectAllReviews } from 'redux';
+import { fetchAllReviews } from 'redux/reviews/selectors';
+import { selectAllReviews } from 'redux/reviews/selectors';
 import { ReviewCard } from './ReviewCard';
 import {
   ReviewsContainer,
