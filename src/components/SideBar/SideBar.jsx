@@ -16,7 +16,7 @@ export const SideBar = ({ openMenu, onClose }) => {
           : `${css.conteinerSideBar}`)
              }
     >
-           <div className={css.logoBox}>
+        <div className={css.logoBox}>
         <img className={css.logoImg} src={Logo} alt="Goose_logo" />
         <p className={css.logoTitle}>GooseTrack</p>
 
