@@ -23,7 +23,12 @@ const SignupSchema = Yup.object().shape({
     .email('Invalid email')
     .required('Email is Required'),
   password: Yup.string()
-    .matches(PASSWORD_REGEXP, 'Password must be at least 6 characters')
+    .matches(
+      PASSWORD_REGEXP,
+      `Invalid Password: 
+      Must be at least 6 characters, 
+      Must be latin letters `
+    )
     .required('Password is Required'),
 });
 
