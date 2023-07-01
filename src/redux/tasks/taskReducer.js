@@ -5,6 +5,7 @@ import { fetchTasks } from './taskOperation';
 const taskReducer = createSlice({
   name: 'task',
   initialState: {
+    activeDate: new Date().toISOString().slice(0, 10),
     tasks: {
       allTasks: [],
       isLoading: false,
@@ -27,6 +28,9 @@ const taskReducer = createSlice({
     },
   },
   reducers: {
+    setActivedDate(state, { payload }) {
+      state.activeData = payload;
+    },
     updateColumns: (state, action) => {
       state.columns = action.payload;
     },
@@ -80,6 +84,6 @@ const taskReducer = createSlice({
   },
 });
 
-export const { updateColumns, setData } = taskReducer.actions;
+export const { updateColumns, setData, setActivedDate } = taskReducer.actions;
 
 export default taskReducer.reducer;
