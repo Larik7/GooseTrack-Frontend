@@ -37,8 +37,12 @@ export const RegisterForm = () => {
   const handleSubmit = async (values, { resetForm }) => {
     setUserEmail(values.email);
 
-    await dispatch(register({ ...values })).then(() => {
-      setIsOpened(true);
+    await dispatch(register({ ...values })).then(data => {
+      console.log(data);
+      if (data.meta.requestStatus === 'fulfilled') {
+        setIsOpened(true);
+      }
+      return;
     });
 
     await resetForm();
