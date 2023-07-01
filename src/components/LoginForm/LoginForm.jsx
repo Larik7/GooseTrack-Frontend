@@ -3,9 +3,9 @@ import * as Yup from 'yup';
 import { MdOutlineLogin } from 'react-icons/md';
 import { BiErrorCircle } from 'react-icons/bi';
 import { FcOk } from 'react-icons/fc';
-import { ButtonNavigation } from 'components/AuthNavigate/AuthNavigate';
 
 import css from './LoginForm.module.css';
+import { ButtonNavigation } from 'components/AuthNavigate/AuthNavigate';
 
 // Компонент форми для входу
 export const LoginForm = ({ handleSumbit }) => {
@@ -129,15 +129,15 @@ export const LoginForm = ({ handleSumbit }) => {
                 />
                 Sign Up With Google
               </a>
+              <ButtonNavigation
+                route="/register"
+                btnText="Sign Up"
+                className={css.sign}
+              ></ButtonNavigation>
             </Form>
           )}
         </Formik>
       </div>
-      <ButtonNavigation
-        route="/register"
-        btnText="Sign Up"
-        className={css.sign}
-      ></ButtonNavigation>
     </div>
   );
 };
