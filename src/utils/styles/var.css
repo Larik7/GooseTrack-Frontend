@@ -1,9 +1,77 @@
-:root {
-    /* fonts */
-    --secondary-font: 'Coolvetica', sans-serif;
+:root{
+  /* fonts */
+  --secondary-font: 'Coolvetica', sans-serif;
+  --button-font: 'Inter', sans-serif;
 
-    /* background colors */
-    
-    --primary-background-color: #ffffff;
-    --secondary-background-color: #EAEAEA;
+  /* background colors */
+ 
+  --primary-background-color: #f7f6f9;
+  --secondary-background-color: #eaeaea;
+
+  --sidebar-background-color: #ffffff;
+
+  --task-item-background-color: #f0f0f0;
+
+  /* text colors */
+  --primary-text-color: #111111;
+  --secondary-text-color: #343434;
+
+  /* icon month-day */
+  --toggle-button-color: #dcebf7;
+  --toggle-button-color-active: #cae8ff;
+
+  /* Nav colors */
+
+  --nav-button-color: rgba(52, 52, 52, 0.5);
+  --nav-button-color-hover: #3e85f3;
+  --nav-button-background-hover: #e3f3ff;
+
+  --button-color-hover: #2b78ef;
+
+  /* Feedback modal */
+
+  --feedback-background-input: #f6f6f6;
+  --feedback-btnCancel-background: #dcebf7;
+  --feedback-editBtn-background: #e3f3ff;
+  --feedback-cancelMini-background: #facedd;
+  --feedback-border-color: rgba(255, 255, 255, 0);
+  
+  /* animation */
+  --animation-cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* task colors */
+
+  --high-color: #ea3d65;
+  --medium-color: #f3b249;
+  --low-color: #72c2f8;
+
 }
+
+[data-theme='dark'] {
+  /* background colors */
+  --secondary-background-color: #171820;
+  --primary-background-color: #21222c;
+  --primary-text-color: #ffffff;
+  --sidebar-background-color: #13151a;
+
+  /* text colors */
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #ffffff;
+
+  /* icon month-day */
+  --toggle-button-color: #ffffff;
+  --toggle-button-color-active: #21222c;
+
+  /* Nav colors */
+  --nav-button-color: #ffffff;
+  --nav-button-color-hover: #ffffff;
+  --nav-button-background-hover: #3e85f3;
+
+  /* Feedback modal */
+  --feedback-background-input: #13151a;
+  --feedback-btnCancel-background: #21222c;
+  --feedback-editBtn-background: #353647;
+  --feedback-cancelMini-background: #c08297;
+  --feedback-border-color: rgba(255, 255, 255, 0.15);
+}
+

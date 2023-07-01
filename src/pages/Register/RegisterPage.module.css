@@ -1,0 +1,33 @@
+.register_page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #dcebf7;
+}
+
+.login_link {
+  color: #3e85f3;
+  font-size: 12px;
+  font-family: Inter;
+  font-weight: 600;
+  line-height: calc(14 / 12);
+  text-decoration-line: underline;
+}
+
+@media (min-width: 767px) {
+  .login_link {
+    font-size: 18px;
+    line-height: calc(24 / 18);
+  }
+}
+
+@media (min-width: 1439px) {
+  .register_page {
+    background-image: url(../../images/register_page/elements_1.png);
+    background-repeat: no-repeat;
+    background-position: 50px 100%;
+  }
+}

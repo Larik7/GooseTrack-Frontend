@@ -1,0 +1,22 @@
+
+.button {
+    border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40;
+        text-align: center;
+        padding: 0;
+        /* margin-right: 17px;
+        margin-left: 27px; */
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0);
+}
+
+.button svg {
+    width: 26px;
+    height: auto;
+   color: #3E85F3;
+   border: none;
+
+}

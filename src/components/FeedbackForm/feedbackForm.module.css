@@ -1,0 +1,153 @@
+.feedbackForm {
+  max-width: 404px;
+  height: 285px;
+}
+.feedbackFormLabel {
+  display: block;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  color: rgba(52, 52, 52, 0.8);
+}
+.feedbackFormStarInput {
+  display: none;
+}
+.starContainerWrap {
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .starContainerWrap {
+    margin-bottom: 24px;
+  }
+}
+.textInput {
+  padding: 14px 18px;
+  width: 100%;
+  height: 130px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  margin-top: 8px;
+  border: none;
+  resize: none;
+  background-color: var(--feedback-background-input);
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--secondary-text-color);
+  outline: none;
+  border: 1px solid var(--feedback-border-color);
+}
+.textInput:focus {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+@media screen and (min-width: 768px) {
+  .textInput {
+    width: 100%;
+    height: 127px;
+    margin-bottom: 10px;
+  }
+}
+.btnWrap {
+  display: flex;
+  gap: 8px;
+}
+.btnSaveOrEdit {
+  position: relative;
+  margin-left: auto;
+  padding: 0;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  background: var(--nav-button-color);
+  color: var(--sidebar-background-color);
+  cursor: pointer;
+  width: 198px;
+  height: 42px;
+}
+.btnSaveOrEdit:hover,
+.btnSaveOrEdit:focus {
+  background-color: var(--button-color-hover);
+}
+@media screen and (min-width: 768px) {
+  .btnSaveOrEdit {
+    height: 48px;
+  }
+}
+.btnCancel {
+  position: relative;
+  margin-left: auto;
+  padding: 0;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  background: var(--feedback-btnCancel-background);
+
+  color: var(--secondary-text-color);
+
+  cursor: pointer;
+  width: 198px;
+  height: 42px;
+}
+.btnCancel:hover,
+.btnCancel:focus {
+  background: var(--button-color-hover);
+}
+@media screen and (min-width: 768px) {
+  .btnCancel {
+    height: 48px;
+  }
+}
+.labelandBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.editBtn {
+  fill: var(--button-color-hover);
+  width: 30px;
+  height: 30px;
+
+  padding: 8px;
+  background: var(--feedback-editBtn-background);
+
+  border-radius: 50%;
+}
+.editBtn:hover,
+.editBtn:focus {
+  fill: var(--primary-text-color);
+  background: var(--nav-button-color-hover);
+  padding: 8px;
+}
+.cancelMiniBtn {
+  fill: #ea3d65;
+  width: 30px;
+  height: 30px;
+
+  padding: 8px;
+  background: var(--feedback-cancelMini-background);
+
+  border-radius: 50%;
+}
+.cancelMiniBtn:hover,
+.cancelMiniBtn:focus {
+  fill: var(--primary-text-color);
+  background: #ea3d65;
+  padding: 8px;
+}
+.starBtn {
+  width: 24px;
+  height: 24px;
+}

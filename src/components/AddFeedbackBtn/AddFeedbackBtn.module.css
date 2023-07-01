@@ -1,0 +1,22 @@
+.feedbackBtnStyle {
+  border-style: none;
+  background: #3e85f3;
+  box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+  border-radius: 10px;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-align: center;
+
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-right: 24px;
+  @media (min-width: 768px) {
+    width: 130px;
+    height: 42px;
+    font-size: 14px;
+  }
+}

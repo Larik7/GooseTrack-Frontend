@@ -1,15 +1,14 @@
 import React from 'react';
 
-import {
-  Description,
-} from 'components/MainPage';
+import { AuthSection } from 'components/AuthSection/AuthSection';
+import { Description } from 'components/MainPage';
 
-const MainPage = () => {
+export const MainPage = () => {
   return (
     <>
+      <AuthSection />
       <Description />
+      {/* <PageReviewsSlider /> */}
     </>
   );
 };
-
-export default MainPage;
