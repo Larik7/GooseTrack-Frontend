@@ -38,8 +38,9 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
     setHover(null);
     setEditReview(false);
   };
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault();
+    console.log(11);
     const currentMessage = e.currentTarget.message.value;
     if (!rating) {
       return;
@@ -54,11 +55,11 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
       if (reviewOwn.comment === currentMessage && reviewOwn.rating === rating) {
         return;
       }
-      await dispatch(updateReview(id, { rating, comment: message }));
+      dispatch(updateReview(id, { rating, comment: message }));
       reset();
       onClose();
     } else {
-      await dispatch(addReview({ rating, comment: message }));
+      dispatch(addReview({ rating, comment: message }));
       reset();
       onClose();
     }
@@ -66,11 +67,11 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
   const handleClickEdit = () => {
     setEditReview(true);
   };
-  const handleClickDelete = async () => {
+  const handleClickDelete = () => {
     if (rating === 0 && message === '') {
       return;
     }
-    await dispatch(deleteReview());
+    dispatch(deleteReview());
     reset();
     onClose();
   };
@@ -143,7 +144,11 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
               Edit
             </button>
           ) : (
-            <button className={css.btnSaveOrEdit} type="submit">
+            <button
+              className={css.btnSaveOrEdit}
+              type="submit"
+              onSubmit={handleSubmit}
+            >
               Save
             </button>
           )}

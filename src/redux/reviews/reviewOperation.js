@@ -1,26 +1,43 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { isToken } from 'redux/auth/selectors';
 axios.defaults.baseURL = 'https://goosetrackback.onrender.com/';
-// const setToken = token => {
-//   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-// };
 export const fetchReviews = createAsyncThunk(
-  'reviews/fetchAll',
+  '/reviews/fetchAll',
   async ({ page, limit }, thunkAPI) => {
+    const token = useSelector(isToken());
+    const header = `Authorization: Bearer ${token}`;
+    const axiosParams = {
+      headers: {
+        header,
+      },
+    };
     try {
-      const { data } = await axios.get(`reviews?limit=${limit}&page=${page}`);
-      return data.data.reviews;
+      const { data } = await axios.get(
+        `api/reviews?limit=${limit}&page=${page}`,
+        axiosParams
+      );
+      return data.reviews;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
 export const fetchOwnReviews = createAsyncThunk(
-  'reviews/fetchOwn',
+  '/reviews/fetchOwn',
   async (_, thunkAPI) => {
+    const token = useSelector(isToken());
+    const header = `Authorization: Bearer ${token}`;
+    const axiosParams = {
+      headers: {
+        header,
+      },
+    };
     try {
-      const { data } = await axios.get('reviews/own');
-      return data.data.reviews;
+      const { data } = await axios.get('api/reviews/own', axiosParams);
+      console.log(data);
+      return data.reviews;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -29,8 +46,16 @@ export const fetchOwnReviews = createAsyncThunk(
 export const addReview = createAsyncThunk(
   'reviews/addReview',
   async (review, thunkAPI) => {
+    const token = useSelector(isToken());
+    const header = `Authorization: Bearer ${token}`;
+    const axiosParams = {
+      headers: {
+        header,
+      },
+    };
+    console.log(token);
     try {
-      const { data } = await axios.post('/reviews/own', review);
+      const { data } = await axios.post('api/reviews/own', axiosParams, review);
       return data.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -41,8 +66,15 @@ export const addReview = createAsyncThunk(
 export const deleteReview = createAsyncThunk(
   'reviews/deleteReview',
   async (_, thunkAPI) => {
+    const token = useSelector(isToken());
+    const header = `Authorization: Bearer ${token}`;
+    const axiosParams = {
+      headers: {
+        header,
+      },
+    };
     try {
-      const { data } = await axios.delete(`/reviews/own/`);
+      const { data } = await axios.delete(`api/reviews/own`, axiosParams);
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -53,9 +85,20 @@ export const deleteReview = createAsyncThunk(
 export const updateReview = createAsyncThunk(
   'reviews/updateReview',
   async ({ id, review }, thunkAPI) => {
+    const token = useSelector(isToken());
+    const header = `Authorization: Bearer ${token}`;
+    const axiosParams = {
+      headers: {
+        header,
+      },
+    };
     try {
-      const { data } = await axios.patch(`/reviews/own/${id}`, review);
-      return data.data;
+      const { data } = await axios.patch(
+        `api/reviews/own/${id}`,
+        axiosParams,
+        review
+      );
+      return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
