@@ -10,9 +10,9 @@ import { currentPage } from 'redux/auth/authOperation';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { RestrictedRoute } from 'helpers/RestrictedRoute';
 import { PrivateRoute } from 'helpers/PrivetRoute';
-// import { LoginForm } from '../pages/LoginForm/LoginForm';
-// import { Description } from './MainPage/Description/Description';
+import { Vortex } from 'react-loader-spinner';
 
+// import { Description } from './MainPage/Description/Description';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,20 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <p style={{ textAlign: 'center' }}>Loading ...</p>
+    <Vortex
+      visible={true}
+      height="80"
+      width="80"
+      ariaLabel="vortex-loading"
+      wrapperStyle={{
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+      }}
+      wrapperClass="vortex-wrapper"
+      colors={['blue', 'blue', 'blue', 'yellow', 'yellow', 'yellow']}
+    />
   ) : (
     <Routes>
       <Route path="/" element={<AuthSection />}></Route>
@@ -52,4 +65,3 @@ export const App = () => {
     </Routes>
   );
 };
-
