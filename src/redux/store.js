@@ -27,12 +27,17 @@ const persistConfigTask = {
   storage,
   // whitelist: ['token'],
 };
+const persistConfigReviews = {
+  key: 'reviews',
+  storage,
+  // whitelist: ['token'],
+};
 
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
 
-    reviews: persistReducer(persistConfig, reviewsReducer),
+    reviews: persistReducer(persistConfigReviews, reviewsReducer),
 
     task: persistReducer(persistConfigTask, taskReducer),
   },
