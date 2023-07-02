@@ -18,13 +18,12 @@ let userValidSchema = object({
   comment: string().required(),
 });
 export const FeedbackForm = ({ reviewOwn, onClose }) => {
-  const { _id: idUser } = reviewOwn;
   const dispatch = useDispatch();
   const [rating, setRating] = useState(reviewOwn.rating || 0);
   const [message, setMessage] = useState(reviewOwn.comment || '');
   const [hover, setHover] = useState(null);
-  const [id] = useState(idUser || ''); // const [id, setID] = useState(idUser || ''); тут 'setID' is assigned a value but never used;
   const [editReview, setEditReview] = useState(false);
+
   // useEffect(() => {
   //   // if (isEditReview) {
   //   //   setRating(editedRating);
@@ -40,8 +39,7 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
   };
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(11);
-    const currentMessage = e.currentTarget.message.value;
+    const currentMessage = message;
     if (!rating) {
       return;
     }
@@ -55,7 +53,7 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
       if (reviewOwn.comment === currentMessage && reviewOwn.rating === rating) {
         return;
       }
-      dispatch(updateReview(id, { rating, comment: message }));
+      dispatch(updateReview({ rating, comment: message }));
       reset();
       onClose();
     } else {
@@ -63,6 +61,9 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
       reset();
       onClose();
     }
+    dispatch(addReview({ rating, comment: message }));
+    reset();
+    onClose();
   };
   const handleClickEdit = () => {
     setEditReview(true);
@@ -79,7 +80,9 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
     <Formik
       initialValues={{ rating, message }}
       validationSchema={userValidSchema}
-      onSubmit={handleSubmit}
+      onSubmit={e => {
+        handleSubmit(e);
+      }}
     >
       <Form className={css.feedbackForm}>
         <label className={css.feedbackFormLabel}>Rating</label>
@@ -139,15 +142,16 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
           />
         </div>
         <div className={css.btnWrap}>
-          {reviewOwn.rating === rating && reviewOwn.comment === message ? (
-            <button className={css.btnSaveOrEdit} type="button">
+          {(reviewOwn.rating === rating && reviewOwn.comment === message) ||
+          editReview === true ? (
+            <button className={css.btnSaveOrEdit} type="submit">
               Edit
             </button>
           ) : (
             <button
               className={css.btnSaveOrEdit}
               type="submit"
-              onSubmit={handleSubmit}
+              onClick={handleSubmit}
             >
               Save
             </button>
