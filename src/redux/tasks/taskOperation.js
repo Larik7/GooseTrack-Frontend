@@ -20,3 +20,18 @@ export const fetchTasks = createAsyncThunk(
     }
   }
 );
+
+export const addTask = createAsyncThunk(
+  'task/add',
+  async (task, { rejectWithValue }) => {
+    try {
+      console.log(task);
+      const response = await axios.post('api/tasks', task);
+
+      console.log(response);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

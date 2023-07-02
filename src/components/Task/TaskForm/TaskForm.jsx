@@ -1,13 +1,16 @@
 // Компонент форми для створення завдання
 import css from './TaskForm.module.css';
-import { useState } from 'react';
+
 import { Formik, Field, Form } from 'formik';
 import { IoMdClose } from 'react-icons/io';
 import { SlPencil } from 'react-icons/sl';
+import { useDispatch } from 'react-redux';
+import { addTask, fetchTasks } from 'redux/tasks/taskOperation';
 
-export const TaskForm = ({ initialData, onClose }) => {
-  const [task, setTask] = useState({});
-
+export const TaskForm = ({ onClose, tasks }) => {
+  const dispatch = useDispatch();
+  console.log('form tasks', tasks);
+  const category = tasks[0].category;
   const initialValues = {
     title: 'Enter text',
     start: '9:00',
@@ -16,13 +19,21 @@ export const TaskForm = ({ initialData, onClose }) => {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    // Обробка введених даних
-    setTask(values);
-
+    dispatch(
+      addTask({
+        title: values.title,
+        date: '2023-06-30',
+        start: values.start,
+        end: values.end,
+        priority: values.picked,
+        category: category,
+      })
+    );
     resetForm();
-  };
+    onClose();
 
-  console.log(task);
+    dispatch(fetchTasks());
+  };
 
   return (
     <div className={css.modal_form}>

@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, logIn, logOut, currentPage } from './authOperation';
+import {
+  register,
+  logIn,
+  logOut,
+  currentPage,
+  refreshToken,
+} from './authOperation';
 
 const initialState = {
   user: { name: null, email: null },
@@ -13,30 +19,30 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
-    [register.pending](state, _) {
+    [register.pending](state) {
       state.isLoggedIn = false;
     },
-    [register.fulfilled](state, action) {
-      state.accessToken = action.payload.accessToken;
+    [register.fulfilled](state, { payload }) {
+      state.accessToken = payload.accessToken;
       state.isLoggedIn = true;
     },
     [register.rejected](state, { payload }) {
       state.error = payload;
       state.isLoggedIn = true;
     },
-    [logIn.pending](state, _) {
+    [logIn.pending](state) {
       state.isLoggedIn = false;
     },
-    [logIn.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.accessToken = action.payload.accessToken;
+    [logIn.fulfilled](state, { payload }) {
+      state.user = payload.user;
+      state.accessToken = payload.accessToken;
       state.isLoggedIn = true;
     },
     [logIn.rejected](state, { payload }) {
       state.error = payload;
       state.isLoggedIn = true;
     },
-    [logOut.pending](state, _) {
+    [logOut.pending](state) {
       state.isLoggedIn = false;
     },
     [logOut.fulfilled](state) {
@@ -51,13 +57,25 @@ const authSlice = createSlice({
     [currentPage.pending](state) {
       state.isRefreshing = true;
     },
-    [currentPage.fulfilled](state, action) {
-      state.user = action.payload;
+    [currentPage.fulfilled](state, { payload }) {
+      state.user = payload;
 
       state.isRefreshing = false;
       state.isLoggedIn = true;
     },
     [currentPage.rejected](state, { payload }) {
+      state.error = payload;
+      state.isRefreshing = false;
+    },
+    [refreshToken.pending](state) {
+      state.isRefreshing = true;
+    },
+    [refreshToken.fulfilled](state, { payload }) {
+      state.accessToken = payload.refreshToken;
+      state.isRefreshing = false;
+      state.isLoggedIn = true;
+    },
+    [refreshToken.rejected](state, { payload }) {
       state.error = payload;
       state.isRefreshing = false;
     },
