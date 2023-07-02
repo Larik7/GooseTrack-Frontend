@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
-import { fetchAllReviews } from 'redux/reviews/selectors';
+import { fetchReviews } from 'redux/reviews/reviewOperation';
 import { selectAllReviews } from 'redux/reviews/selectors';
 import { ReviewCard } from './ReviewCard';
 import sprite from 'icons/sprite.svg';
@@ -65,7 +65,7 @@ export const ReviewsSlider = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAllReviews());
+    dispatch(fetchReviews());
   }, [dispatch]);
 
   const lastTenReviews = reviews?.data?.slice(-10);
