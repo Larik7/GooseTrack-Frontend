@@ -31,15 +31,19 @@ export const MainLayout = () => {
 
   return (
     <div className={css.conteinerMainLayout}>
-      <div className={!openMenu && css.backDrop} onClick={hendelBackDropClick}>
-        {' '}
-      </div>
+//       <div className={!openMenu && css.backDrop} onClick={hendelBackDropClick}>
+//         {' '}
+//       </div>
+      {!openMenu ? (
+        <div className={css.backDrop} onClick={hendelBackDropClick}></div>
+      ) : (
+        <></>
+      )}
       <Header
         openMenu={openMenu}
         setOpen={setOpenMenu}
         toggleShowSideBar={toggleShowSideBar}
       />
-
       <aside className={css.aside}>
         <SideBar openMenu={openMenu} onClose={onCloseSideBar} />
       </aside>
