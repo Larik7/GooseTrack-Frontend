@@ -11,6 +11,7 @@ import { PrivateRoute } from 'helpers/PrivetRoute';
 import { Vortex } from 'react-loader-spinner';
 import { MainPage } from 'pages/MainPage/MainPage';
 import { StatisticsPage } from '../pages/StatisticsPage/StatisticsPage';
+import { CalendarPage } from '../pages/Calendar/CalendarPage';
 
 // import { LoginForm } from '../pages/LoginForm/LoginForm';
 
@@ -59,8 +60,9 @@ export const App = () => {
         element={
           <PrivateRoute redirectTo="/login" component={<MainLayout />} />
         }
-        >
-       <Route path="statistics" element={<StatisticsPage />} />
+      >
+        <Route path="statistics" element={<StatisticsPage />} />
+        <Route path="calendar" element={<CalendarPage />} />
       </Route>
     </Routes>
   );
