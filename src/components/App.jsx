@@ -12,6 +12,8 @@ import { selectIsRefreshing } from 'redux/auth/selectors';
 import { RestrictedRoute } from 'helpers/RestrictedRoute';
 import { PrivateRoute } from 'helpers/PrivetRoute';
 import { Vortex } from 'react-loader-spinner';
+import { StatisticPage } from './StatisticPage/StatisticPage';
+
 // import { LoginForm } from '../pages/LoginForm/LoginForm';
 
 // import { Description } from './MainPage/Description/Description';
@@ -41,8 +43,7 @@ export const App = () => {
     />
   ) : (
     <Routes>
-      <Route path="/" element={<AuthSection />}></Route>
-
+      <Route path="/" element={<AuthSection />} />
       <Route
         path="/login"
         element={
@@ -57,12 +58,11 @@ export const App = () => {
       />
       <Route
         path="/mainLayout"
-        element={
-          <PrivateRoute redirectTo="/login" component={<MainLayout />} />
-        }
-      >
-        {' '}
+        element={<PrivateRoute redirectTo="/login" component={<MainLayout />} />}
+        >
+          <Route path="statistics" element={<StatisticPage />} />
         <Route path="userInfo" element={<UserInfo />} />
+        <Route path="statistics" element={<StatisticPage />} />
       </Route>
     </Routes>
   );

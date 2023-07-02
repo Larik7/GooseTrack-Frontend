@@ -2,13 +2,13 @@ import { Header } from 'components/Header/Header';
 import { SideBar } from 'components/SideBar/SideBar';
 import css from './mainlayout.module.css';
 
-import { TasksColumnsList } from 'components/Task/TasksColumnsList/TasksColumnsList';
-
 import React, { Suspense, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import { TasksColumnsList } from 'components/Task/TasksColumnsList/TasksColumnsList';
 
 export const MainLayout = () => {
   const [openMenu, setOpenMenu] = useState(true);
+  const location = useLocation();
 
   const hendelBackDropClick = e => {
     if (e.target === e.currentTarget && !openMenu) {
@@ -20,6 +20,8 @@ export const MainLayout = () => {
   const onCloseSideBar = () => {
     setOpenMenu(!openMenu);
   };
+
+  const shouldDisplayTasksColumnsList = location.pathname === '/mainLayout';
 
   return (
     <div className={css.conteinerMainLayout}>
@@ -35,7 +37,7 @@ export const MainLayout = () => {
       <main className={css.main}>
         <div className={css.mainComponent}>
           <Suspense fallback={null}>
-            {<TasksColumnsList />}
+            {shouldDisplayTasksColumnsList && <TasksColumnsList />}
             <Outlet />
           </Suspense>
         </div>
