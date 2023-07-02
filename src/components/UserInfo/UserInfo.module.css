@@ -74,7 +74,15 @@
 	background-color: var(--button-color-hover);
 }
 
-
+.btnChangeAvatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
 
 
 @media screen and (min-width: 768px) {

@@ -4,7 +4,7 @@ import { LoginPage } from '../pages/LoginPage/LoginPage';
 import { AuthSection } from './MainPage/AuthSection/AuthSection';
 import { MainLayout } from '../pages/MainLayout/MainLayout';
 import { RegisterPage } from 'pages/Register/RegisterPage';
-import { UserInfo } from './UserInfo/UserInfo';
+// import { UserInfo } from './UserInfo/UserInfo';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { currentPage } from 'redux/auth/authOperation';
@@ -62,8 +62,12 @@ export const App = () => {
           <PrivateRoute redirectTo="/login" component={<MainLayout />} />
         }
       >
-        {' '}
-        <Route path="userInfo" element={<UserInfo />} />
+        {/* <Route
+          path="userInfo"
+          element={
+            <PrivateRoute redirectTo="/login" component={<UserInfo />} />
+          }
+        /> */}
       </Route>
     </Routes>
   );
