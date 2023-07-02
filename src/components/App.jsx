@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { LoginPage } from '../pages/LoginPage/LoginPage';
-import { AuthSection } from './MainPage/AuthSection/AuthSection';
+// import { AuthSection } from './MainPage/AuthSection/AuthSection';
 import { MainLayout } from '../pages/MainLayout/MainLayout';
 import { RegisterPage } from 'pages/Register/RegisterPage';
 import { UserInfo } from './UserInfo/UserInfo';
