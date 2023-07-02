@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
-import { fetchTasks } from './taskOperation';
+import { fetchTasks, addTask } from './taskOperation';
 
 const taskReducer = createSlice({
   name: 'task',
@@ -11,7 +11,7 @@ const taskReducer = createSlice({
       isLoading: false,
       error: null,
     },
-    userRepo: [],
+
     columns: {
       [nanoid()]: {
         name: 'to-do',
@@ -36,7 +36,7 @@ const taskReducer = createSlice({
     },
     setData: (state, action) => {
       state.tasks = action.payload.tasks;
-      state.userRepo = action.payload.userRepo;
+
       state.columns = action.payload.columns;
     },
   },
@@ -78,6 +78,15 @@ const taskReducer = createSlice({
       state.tasks.isLoading = false;
     },
     [fetchTasks.rejected]: (state, { payload }) => {
+      state.tasks.isLoading = false;
+      state.tasks.error = payload;
+    },
+
+    [addTask.pending]: state => {
+      state.tasks.isLoading = true;
+    },
+
+    [addTask.rejected]: (state, { payload }) => {
       state.tasks.isLoading = false;
       state.tasks.error = payload;
     },

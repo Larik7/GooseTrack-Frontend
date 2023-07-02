@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getColumns } from 'redux/tasks/selectors';
@@ -24,13 +24,12 @@ export const TasksColumnsList = () => {
   const inProgressTasks = getTasksByCategory('in-progress');
   const doneTasks = getTasksByCategory('done');
 
-  const click = () => {
+  useEffect(() => {
     dispatch(fetchTasks());
-  };
+  }, [dispatch]);
 
   return (
     <div className={css.columns_section}>
-      <button onClick={click}>fetch</button>
       <ul className={css.container}>
         <li className={css.column} key={nanoid()}>
           <TasksColumn title="To Do" tasks={todoTasks} />

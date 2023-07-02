@@ -5,5 +5,5 @@ import { useSelector } from 'react-redux';
 export const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
   const token = useSelector(isToken);
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  return isLoggedIn && token ? <Navigate to={redirectTo} /> : Component;
+  return isLoggedIn && token ? <Navigate to={redirectTo} replace /> : Component;
 };

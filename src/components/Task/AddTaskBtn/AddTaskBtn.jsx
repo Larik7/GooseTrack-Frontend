@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { CreateTaskModal } from '../CreateTaskModal/CreateTaskModal';
-import { BiPlusCircle } from 'react-icons/bi';
-import css from './ColumnHeadBar.module.css';
 
-export const ColumnHeadBar = ({ title, tasks }) => {
+import css from './AddTaskBtn.module.css';
+
+export const AddTaskBtn = ({ tasks }) => {
   const [open, setOpen] = useState(false);
-
-  console.log(tasks);
 
   const onClose = () => {
     setOpen(!open);
@@ -14,9 +12,8 @@ export const ColumnHeadBar = ({ title, tasks }) => {
 
   return (
     <div className={css.head}>
-      <h2 className={css.title}>{title}</h2>
       <button onClick={onClose} className={css.add_btn}>
-        <BiPlusCircle className={css.icon} />
+        Add task
       </button>
       {open && <CreateTaskModal onClose={onClose} tasks={tasks} />}
     </div>

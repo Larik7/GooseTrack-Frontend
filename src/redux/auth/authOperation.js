@@ -84,3 +84,21 @@ export const currentPage = createAsyncThunk(
     }
   }
 );
+
+export const refreshToken = createAsyncThunk(
+  'auth/refreshToken',
+  async (data, thunkAPI) => {
+    try {
+      const response = await axios.post('/api/auth/refresh', { data });
+      const { accessToken, refreshToken } = response.data;
+      console.log(response);
+      // Оновлення токенів на фронтенді
+      setToken(refreshToken);
+
+      // Повернення оновлених токенів
+      return { accessToken, refreshToken };
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

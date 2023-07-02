@@ -1,0 +1,15 @@
+.add_btn {
+  width: 88%;
+  height: 52px;
+  margin: 16px 163px 16px 20px;
+
+  border-radius: 8px;
+  border: 1px dashed #3e85f3;
+  background: #e3f3ff;
+
+  margin: 32px 20px 28px 20px;
+}
+
+.add_btn:hover {
+  background-color: #3e85f3;
+}
