@@ -1,16 +1,3 @@
-.conteinerMainLayout {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 100vh;
-  /* outline: 1px solid red; */
-  background: var(--primary-background-color);
-  /* width: 335px; */
-  /* outline: 1px solid red; */
-  /*   background: var(--secondary-background-color);
-  padding: 0 15px; */
-}
 
 @media screen and (min-width: 1158px) {
   .conteinerMainLayout {
@@ -24,7 +11,7 @@
 }
 
 .mainComponent {
-  background-color: #fff;
+  background-color: var(--primary-background-color);
   border-radius: 16px;
 }
 
@@ -34,11 +21,6 @@
   }
 }
 
-.main {
-  display: flex;
-  background-color: var(--primary-background-color);
-  /*   display: block; */
-}
 
 @media (min-width: 375px) {
   .mainComponent {
@@ -56,10 +38,6 @@
 
   .main {
     display: flex;
-  }
-
-  .conteinerMainLayout {
-    background: var(--primary-background-color);
   }
 }
 
@@ -96,7 +74,7 @@
 .wrapper {
   border-radius: 16px;
   /* border: solid #e3f3ff; */
-  background: white;
+  background:  var(--primary-background-color);
   width: 1087px;
   height: 752px;
   padding-top: 134px;
@@ -144,7 +122,7 @@
 }
 
 .chart {
-  background: white;
+background-color: var(--primary-background-color);
   /* padding-top: 85px;
   padding-left: 40px;
   padding-left: 40px;
