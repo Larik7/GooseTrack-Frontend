@@ -31,9 +31,7 @@ export const MainLayout = () => {
 
   return (
     <div className={css.conteinerMainLayout}>
-//       <div className={!openMenu && css.backDrop} onClick={hendelBackDropClick}>
-//         {' '}
-//       </div>
+
       {!openMenu ? (
         <div className={css.backDrop} onClick={hendelBackDropClick}></div>
       ) : (
@@ -59,3 +57,8 @@ export const MainLayout = () => {
     </div>
   );
 };
+
+
+      //  <div className={!openMenu && css.backDrop} onClick={hendelBackDropClick}>
+      //    {' '}
+      //  </div>;
