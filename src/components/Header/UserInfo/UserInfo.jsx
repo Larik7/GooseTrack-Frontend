@@ -8,6 +8,7 @@ export const UserInfo = toggleShowSideBar => {
   const { user } = useSelector(selectUser);
   const [avatar, setAvatar] = useState(null);
 
+
   useEffect(() => {
     if (!user?.name) {
       setAvatar(null);
@@ -23,7 +24,7 @@ export const UserInfo = toggleShowSideBar => {
       onClick={() => toggleShowSideBar(false)}
     >
       <section className={css.UserInfoSection}>
-        <p className={css.userName}> {user.name} </p>
+        <p className={css.userName}>user </p>
         <div>
           {!user?.avatarUrl ? (
             <p className={css.avatarWord}>{avatar}</p>
