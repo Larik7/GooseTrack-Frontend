@@ -11,7 +11,7 @@ import { RestrictedRoute } from 'helpers/RestrictedRoute';
 import { PrivateRoute } from 'helpers/PrivetRoute';
 import { Vortex } from 'react-loader-spinner';
 import { MainPage } from 'pages/MainPage/MainPage';
-
+import { StatisticsPage } from '../pages/StatisticsPage/StatisticsPage';
 
 // import { LoginForm } from '../pages/LoginForm/LoginForm';
 
@@ -60,7 +60,8 @@ export const App = () => {
         element={
           <PrivateRoute redirectTo="/login" component={<MainLayout />} />
         }
-      >
+        >
+       <Route path="statistics" element={<StatisticsPage />} />
       </Route>
     </Routes>
   );
