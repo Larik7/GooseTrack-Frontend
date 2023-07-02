@@ -24,7 +24,7 @@ export const UserInfo = toggleShowSideBar => {
       onClick={() => toggleShowSideBar(false)}
     >
       <section className={css.UserInfoSection}>
-        <p className={css.userName}> UserName </p>
+        <p className={css.userName}> {user.name} </p>
         <div>
           {!user?.avatarUrl ? (
             <p className={css.avatarWord}>{avatar}</p>
