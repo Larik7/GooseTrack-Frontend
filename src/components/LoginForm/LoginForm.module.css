@@ -38,7 +38,7 @@
   }
 
   .inside_container {
-    background: #fff;
+    background: var(--log-background-color);
     border-radius: 8px;
     width: 375px;
     height: 388px;
@@ -54,8 +54,6 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 100%;
-
-    color: var(--nav-button-color-hover);
 
     text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
       0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
@@ -90,7 +88,7 @@
     font-size: 12px;
     line-height: 15px;
 
-    color: var(--primary-text-color);
+    color: var(--log-text-color);
 
     flex: none;
     order: 0;
@@ -123,7 +121,7 @@
     font-size: 14px;
     line-height: 129%;
 
-    color: var(--primary-text-color);
+    color: var(--log-text-color);
 
     padding-left: 14px;
 
@@ -151,7 +149,7 @@
     width: 100%;
     height: 46px;
 
-    background: var(--nav-button-color-hover);
+    background: var(--log-btn-color);
     box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
     border-radius: 16px;
 
@@ -165,7 +163,7 @@
   }
 
   .button:hover {
-    background: var(--button-color-hover);
+    background: var(--log-btn-hover);
   }
   .button_google {
     cursor: pointer;
@@ -282,22 +280,6 @@
     margin: 0 144px;
   }
 
-  .title {
-    margin-top: 40px;
-
-    margin-bottom: 40px;
-
-    font-weight: 600;
-    font-size: 24px;
-
-    line-height: 100%;
-
-    color: var(--nav-button-color-hover);
-
-    text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
-      0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
-  }
-
   .form {
     display: flex;
     flex-direction: column;
@@ -334,7 +316,7 @@
     font-size: 14px;
     line-height: 17px;
 
-    color: var(--primary-text-color);
+    color: var(--log-text-color);
   }
 
   .label_email.error_label {
@@ -391,7 +373,7 @@
     width: 400px;
     height: 46px;
 
-    background: var(--nav-button-color-hover);
+    background: var(--log-btn-color);
     box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
     border-radius: 16px;
 
@@ -519,7 +501,7 @@
 
     line-height: 100%;
 
-    color: var(--nav-button-color-hover);
+    color: var(--log-title-color);
 
     text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
       0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
@@ -561,7 +543,7 @@
     font-size: 14px;
     line-height: 17px;
 
-    color: var(--primary-text-color);
+    color: var(--log-text-color);
   }
   .label_email.error_label {
     color: red;
@@ -617,7 +599,7 @@
     width: 400px;
     height: 46px;
 
-    background: var(--nav-button-color-hover);
+    background: var(--log-btn-color);
     box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
     border-radius: 16px;
 
@@ -627,7 +609,7 @@
 
     letter-spacing: -0.02em;
 
-    color: var(--sidebar-background-color);
+    color: #ffffff;
   }
   .button:hover {
     background: var(--button-color-hover);
@@ -639,7 +621,7 @@
   .sign {
     /* position: absolute; */
     font-weight: 600;
-    color: var(--nav-button-color-hover);
+    color: var(--log-title-color);
 
     font-size: 18px;
     line-height: 24px;
