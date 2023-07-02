@@ -1,0 +1,19 @@
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;    
+  background-color:var(--mobile-bdg-color); 
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    margin-left: 289px;
+  }
+}
