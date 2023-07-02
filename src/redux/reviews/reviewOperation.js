@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { isToken } from 'redux/auth/selectors';
 axios.defaults.baseURL = 'https://goosetrackback.onrender.com/';
+
 export const fetchReviews = createAsyncThunk(
   '/reviews/fetchAll',
   async ({ page, limit }, thunkAPI) => {
@@ -16,6 +17,7 @@ export const fetchReviews = createAsyncThunk(
     }
   }
 );
+
 export const fetchOwnReviews = createAsyncThunk(
   '/reviews/fetchOwn',
   async (_, thunkAPI) => {
