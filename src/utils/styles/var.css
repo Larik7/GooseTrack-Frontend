@@ -58,6 +58,14 @@
   --high-color: #ea3d65;
   --medium-color: #f3b249;
   --low-color: #72c2f8;
+
+  /* login and logout */
+  --log-background-color: #FFFFFF;
+  --log-title-color:#3e85f3;
+  --log-text-color: #111111;
+  --log-btn-color:#3e85f3;
+  --log-btn-hover: #2b78ef;
+
 }
 
 [data-theme='dark'] {
@@ -86,6 +94,12 @@
   --feedback-editBtn-background: #353647;
   --feedback-cancelMini-background: #c08297;
   --feedback-border-color: rgba(255, 255, 255, 0.15);
+
+    /* login and logout */
+      --log-title-color: #3e85f3;
+      --log-text-color: #111111;
+      --log-btn-color: #3e85f3;
+     --log-btn-hover: #2b78ef;
 
   /* calendar */
   --close-btn-color: #ffffff;
