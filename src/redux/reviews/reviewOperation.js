@@ -3,20 +3,13 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { isToken } from 'redux/auth/selectors';
 axios.defaults.baseURL = 'https://goosetrackback.onrender.com/';
+
 export const fetchReviews = createAsyncThunk(
   '/reviews/fetchAll',
   async ({ page, limit }, thunkAPI) => {
-    const token = useSelector(isToken());
-    const header = `Authorization: Bearer ${token}`;
-    const axiosParams = {
-      headers: {
-        header,
-      },
-    };
     try {
       const { data } = await axios.get(
-        `api/reviews?limit=${limit}&page=${page}`,
-        axiosParams
+        `api/reviews?limit=${limit}&page=${page}`
       );
       return data.reviews;
     } catch (e) {
@@ -24,6 +17,7 @@ export const fetchReviews = createAsyncThunk(
     }
   }
 );
+
 export const fetchOwnReviews = createAsyncThunk(
   '/reviews/fetchOwn',
   async (_, thunkAPI) => {
@@ -32,6 +26,7 @@ export const fetchOwnReviews = createAsyncThunk(
     const axiosParams = {
       headers: {
         header,
+        'Content-type': 'Application/json',
       },
     };
     try {
@@ -51,6 +46,7 @@ export const addReview = createAsyncThunk(
     const axiosParams = {
       headers: {
         header,
+        'Content-type': 'Application/json',
       },
     };
     console.log(token);
@@ -71,6 +67,7 @@ export const deleteReview = createAsyncThunk(
     const axiosParams = {
       headers: {
         header,
+        'Content-type': 'Application/json',
       },
     };
     try {
@@ -90,6 +87,7 @@ export const updateReview = createAsyncThunk(
     const axiosParams = {
       headers: {
         header,
+        'Content-type': 'Application/json',
       },
     };
     try {

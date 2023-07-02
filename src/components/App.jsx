@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { LoginPage } from '../pages/LoginPage/LoginPage';
-import { AuthSection } from '../components/AuthSection/AuthSection';
+import { AuthSection } from './MainPage/AuthSection/AuthSection';
 import { MainLayout } from '../pages/MainLayout/MainLayout';
 import { RegisterPage } from 'pages/Register/RegisterPage';
 import { UserInfo } from './UserInfo/UserInfo';
@@ -12,8 +12,7 @@ import { selectIsRefreshing } from 'redux/auth/selectors';
 import { RestrictedRoute } from 'helpers/RestrictedRoute';
 import { PrivateRoute } from 'helpers/PrivetRoute';
 import { Vortex } from 'react-loader-spinner';
-import { StatisticPage } from './StatisticPage/StatisticPage';
-
+import { MainPage } from 'pages/MainPage/MainPage';
 // import { LoginForm } from '../pages/LoginForm/LoginForm';
 
 // import { Description } from './MainPage/Description/Description';
@@ -43,7 +42,8 @@ export const App = () => {
     />
   ) : (
     <Routes>
-      <Route path="/" element={<AuthSection />} />
+      <Route path="/" element={<MainPage />}></Route>
+
       <Route
         path="/login"
         element={
@@ -58,11 +58,12 @@ export const App = () => {
       />
       <Route
         path="/mainLayout"
-        element={<PrivateRoute redirectTo="/login" component={<MainLayout />} />}
-        >
-          <Route path="statistics" element={<StatisticPage />} />
+        element={
+          <PrivateRoute redirectTo="/login" component={<MainLayout />} />
+        }
+      >
+        {' '}
         <Route path="userInfo" element={<UserInfo />} />
-        <Route path="statistics" element={<StatisticPage />} />
       </Route>
     </Routes>
   );
