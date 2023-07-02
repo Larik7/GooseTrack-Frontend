@@ -1,0 +1,22 @@
+.container {
+  background: white;
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  align-items: center;
+}
+
+.shapebar {
+  border-radius: 10px;
+  color: #000;
+}
+
+.tasks {
+  color: #343434;
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 600;
+  line-height: 150%;
+  margin-left: 40px;
+  margin-top: 40px;
+}
