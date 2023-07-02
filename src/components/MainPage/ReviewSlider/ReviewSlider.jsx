@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
 import { fetchReviews } from 'redux/reviews/reviewOperation';
-import { selectAllReviews } from 'redux/reviews/selectors';
+import { selectAllReviews } from 'redux/reviews/reviewSelector';
 import { ReviewCard } from './ReviewCard';
 import sprite from 'icons/sprite.svg';
 import './ReviewSlider.module.css';
