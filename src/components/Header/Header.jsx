@@ -2,7 +2,7 @@
 import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
 import cssLogo from '../SideBar/sideBar.module.css';
 import css from './header.module.css';
-import avatar from '../../images/avatars/avatarShev.jpg';
+// import avatar from '../../images/avatars/avatarShev.jpg';
 
 import { RxHamburgerMenu } from 'react-icons/rx';
 // переключатели темы
@@ -10,14 +10,14 @@ import { ThemeToggler } from './ThemeToggle/ThemeToggle';
 import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 
 import {Tour} from '../Tour/Tour'
+import { UserInfo } from './UserInfo/UserInfo';
 
 // import { HiOutlineSun } from "react-icons/hi"
 
-export const Header = ({ openMenu, setOpen}) => {
-
+export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
   const handlerMenu = () => {
     setOpen(!openMenu);
-       };
+  };
 
   return (
     <header className={css.header}>
@@ -35,14 +35,11 @@ export const Header = ({ openMenu, setOpen}) => {
         </button>
         <p className={css.infoTitle}>Info Title</p>
         <div className={css.conteinerBtn}>
-        <AddFeedbackBtn feedbackBtnStyle={css.feedbackBtn}/>
+          <AddFeedbackBtn feedbackBtnStyle={css.feedbackBtn} />
           <div className={css.infoMenu}>
             <ThemeToggler />
-            <Tour/>
-            <p className={css.userName}> UserName </p>
-            <div className={css.imgBox}>
-              <img src={avatar} alt="userImg" />
-            </div>
+            <Tour />
+            <UserInfo toggleShowSideBar={toggleShowSideBar} />
           </div>
         </div>
       </div>

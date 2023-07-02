@@ -1,6 +1,6 @@
-import Goose from '../../images/Goose.png';
+import Goose from '../../../images/Goose.png';
 import { FiLogIn } from 'react-icons/fi';
-import { ButtonNavigation } from '../AuthNavigate/AuthNavigate';
+import { ButtonNavigation } from '../../AuthNavigate/AuthNavigate';
 import css from './AuthSection.module.css';
 
 export const AuthSection = () => {

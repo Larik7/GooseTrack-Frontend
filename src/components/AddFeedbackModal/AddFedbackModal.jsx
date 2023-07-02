@@ -10,8 +10,6 @@ export const AddFeedbackModal = ({ onCloseModal }) => {
     setReview(reviewOwn);
   }, [reviewOwn]);
 
-  console.log(reviewOwn);
-
   function handleCloseModal() {
     onCloseModal();
   }
