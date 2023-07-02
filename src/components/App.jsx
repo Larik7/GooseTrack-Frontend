@@ -61,12 +61,6 @@ export const App = () => {
           <PrivateRoute redirectTo="/login" component={<MainLayout />} />
         }
       >
-        {/* <Route
-          path="userInfo"
-          element={
-            <PrivateRoute redirectTo="/login" component={<UserInfo />} />
-          }
-        /> */}
       </Route>
     </Routes>
   );

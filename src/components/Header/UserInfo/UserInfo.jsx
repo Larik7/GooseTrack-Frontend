@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import avatar from '../../../images/avatars/avatarShev.jpg';
 import css from './UserInfo.module.css';
 import { useSelector } from 'react-redux';
 import { selectUser } from 'redux/auth/selectors';
