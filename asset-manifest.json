@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/GooseTrack-Frontend/static/css/main.1db82b09.css",
-    "main.js": "/GooseTrack-Frontend/static/js/main.8f08ac3d.js",
+    "main.css": "/GooseTrack-Frontend/static/css/main.4ddfd255.css",
+    "main.js": "/GooseTrack-Frontend/static/js/main.6b820ed9.js",
     "static/media/tablet_calendar@2x.png": "/GooseTrack-Frontend/static/media/tablet_calendar@2x.844cff810c188f6f25a7.png",
     "static/media/desktop_calendar@2x.png": "/GooseTrack-Frontend/static/media/desktop_calendar@2x.511158f67c65ff6302fb.png",
     "static/media/Inter-Bold.eot": "/GooseTrack-Frontend/static/media/Inter-Bold.7e9fff4114e0ea385c94.eot",
@@ -46,15 +46,16 @@
     "static/media/CoolveticaRg-Italic.woff2": "/GooseTrack-Frontend/static/media/CoolveticaRg-Italic.354b20eb1b8d25af62a1.woff2",
     "static/media/CoolveticaRg-Regular.woff2": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.3829e81cd606bef6e1e9.woff2",
     "static/media/mobile_all.png": "/GooseTrack-Frontend/static/media/mobile_all.7437604843643f7b4866.png",
+    "static/media/Goose404.png": "/GooseTrack-Frontend/static/media/Goose404.d205738fb69673dcde2a.png",
     "static/media/Goose.png": "/GooseTrack-Frontend/static/media/Goose.cf97a81d5acf2bc6829f.png",
     "static/media/sprite.svg": "/GooseTrack-Frontend/static/media/sprite.e95ac571742d3970ecc3aea57e2db0cf.svg",
     "index.html": "/GooseTrack-Frontend/index.html",
     "static/media/x-close.svg": "/GooseTrack-Frontend/static/media/x-close.cffc8a086992ad16f1f0db83c5a8a66f.svg",
-    "main.1db82b09.css.map": "/GooseTrack-Frontend/static/css/main.1db82b09.css.map",
-    "main.8f08ac3d.js.map": "/GooseTrack-Frontend/static/js/main.8f08ac3d.js.map"
+    "main.4ddfd255.css.map": "/GooseTrack-Frontend/static/css/main.4ddfd255.css.map",
+    "main.6b820ed9.js.map": "/GooseTrack-Frontend/static/js/main.6b820ed9.js.map"
   },
   "entrypoints": [
-    "static/css/main.1db82b09.css",
-    "static/js/main.8f08ac3d.js"
+    "static/css/main.4ddfd255.css",
+    "static/js/main.6b820ed9.js"
   ]
 }
