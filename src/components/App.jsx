@@ -12,6 +12,7 @@ import { Vortex } from 'react-loader-spinner';
 import { MainPage } from 'pages/MainPage/MainPage';
 import { StatisticsPage } from '../pages/StatisticsPage/StatisticsPage';
 import { CalendarPage } from '../pages/Calendar/CalendarPage';
+import { Page404 } from 'pages/Page404/Page404';
 
 // import { LoginForm } from '../pages/LoginForm/LoginForm';
 
@@ -41,7 +42,7 @@ export const App = () => {
       colors={['blue', 'blue', 'blue', 'yellow', 'yellow', 'yellow']}
     />
   ) : (
-    <Routes>
+      <Routes>
       <Route path="/" element={<MainPage />}></Route>
       <Route
         path="/login"
@@ -63,7 +64,8 @@ export const App = () => {
       >
         <Route path="statistics" element={<StatisticsPage />} />
         <Route path="calendar" element={<CalendarPage />} />
-      </Route>
+        </Route>
+         <Route path="*" element={<Page404 />} /> 
     </Routes>
   );
 };
