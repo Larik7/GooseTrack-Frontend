@@ -11,7 +11,7 @@ import {
 } from 'recharts';
 import { fetchTasks } from 'redux/tasks/taskOperation';
 import { useEffect } from 'react';
-import { getAllTasks } from 'redux/tasks/selectors';
+import { selectAllTasks } from 'redux/tasks/selectors';
 
 const tasks = [
   {
@@ -70,7 +70,7 @@ const currentMonth = 5;
 
 export const StatisticsChart = () => {
   const dispatch = useDispatch();
-  const tasksBD = useSelector(getAllTasks);
+  const tasksBD = useSelector(selectAllTasks);
 
   useEffect(() => {
     dispatch(fetchTasks());

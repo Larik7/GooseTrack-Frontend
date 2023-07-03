@@ -1,4 +1,3 @@
-
 @media screen and (min-width: 1158px) {
   .conteinerMainLayout {
     width: 100%;
@@ -20,7 +19,6 @@
     width: 1440px;
   }
 }
-
 
 @media (min-width: 375px) {
   .mainComponent {
@@ -73,18 +71,31 @@
 
 .wrapper {
   border-radius: 16px;
-  /* border: solid #e3f3ff; */
-  background:  var(--primary-background-color);
-  width: 1087px;
-  height: 752px;
+  background: var(--sidebar-background-color);
+  width: 335px;
+  height: 684px;
   padding-top: 134px;
   padding-left: 113px;
   padding-right: 113px;
   padding-bottom: 104px;
+
+  @media screen and (min-width: 768px) {
+    width: 704px;
+    height: 854px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    border-radius: 16px;
+    width: 1087px;
+    height: 752px;
+    padding-top: 134px;
+    padding-left: 113px;
+    padding-right: 113px;
+    padding-bottom: 104px;
+  }
 }
 
 .upperchart {
-  /* width: 1087px; */
   height: 34px;
   display: flex;
   justify-content: flex-end;
@@ -99,7 +110,6 @@
 }
 
 .itemDay::before {
-  /* position: absolute; */
   content: '';
   display: inline-block;
   background-color: #ffd2dd;
@@ -122,13 +132,22 @@
 }
 
 .chart {
-background-color: var(--primary-background-color);
-  /* padding-top: 85px;
-  padding-left: 40px;
-  padding-left: 40px;
-  padding-bottom: 69px; */
+  background-color: var(--sidebar-background-color);
   border-radius: 29px;
   border: 1px solid #e3f3ff;
-  width: 860px;
-  height: 440px;
+  /* width: 335px; */
+  /* height: 684px; */
+
+  @media screen and (min-width: 768px) {
+    width: 640px;
+    height: 424px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    /* background-color: var(--sidebar-background-color); */
+    /* border-radius: 29px; */
+    /* border: 1px solid #e3f3ff; */
+    width: 860px;
+    height: 440px;
+  }
 }
