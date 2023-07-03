@@ -6,8 +6,6 @@ import css from './ColumnHeadBar.module.css';
 export const ColumnHeadBar = ({ title, tasks }) => {
   const [open, setOpen] = useState(false);
 
-  console.log(tasks);
-
   const onClose = () => {
     setOpen(!open);
   };
