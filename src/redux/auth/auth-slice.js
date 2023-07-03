@@ -32,16 +32,19 @@ const authSlice = createSlice({
     },
     [logIn.pending](state) {
       state.isLoggedIn = false;
+      state.isRefreshing = true;
     },
     [logIn.fulfilled](state, { payload }) {
       state.user.name = payload.name;
       state.user.email = payload.email;
       state.accessToken = payload.accessToken;
       state.isLoggedIn = true;
+      state.isRefreshing = false;
     },
     [logIn.rejected](state, { payload }) {
       state.error = payload;
       state.isLoggedIn = true;
+      state.isRefreshing = false;
     },
     [logOut.pending](state) {
       state.isLoggedIn = false;

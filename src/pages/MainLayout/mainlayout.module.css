@@ -1,5 +1,4 @@
 .conteinerMainLayout {
-
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -9,28 +8,21 @@
   background: var(--primary-background-color);
   /* width: 335px; */
   /* outline: 1px solid red; */
-/*   background: var(--secondary-background-color);
+  /*   background: var(--secondary-background-color);
   padding: 0 15px; */
 }
 
 @media screen and (min-width: 1158px) {
   .conteinerMainLayout {
-
     width: 100%;
-    height: 100vh
+    height: 100vh;
   }
-
-}
-.main {
-  background-color: var(--primary-background-color);
-  padding: 40px 20px ;
 }
 
 .mainComponent {
   background-color: #fff;
   border-radius: 16px;
 }
-
 
 @media (min-width: 1440px) {
   .conteinerMainLayout {
@@ -41,8 +33,9 @@
 .main {
   display: flex;
   background-color: var(--primary-background-color);
-/*   display: block; */
-
+  /*   display: block; */
+  padding: 40px 20px;
+  justify-content: center;
 }
 
 @media (min-width: 375px) {
@@ -63,12 +56,10 @@
     display: flex;
   }
 
-    .conteinerMainLayout {
-
-      background: var(--primary-background-color);
-    }
+  .conteinerMainLayout {
+    background: var(--primary-background-color);
+  }
 }
-
 
 @media (min-width: 1440px) {
   .mainComponent {
@@ -87,16 +78,15 @@
   }
 }
 @media (max-width: 1439px) {
- .backDrop{ 
-  width: 100%;
-height:100%;
-position: fixed;
-z-index: 1;
-top: 0;
-left: 0;
+  .backDrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
 
-backdrop-filter: blur(2px);
-background-color: rgba(35, 100, 138, 0.349);
-
-}}
-
+    backdrop-filter: blur(2px);
+    background-color: rgba(35, 100, 138, 0.349);
+  }
+}
