@@ -82,6 +82,22 @@
     font-weight: 600;
     line-height: 12px;
   }
+  .avatarWord {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text-color);
+    background-color: #3e85f3;
+    font-family: var(--button-font);
+    font-weight: 700;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1.8px solid var(--nav-button-color-hover);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -163,5 +179,21 @@
 
     font-weight: 600;
     line-height: 12px;
+  }
+  .avatarWord {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text-color);
+    background-color: #3e85f3;
+    font-family: var(--button-font);
+    font-weight: 700;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1.8px solid var(--nav-button-color-hover);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
   }
 }

@@ -2,16 +2,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// const { TOKEN } = require('../config');
-
-// const octokit = new Octokit({
-//   TOKEN,
-// });
+const setToken = accessToken => {
+  axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+};
 
 export const fetchTasks = createAsyncThunk(
   'task/fetchAll',
-  async (_, { rejectWithValue }) => {
+  async (_, { rejectWithValue, getState }) => {
+    const { auth } = getState();
+    const accessToken = auth.accessToken;
+    if (accessToken === null) {
+      return rejectWithValue('We dont have a token');
+    }
     try {
+      setToken(accessToken);
       const response = await axios.get('api/tasks');
 
       return response.data;
@@ -23,11 +27,16 @@ export const fetchTasks = createAsyncThunk(
 
 export const addTask = createAsyncThunk(
   'task/add',
-  async (task, { rejectWithValue }) => {
+  async (task, { rejectWithValue, getState }) => {
+    console.log(task);
+    const { auth } = getState();
+    const accessToken = auth.accessToken;
+    if (accessToken === null) {
+      return rejectWithValue('We dont have a token');
+    }
     try {
-      console.log(task);
+      setToken(accessToken); // Розкоментуйте цей рядок
       const response = await axios.post('api/tasks', task);
-
       console.log(response);
       return response.data;
     } catch (error) {

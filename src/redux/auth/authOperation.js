@@ -70,6 +70,7 @@ export const currentPage = createAsyncThunk(
     const { auth } = thunkAPI.getState();
 
     const accessToken = auth.accessToken;
+
     if (accessToken === null) {
       return thunkAPI.rejectWithValue('We dont have a token');
     }
