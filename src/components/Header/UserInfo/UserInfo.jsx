@@ -5,21 +5,19 @@ import { selectUser } from 'redux/auth/selectors';
 import { NavLink } from 'react-router-dom';
 
 export const UserInfo = toggleShowSideBar => {
-  const { user } = useSelector(selectUser) ?? {};
+  const user = useSelector(selectUser) ?? {};
   const [avatar, setAvatar] = useState(null);
 
   useEffect(() => {
-
-    if (!user?.name) {
+    if (!user.name) {
       setAvatar(null);
     } else {
-      setAvatar(user?.name.slice(0, 1).toUpperCase());
+      setAvatar(user.name.slice(0, 1).toUpperCase());
     }
-  }, [user?.name]);
+  }, [user.name]);
 
-
-  const username = user?.name ?? '';
-  const imgURL = user?.imgURL ?? null;
+  const username = user.name ?? '';
+  const imgURL = user.imgURL ?? null;
 
   return (
     <NavLink

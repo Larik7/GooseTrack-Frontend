@@ -22,7 +22,7 @@ const authSlice = createSlice({
     [register.pending](state) {
       state.isLoggedIn = false;
     },
-    [register.fulfilled](state, {payload}) {
+    [register.fulfilled](state, { payload }) {
       state.accessToken = payload.accessToken;
       state.isLoggedIn = true;
     },
@@ -34,7 +34,8 @@ const authSlice = createSlice({
       state.isLoggedIn = false;
     },
     [logIn.fulfilled](state, { payload }) {
-      state.user = payload.user;
+      state.user.name = payload.name;
+      state.user.email = payload.email;
       state.accessToken = payload.accessToken;
       state.isLoggedIn = true;
     },

@@ -77,7 +77,7 @@ export const currentPage = createAsyncThunk(
     try {
       setToken(accessToken);
       const res = await axios.get('api/auth/current');
-      console.log(res);
+
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -91,7 +91,7 @@ export const refreshToken = createAsyncThunk(
     try {
       const response = await axios.post('/api/auth/refresh', { data });
       const { accessToken, refreshToken } = response.data;
-      console.log(response);
+
       // Оновлення токенів на фронтенді
       setToken(refreshToken);
 
