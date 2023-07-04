@@ -8,10 +8,13 @@ import {
   CartesianGrid,
   Tooltip,
   LabelList,
+  ResponsiveContainer,
+  
 } from 'recharts';
 import { fetchTasks } from 'redux/tasks/taskOperation';
 import { useEffect } from 'react';
 import { selectAllTasks } from 'redux/tasks/selectors';
+
 
 const tasks = [
   {
@@ -165,16 +168,19 @@ export const StatisticsChart = () => {
 
 
   const strokeVar = 'var(--primary-text-color)';
+  const backgraondColor = 'var(--tooltip-color)';
+
+  
 
   return (
     <>
       <p className={css.tasks}>
         <b>Tasks</b>
       </p>
+      <ResponsiveContainer width="100%" height="90%">
       <BarChart
-        width={780}
-        height={400}
         data={tasksForChart}
+        
         margin={{
           top: 35,
           right: 0,
@@ -182,11 +188,12 @@ export const StatisticsChart = () => {
           bottom: 50,
         }}
       >
-        <CartesianGrid stroke="#E3F3FF" strokeDasharray="0" vertical={false} />
-        <XAxis dataKey="name"  stroke="0" tick={{ fill: strokeVar }} /> 
-        <YAxis stroke="0" tick={{ fill: strokeVar }}/>
-        <Tooltip />
-        <defs>
+        <CartesianGrid stroke="#E3F3FF" strokeDasharray="0" vertical={false}  />
+        <XAxis dataKey="name"   stroke="0" tick={{ fill: strokeVar, dy: 10  }}   /> 
+        <YAxis stroke="0" tick={{ fill: strokeVar, dx: -20 }}/>
+        <Tooltip contentStyle={{ color: strokeVar, backgroundColor: backgraondColor, borderRadius: '10px',}} />
+
+        <defs >
           <linearGradient id="colorDay" x1="0" y1="1" x2="0" y2="0">
             <stop offset="1%" stopColor="#FFD2DD" stopOpacity={0.8} />
             <stop offset="99%" stopColor="#FFD2DD" stopOpacity={0} />
@@ -196,7 +203,7 @@ export const StatisticsChart = () => {
             <stop offset="99%" stopColor="#3E85F3" stopOpacity={0} />
           </linearGradient>
         </defs>
-        <Bar dataKey="ByDay" fill="url(#colorDay)" barSize={27} radius={[0,0,10,10]}>
+        <Bar dataKey="ByDay" fill="url(#colorDay)" barSize={27} radius={[0,0,10,10]} >
           <LabelList dataKey="ByDayPercent" position="top" fill={strokeVar} fontWeight="lighter"  />
         </Bar>
         <Bar
@@ -205,9 +212,10 @@ export const StatisticsChart = () => {
           barSize={27}
           radius={[0,0,10,10]}
         >
-          <LabelList dataKey="ByMonthPercent" position="top"  fill={strokeVar} fontWeight="lighter"  />
+          <LabelList dataKey="ByMonthPercent" position="top"  fill={strokeVar} fontWeight="lighter"   />
         </Bar>
-      </BarChart>
+        </BarChart>
+        </ResponsiveContainer>
     </>
   );
 };
