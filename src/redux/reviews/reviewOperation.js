@@ -1,17 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
-import { isToken } from 'redux/auth/selectors';
-axios.defaults.baseURL = 'https://goosetrackback.onrender.com/';
 
+axios.defaults.baseURL = 'https://goosetrackback.onrender.com/';
+const setToken = accessToken => {
+  axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+};
 export const fetchReviews = createAsyncThunk(
   '/reviews/fetchAll',
-  async ({ page, limit }, thunkAPI) => {
+  async (_, thunkAPI) => {
     try {
-      const { data } = await axios.get(
-        `api/reviews?limit=${limit}&page=${page}`
-      );
-      return data.reviews;
+      const { data } = await axios.get(`/api/reviews`);
+      return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -20,85 +19,71 @@ export const fetchReviews = createAsyncThunk(
 
 export const fetchOwnReviews = createAsyncThunk(
   '/reviews/fetchOwn',
-  async (_, thunkAPI) => {
-    const token = useSelector(isToken());
-    const header = `Authorization: Bearer ${token}`;
-    const axiosParams = {
-      headers: {
-        header,
-        'Content-type': 'Application/json',
-      },
-    };
+  async (_, { rejectWithValue, getState }) => {
+    const { auth } = getState();
+    const accessToken = auth.accessToken;
+    if (accessToken === null) {
+      return rejectWithValue('We dont have a token');
+    }
     try {
-      const { data } = await axios.get('api/reviews/own', axiosParams);
-      console.log(data);
+      setToken(accessToken);
+      const { data } = await axios.get('api/reviews/own');
       return data.reviews;
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+      return rejectWithValue(e.message);
     }
   }
 );
 export const addReview = createAsyncThunk(
   'reviews/addReview',
-  async (review, thunkAPI) => {
-    const token = useSelector(isToken());
-    const header = `Authorization: Bearer ${token}`;
-    const axiosParams = {
-      headers: {
-        header,
-        'Content-type': 'Application/json',
-      },
-    };
-    console.log(token);
+  async (review, { rejectWithValue, getState }) => {
+    const { auth } = getState();
+    const accessToken = auth.accessToken;
+    if (accessToken === null) {
+      return rejectWithValue('We dont have a token');
+    }
     try {
-      const { data } = await axios.post('api/reviews/own', axiosParams, review);
+      setToken(accessToken);
+      const { data } = await axios.post('api/reviews/own', review);
       return data.data;
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+      return rejectWithValue(e.message);
     }
   }
 );
 
 export const deleteReview = createAsyncThunk(
   'reviews/deleteReview',
-  async (_, thunkAPI) => {
-    const token = useSelector(isToken());
-    const header = `Authorization: Bearer ${token}`;
-    const axiosParams = {
-      headers: {
-        header,
-        'Content-type': 'Application/json',
-      },
-    };
+  async (_, { rejectWithValue, getState }) => {
+    const { auth } = getState();
+    const accessToken = auth.accessToken;
+    if (accessToken === null) {
+      return rejectWithValue('We dont have a token');
+    }
     try {
-      const { data } = await axios.delete(`api/reviews/own`, axiosParams);
+      setToken(accessToken);
+      const { data } = await axios.delete(`api/reviews/own`);
       return data;
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+      return rejectWithValue(e.message);
     }
   }
 );
 
 export const updateReview = createAsyncThunk(
   'reviews/updateReview',
-  async ({ id, review }, thunkAPI) => {
-    const token = useSelector(isToken());
-    const header = `Authorization: Bearer ${token}`;
-    const axiosParams = {
-      headers: {
-        header,
-        'Content-type': 'Application/json',
-      },
-    };
+  async (review, { rejectWithValue, getState }) => {
+    const { auth } = getState();
+    const accessToken = auth.accessToken;
+    if (accessToken === null) {
+      return rejectWithValue('We dont have a token');
+    }
     try {
-      const { data } = await axios.patch(
-        `api/reviews/own`,
-        axiosParams,
-        review
-      );
+      setToken(accessToken);
+      const { data } = await axios.patch(`api/reviews/own`, review);
       return data;
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+      return rejectWithValue(e.message);
     }
   }
 );
