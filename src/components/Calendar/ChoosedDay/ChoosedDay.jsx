@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { selectAllTasks } from 'redux/tasks/selectors';
 import { DayCalendarHead } from './DayCalendarHead/DayCalendarHead';
-import { TasksColumnsList } from './TasksCopmonents/TasksColumnsList/TasksColumnsList';
+import { TasksColumnsList } from '../../Task/TasksColumnsList/TasksColumnsList';
 import { useParams } from 'react-router-dom';
 import css from './ChoosedDay.module.css';
 
