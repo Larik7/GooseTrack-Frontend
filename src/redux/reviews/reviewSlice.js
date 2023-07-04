@@ -47,7 +47,7 @@ export const reviewsSlice = createSlice({
       .addCase(addReview.pending, handlePending)
       .addCase(addReview.fulfilled, (state, { payload }) => {
         state.reviews = [...state.reviews, payload];
-        state.ownReviews = [...payload];
+        state.ownReviews = payload;
         state.isLoading = false;
         state.error = null;
       })
@@ -60,9 +60,7 @@ export const reviewsSlice = createSlice({
         state.reviews = Array.isArray(state.reviews)
           ? state.reviews.filter(review => review.id !== payload.id)
           : [];
-        state.ownReviews = state.ownReviews?.filter(
-          review => review.id !== payload.id
-        );
+        state.ownReviews = [];
       })
       .addCase(deleteReview.rejected, handleRejected)
 
@@ -70,24 +68,9 @@ export const reviewsSlice = createSlice({
       .addCase(updateReview.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        state.reviews = state.reviews?.map(review => {
-          if (review._id === payload._id) {
-            return payload;
-          }
-          return review;
-        });
-        state.ownReviews = state.ownReviews?.map(review =>
-          review.id === payload.id ? payload : review
-        );
+        state.ownReviews = payload;
       })
       .addCase(updateReview.rejected, handleRejected);
-
-    //   .addCase(logOut.fulfilled, state => {
-    //     state.reviews = [];
-    //     state.ownReviews = [];
-    //     state.error = null;
-    //     state.isLoading = false;
-    //   });
   },
 });
 
