@@ -1,0 +1,30 @@
+.toolbar_list {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar_button {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  cursor: pointer;
+}
+
+.toolbar_svg {
+  fill: var(--task-item-background-color);
+  stroke: var(--primary-text-color);
+}
+
+.toolbar_svg:hover,
+.toolbar_svg:focus {
+  stroke: var(--nav-button-color-hover);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 767px) {
+  .toolbar_svg {
+    width: 16px;
+    height: 16px;
+  }
+}
