@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // Перевірити редукс!!!!
-import { isToken } from '../../redux/auth/selectors';
-import { refreshToken } from '../../redux/auth/authOperation';
+import { selectUser } from '../../redux/auth/selectors';
+import { updateUser } from '../../redux/auth/authOperation';
 import moment from 'moment';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { UserFormSchema } from './UserFormSchema';
@@ -13,7 +13,7 @@ import userAvatar from '../../images/avatars/avatarShev.jpg';
 
 export const UserForm = ({ theme = '' }) => {
   const dispatch = useDispatch();
-  const userInfo = useSelector(isToken);
+  const userInfo = useSelector(selectUser);
   const [previewImageUrl, setPreviewImageUrl] = useState(null);
   const [file, setFile] = useState(null);
 
@@ -44,7 +44,7 @@ export const UserForm = ({ theme = '' }) => {
       formData.append('avatar', file);
     }
     try {
-      await dispatch(refreshToken(formData));
+      await dispatch(updateUser(formData));
       Notify.success('Success.Info updated.');
     } catch (error) {
       console.log(error);
