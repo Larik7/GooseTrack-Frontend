@@ -8,7 +8,7 @@ import {
   MyCloseIcon,
 } from './Modal.styled';
 
-
+// Export modal
 export const Modal = ({ children, handlerCloseModal }) => {
   const handleKeyDown = useCallback(
     evt => {
