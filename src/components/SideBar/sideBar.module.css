@@ -2,7 +2,6 @@
   width: 225px;
   /* outline: 1px solid red; */
   background-color: var(--sidebar-background-color);
-  border-right: 1px solid rgba(220, 227, 229, 0.50);
   height: 1024px;
   display: flex;
   flex-direction: column;
@@ -26,6 +25,12 @@
     font-size: 16px;
     line-height: 22px;
     margin-right: 36px;
+  }
+   .open {
+  transform: translateX(0);
+    position: absolute;
+    top :0;
+    z-index:10;
   }
 }
 
@@ -51,12 +56,6 @@
   position: absolute;
   top :0
   }
- .open {
-  transform: translateX(0);
-    position: absolute;
-    top :0;
-    z-index:10;
-  }
 
 }
 
@@ -74,7 +73,7 @@
   }
 
   .conteinerSideBar {
-    border-right: 1px solid rgba(220, 227, 229, 0.5);
+
     width: 290px;
     height: 785px;
   }

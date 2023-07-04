@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import { Modal } from 'components/Modal/Modal';
 import { useResponse } from 'hooks';
-import './ReviewCard.module.css';
+import css from './ReviewCard.module.css';
 import sprite from 'icons/sprite.svg';
 
 
@@ -28,9 +28,9 @@ export const ReviewCard = props => {
   const formattedComment = shortenComment(props.children);
 
   return (
-    <div className="ReviewCardContainer">
-      <div className="HeaderContainer">
-        <div className="AvatarWrapper">
+    <div className={css.ReviewCardContainer}>
+      <div className={css.HeaderContainer}>
+        <div className={css.AvatarWrapper}>
           {props.src ? (
             <img src={props.src} alt="User avatar" />
           ) : (
@@ -42,7 +42,7 @@ export const ReviewCard = props => {
 
         <div>
           <h3>{props.name}</h3>
-          <ul className="StarContainer" value={props.num}>
+          <ul className={css.StarContainer} value={props.num}>
             <li>
               <svg height="14" width="14">
                 <use href={sprite + '#star'}></use>
@@ -72,12 +72,12 @@ export const ReviewCard = props => {
         </div>
       </div>
 
-      <div className="CommentText" onClick={toggleModal}>
+      <div className={css.CommentText} onClick={toggleModal}>
         {formattedComment}
         </div>
       {isModalOpen && (
         <Modal handlerCloseModal={toggleModal}>
-          <div className="ModalContent">
+          <div className={css.ModalContent}>
             {props.children}
             </div>
         </Modal>

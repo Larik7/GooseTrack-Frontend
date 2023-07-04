@@ -28,7 +28,7 @@ export const fetchOwnReviews = createAsyncThunk(
     try {
       setToken(accessToken);
       const { data } = await axios.get('api/reviews/own');
-      return data.reviews;
+      return data;
     } catch (e) {
       return rejectWithValue(e.message);
     }
@@ -45,7 +45,7 @@ export const addReview = createAsyncThunk(
     try {
       setToken(accessToken);
       const { data } = await axios.post('api/reviews/own', review);
-      return data.data;
+      return data;
     } catch (e) {
       return rejectWithValue(e.message);
     }
