@@ -115,9 +115,10 @@ const taskReducer = createSlice({
     [updateTask.fulfilled]: (state, { payload }) => {
       state.tasks.isLoading = false;
       state.tasks.error = null;
-      state.tasks.allTasks = state.tasks.allTasks.map(task =>
-        task._id === payload._id ? payload : task
+      const taskIndex = state.tasks.allTasks.findIndex(
+        task => task._id === payload._id
       );
+      state.tasks[taskIndex] = payload.task;
     },
 
     [updateTask.rejected]: (state, { payload }) => {

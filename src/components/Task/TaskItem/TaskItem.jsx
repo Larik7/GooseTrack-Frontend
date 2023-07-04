@@ -52,7 +52,7 @@ export const TaskItem = ({ task }) => {
           <p className={`${priorityClass}`}>{task.priority}</p>
         </div>
         <div className={css.btn_box}>
-          <TaskToolbar id={task._id} />
+          <TaskToolbar task={task} />
         </div>
       </div>
     </div>
