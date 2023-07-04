@@ -6,7 +6,7 @@ import { refreshToken } from '../../redux/auth/authOperation';
 import moment from 'moment';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { UserFormSchema } from './UserFormSchema';
-import { DatePicker } from './DatePicker/DatePicker';
+import { MyDatePicker } from './DatePicker/DatePicker';
 import { Notify } from 'notiflix';
 import css from './UserForm.module.css';
 import userAvatar from '../../images/avatars/avatarShev.jpg';
@@ -131,7 +131,7 @@ export const UserForm = ({ theme = '' }) => {
                   className={`${css.username_form__label} ${theme}`}
                 >
                   Birthday:
-                  <DatePicker
+                  <MyDatePicker
                     name="birthday"
                     birthday={formik.values.birthday}
                     className={css.my_date_picker}
