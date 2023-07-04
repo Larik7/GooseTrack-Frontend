@@ -46,15 +46,15 @@ export const addTask = createAsyncThunk(
 );
 
 export const updateTask = createAsyncThunk(
-  'task/update',
-  async ({ id, task }, { rejectWithValue, getState }) => {
+  'task/updateTask',
+  async ({ taskId, task }, { rejectWithValue, getState }) => {
     const { auth } = getState();
     const accessToken = auth.accessToken;
     if (accessToken === null) {
       return rejectWithValue('We dont have a token');
     }
     try {
-      const response = await axios.patch(`api/tasks/${id}`, task);
+      const response = await axios.patch(`api/tasks/${taskId}`, { ...task });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -63,9 +63,8 @@ export const updateTask = createAsyncThunk(
 );
 
 export const deleteTask = createAsyncThunk(
-  'task/delete',
+  'task/deleteTask',
   async (taskId, { rejectWithValue, getState }) => {
-    console.log(taskId);
     const { auth } = getState();
     const accessToken = auth.accessToken;
     if (accessToken === null) {

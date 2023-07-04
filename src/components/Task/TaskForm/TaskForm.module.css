@@ -214,6 +214,11 @@
   .radio_button:hover input[type='radio']:checked + .radio_circle::before {
     background-color: #555;
   }
+
+  .toolbar_svg {
+    fill: transparent;
+    stroke: var(--sidebar-background-color);
+  }
 }
 @media (min-width: 768px) {
   .modal_form {
@@ -429,5 +434,12 @@
 
   .radio_button:hover input[type='radio']:checked + .radio_circle::before {
     background-color: #555;
+  }
+
+  .toolbar_svg {
+    fill: transparent;
+    stroke: var(--sidebar-background-color);
+    width: 18px;
+    height: 18px;
   }
 }
