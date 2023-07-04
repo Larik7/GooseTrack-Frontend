@@ -3,7 +3,7 @@ import { CreateTaskModal } from '../CreateTaskModal/CreateTaskModal';
 import { BiPlusCircle } from 'react-icons/bi';
 import css from './ColumnHeadBar.module.css';
 
-export const ColumnHeadBar = ({ title, tasks }) => {
+export const ColumnHeadBar = ({ title, category }) => {
   const [open, setOpen] = useState(false);
 
   const onClose = () => {
@@ -16,7 +16,7 @@ export const ColumnHeadBar = ({ title, tasks }) => {
       <button onClick={onClose} className={css.add_btn}>
         <BiPlusCircle className={css.icon} />
       </button>
-      {open && <CreateTaskModal onClose={onClose} tasks={tasks} />}
+      {open && <CreateTaskModal onClose={onClose} category={category} />}
     </div>
   );
 };

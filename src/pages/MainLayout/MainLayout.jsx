@@ -3,12 +3,13 @@ import { SideBar } from 'components/SideBar/SideBar';
 import css from './mainlayout.module.css';
 
 import React, { Suspense, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
-import { TasksColumnsList } from 'components/Task/TasksColumnsList/TasksColumnsList';
+import { Outlet } from 'react-router-dom';
+// import { CalendarPage } from 'pages/Calendar/CalendarPage';
+// import { TasksColumnsList } from 'components/Task/TasksColumnsList/TasksColumnsList';
 
 export const MainLayout = () => {
   const [openMenu, setOpenMenu] = useState(true);
-  const location = useLocation();
+  // const location = useLocation();
 
   const hendelBackDropClick = e => {
     if (e.target === e.currentTarget && !openMenu) {
@@ -21,8 +22,8 @@ export const MainLayout = () => {
     setOpenMenu(!openMenu);
   };
 
-  const shouldDisplayTasksColumnsList = location.pathname === '/mainLayout';
-  
+  // const shouldDisplayTasksColumnsList = location.pathname === '/mainLayout';
+
   const toggleShowSideBar = (status = null) => {
     if (status === null) {
       setOpenMenu(prev => !prev);
@@ -33,7 +34,6 @@ export const MainLayout = () => {
 
   return (
     <div className={css.conteinerMainLayout}>
-
       {!openMenu ? (
         <div className={css.backDrop} onClick={hendelBackDropClick}></div>
       ) : (
@@ -51,7 +51,8 @@ export const MainLayout = () => {
       <main className={css.main}>
         <div className={css.mainComponent}>
           <Suspense fallback={null}>
-            {shouldDisplayTasksColumnsList && <TasksColumnsList />}
+            {/* <CalendarPage /> */}
+            {/* {shouldDisplayTasksColumnsList && <TasksColumnsList />} */}
             <Outlet />
           </Suspense>
         </div>
@@ -60,7 +61,6 @@ export const MainLayout = () => {
   );
 };
 
-
-      //  <div className={!openMenu && css.backDrop} onClick={hendelBackDropClick}>
-      //    {' '}
-      //  </div>;
+//  <div className={!openMenu && css.backDrop} onClick={hendelBackDropClick}>
+//    {' '}
+//  </div>;

@@ -4,12 +4,13 @@
   margin: 16px 163px 16px 20px;
 
   border-radius: 8px;
-  border: 1px dashed #3e85f3;
-  background: #e3f3ff;
+  border: 1px dashed var(--nav-button-color-hover);
+  background: var(--button-period-type);
 
   margin: 32px 20px 28px 20px;
+  transition: background-color var(--animation-cubic);
 }
 
 .add_btn:hover {
-  background-color: #3e85f3;
+  background-color: var(--nav-button-color-hover);
 }

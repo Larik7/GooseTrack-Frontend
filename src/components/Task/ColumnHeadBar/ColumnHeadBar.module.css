@@ -31,7 +31,7 @@
   }
 
   .icon:hover {
-    fill: #3e85f3;
+    fill: var(--color-button-period-type);
   }
 }
 
@@ -68,6 +68,6 @@
   }
 
   .icon:hover {
-    fill: #3e85f3;
+    fill: var(--color-button-period-type);
   }
 }
