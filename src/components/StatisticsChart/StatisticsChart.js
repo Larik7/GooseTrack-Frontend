@@ -197,7 +197,7 @@ export const StatisticsChart = () => {
           </linearGradient>
         </defs>
         <Bar dataKey="ByDay" fill="url(#colorDay)" barSize={27} radius={[0,0,10,10]}>
-          <LabelList dataKey="ByDayPercent" position="top" stroke="#343434" />
+          <LabelList dataKey="ByDayPercent" position="top" fill={strokeVar} fontWeight="lighter"  />
         </Bar>
         <Bar
           dataKey="ByMonth"
@@ -205,7 +205,7 @@ export const StatisticsChart = () => {
           barSize={27}
           radius={[0,0,10,10]}
         >
-          <LabelList dataKey="ByMonthPercent" position="top" stroke="#343434" />
+          <LabelList dataKey="ByMonthPercent" position="top"  fill={strokeVar} fontWeight="lighter"  />
         </Bar>
       </BarChart>
     </>
