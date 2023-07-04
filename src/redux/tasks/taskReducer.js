@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
-import { fetchTasks, addTask } from './taskOperation';
+import { fetchTasks, addTask, updateTask, deleteTask } from './taskOperation';
 
 const taskReducer = createSlice({
   name: 'task',
@@ -104,6 +104,41 @@ const taskReducer = createSlice({
     },
 
     [addTask.rejected]: (state, { payload }) => {
+      state.tasks.isLoading = false;
+      state.tasks.error = payload;
+    },
+
+    [updateTask.pending]: state => {
+      state.tasks.isLoading = true;
+    },
+
+    [updateTask.fulfilled]: (state, { payload }) => {
+      state.tasks.isLoading = false;
+      state.tasks.error = null;
+      state.tasks.allTasks = state.tasks.allTasks.map(task =>
+        task._id === payload._id ? payload : task
+      );
+    },
+
+    [updateTask.rejected]: (state, { payload }) => {
+      state.tasks.isLoading = false;
+      state.tasks.error = payload;
+    },
+
+    [deleteTask.pending]: state => {
+      state.tasks.isLoading = false;
+      state.tasks.error = null;
+    },
+
+    [deleteTask.fulfilled]: (state, { payload }) => {
+      state.tasks.isLoading = false;
+      state.tasks.error = null;
+      state.tasks.allTasks = state.tasks.allTasks.filter(
+        task => task._id !== payload
+      );
+    },
+
+    [deleteTask.rejected]: (state, { payload }) => {
       state.tasks.isLoading = false;
       state.tasks.error = payload;
     },
