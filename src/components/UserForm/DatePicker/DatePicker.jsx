@@ -5,7 +5,7 @@ import { useField } from 'formik';
 
 const today = new Date().toISOString().split('T')[0];
 
-export const DatePicker = ({ name = '', birthday }) => {
+export const MyDatePicker = ({ name = '', birthday }) => {
   const [field, meta, helpers] = useField('date');
   const { value } = meta;
   const { setValue } = helpers;
@@ -60,5 +60,3 @@ export const DatePicker = ({ name = '', birthday }) => {
     />
   );
 };
-
-
