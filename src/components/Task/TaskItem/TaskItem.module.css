@@ -87,7 +87,7 @@
     align-items: center;
     justify-content: center;
     color: var(--primary-text-color);
-    background-color: #3e85f3;
+    background-color: var(--nav-button-color-hover);
     font-family: var(--button-font);
     font-weight: 700;
     overflow: hidden;
@@ -185,7 +185,7 @@
     align-items: center;
     justify-content: center;
     color: var(--primary-text-color);
-    background-color: #3e85f3;
+    background-color: var(--nav-button-color-hover);
     font-family: var(--button-font);
     font-weight: 700;
     overflow: hidden;

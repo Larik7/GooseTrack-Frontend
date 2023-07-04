@@ -3,7 +3,7 @@ import { CreateTaskModal } from '../CreateTaskModal/CreateTaskModal';
 
 import css from './AddTaskBtn.module.css';
 
-export const AddTaskBtn = ({ tasks }) => {
+export const AddTaskBtn = ({ category }) => {
   const [open, setOpen] = useState(false);
 
   const onClose = () => {
@@ -15,7 +15,7 @@ export const AddTaskBtn = ({ tasks }) => {
       <button onClick={onClose} className={css.add_btn}>
         Add task
       </button>
-      {open && <CreateTaskModal onClose={onClose} tasks={tasks} />}
+      {open && <CreateTaskModal onClose={onClose} category={category} />}
     </div>
   );
 };

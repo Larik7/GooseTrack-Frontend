@@ -32,13 +32,17 @@ export const TasksColumnsList = () => {
     <div className={css.columns_section}>
       <ul className={css.container}>
         <li className={css.column} key={nanoid()}>
-          <TasksColumn title="To Do" tasks={todoTasks} />
+          <TasksColumn title="To Do" tasks={todoTasks} category="to-do" />
         </li>
         <li className={css.column} key={nanoid()}>
-          <TasksColumn title="In Progress" tasks={inProgressTasks} />
+          <TasksColumn
+            title="In Progress"
+            tasks={inProgressTasks}
+            category="in-progress"
+          />
         </li>
         <li className={css.column} key={nanoid()}>
-          <TasksColumn title="Done" tasks={doneTasks} />
+          <TasksColumn title="Done" tasks={doneTasks} category="done" />
         </li>
       </ul>
     </div>

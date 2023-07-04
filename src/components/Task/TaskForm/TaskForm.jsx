@@ -2,18 +2,18 @@ import css from './TaskForm.module.css';
 import * as Yup from 'yup';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { IoMdClose } from 'react-icons/io';
-import { SlPencil } from 'react-icons/sl';
+// import { SlPencil } from 'react-icons/sl';
 import { useDispatch } from 'react-redux';
 import { addTask, fetchTasks } from 'redux/tasks/taskOperation';
+import { FiPlus } from 'react-icons/fi';
 
-export const TaskForm = ({ onClose, tasks }) => {
+export const TaskForm = ({ onClose, category }) => {
   const dispatch = useDispatch();
-  console.log('form tasks', tasks);
-  const category = tasks[0].category;
+
   const initialValues = {
     title: 'Enter text',
-    start: '9:00',
-    end: '14:00',
+    start: '00:00',
+    end: '00:00',
     priority: 'low',
   };
   const todoSchema = Yup.object().shape({
@@ -179,10 +179,19 @@ export const TaskForm = ({ onClose, tasks }) => {
             <button className={css.icon_close} onClick={onClose}>
               {<IoMdClose className={css.icon} />}
             </button>
-            <button className={css.button} type="submit">
-              {<SlPencil className={css.icon_pencil} />}
-              Edit
-            </button>
+            <div className={css.box_btn}>
+              <button className={css.button} type="submit">
+                {<FiPlus className={css.icon_plus} />}
+                Add
+              </button>
+              <button
+                className={css.button_close}
+                type="click"
+                onClick={onClose}
+              >
+                Cancel
+              </button>
+            </div>
           </Form>
         )}
       </Formik>

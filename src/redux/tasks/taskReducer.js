@@ -86,6 +86,23 @@ const taskReducer = createSlice({
       state.tasks.isLoading = true;
     },
 
+    [addTask.fulfilled]: (state, action) => {
+      state.tasks.isLoading = false;
+      state.tasks.error = null;
+
+      const task = action.payload;
+
+      const category = task.category;
+      const columnKey = Object.keys(state.columns).find(
+        key => state.columns[key].name === category
+      );
+      if (columnKey) {
+        state.columns[columnKey].items.push(task);
+      }
+
+      state.tasks.allTasks.push(task);
+    },
+
     [addTask.rejected]: (state, { payload }) => {
       state.tasks.isLoading = false;
       state.tasks.error = payload;
