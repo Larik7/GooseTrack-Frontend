@@ -19,6 +19,7 @@
     "formik": "^2.4.2",
     "i18next": "^23.2.3",
     "i18next-browser-languagedetector": "^7.0.2",
+    "js-cookie": "^3.0.5",
     "moment": "^2.29.4",
     "nanoid": "^4.0.2",
     "notiflix": "^3.2.6",
