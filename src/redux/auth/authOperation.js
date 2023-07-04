@@ -14,7 +14,7 @@ export const register = createAsyncThunk(
   'auth/register',
   async (data, thunkAPI) => {
     try {
-      const res = await axios.post('/api/auth/registration', data);
+      const res = await axios.post('api/auth/registration', data);
       return res.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -27,7 +27,7 @@ export const resendVerify = createAsyncThunk(
   'auth/verify',
   async (email, thunkAPI) => {
     try {
-      const res = await axios.post('/api/auth/verify', { email });
+      const res = await axios.post('api/auth/verify', { email });
       toast.success('Verification resend to your e-mail');
       return res.data;
     } catch (error) {
@@ -41,7 +41,7 @@ export const logIn = createAsyncThunk(
   'api/auth/login',
   async (data, thunkAPI) => {
     try {
-      const res = await axios.post('/api/auth/login', data);
+      const res = await axios.post('api/auth/login', data);
 
       setToken(res.data.accessToken);
 
@@ -90,7 +90,7 @@ export const refreshToken = createAsyncThunk(
   'auth/refreshToken',
   async (data, thunkAPI) => {
     try {
-      const response = await axios.post('/api/auth/refresh', { data });
+      const response = await axios.post('api/auth/refresh', { data });
       const { accessToken, refreshToken } = response.data;
 
       // Оновлення токенів на фронтенді
