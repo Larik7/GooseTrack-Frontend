@@ -17,7 +17,8 @@ export const Backdrop = styled.div`
 
 export const ModalContainer = styled.div`
   position: relative;
-  background-color: ${p => p.theme.colors.modal_window};
+  background-color: #2b78ef;
+;
   border: none;
   min-width: 100px;
   min-height: 100px;
