@@ -54,19 +54,19 @@ export const PeriodPaginator = ({
         {params.currentDay ? formattedDay : formattedMonth}
       </div>
       <div className={css.period_tabs_container}>
-        <div
+        <button
           className={css.period_tabs}
           onClick={params.currentDay ? prevDay : prevMonth}
         >
           <AiOutlineLeft className={css.icon} />
-        </div>
-        <div
+        </button>
+        <button
           className={css.period_tabs}
           style={{ transform: 'rotate(180deg)' }}
           onClick={params.currentDay ? nextDay : nextMonth}
         >
           <AiOutlineLeft className={css.icon} />
-        </div>
+        </button>
       </div>
     </div>
   );
