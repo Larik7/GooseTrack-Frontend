@@ -1,7 +1,7 @@
 import css from './TaskToolbar.module.css';
 import icons from '../../../icons/sprite.svg';
 import { useDispatch } from 'react-redux';
-import { deleteTask, updateTask } from 'redux/tasks/taskOperation';
+import { deleteTask } from 'redux/tasks/taskOperation';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectAllTasks } from 'redux/tasks/selectors';
@@ -18,9 +18,9 @@ export const TaskToolbar = ({ id }) => {
   };
 
   const handeleChangeCategory = () => {};
-  const handeleEditCard = () => {
-    dispatch(updateTask(id));
-  };
+  // const handeleEditCard = () => {
+  //   dispatch(updateTask(id));
+  // };
   const handeleDeleteCard = () => {
     dispatch(deleteTask(id));
   };
