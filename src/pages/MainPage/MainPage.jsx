@@ -12,7 +12,7 @@ export const MainPage = () => {
       <Description />
       <ReviewsSlider />
      
-   
+
     </>
   );
 };
