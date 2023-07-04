@@ -15,7 +15,6 @@ import { CalendarPage } from '../pages/Calendar/CalendarPage';
 import { ChoosedMonth } from '../pages/Calendar/ChoosedMonth/ChoosedMonth';
 import ChoosedDay from '../components/Calendar/ChoosedDay/ChoosedDay';
 import { Page404 } from 'pages/Page404/Page404';
-import { TasksColumnsList } from './Task/TasksColumnsList/TasksColumnsList';
 import { Account } from 'pages/Account/Account';
 
 export const App = () => {
