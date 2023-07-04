@@ -6,7 +6,8 @@
   height: 115px;
   width: 100%;
   padding: 24px 20px;
-  background: var( --primary-background-color);
+  justify-content: center;
+  background: var(--secondary-background-color);
 }
 .headerInfoBox {
   display: block;
@@ -35,17 +36,19 @@
 @media (min-width: 1440px) {
   .header {
     padding: 32px 32px 32px 0;
+      justify-content: space-between;
   }
   .logoConteiner {
     padding: 32px 24px;
     background: var(--sidebar-background-color);
     height: 115px;
     width: 290px;
-    border-right: 1px solid rgba(220, 227, 229, 0.5);
+   
   }
   .logoBox {
     display: flex;
     align-items: center;
+    justify-content: center;
    
   }
   .headerInfoBox {

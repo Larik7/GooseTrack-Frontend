@@ -1,4 +1,4 @@
-import { useState } from 'react'; // useEffect
+import { useState, useEffect } from 'react'; // useEffect
 import { Formik, Form, Field } from 'formik';
 import { object, string } from 'yup';
 import css from './feedbackForm.module.css';
@@ -19,18 +19,17 @@ let userValidSchema = object({
 });
 export const FeedbackForm = ({ reviewOwn, onClose }) => {
   const dispatch = useDispatch();
-  const [rating, setRating] = useState(reviewOwn.rating || 0);
-  const [message, setMessage] = useState(reviewOwn.comment || '');
+  const [rating, setRating] = useState(0);
+  const [message, setMessage] = useState('');
   const [hover, setHover] = useState(null);
   const [editReview, setEditReview] = useState(false);
-
-  // useEffect(() => {
-  //   // if (isEditReview) {
-  //   //   setRating(editedRating);
-  //   //   setMessage(editedMessage);
-  //   //   setId(editedId);
-  //   // }
-  // }, [editedMessage, editedRating, editedId]);
+  useEffect(() => {
+    if (reviewOwn === null) {
+      return;
+    }
+    setRating(reviewOwn.rating);
+    setMessage(reviewOwn.comment);
+  }, [reviewOwn]);
   const reset = () => {
     setMessage('');
     setRating(0);
@@ -56,6 +55,7 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
       dispatch(updateReview({ rating, comment: message }));
       reset();
       onClose();
+      return;
     } else {
       dispatch(addReview({ rating, comment: message }));
       reset();
@@ -97,6 +97,14 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
                   name="rating"
                   value={ratingValue}
                   onClick={() => setRating(ratingValue)}
+                  disabled={
+                    editReview === true ||
+                    reviewOwn === null ||
+                    (reviewOwn.rating !== rating &&
+                      reviewOwn.comment !== message)
+                      ? false
+                      : true
+                  }
                 />
                 <Star
                   className={css.starBtn}
@@ -105,6 +113,14 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
                   }
                   width={24}
                   height={24}
+                  disabled={
+                    editReview === true ||
+                    reviewOwn === null ||
+                    (reviewOwn.rating !== rating &&
+                      reviewOwn.comment !== message)
+                      ? false
+                      : true
+                  }
                   style={{ marginRight: 1 }}
                   onMouseEnter={() => setHover(ratingValue)}
                   onMouseLeave={() => setHover(null)}
@@ -118,7 +134,9 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
             <label htmlFor="FBId" className={css.feedbackFormLabel}>
               Review
             </label>
-            {!reviewOwn.rating ? (
+            {reviewOwn === null ||
+            !reviewOwn.rating ||
+            (reviewOwn.rating === rating && reviewOwn.comment === message) ? (
               <div className={css.btnWrap}>
                 <Pencil className={css.editBtn} onClick={handleClickEdit} />
                 <Trash
@@ -139,34 +157,49 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
             id="FBId"
             name="message"
             placeholder="Enter text"
+            disabled={
+              editReview === true ||
+              reviewOwn === null ||
+              (reviewOwn.rating !== rating && reviewOwn.comment !== message)
+                ? false
+                : true
+            }
           />
         </div>
-        <div className={css.btnWrap}>
-          {(reviewOwn.rating === rating && reviewOwn.comment === message) ||
-          editReview === true ? (
-            <button className={css.btnSaveOrEdit} type="submit">
-              Edit
-            </button>
-          ) : (
+        {reviewOwn === null ||
+        (reviewOwn.rating !== rating && reviewOwn.comment !== message) ? (
+          <div className={css.btnWrap}>
+            {editReview === true ? (
+              <button
+                className={css.btnSaveOrEdit}
+                type="submit"
+                onClick={handleSubmit}
+              >
+                Edit
+              </button>
+            ) : (
+              <button
+                className={css.btnSaveOrEdit}
+                type="submit"
+                onClick={handleSubmit}
+              >
+                Save
+              </button>
+            )}
             <button
-              className={css.btnSaveOrEdit}
-              type="submit"
-              onClick={handleSubmit}
+              className={css.btnCancel}
+              type="button"
+              onClick={() => {
+                reset();
+                onClose();
+              }}
             >
-              Save
+              Cancel
             </button>
-          )}
-          <button
-            className={css.btnCancel}
-            type="button"
-            onClick={() => {
-              reset();
-              onClose();
-            }}
-          >
-            Cancel
-          </button>
-        </div>
+          </div>
+        ) : (
+          <></>
+        )}
       </Form>
     </Formik>
   );

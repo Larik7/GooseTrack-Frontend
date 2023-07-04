@@ -4,18 +4,26 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { IoMdClose } from 'react-icons/io';
 // import { SlPencil } from 'react-icons/sl';
 import { useDispatch } from 'react-redux';
-import { addTask, fetchTasks } from 'redux/tasks/taskOperation';
+import { addTask, fetchTasks, updateTask } from 'redux/tasks/taskOperation';
 import { FiPlus } from 'react-icons/fi';
+import icons from '../../../icons/sprite.svg';
 
-export const TaskForm = ({ onClose, category }) => {
+export const TaskForm = ({ onClose, category, task }) => {
   const dispatch = useDispatch();
 
-  const initialValues = {
-    title: 'Enter text',
-    start: '00:00',
-    end: '00:00',
-    priority: 'low',
-  };
+  const initialValues = task
+    ? {
+        title: task.title,
+        start: task.start,
+        end: task.end,
+        priority: task.priority,
+      }
+    : {
+        title: 'Enter text',
+        start: '00:00',
+        end: '00:00',
+        priority: 'low',
+      };
   const todoSchema = Yup.object().shape({
     title: Yup.string().max(250).required('Title is required'),
     start: Yup.string()
@@ -46,17 +54,22 @@ export const TaskForm = ({ onClose, category }) => {
 
   const handleSubmit = (values, { resetForm }) => {
     const { title, start, end, priority } = values;
-    const date = values.date || '2023-06-30';
-    dispatch(
-      addTask({
-        title,
-        date,
-        start,
-        end,
-        priority,
-        category,
-      })
-    );
+    if (!task) {
+      const date = values.date || '2023-06-30';
+      dispatch(
+        addTask({
+          title,
+          date,
+          start,
+          end,
+          priority,
+          category,
+        })
+      );
+    } else {
+      dispatch(updateTask({ taskId: task._id, task: values }));
+    }
+
     resetForm();
     onClose();
 
@@ -180,17 +193,28 @@ export const TaskForm = ({ onClose, category }) => {
               {<IoMdClose className={css.icon} />}
             </button>
             <div className={css.box_btn}>
-              <button className={css.button} type="submit">
-                {<FiPlus className={css.icon_plus} />}
-                Add
-              </button>
-              <button
-                className={css.button_close}
-                type="click"
-                onClick={onClose}
-              >
-                Cancel
-              </button>
+              {task ? (
+                <button className={css.button} type="submit">
+                  <svg className={css.toolbar_svg} width="16px" height="16px">
+                    <use href={`${icons}#icon-pencil-01`}></use>
+                  </svg>
+                  Edit
+                </button>
+              ) : (
+                <>
+                  <button className={css.button} type="submit">
+                    {<FiPlus className={css.icon_plus} />}
+                    Add
+                  </button>
+                  <button
+                    className={css.button_close}
+                    type="click"
+                    onClick={onClose}
+                  >
+                    Cancel
+                  </button>
+                </>
+              )}
             </div>
           </Form>
         )}

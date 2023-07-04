@@ -6,7 +6,7 @@ import { fetchReviews } from 'redux/reviews/reviewOperation';
 import { selectAllReviews } from 'redux/reviews/reviewSelector';
 import { ReviewCard } from './ReviewCard';
 import sprite from 'icons/sprite.svg';
-import './ReviewSlider.module.css';
+import css from './ReviewSlider.module.css';
 
 // Slide Right
 const SlickRight = ({ currentSlide, slideCount, ...props }) => (
@@ -17,7 +17,7 @@ const SlickRight = ({ currentSlide, slideCount, ...props }) => (
     aria-disabled={false}
     type="button"
   >
-    <svg height="6" width="39" className="svg-arrow">
+    <svg height="6" width="39" className={css.svgarrow}>
       <use href={sprite + '#arrow-right-slider'}></use>
     </svg>
   </div>
@@ -32,7 +32,7 @@ const SlickLeft = ({ currentSlide, slideCount, ...props }) => (
     aria-disabled={false}
     type="button"
   >
-    <svg height="6" width="39" className="svg-arrow">
+    <svg height="6" width="39" className={css.svgarrow}>
       <use href={sprite + '#arrow-left-slider'}></use>
     </svg>
   </div>
@@ -71,10 +71,10 @@ export const ReviewsSlider = () => {
   const lastTenReviews = reviews?.data?.slice(-10);
 
   return (
-    <section className="Wrapper">
-      <section className="ReviewsContainer">
+    <section className={css.Wrapper}>
+      <section className={css.ReviewsContainer}>
         <h2>REVIEWS</h2>
-        <Slider className="slider" {...settings}>
+        <Slider className={css.slider} {...settings}>
           {lastTenReviews?.map(review => (
             <ReviewCard
               key={review._id}
@@ -96,7 +96,7 @@ export const ReviewsSlider = () => {
             Great for staying organized.
           </ReviewCard>
         </Slider>
-        <div className="ArrowContainer" />
+        <div className={css.ArrowContainer} />
       </section>
     </section>
   );
