@@ -163,6 +163,9 @@ export const StatisticsChart = () => {
   tasksInProgress.ByMonthPercent = ByMonthPer[1];
   tasksDone.ByMonthPercent = ByMonthPer[2];
 
+
+  const strokeVar = 'var(--primary-text-color)';
+
   return (
     <>
       <p className={css.tasks}>
@@ -180,8 +183,8 @@ export const StatisticsChart = () => {
         }}
       >
         <CartesianGrid stroke="#E3F3FF" strokeDasharray="0" vertical={false} />
-        <XAxis dataKey="name" stroke="0" />
-        <YAxis stroke="0" />
+        <XAxis dataKey="name"  stroke="0" tick={{ fill: strokeVar }} /> 
+        <YAxis stroke="0" tick={{ fill: strokeVar }}/>
         <Tooltip />
         <defs>
           <linearGradient id="colorDay" x1="0" y1="1" x2="0" y2="0">
@@ -193,16 +196,16 @@ export const StatisticsChart = () => {
             <stop offset="99%" stopColor="#3E85F3" stopOpacity={0} />
           </linearGradient>
         </defs>
-        <Bar dataKey="ByDay" fill="url(#colorDay)" barSize={27}>
-          <LabelList dataKey="ByDayPercent" position="top" stroke="#343434" />
+        <Bar dataKey="ByDay" fill="url(#colorDay)" barSize={27} radius={[0,0,10,10]}>
+          <LabelList dataKey="ByDayPercent" position="top" fill={strokeVar} fontWeight="lighter"  />
         </Bar>
         <Bar
-          className={css.shapebar}
           dataKey="ByMonth"
           fill="url(#colorMonth)"
           barSize={27}
+          radius={[0,0,10,10]}
         >
-          <LabelList dataKey="ByMonthPercent" position="top" stroke="#343434" />
+          <LabelList dataKey="ByMonthPercent" position="top"  fill={strokeVar} fontWeight="lighter"  />
         </Bar>
       </BarChart>
     </>
