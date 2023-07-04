@@ -41,7 +41,6 @@ export const reviewsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.ownReviews = payload;
-        console.log(state.error);
       })
       .addCase(fetchOwnReviews.rejected, handleRejected)
 
