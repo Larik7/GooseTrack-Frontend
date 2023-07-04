@@ -6,7 +6,7 @@
 
 .wrapper {
   border-radius: 16px;
-  background: var(--sidebar-background-color);
+  background: var(--primary-background-color);
   width: 335px;
   height: 684px;
   padding-top: 134px;
@@ -45,9 +45,7 @@
 }
 
 @media (min-width: 1440px) {
-  .conteinerMainLayout {
-    width: 1440px;
-  }
+
 
   .mainComponent {
     width: 1087px;
@@ -113,7 +111,7 @@
 }
 
 .chart {
-  background-color: var(--sidebar-background-color);
+  background-color: var(--primary-background-color);
   border-radius: 29px;
   border: 1px solid #e3f3ff;
   margin: auto;

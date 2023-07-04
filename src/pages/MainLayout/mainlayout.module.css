@@ -5,7 +5,7 @@
   width: 100%;
   height: 100vh;
   /* outline: 1px solid red; */
-  background: var(--primary-background-color);
+  background: var(--secondary-background-color);
   /* width: 335px; */
   /* outline: 1px solid red; */
   /*   background: var(--secondary-background-color);
@@ -13,10 +13,7 @@
 }
 
 @media screen and (min-width: 1158px) {
-  .conteinerMainLayout {
-    width: 100%;
-    height: 100vh;
-  }
+
 }
 
 .mainComponent {
@@ -25,14 +22,12 @@
 }
 
 @media (min-width: 1440px) {
-  .conteinerMainLayout {
-    width: 1440px;
-  }
+
 }
 
 .main {
   display: flex;
-  background-color: var(--primary-background-color);
+  background-color: var(--secondary-background-color);
   /*   display: block; */
   padding: 40px 20px;
   justify-content: center;
@@ -56,9 +51,7 @@
     display: flex;
   }
 
-  .conteinerMainLayout {
-    background: var(--primary-background-color);
-  }
+
 }
 
 @media (min-width: 1440px) {
@@ -87,6 +80,6 @@
     left: 0;
 
     backdrop-filter: blur(2px);
-    background-color: rgba(35, 100, 138, 0.349);
+    background-color: var(--secondary-background-color);
   }
 }
