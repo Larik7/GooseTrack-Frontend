@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// Перевірити редукс!!!!
+
 import { selectUser } from '../../redux/auth/selectors';
 import { updateUser } from '../../redux/auth/authOperation';
 import moment from 'moment';
