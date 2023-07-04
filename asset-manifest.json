@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/GooseTrack-Frontend/static/css/main.3d6c18d5.css",
-    "main.js": "/GooseTrack-Frontend/static/js/main.cf661474.js",
+    "main.css": "/GooseTrack-Frontend/static/css/main.c78caa64.css",
+    "main.js": "/GooseTrack-Frontend/static/js/main.2ff864e1.js",
     "static/media/tablet_calendar@2x.png": "/GooseTrack-Frontend/static/media/tablet_calendar@2x.844cff810c188f6f25a7.png",
     "static/media/desktop_calendar@2x.png": "/GooseTrack-Frontend/static/media/desktop_calendar@2x.511158f67c65ff6302fb.png",
     "static/media/Inter-Bold.eot": "/GooseTrack-Frontend/static/media/Inter-Bold.7e9fff4114e0ea385c94.eot",
@@ -43,21 +43,31 @@
     "static/media/avatarShev.jpg": "/GooseTrack-Frontend/static/media/avatarShev.ba72e73b9ac9458ac7fc.jpg",
     "static/media/CoolveticaRg-Regular.woff": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.d7bc4174b8f5b1d10a2d.woff",
     "static/media/elements_1.png": "/GooseTrack-Frontend/static/media/elements_1.6a8dd8d362380e8fb023.png",
+    "static/media/Фролова_Валерія.jpg": "/GooseTrack-Frontend/static/media/Фролова_Валерія.198ec5da1bd6737eedc7.jpg",
+    "static/media/Антон_Звертановський.jpg": "/GooseTrack-Frontend/static/media/Антон_Звертановський.49260de2fc64dc9ff8c0.jpg",
+    "static/media/Дубей_Анатолій.jpg": "/GooseTrack-Frontend/static/media/Дубей_Анатолій.a39b1a6bd34d10993ec9.jpg",
     "static/media/elements.png": "/GooseTrack-Frontend/static/media/elements.e7e929f2404e1cb175d0.png",
     "static/media/CoolveticaRg-Italic.woff2": "/GooseTrack-Frontend/static/media/CoolveticaRg-Italic.354b20eb1b8d25af62a1.woff2",
     "static/media/CoolveticaRg-Regular.woff2": "/GooseTrack-Frontend/static/media/CoolveticaRg-Regular.3829e81cd606bef6e1e9.woff2",
     "static/media/mobile_all.png": "/GooseTrack-Frontend/static/media/mobile_all.7437604843643f7b4866.png",
     "static/media/Goose404.png": "/GooseTrack-Frontend/static/media/Goose404.d205738fb69673dcde2a.png",
+    "static/media/Антон_Логвиненко.jpg": "/GooseTrack-Frontend/static/media/Антон_Логвиненко.64c6908932f37d820a56.jpg",
     "static/media/Goose.png": "/GooseTrack-Frontend/static/media/Goose.cf97a81d5acf2bc6829f.png",
+    "static/media/Байдін_Денис.jpg": "/GooseTrack-Frontend/static/media/Байдін_Денис.6d47b9755cbc07983a5a.jpg",
+    "static/media/Мельниченко_Лариса.jpg": "/GooseTrack-Frontend/static/media/Мельниченко_Лариса.af96bba9ffd78a661300.jpg",
+    "static/media/Музыка_Андрей.jpg": "/GooseTrack-Frontend/static/media/Музыка_Андрей.45aa1fe2d50c908c6ec3.jpg",
+    "static/media/Уланов_Ілларіон.jpg": "/GooseTrack-Frontend/static/media/Уланов_Ілларіон.7df7d7d808d9928bfc11.jpg",
+    "static/media/Станков_Максим.jpg": "/GooseTrack-Frontend/static/media/Станков_Максим.33ef4407d4e1e2b8cb2f.jpg",
+    "static/media/Жовновський_Дмитро.jpg": "/GooseTrack-Frontend/static/media/Жовновський_Дмитро.b86b56bf51cb18a7369d.jpg",
     "static/media/sprite.svg": "/GooseTrack-Frontend/static/media/sprite.0fa5459a2806ab192b88cccec42431ec.svg",
+    "static/media/team_icon.svg": "/GooseTrack-Frontend/static/media/team_icon.54bd973698278eb677bcffd17ba169b8.svg",
     "index.html": "/GooseTrack-Frontend/index.html",
     "static/media/plus.svg": "/GooseTrack-Frontend/static/media/plus.f0087676f0974ccbb001.svg",
-    "static/media/x-close.svg": "/GooseTrack-Frontend/static/media/x-close.cffc8a086992ad16f1f0db83c5a8a66f.svg",
-    "main.3d6c18d5.css.map": "/GooseTrack-Frontend/static/css/main.3d6c18d5.css.map",
-    "main.cf661474.js.map": "/GooseTrack-Frontend/static/js/main.cf661474.js.map"
+    "main.c78caa64.css.map": "/GooseTrack-Frontend/static/css/main.c78caa64.css.map",
+    "main.2ff864e1.js.map": "/GooseTrack-Frontend/static/js/main.2ff864e1.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d6c18d5.css",
-    "static/js/main.cf661474.js"
+    "static/css/main.c78caa64.css",
+    "static/js/main.2ff864e1.js"
   ]
 }
