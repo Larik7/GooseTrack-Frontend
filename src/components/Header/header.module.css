@@ -66,6 +66,7 @@
   padding: 5px;
   cursor: pointer;
   border: none;
+  color: var(--nav-button-color);
 }
 
 @media (min-width: 375px) {

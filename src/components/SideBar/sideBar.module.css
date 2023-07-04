@@ -26,12 +26,6 @@
     line-height: 22px;
     margin-right: 36px;
   }
-   .open {
-  transform: translateX(0);
-    position: absolute;
-    top :0;
-    z-index:10;
-  }
 }
 
 @media (min-width: 768px) {
@@ -56,7 +50,12 @@
   position: absolute;
   top :0
   }
-
+ .open {
+   transform: translateX(0);
+   position: absolute;
+   top: 0;
+   z-index: 10;
+ }
 }
 
 
@@ -73,12 +72,9 @@
   }
 
   .conteinerSideBar {
-
     width: 290px;
     height: 785px;
   }
-  
-
 }
 
 .logoTitle {
@@ -106,7 +102,8 @@
 
 .btnClose {
   padding: 5px;
-  background-color: #ffffff;
+  background-color: var(--sidebar-background-color);
   border-color: transparent;
   cursor: pointer;
+  color: var(--close-btn-color);
 }

@@ -80,6 +80,6 @@
     left: 0;
 
     backdrop-filter: blur(2px);
-    background-color: var(--secondary-background-color);
+
   }
 }
