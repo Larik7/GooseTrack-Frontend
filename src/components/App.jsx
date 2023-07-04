@@ -14,7 +14,7 @@ import { StatisticsPage } from '../pages/StatisticsPage/StatisticsPage';
 // import { CalendarPage } from '../pages/Calendar/CalendarPage';
 import { Page404 } from 'pages/Page404/Page404';
 import { TasksColumnsList } from './Task/TasksColumnsList/TasksColumnsList';
-
+import { Account } from 'pages/Account/Account';
 // import { LoginForm } from '../pages/LoginForm/LoginForm';
 
 // import { Description } from './MainPage/Description/Description';
@@ -68,7 +68,7 @@ export const App = () => {
         {/* <Route path="/day/:currentDay" element={<TasksColumnsList />} /> */}
         {/* <Route path="/mouth/:currentDay" element={<TasksColumnsList />} /> */}
         <Route path="/calendar/statistics" element={<StatisticsPage />} />
-        {/* <Route path="/calendar/userInfo" element={<Account/>} /> */}
+        <Route path="/calendar/userInfo" element={<Account />} />
       </Route>
 
       <Route path="*" element={<Page404 />} />

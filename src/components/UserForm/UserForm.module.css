@@ -163,7 +163,7 @@ input[type='text' i] {
   font-weight: 600;
   font-size: 16px;
   line-height: 18px;
-  color: var(--primary-text-color);
+  color: var(--log-text-color);
 }
 
 .username_form-input--last {
