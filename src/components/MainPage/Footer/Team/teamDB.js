@@ -6,7 +6,7 @@ export const teams =
         position: "Team-lead",
         git: "https://github.com/Larik7",
         linkedin: "https://www.linkedin.com/",
-        description: ["Building the project architecture, developing the project backend"],
+        description: ["Building the project architecture, calendar, developing the project backend and frontend"],
         avatar: require('../../../../images/team/Уланов_Ілларіон.jpg'),
         },
         { 
@@ -15,7 +15,7 @@ export const teams =
         position: "Scrum-master",
         git: "https://github.com/",
         linkedin: "https://www.linkedin.com/",
-        description: ["Organization of teamwork, development of the start page, 404 pages and autologin"],
+        description: ["Organization of teamwork"],
         avatar: require('../../../../images/team/Владимир_Плотников.jpg'),
        },
        { 
@@ -24,7 +24,7 @@ export const teams =
         position: "Developer",
         git: "https://github.com/DubeiA",
         linkedin: "https://www.linkedin.com/",
-        description: ["Calendar development"],
+        description: ["Development of a user registration block, сalendar development"],
         avatar: require('../../../../images/team/Дубей_Анатолій.jpg'),
        },
        { 
@@ -33,7 +33,7 @@ export const teams =
         position: "Developer",
         git: "https://github.com/Ahamoth",
         linkedin: "https://www.linkedin.com/",
-        description: ["Development of a user registration block, visual theme change"],
+        description: ["Development of the backend of registration, login and avatar blocks. Swagger"],
         avatar: require('../../../../images/team/Музыка_Андрей.jpg'),
        },
        { 
@@ -51,7 +51,7 @@ export const teams =
         position: "Developer",
         git: "https://github.com/Erlara",
         linkedin: "https://www.linkedin.com/",
-        description: ["Development of sidebar and header modules"],
+        description: ["Development of a block of statistics"],
         avatar: require('../../../../images/team/Мельниченко_Лариса.jpg'),
        },
        { 
@@ -60,7 +60,7 @@ export const teams =
         position: "Developer",
         git: "https://github.com/Anton-Logvinenko",
         linkedin: "https://www.linkedin.com/",
-        description:[ "LoginPage development and site language change"],
+        description:[ "LoginPage development"],
         avatar: require('../../../../images/team/Антон_Логвиненко.jpg'),
        },
        { 
@@ -87,7 +87,7 @@ export const teams =
         position: "Developer",
         git: "https://github.com/Demiurge232",
         linkedin: "https://www.linkedin.com/",
-        description: ["Development of the backend of registration blocks and tasks. Swagger"],
+        description: ["Calendar and tasks development"],
         avatar: require('../../../../images/team/Станков_Максим.jpg'),
         },
         { 
@@ -96,7 +96,7 @@ export const teams =
         position: "Developer",
         git: "https://github.com/Demiurge232",
         linkedin: "https://www.linkedin.com/",
-        description: ["Development of the backend of registration blocks and tasks. Swagger"],
+        description: ["Calendar and tasks development"],
         avatar: require('../../../../images/team/Марчук_Андрій.jpg'),
         },
        { 
@@ -105,7 +105,7 @@ export const teams =
         position: "Developer",
         git: "https://github.com/zhdima",
         linkedin: "https://www.linkedin.com/",
-        description: ["Development of the backend of login, reviews and avatar"],
+        description: ["Development of the backend of reviews and tasks. Swagger"],
         avatar: require('../../../../images/team/Жовновський_Дмитро.jpg'),
        },
        { 
@@ -114,7 +114,7 @@ export const teams =
         position: "Developer",
         git: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/",
-        description: ["Development of User Profile"],
+        description: ["Development of sidebar and header modules"],
         avatar: require('../../../../images/team/Анастасия_Шамало.jpg'),
         },
        { 
