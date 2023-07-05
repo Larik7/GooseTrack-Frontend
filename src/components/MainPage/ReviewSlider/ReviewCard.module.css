@@ -1,3 +1,4 @@
+/* ReviewCardContainer */
 .ReviewCardContainer {
   box-sizing: border-box;
   margin-left: auto;
@@ -8,76 +9,84 @@
   font-family: Inter;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 8px;
+}
 
   @media screen and (max-width: 374px) {
+    .ReviewCardContainer {
     width: 99%;
     padding: 10px;
-  }
+    }}
 
   @media screen and (min-width: 768px) {
+    .ReviewCardContainer {
     display: flex;
     flex-direction: column;
     width: 580px;
     height: 187px;
     padding: 32px;
+    }
   }
 
-  & h3 {
-    margin-top: 0;
-    margin-bottom: 13px;
-    line-height: 1;
-    font-size: 18px;
-    color: #343434;
+  .ReviewCardContainer h3 {
+  margin-top: 0;
+  margin-bottom: 13px;
+  line-height: 1;
+  font-size: 18px;
+  color: #343434;
   }
-}
 
+
+/* HeaderContainer */
 .HeaderContainer {
   display: flex;
   gap: 17px;
 }
 
+
+/* AvatarWrapper */
 .AvatarWrapper {
   width: 50px;
   height: 50px;
-
-  & img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
 }
 
-.StarContainer {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: start; */
-  /* align-self: flex-end; */
-  align-self: flex-start;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 29px;
+.AvatarWrapper.img {    
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 50%;
+}
 
-  height: 14px;
-  list-style: none;
+
+/* StarContainer */
+.StarContainer {
+display: flex;
+flex-direction: row;
+align-self: flex-start;
+gap: 10px;
+padding: 0;
+margin: 0;
+margin-bottom: 29px;
+height: 14px;
+list-style: none;
+}
 
   @media screen and (min-width: 768px) {
-    margin-bottom: 24px;
-  }
+  .StarContainer {
+  margin-bottom: 24px;
+  }}
 
-  & li:nth-child(-n) {
-    & svg {
+  .li:nth-child(-n + ${props => props.value}) {
+    svg {
       fill: #ffac33;
-    }
-  }
+    }}
 
   svg {
     fill: #cec9c1;
   }
-}
 
+
+/* CommentText */
 .CommentText {
   margin: 0;
   height: 72px;
@@ -88,20 +97,24 @@
   line-height: 1.29;
   color: rgba(17, 17, 17, 0.7);
   cursor: pointer;
+}
 
-  @media screen and (max-width: 374px) {
+    @media screen and (max-width: 374px) {
+    .CommentText {
     height: 86px;
-  }
+    }}
 
-  @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) {
+    .CommentText {
     width: 447px;
     height: 54px;
     flex-grow: 1;
     align-self: flex-end;
-  }
-}
+    }}
 
-.ModalContent {
+
+  /* ModalContent */
+  .ModalContent {
   height: auto;
   padding: 40px 40px;
   max-width: 335px;
@@ -114,9 +127,12 @@
   background-color: #ffffff;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 8px;
+  }
 
-  @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) {
+    .ModalContent {
     padding: 45px 50px;
     max-width: 468px;
-  }
-}
+    }
+    }
+
