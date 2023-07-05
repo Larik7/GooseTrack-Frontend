@@ -105,5 +105,5 @@
   background-color: var(--sidebar-background-color);
   border-color: transparent;
   cursor: pointer;
-  color: var(--close-btn-color);
+  color: transparent;
 }
