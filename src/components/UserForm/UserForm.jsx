@@ -16,16 +16,16 @@ export const UserForm = ({ theme = '' }) => {
   const [previewImageUrl, setPreviewImageUrl] = useState(null);
   const [file, setFile] = useState(null);
 
+  console.log('userInfo', userInfo);
+
   const [avatar, setAvatar] = useState(null);
   useEffect(() => {
-    if (!userInfo.name) {
-      setAvatar(null);
-    } else {
+    if (!userInfo.avatarURL) {
       setAvatar(userInfo.name.slice(0, 1).toUpperCase());
     }
-  }, [userInfo.name]);
+  }, [userInfo.avatarURL, userInfo.name]);
 
-  const imgURL = userInfo.imgURL ?? null;
+  const imgURL = userInfo.avatarURL ?? null;
   // console.log(userInfo);
 
   let initialUserInfo = {
@@ -34,7 +34,7 @@ export const UserForm = ({ theme = '' }) => {
     name: userInfo ? userInfo.name : '',
     email: userInfo ? userInfo.email : '',
     birthday: userInfo ? userInfo.birthday : '1999-12-31',
-    // avatarUpload: false,
+    avatarURL: false,
   };
 
   const submiting = values => {

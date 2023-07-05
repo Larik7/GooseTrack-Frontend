@@ -9,7 +9,14 @@ import {
 } from './authOperation';
 
 const initialState = {
-  user: { name: null, email: null, birthday: null, phone: null, skype: null },
+  user: {
+    name: null,
+    email: null,
+    birthday: null,
+    phone: null,
+    skype: null,
+    avatarURL: null,
+  },
   accessToken: null,
   isLoggedIn: false,
   isRefreshing: false,

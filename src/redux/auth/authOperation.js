@@ -118,9 +118,9 @@ export const updateUser = createAsyncThunk(
     try {
       setToken(accessToken);
       const res = await axios.put('api/auth/user', data);
-      console.log(res.data);
-      console.log(res.data.updatedUser);
-      return res.data.updatedUser;
+      // console.log(res.data.data);
+      console.log(res.data.data.updatedUser);
+      return res.data.data.updatedUser;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
