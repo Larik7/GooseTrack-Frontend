@@ -7,9 +7,11 @@ import { useDispatch } from 'react-redux';
 import { addTask, fetchTasks, updateTask } from 'redux/tasks/taskOperation';
 import { FiPlus } from 'react-icons/fi';
 import icons from '../../../icons/sprite.svg';
+import { useSelector } from 'react-redux';
 
 export const TaskForm = ({ onClose, category, task }) => {
   const dispatch = useDispatch();
+  const chooseDay = useSelector(state => state.task.activeDate);
 
   const initialValues = task
     ? {
@@ -55,7 +57,7 @@ export const TaskForm = ({ onClose, category, task }) => {
   const handleSubmit = (values, { resetForm }) => {
     const { title, start, end, priority } = values;
     if (!task) {
-      const date = values.date || '2023-07-05';
+      const date = values.date || chooseDay;
       dispatch(
         addTask({
           title,
