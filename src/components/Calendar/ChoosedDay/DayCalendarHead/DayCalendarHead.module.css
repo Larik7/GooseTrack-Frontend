@@ -46,3 +46,9 @@
     color: var(--btn-text-color);
   }
 } */
+
+.grid_weeks_container {
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 24px;
+}

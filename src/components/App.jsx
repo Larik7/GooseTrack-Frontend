@@ -13,7 +13,7 @@ import { MainPage } from 'pages/MainPage/MainPage';
 import { StatisticsPage } from '../pages/StatisticsPage/StatisticsPage';
 import { CalendarPage } from '../pages/Calendar/CalendarPage';
 import { ChoosedMonth } from '../pages/Calendar/ChoosedMonth/ChoosedMonth';
-import ChoosedDay from '../components/Calendar/ChoosedDay/ChoosedDay';
+import { ChoosedDay } from '../components/Calendar/ChoosedDay/ChoosedDay';
 import { Page404 } from 'pages/Page404/Page404';
 import { Account } from 'pages/Account/Account';
 
@@ -64,7 +64,7 @@ export const App = () => {
         <Route index element={<CalendarPage />} />
         <Route path="day/:currentDay" element={<ChoosedDay />} />
         <Route path="mouth/:currentDay" element={<ChoosedMonth />} />
-        <Route path="calendar/statistics" element={<StatisticsPage />} />
+        <Route path="/calendar/statistics" element={<StatisticsPage />} />
         <Route path="/calendar/userInfo" element={<Account />} />
       </Route>
 

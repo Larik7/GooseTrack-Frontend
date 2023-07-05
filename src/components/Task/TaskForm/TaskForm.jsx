@@ -55,7 +55,7 @@ export const TaskForm = ({ onClose, category, task }) => {
   const handleSubmit = (values, { resetForm }) => {
     const { title, start, end, priority } = values;
     if (!task) {
-      const date = values.date || '2023-06-30';
+      const date = values.date || '2023-07-05';
       dispatch(
         addTask({
           title,

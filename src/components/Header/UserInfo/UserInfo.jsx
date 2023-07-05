@@ -16,7 +16,7 @@ export const UserInfo = toggleShowSideBar => {
     }
   }, [user.name]);
 
-  console.log(user.imgURL);
+  // console.log(user.imgURL);
 
   const username = user.name ?? '';
   const imgURL = user.imgURL ?? null;

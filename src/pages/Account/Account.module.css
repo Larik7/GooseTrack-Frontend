@@ -1,8 +1,8 @@
 .container {
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 40px;    
-  background-color:var(--mobile-bdg-color); 
+  padding-bottom: 40px;
+  background-color: var(--sidebar-background-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -14,6 +14,6 @@
 
 @media screen and (min-width: 1280px) {
   .container {
-    margin-left: 289px;
+    /* margin-left: 289px; */
   }
 }
