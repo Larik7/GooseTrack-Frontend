@@ -1,2 +1,10 @@
+// Import
 import { Description } from './Description';
-export {Description};
+import { ReviewsSlider } from './ReviewsSlider';
+
+
+// Export
+export {
+    Description, 
+    ReviewsSlider,
+};

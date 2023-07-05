@@ -6,9 +6,10 @@ import { fetchReviews } from 'redux/reviews/reviewOperation';
 import { selectAllReviews } from 'redux/reviews/reviewSelector';
 import { ReviewCard } from './ReviewCard';
 import sprite from 'icons/sprite.svg';
-import css from './ReviewSlider.module.css';
+import css from './ReviewsSlider.module.css';
 
-// Slide Right
+
+// Slick Right
 const SlickRight = ({ currentSlide, slideCount, ...props }) => (
   <div
     {...props}
@@ -23,7 +24,7 @@ const SlickRight = ({ currentSlide, slideCount, ...props }) => (
   </div>
 );
 
-// Slide Left
+// Slick Left
 const SlickLeft = ({ currentSlide, slideCount, ...props }) => (
   <div
     {...props}
@@ -59,7 +60,7 @@ const settings = {
   prevArrow: <SlickLeft />,
 };
 
-// Review Slider
+// Reviews Slider
 export const ReviewsSlider = () => {
   const reviews = useSelector(selectAllReviews);
   const dispatch = useDispatch();

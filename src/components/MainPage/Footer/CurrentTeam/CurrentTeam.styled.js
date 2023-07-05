@@ -62,7 +62,7 @@ export const TeamName = styled.p`
   font-weight: 700;
   font-size: 24px;
   line-height: 1.3em;
-  max-width: 165px;
+  max-width: 150px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;

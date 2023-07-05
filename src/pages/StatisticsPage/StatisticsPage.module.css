@@ -1,12 +1,11 @@
 .mainComponent {
-  background-color: var(--primary-background-color);
+  background-color: var(--sidebar-background-color);
   border-radius: 16px;
 }
 
-
 .wrapper {
   border-radius: 16px;
-  background: var(--primary-background-color);
+  background: var(--sidebar-background-color);
   width: 335px;
   height: 684px;
   padding-top: 134px;
@@ -45,8 +44,6 @@
 }
 
 @media (min-width: 1440px) {
-
-
   .mainComponent {
     width: 1087px;
     height: 752px;

@@ -12,7 +12,7 @@ const emptySortedTask = {
   toDo: [],
 };
 
-const ChoosedDay = () => {
+export const ChoosedDay = () => {
   const { currentDay: targetDate } = useParams();
 
   const tasks = useSelector(selectAllTasks);
@@ -67,5 +67,3 @@ const ChoosedDay = () => {
     </div>
   );
 };
-
-export default ChoosedDay;

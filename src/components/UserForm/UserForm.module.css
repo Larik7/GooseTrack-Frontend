@@ -6,7 +6,7 @@
   margin-top: 95px;
   margin-bottom: 38px;
   border-radius: 16px;
-  background-color: var(--primary-background-color);
+  background-color: var(--sidebar-background-color);
   @media screen and (min-width: 767px) {
     margin-top: 64px;
     display: flex;
@@ -23,7 +23,7 @@
   margin-bottom: 40px;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-background-color);
+  background-color: var(--sidebar-background-color);
   @media screen and (min-width: 767px) {
     position: relative;
 
