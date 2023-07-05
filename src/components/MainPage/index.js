@@ -1,10 +1,6 @@
-// Import
-import { Description } from './Description';
-import { ReviewsSlider } from './ReviewsSlider';
 
 
 // Export
-export {
-    Description, 
-    ReviewsSlider,
-};
+export * from 'components/MainPage/ReviewSlider/ReviewsSlider';
+
+
