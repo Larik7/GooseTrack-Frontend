@@ -78,6 +78,7 @@
 }
 @media screen and (min-width: 1200px) {
   .taskContainer {
+    overflow: auto;
     top: 67px;
   }
 }
