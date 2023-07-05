@@ -11,12 +11,12 @@ export const teams =
         },
         { 
         name: "Vladimir",
-        surName: "",
+        surName: "Plotnikov",
         position: "Scrum-master",
         git: "https://github.com/",
         linkedin: "https://www.linkedin.com/",
         description: ["Organization of teamwork, development of the start page, 404 pages and autologin"],
-        avatar: require('../../../../images/team/Уланов_Ілларіон.jpg'),
+        avatar: require('../../../../images/team/Владимир_Плотников.jpg'),
        },
        { 
         name: "Anatoliy",
@@ -89,7 +89,16 @@ export const teams =
         linkedin: "https://www.linkedin.com/",
         description: ["Development of the backend of registration blocks and tasks. Swagger"],
         avatar: require('../../../../images/team/Станков_Максим.jpg'),
-       },
+        },
+        { 
+        name: "Andrey",
+        surName: "Marchuk",
+        position: "Developer",
+        git: "https://github.com/Demiurge232",
+        linkedin: "https://www.linkedin.com/",
+        description: ["Development of the backend of registration blocks and tasks. Swagger"],
+        avatar: require('../../../../images/team/Марчук_Андрій.jpg'),
+        },
        { 
         name: "Dmitriy",
         surName: "Zgovnovskiy",
@@ -101,12 +110,21 @@ export const teams =
        },
        { 
         name: "Anastasiya",
-        surName: "",
+        surName: "Shamalo",
         position: "Developer",
         git: "https://github.com/",
         linkedin: "https://www.linkedin.com/in/",
         description: ["Development of User Profile"],
-        avatar: require('../../../../images/team/Фролова_Валерія.jpg'),
+        avatar: require('../../../../images/team/Анастасия_Шамало.jpg'),
+        },
+       { 
+        name: "Pavlo",
+        surName: "Ziuskin",
+        position: "Developer",
+        git: "https://github.com/PavloZiuskin",
+        linkedin: "https://www.linkedin.com/in/",
+        description: ["Development of User Profile"],
+        avatar: require('../../../../images/team/Павло_Зюськин.jpg'),
         },
     ];
  

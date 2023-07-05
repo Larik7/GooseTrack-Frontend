@@ -91,12 +91,12 @@ export const SocItem = styled.li`
   height: 44px;
   width: 44px;
   border-radius: 50%;
-  background: var(--priority-high-bg-color);
-  transition: background-color var(--animation);
+  background: var(--task-item-background-color);
+  transition: background-color var(--animation-cubic);
 
   &:hover,
   &:focus {
-    background-color: var(--low-color);
+    background-color: var(--primary-text-color);
   }
 `;
 
@@ -107,13 +107,13 @@ export const SocLink = styled.a`
 `;
 
 export const SocIcon = styled.svg`
-  fill: var(--primary-text-color);
-  transition: fill var(--animation);
+  fill: var(--log-text-color);
+  transition: fill var(--animation-cubic);
 
   &:hover,
   &:focus {
-    fill: var(--nav-button-background-hover);
-    transition: fill var(--animation);
+    fill: var(--priority-high-bg-color);
+    transition: fill var(--animation-cubic);
   }
 `;
 
@@ -129,5 +129,5 @@ export const TeamText = styled.ul`
   font-size: 18px;
   line-height: 1em;
   text-align: center;
-  color: #ffffff;
+  color: var(--secondary-background-color);
 `;
