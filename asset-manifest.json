@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/GooseTrack-Frontend/static/css/main.abd4242e.css",
+    "main.css": "/GooseTrack-Frontend/static/css/main.c6e4db56.css",
     "main.js": "/GooseTrack-Frontend/static/js/main.a7c7dfad.js",
     "static/media/tablet_calendar@2x.png": "/GooseTrack-Frontend/static/media/tablet_calendar@2x.844cff810c188f6f25a7.png",
     "static/media/desktop_calendar@2x.png": "/GooseTrack-Frontend/static/media/desktop_calendar@2x.511158f67c65ff6302fb.png",
@@ -66,11 +66,11 @@
     "static/media/team_icon.svg": "/GooseTrack-Frontend/static/media/team_icon.54bd973698278eb677bcffd17ba169b8.svg",
     "index.html": "/GooseTrack-Frontend/index.html",
     "static/media/plus.svg": "/GooseTrack-Frontend/static/media/plus.f0087676f0974ccbb001.svg",
-    "main.abd4242e.css.map": "/GooseTrack-Frontend/static/css/main.abd4242e.css.map",
+    "main.c6e4db56.css.map": "/GooseTrack-Frontend/static/css/main.c6e4db56.css.map",
     "main.a7c7dfad.js.map": "/GooseTrack-Frontend/static/js/main.a7c7dfad.js.map"
   },
   "entrypoints": [
-    "static/css/main.abd4242e.css",
+    "static/css/main.c6e4db56.css",
     "static/js/main.a7c7dfad.js"
   ]
 }
