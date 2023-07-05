@@ -7,7 +7,9 @@ import { setActivedDate } from 'redux/tasks/taskReducer';
 
 export const CallendarDayBox = ({ date, month, picked = false }) => {
   const dispatch = useDispatch();
+
   const dateForBox = `${month}-${date.toString().padStart(2, 0)}`;
+
   const allTasks = useSelector(selectAllTasks);
   const activeDate = useSelector(selectActiveDate);
 
@@ -21,6 +23,7 @@ export const CallendarDayBox = ({ date, month, picked = false }) => {
   );
   const handleDayBox = () => {
     dispatch(setActivedDate(dateForBox));
+    // console.log('dispatch day', new Date().toISOString().slice(0, 10));
   };
   return (
     <Link

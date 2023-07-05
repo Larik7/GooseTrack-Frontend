@@ -4,9 +4,12 @@ import { nanoid } from 'nanoid';
 import css from './callendarTable.module.css';
 import { CallendarDayBox } from './CallendarDayBox/CalendarDayBox';
 import { selectActiveDate } from 'redux/tasks/selectors';
+
 export const CalendarTable = () => {
   const date = useSelector(selectActiveDate);
+
   const callendaryBox = getCalendaryFormat(date);
+  console.log(date);
   return (
     <div className={css.callendarContainer}>
       {callendaryBox.map(week => (
