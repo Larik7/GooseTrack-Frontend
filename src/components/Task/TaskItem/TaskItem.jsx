@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from 'redux/auth/selectors';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import TaskToolbar from '../TaskToolbar/TaskToolbar';
 
 export const TaskItem = ({ task }) => {
   const user = useSelector(selectUser);
@@ -51,9 +52,7 @@ export const TaskItem = ({ task }) => {
           <p className={`${priorityClass}`}>{task.priority}</p>
         </div>
         <div className={css.btn_box}>
-          <button>1</button>
-          <button>1</button>
-          <button>1</button>
+          <TaskToolbar task={task} />
         </div>
       </div>
     </div>

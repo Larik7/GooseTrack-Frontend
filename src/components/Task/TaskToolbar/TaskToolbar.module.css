@@ -1,0 +1,86 @@
+.toolbar_list {
+  height: 100%;
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  bottom: 0;
+  right: 0;
+  gap: 12px;
+}
+
+.toolbar_button {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  cursor: pointer;
+}
+
+.toolbar_svg {
+  fill: transparent;
+  stroke: var(--primary-text-color);
+}
+
+.toolbar_svg:hover,
+.toolbar_svg:focus {
+  stroke: var(--nav-button-color-hover);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.change_box {
+  display: flex;
+  position: absolute;
+  background-color: var(--task-item-background-color);
+  padding: 16px 20px 16px 20px;
+  box-shadow: 0px 4px 16px rgba(17, 17, 17, 0.1);
+  border-radius: 8px;
+  width: 147px;
+  height: 90px;
+  justify-content: space-between;
+  top: 30px;
+  right: -20px;
+  z-index: 100;
+}
+
+.change_box_item {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 4px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.change_box_text:hover,
+.change_box_text:focus {
+  color: var(--nav-button-color-hover);
+  stroke: var(--nav-button-color-hover);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.change_box_item:first-child {
+  margin-bottom: 6px;
+}
+
+.change_box_text {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--secondary-text-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 767px) {
+  .toolbar_svg {
+    width: 16px;
+    height: 16px;
+  }
+}

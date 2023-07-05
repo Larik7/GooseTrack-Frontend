@@ -1,0 +1,102 @@
+.weeks_item {
+  display: flex;
+  height: 68px;
+  padding: 10px 0;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: calc(18 / 16);
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  background: var(--sidebar-background-color);
+  border-radius: 8px;
+  color: var(--calendar-digit-color);
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.week_item_day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 26px;
+  padding: 3px;
+  color: var(--calendar-digit-color);
+  background: var(--sidebar-background-color);
+  border-radius: 6px;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(18 / 16);
+}
+
+.week_item_day:hover,
+.week_item_day:focus {
+  color: var(--sidebar-background-color);
+  background-color: var(--nav-button-color-hover);
+}
+
+.current_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 26px;
+  padding: 5px;
+  background: var(--sidebar-background-color);
+  border-radius: 6px;
+  color: var(--calendar-digit-color);
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: calc(18 / 16);
+}
+
+.grid_weeks_container {
+  border-radius: 8px;
+  background: var(--sidebar-background-color);
+  border: 1px solid var(--modal-border-color);
+  margin: 24px 0 32px;
+  text-align: center;
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weeks_item_name {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: calc(18 / 14);
+}
+
+.selected_day {
+  display: inline-block;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: var(--sidebar-background-color);
+  background-color: var(--nav-button-color-hover);
+}
+
+.not_selected_day {
+  display: inline-block;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+
+.week_item_day:disabled {
+  background-color: var(--nav-button-color-hover);
+  cursor: default;
+  border: none;
+  color: var(--sidebar-background-color);
+}

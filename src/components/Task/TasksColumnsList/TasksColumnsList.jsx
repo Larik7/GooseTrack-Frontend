@@ -1,28 +1,28 @@
 import { nanoid } from 'nanoid';
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { getColumns } from 'redux/tasks/selectors';
+// import { getColumns } from 'redux/tasks/selectors';
 import { fetchTasks } from 'redux/tasks/taskOperation';
 import { TasksColumn } from '../TaskColumn/TaskColums';
 
 import css from './TasksColumnsList.module.css';
 
-export const TasksColumnsList = () => {
+export const TasksColumnsList = ({ sortedTasksData }) => {
   const dispatch = useDispatch();
-  const columns = useSelector(getColumns);
+  // const columns = useSelector(getColumns);
 
-  const getTasksByCategory = category => {
-    const columnKey = Object.keys(columns).find(
-      key => columns[key].name === category
-    );
-    return columnKey ? columns[columnKey].items : [];
-  };
+  // const getTasksByCategory = category => {
+  //   const columnKey = Object.keys(columns).find(
+  //     key => columns[key].name === category
+  //   );
+  //   return columnKey ? columns[columnKey].items : [];
+  // };
 
   // Отримуємо завдання з різних категорій
-  const todoTasks = getTasksByCategory('to-do');
-  const inProgressTasks = getTasksByCategory('in-progress');
-  const doneTasks = getTasksByCategory('done');
+  const todoTasks = sortedTasksData.toDo;
+  const inProgressTasks = sortedTasksData.inProgress;
+  const doneTasks = sortedTasksData.done;
 
   useEffect(() => {
     dispatch(fetchTasks());

@@ -5,10 +5,18 @@ import {
   logOut,
   currentPage,
   refreshToken,
+  updateUser,
 } from './authOperation';
 
 const initialState = {
-  user: { name: null, email: null },
+  user: {
+    name: null,
+    email: null,
+    birthday: null,
+    phone: null,
+    skype: null,
+    avatarURL: null,
+  },
   accessToken: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -80,6 +88,19 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
     },
     [refreshToken.rejected](state, { payload }) {
+      state.error = payload;
+      state.isRefreshing = false;
+    },
+    [updateUser.pending](state) {
+      state.isRefreshing = true;
+    },
+    [updateUser.fulfilled](state, { payload }) {
+      state.user = payload;
+
+      state.isRefreshing = false;
+      state.isLoggedIn = true;
+    },
+    [updateUser.rejected](state, { payload }) {
       state.error = payload;
       state.isRefreshing = false;
     },

@@ -2,13 +2,17 @@ import { Outlet } from 'react-router';
 // import React, { Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import { useState, Suspense } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { CalendarToolbar } from 'components/Calendar/CalendarToolbar';
 import { ChoosedMonth } from 'pages/Calendar/ChoosedMonth/ChoosedMonth';
+import { setActivedDate } from 'redux/tasks/taskReducer';
 
 export const CalendarPage = ({ selectedDay, setSelectedDay }) => {
+  const dispatch = useDispatch();
   const params = useParams();
   const [currentDate, setCurrentDate] = useState(new Date());
+  dispatch(setActivedDate(new Date().toDateString().slice(0, 10)));
   return (
     <div>
       <Suspense fallback={null}>

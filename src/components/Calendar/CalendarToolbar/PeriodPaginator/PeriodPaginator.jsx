@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineLeft } from 'react-icons/ai';
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns';
 import css from './PeriodPaginator.module.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { parseDate } from 'helpers/parseDate';
@@ -8,6 +8,7 @@ import { enGB, eo, uk } from 'date-fns/locale';
 import { useTranslation } from 'react-i18next';
 
 const locales = { enGB, eo, uk };
+
 export const PeriodPaginator = ({
   selectedDay,
   nextMonth,
@@ -29,6 +30,7 @@ export const PeriodPaginator = ({
     const parsedDate = parseDate(selectedDay);
     navigate(`/calendar/day/${parsedDate}`);
   }, [selectedDay, navigate, params.currentDay]);
+
   useEffect(() => {
     if (i18n.language === 'ua') {
       setLanguage('uk');
@@ -44,9 +46,29 @@ export const PeriodPaginator = ({
     locale: locales[language],
   });
 
-  const formattedDay = format(selectedDay, dayFormat, {
-    locale: locales[language],
-  });
+  let formattedDay = '';
+  if (isValid(selectedDay)) {
+    console.log('selectedDay', selectedDay);
+    formattedDay = format(selectedDay, dayFormat, {
+      locale: locales[language],
+    });
+  }
+
+  const handlePrevClick = () => {
+    if (params.currentDay) {
+      prevDay();
+    } else {
+      prevMonth();
+    }
+  };
+
+  const handleNextClick = () => {
+    if (params.currentDay) {
+      nextDay();
+    } else {
+      nextMonth();
+    }
+  };
 
   return (
     <div className={css.group_period}>
@@ -54,19 +76,16 @@ export const PeriodPaginator = ({
         {params.currentDay ? formattedDay : formattedMonth}
       </div>
       <div className={css.period_tabs_container}>
-        <div
-          className={css.period_tabs}
-          onClick={params.currentDay ? prevDay : prevMonth}
-        >
+        <button className={css.period_tabs} onClick={handlePrevClick}>
           <AiOutlineLeft className={css.icon} />
-        </div>
-        <div
+        </button>
+        <button
           className={css.period_tabs}
           style={{ transform: 'rotate(180deg)' }}
-          onClick={params.currentDay ? nextDay : nextMonth}
+          onClick={handleNextClick}
         >
           <AiOutlineLeft className={css.icon} />
-        </div>
+        </button>
       </div>
     </div>
   );

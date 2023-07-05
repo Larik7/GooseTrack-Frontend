@@ -1,24 +1,36 @@
-// import css from './header.module.css';
+// Header.js
+import { useLocation } from 'react-router-dom';
 import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
 import cssLogo from '../SideBar/sideBar.module.css';
 import css from './header.module.css';
-// import avatar from '../../images/avatars/avatarShev.jpg';
-
 import { RxHamburgerMenu } from 'react-icons/rx';
-// переключатели темы
 import { ThemeToggler } from './ThemeToggle/ThemeToggle';
 import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
-
-import {Tour} from '../Tour/Tour'
+import { Tour } from '../Tour/Tour';
 import { UserInfo } from './UserInfo/UserInfo';
 
 
-// import { HiOutlineSun } from "react-icons/hi"
 
 export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
   const handlerMenu = () => {
     setOpen(!openMenu);
   };
+  const location = useLocation();
+ let title = '';
+
+  switch (location.pathname) {
+    case '/statistics':
+      title = 'Statistics';
+      break;
+    case '/user':
+      title = 'User Profile';
+      break;
+    case '/calendar':
+      title = 'Calendar';
+      break;
+    default:
+      title = '';
+  }
 
   return (
     <header className={css.header}>
@@ -31,10 +43,9 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
 
       <div className={css.headerInfoBox}>
         <button className={css.burgerMenu} onClick={handlerMenu}>
-          {' '}
           <RxHamburgerMenu size={32} />
         </button>
-        <p className={css.infoTitle}>Info Title</p>
+        <p className={css.infoTitle}>{title}</p>
         <div className={css.conteinerBtn}>
           <AddFeedbackBtn feedbackBtnStyle={css.feedbackBtn} />
           <div className={css.infoMenu}>

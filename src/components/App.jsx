@@ -11,13 +11,11 @@ import { PrivateRoute } from 'helpers/PrivetRoute';
 import { Vortex } from 'react-loader-spinner';
 import { MainPage } from 'pages/MainPage/MainPage';
 import { StatisticsPage } from '../pages/StatisticsPage/StatisticsPage';
-// import { CalendarPage } from '../pages/Calendar/CalendarPage';
+import { CalendarPage } from '../pages/Calendar/CalendarPage';
+import { ChoosedMonth } from '../pages/Calendar/ChoosedMonth/ChoosedMonth';
+import { ChoosedDay } from '../components/Calendar/ChoosedDay/ChoosedDay';
 import { Page404 } from 'pages/Page404/Page404';
-import { TasksColumnsList } from './Task/TasksColumnsList/TasksColumnsList';
-
-// import { LoginForm } from '../pages/LoginForm/LoginForm';
-
-// import { Description } from './MainPage/Description/Description';
+import { Account } from 'pages/Account/Account';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -63,12 +61,11 @@ export const App = () => {
           <PrivateRoute redirectTo="/login" component={<MainLayout />} />
         }
       >
-        <Route index element={<TasksColumnsList />} />
-        {/* <-----   CalendarPage */}
-        {/* <Route path="/day/:currentDay" element={<TasksColumnsList />} /> */}
-        {/* <Route path="/mouth/:currentDay" element={<TasksColumnsList />} /> */}
+        <Route index element={<CalendarPage />} />
+        <Route path="day/:currentDay" element={<ChoosedDay />} />
+        <Route path="mouth/:currentDay" element={<ChoosedMonth />} />
         <Route path="/calendar/statistics" element={<StatisticsPage />} />
-        {/* <Route path="/calendar/userInfo" element={<Account/>} /> */}
+        <Route path="/calendar/userInfo" element={<Account />} />
       </Route>
 
       <Route path="*" element={<Page404 />} />

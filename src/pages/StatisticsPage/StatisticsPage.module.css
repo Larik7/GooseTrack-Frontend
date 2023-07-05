@@ -1,29 +1,28 @@
-@media screen and (min-width: 1158px) {
-  .conteinerMainLayout {
-    width: 100%;
-    height: 100vh;
-  }
-}
-.main {
-  background-color: var(--primary-background-color);
-  padding: 40px 20px;
-}
-
 .mainComponent {
-  background-color: var(--primary-background-color);
+  background-color: var(--sidebar-background-color);
   border-radius: 16px;
 }
 
-@media (min-width: 1440px) {
-  .conteinerMainLayout {
-    width: 1440px;
-  }
+.wrapper {
+  border-radius: 16px;
+  background: var(--sidebar-background-color);
+  width: 335px;
+  height: 684px;
+  padding-top: 134px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 104px;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 767px) {
   .mainComponent {
     width: 375px;
     height: 844px;
+  }
+
+  .wrapper {
+    width: 335px;
+    height: 684px;
   }
 }
 
@@ -37,6 +36,11 @@
   .main {
     display: flex;
   }
+
+  .wrapper {
+    width: 704px;
+    height: 854px;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -49,42 +53,14 @@
     float: left;
     width: 20%;
   }
+
   .main {
     float: right;
     width: 80%;
     padding: 0 32px 32px 32px;
   }
-}
-@media (max-width: 1439px) {
-  .backDrop {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
 
-    backdrop-filter: blur(2px);
-    background-color: rgba(35, 100, 138, 0.349);
-  }
-}
-
-.wrapper {
-  border-radius: 16px;
-  background: var(--sidebar-background-color);
-  width: 335px;
-  height: 684px;
-  padding-top: 134px;
-  padding-left: 113px;
-  padding-right: 113px;
-  padding-bottom: 104px;
-
-  @media screen and (min-width: 768px) {
-    width: 704px;
-    height: 854px;
-  }
-
-  @media screen and (min-width: 1440px) {
+  .wrapper {
     border-radius: 16px;
     width: 1087px;
     height: 752px;
@@ -132,11 +108,10 @@
 }
 
 .chart {
-  background-color: var(--sidebar-background-color);
+  background-color: var(--primary-background-color);
   border-radius: 29px;
   border: 1px solid #e3f3ff;
-  /* width: 335px; */
-  /* height: 684px; */
+  margin: auto;
 
   @media screen and (min-width: 768px) {
     width: 640px;
@@ -144,11 +119,7 @@
   }
 
   @media screen and (min-width: 1440px) {
-    /* background-color: var(--sidebar-background-color); */
-    /* border-radius: 29px; */
-    /* border: 1px solid #e3f3ff; */
     width: 860px;
     height: 440px;
   }
 }
-
