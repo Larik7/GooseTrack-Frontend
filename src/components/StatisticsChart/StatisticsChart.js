@@ -9,63 +9,10 @@ import {
   Tooltip,
   LabelList,
   ResponsiveContainer,
-  
 } from 'recharts';
 import { fetchTasks } from 'redux/tasks/taskOperation';
 import { useEffect } from 'react';
 import { selectAllTasks } from 'redux/tasks/selectors';
-
-
-const tasks = [
-  {
-    title: 'Task 1',
-    date: '2023-06-28',
-    start: '09:00',
-    end: '17:00',
-    priority: 'medium',
-    category: 'to-do',
-  },
-  {
-    title: 'Task 4',
-    date: '2023-06-30',
-    start: '09:00',
-    end: '17:00',
-    priority: 'medium',
-    category: 'to-do',
-  },
-  {
-    title: 'Task 2',
-    date: '2023-06-30',
-    start: '09:00',
-    end: '17:00',
-    priority: 'medium',
-    category: 'in-progress',
-  },
-  {
-    title: 'Task 3',
-    date: '2023-06-30',
-    start: '09:00',
-    end: '17:00',
-    priority: 'medium',
-    category: 'done',
-  },
-  {
-    title: 'Task 3',
-    date: '2023-07-28',
-    start: '09:00',
-    end: '17:00',
-    priority: 'medium',
-    category: 'done',
-  },
-  {
-    title: 'Task 3',
-    date: '2023-06-02',
-    start: '09:00',
-    end: '17:00',
-    priority: 'medium',
-    category: 'done',
-  },
-];
 
 const currentDay = '2023-06-30';
 const currentMonth = 5;
@@ -79,11 +26,9 @@ export const StatisticsChart = () => {
     dispatch(fetchTasks());
   }, [dispatch]);
 
-  console.log(tasksBD);
-
   // Вычисляем ByDay
 
-  const tasksByCurrentDay = tasks.filter(task => task.date === currentDay);
+  const tasksByCurrentDay = tasksBD.filter(task => task.date === currentDay);
   const sumTasksToDoDay = tasksByCurrentDay.filter(
     task => task.category === 'to-do'
   ).length;
@@ -96,14 +41,14 @@ export const StatisticsChart = () => {
 
   // Вычисляем ByMonth
 
-  const funcTasksByCurMonth = (tasks, currentMonth) => {
-    const tasksByCurMonth = tasks.filter(
+  const funcTasksByCurMonth = (tasksBD, currentMonth) => {
+    const tasksByCurMonth = tasksBD.filter(
       task => new Date(task.date).getMonth() === currentMonth
     );
     return tasksByCurMonth;
   };
 
-  const tasksByCurrentMonth = funcTasksByCurMonth(tasks, currentMonth);
+  const tasksByCurrentMonth = funcTasksByCurMonth(tasksBD, currentMonth);
 
   const sumTasksToDoMonth = tasksByCurrentMonth.filter(
     task => task.category === 'to-do'
@@ -146,7 +91,7 @@ export const StatisticsChart = () => {
   const allTasksByDay = arrayByDay.reduce((acc, number) => acc + number);
 
   const ByDayPer = arrayByDay.map(
-    item => (item / allTasksByDay).toFixed(2) * 100 + '%'
+    item => Math.round((item / allTasksByDay) * 100) + '%'
   );
 
   tasksToDo.ByDayPercent = ByDayPer[0];
@@ -159,18 +104,15 @@ export const StatisticsChart = () => {
   const allTasksByMonth = arrayByMonth.reduce((acc, number) => acc + number);
 
   const ByMonthPer = arrayByMonth.map(
-    item => (item / allTasksByMonth).toFixed(2) * 100 + '%'
+    item => Math.round((item / allTasksByMonth) * 100) + '%'
   );
 
   tasksToDo.ByMonthPercent = ByMonthPer[0];
   tasksInProgress.ByMonthPercent = ByMonthPer[1];
   tasksDone.ByMonthPercent = ByMonthPer[2];
 
-
   const strokeVar = 'var(--primary-text-color)';
   const backgraondColor = 'var(--tooltip-color)';
-
-  
 
   return (
     <>
@@ -178,44 +120,68 @@ export const StatisticsChart = () => {
         <b>Tasks</b>
       </p>
       <ResponsiveContainer width="100%" height="90%">
-      <BarChart
-        data={tasksForChart}
-        
-        margin={{
-          top: 35,
-          right: 0,
-          left: 20,
-          bottom: 50,
-        }}
-      >
-        <CartesianGrid stroke="#E3F3FF" strokeDasharray="0" vertical={false}  />
-        <XAxis dataKey="name"   stroke="0" tick={{ fill: strokeVar, dy: 10  }}   /> 
-        <YAxis stroke="0" tick={{ fill: strokeVar, dx: -20 }}/>
-        <Tooltip contentStyle={{ color: strokeVar, backgroundColor: backgraondColor, borderRadius: '10px',}} />
-
-        <defs >
-          <linearGradient id="colorDay" x1="0" y1="1" x2="0" y2="0">
-            <stop offset="1%" stopColor="#FFD2DD" stopOpacity={0.8} />
-            <stop offset="99%" stopColor="#FFD2DD" stopOpacity={0} />
-          </linearGradient>
-          <linearGradient id="colorMonth" x1="0" y1="1" x2="0" y2="0">
-            <stop offset="1%" stopColor="#3E85F3" stopOpacity={0.8} />
-            <stop offset="99%" stopColor="#3E85F3" stopOpacity={0} />
-          </linearGradient>
-        </defs>
-        <Bar dataKey="ByDay" fill="url(#colorDay)" barSize={27} radius={[0,0,10,10]} >
-          <LabelList dataKey="ByDayPercent" position="top" fill={strokeVar} fontWeight="lighter"  />
-        </Bar>
-        <Bar
-          dataKey="ByMonth"
-          fill="url(#colorMonth)"
-          barSize={27}
-          radius={[0,0,10,10]}
+        <BarChart
+          data={tasksForChart}
+          margin={{
+            top: 35,
+            right: 0,
+            left: 20,
+            bottom: 50,
+          }}
         >
-          <LabelList dataKey="ByMonthPercent" position="top"  fill={strokeVar} fontWeight="lighter"   />
-        </Bar>
+          <CartesianGrid
+            stroke="#E3F3FF"
+            strokeDasharray="0"
+            vertical={false}
+          />
+          <XAxis dataKey="name" stroke="0" tick={{ fill: strokeVar, dy: 10 }} />
+          <YAxis stroke="0" tick={{ fill: strokeVar, dx: -20 }} />
+          <Tooltip
+            contentStyle={{
+              color: strokeVar,
+              backgroundColor: backgraondColor,
+              borderRadius: '10px',
+            }}
+          />
+
+          <defs>
+            <linearGradient id="colorDay" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="1%" stopColor="#FFD2DD" stopOpacity={0.8} />
+              <stop offset="99%" stopColor="#FFD2DD" stopOpacity={0} />
+            </linearGradient>
+            <linearGradient id="colorMonth" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="1%" stopColor="#3E85F3" stopOpacity={0.8} />
+              <stop offset="99%" stopColor="#3E85F3" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <Bar
+            dataKey="ByDay"
+            fill="url(#colorDay)"
+            barSize={27}
+            radius={[0, 0, 10, 10]}
+          >
+            <LabelList
+              dataKey="ByDayPercent"
+              position="top"
+              fill={strokeVar}
+              fontWeight="lighter"
+            />
+          </Bar>
+          <Bar
+            dataKey="ByMonth"
+            fill="url(#colorMonth)"
+            barSize={27}
+            radius={[0, 0, 10, 10]}
+          >
+            <LabelList
+              dataKey="ByMonthPercent"
+              position="top"
+              fill={strokeVar}
+              fontWeight="lighter"
+            />
+          </Bar>
         </BarChart>
-        </ResponsiveContainer>
+      </ResponsiveContainer>
     </>
   );
 };
