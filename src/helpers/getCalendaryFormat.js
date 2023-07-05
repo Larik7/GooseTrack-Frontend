@@ -33,7 +33,7 @@ export const getCalendaryFormat = nowDate => {
   return weeks;
 };
 function getPastandFutureMonths(monthString) {
-  const [yearStr, monthStr] = monthString;
+  const [yearStr, monthStr] = monthString.split('-');
   const year = parseInt(yearStr);
   const month = parseInt(monthStr);
   const pastMonth = month === 1 ? 12 : month - 1;
