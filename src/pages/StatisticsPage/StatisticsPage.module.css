@@ -1,11 +1,11 @@
 .mainComponent {
-  background-color: var(--sidebar-background-color);
+  background-color: var(--container-page-bacground);
   border-radius: 16px;
 }
 
 .wrapper {
   border-radius: 16px;
-  background: var(--sidebar-background-color);
+  background: var(--container-page-bacground);
   width: 335px;
   height: 684px;
   padding-top: 134px;
@@ -52,6 +52,7 @@
   .aside {
     float: left;
     width: 20%;
+    background-color: var(--secondary-background-color);
   }
 
   .main {
@@ -107,17 +108,21 @@
   margin-bottom: 2px;
 }
 
+
+
+ @media screen and (min-width: 768px) {
+  .chart{ width: 640px;
+    height: 424px;}
+   
+  }
+
 .chart {
-  background-color: var(--primary-background-color);
+  background-color: var(--container-page-bacground);
   border-radius: 29px;
   border: 1px solid #e3f3ff;
   margin: auto;
 
-  @media screen and (min-width: 768px) {
-    width: 640px;
-    height: 424px;
-  }
-
+ 
   @media screen and (min-width: 1440px) {
     width: 860px;
     height: 440px;
