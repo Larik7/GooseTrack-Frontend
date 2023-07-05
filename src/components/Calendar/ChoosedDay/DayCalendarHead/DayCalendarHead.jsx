@@ -13,6 +13,8 @@ import { selectUser } from 'redux/auth/selectors';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import css from './DayCalendarHead.module.css';
+import { setActivedDate } from 'redux/tasks/taskReducer';
+import { useDispatch } from 'react-redux';
 
 export const DayCalendarHead = () => {
   const { currentDay: targetDate } = useParams();
@@ -20,6 +22,7 @@ export const DayCalendarHead = () => {
   const user = useSelector(selectUser);
   const formatofWeek = 'eeee';
   const [time, setTime] = useState(new Date());
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const calendarDate = new Date(targetDate);
@@ -44,8 +47,10 @@ export const DayCalendarHead = () => {
 
   const curenttDayStyle = cureDayStyl => formatDate(cureDayStyl) === targetDate;
   const selectedDay = dayWeeks => formatDate(dayWeeks) === targetDate;
-  const handleChangDay = dayData =>
+  const handleChangDay = dayData => {
+    dispatch(setActivedDate(formatDate(dayData)));
     navigate(`/calendar/day/${formatDate(dayData)}`);
+  };
 
   const renderDayComponent = (week, isSelected) => {
     const dayComponent = curenttDayStyle(week) ? (
