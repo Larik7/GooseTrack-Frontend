@@ -9,8 +9,8 @@
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 64px;
-  font-family: Inter;
-  background-color: var(--primary-background-color);
+  font-family: #343434;
+  background-color: #FFFFFF;
 
   @media screen and (min-width: 768px) {
     width: 704px;
