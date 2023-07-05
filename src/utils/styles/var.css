@@ -6,13 +6,15 @@
   /* background colors */
 
   --primary-background-color: #f7f6f9;
-  --secondary-background-color: #eaeaea;
+  --secondary-background-color: #f7f6f9;
 
   --sidebar-background-color: #ffffff;
 
   --task-item-background-color: #f0f0f0;
 
   --tooltip-color: #f7f6f982;
+
+  --container-page-bacground:#FFFFFF;
 
   /* text colors */
   --primary-text-color: #111111;
@@ -78,7 +80,7 @@
   --sidebar-background-color: #13151a;
 
   --tooltip-color: #1718207c;
-
+--container-page-bacground: #21222C;
   /* text colors */
   --primary-text-color: #ffffff;
   --secondary-text-color: #ffffff;

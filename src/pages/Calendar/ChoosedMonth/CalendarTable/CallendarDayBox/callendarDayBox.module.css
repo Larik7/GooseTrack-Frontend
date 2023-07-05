@@ -3,10 +3,11 @@
   position: relative;
   min-height: 94px;
   border: 1px solid rgba(220, 227, 229, 0.5);
+  border-radius: 8px;
 }
 .dayContainer:hover,
 .dayContainer:focus {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(54, 53, 53, 0.24) 0px 3px 8px;
 }
 @media screen and (min-width: 768px) {
   .dayContainer {

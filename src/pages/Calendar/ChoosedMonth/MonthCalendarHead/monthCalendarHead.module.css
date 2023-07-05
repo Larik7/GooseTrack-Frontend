@@ -2,7 +2,7 @@
   width: 100%;
   border-radius: 8px;
   border: 1px solid rgba(220, 227, 229, 0.8);
-  background-color: #dce3e5cc;
+  background-color: var(--container-page-bacground);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
