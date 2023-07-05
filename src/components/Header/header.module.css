@@ -1,27 +1,22 @@
-
 .header {
   position: relative;
-   display: flex;
+  display: flex;
   align-items: center;
   height: 115px;
   width: 100%;
   padding: 24px 20px;
   justify-content: center;
-  background: var(--secondary-background-color);
+  background: var(--primary-background-color);
 }
 .headerInfoBox {
   display: block;
   display: flex;
   align-items: center;
-  
 }
 
-.conteinerBtn{
+.conteinerBtn {
   display: flex;
-
 }
-
-
 
 @media (min-width: 768px) {
   .header {
@@ -36,24 +31,23 @@
 @media (min-width: 1440px) {
   .header {
     padding: 32px 32px 32px 0;
-      justify-content: space-between;
+    justify-content: space-between;
   }
   .logoConteiner {
     padding: 32px 24px;
     background: var(--sidebar-background-color);
     height: 115px;
     width: 290px;
-   
   }
   .logoBox {
     display: flex;
     align-items: center;
     justify-content: center;
-   
   }
   .headerInfoBox {
-    padding: 0 32px; 
-}}
+    padding: 0 32px;
+  }
+}
 
 @media (max-width: 1439px) {
   .infoTitle {
@@ -75,27 +69,21 @@
   .imgBox {
     height: 32px;
     width: 32px;
-   
   }
 }
-
 
 @media (min-width: 768px) {
   .imgBox {
-      height: 44px;
-      width: 44px;
-
-    }
+    height: 44px;
+    width: 44px;
+  }
   .burgerMenu {
     margin-right: 355px;
   }
-  .feedbackBtn{
+  .feedbackBtn {
     margin-right: 24px;
   }
-
 }
-
-
 
 @media (min-width: 1440px) {
   .infoTitle {
@@ -104,12 +92,10 @@
     font-family: 'Inter';
     font-weight: 700;
     line-height: 32px;
-   
   }
-  .conteinerBtn{
+  .conteinerBtn {
     margin-left: 500px;
   }
-  
 }
 
 .feedbackBtn {
@@ -120,7 +106,7 @@
   font-family: 'Inter';
   font-weight: 600;
   font-size: 12px;
-  line-height: calc(16/12);
+  line-height: calc(16 / 12);
   letter-spacing: -0.02em;
   color: #fff;
   text-align: center;
@@ -138,7 +124,6 @@
   margin-left: auto;
 }
 
-
 .imgBox {
   height: 32px;
   width: 32px;
@@ -153,8 +138,6 @@
   font-weight: 700;
   line-height: 18px;
 }
-
-
 
 @media (min-width: 1440px) {
   .burgerMenu {
@@ -183,6 +166,3 @@
   padding: 10px;
   cursor: pointer;
 }
-
-
-

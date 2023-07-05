@@ -4,30 +4,23 @@
   margin-right: auto;
   width: 100%;
   height: 100vh;
-  /* outline: 1px solid red; */
-  background: var(--secondary-background-color);
-  /* width: 335px; */
-  /* outline: 1px solid red; */
-  /*   background: var(--secondary-background-color);
-  padding: 0 15px; */
+
+  background: var(--primary-background-color);
 }
 
 @media screen and (min-width: 1158px) {
-
 }
 
 .mainComponent {
-  background-color: #fff;
   border-radius: 16px;
 }
 
 @media (min-width: 1440px) {
-
 }
 
 .main {
   display: flex;
-  background-color: var(--secondary-background-color);
+  background-color: var(--primary-background-color);
   /*   display: block; */
   padding: 40px 20px;
   justify-content: center;
@@ -36,7 +29,7 @@
 @media (min-width: 375px) {
   .mainComponent {
     width: 375px;
-    height: 844px;
+    /* height: 844px; */
   }
 }
 
@@ -44,20 +37,18 @@
   .mainComponent {
     border-radius: 16px;
     width: 704px;
-    height: 854px;
+    /* height: 854px; */
   }
 
   .main {
     display: flex;
   }
-
-
 }
 
 @media (min-width: 1440px) {
   .mainComponent {
     width: 1087px;
-    height: 752px;
+    /* height: 752px; */
   }
 
   .aside {

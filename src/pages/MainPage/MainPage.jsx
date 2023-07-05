@@ -12,6 +12,6 @@ export const MainPage = () => {
       <Description />
       {/* <ReviewsSlider /> */}
       <Footer />
-     </>
+    </>
   );
 };

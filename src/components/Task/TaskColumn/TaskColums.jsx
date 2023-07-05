@@ -9,7 +9,7 @@ export const TasksColumn = ({ title, tasks, category }) => {
   return (
     <div className={css.task_column}>
       <ColumnHeadBar title={title} category={category} />
-      {tasks ? <ColumnTasksList tasks={tasks} /> : <p>No tasks available.</p>}
+      {tasks && <ColumnTasksList tasks={tasks} />}
       <AddTaskBtn category={category} />
     </div>
   );
