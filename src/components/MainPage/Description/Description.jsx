@@ -35,7 +35,7 @@ export const Description = () => {
     const { isDesktop, isTablet, isMobile } = useResponse();
 
     return (
-        <div id={css.mainPage}>
+        <div id={css.mainPage} className={css.mainPage}>
           <div className={css.Wrapper}>
             <section className={css.Section}>
               <div className={css.InfoBox}>

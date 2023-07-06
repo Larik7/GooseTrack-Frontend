@@ -3,11 +3,18 @@ import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import { Modal } from 'components/Modal/Modal';
 import { useResponse } from 'hooks';
-import css from './ReviewCard.module.css';
+import {
+  ReviewCardContainer,
+  HeaderContainer,
+  AvatarWrapper,
+  StarContainer,
+  CommentText,
+  ModalContent,
+} from './ReviewCard.styled';
 import sprite from 'icons/sprite.svg';
 
 
-// Review Card
+// ReviewCard
 export const ReviewCard = props => {
   const { isMobile } = useResponse();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,10 +34,11 @@ export const ReviewCard = props => {
 
   const formattedComment = shortenComment(props.children);
 
+  // Return
   return (
-    <div className={css.ReviewCardContainer}>
-      <div className={css.HeaderContainer}>
-        <div className={css.AvatarWrapper}>
+    <ReviewCardContainer>
+      <HeaderContainer>
+        <AvatarWrapper>
           {props.src ? (
             <img src={props.src} alt="User avatar" />
           ) : (
@@ -38,11 +46,11 @@ export const ReviewCard = props => {
               {props.name.charAt(0).toUpperCase()}
             </Avatar>
           )}
-        </div>
+        </AvatarWrapper>
 
         <div>
           <h3>{props.name}</h3>
-          <ul className={css.StarContainer} value={props.num}>
+          <StarContainer value={props.num}>
             <li>
               <svg height="14" width="14">
                 <use href={sprite + '#star'}></use>
@@ -68,20 +76,17 @@ export const ReviewCard = props => {
                 <use href={sprite + '#star'}></use>
               </svg>
             </li>
-          </ul>
+          </StarContainer>
         </div>
-      </div>
+      </HeaderContainer>
 
-      <div className={css.CommentText} onClick={toggleModal}>
-        {formattedComment}
-        </div>
+      <CommentText onClick={toggleModal}>{formattedComment}</CommentText>
+
       {isModalOpen && (
         <Modal handlerCloseModal={toggleModal}>
-          <div className={css.ModalContent}>
-            {props.children}
-            </div>
+          <ModalContent>{props.children}</ModalContent>
         </Modal>
       )}
-    </div>
+    </ReviewCardContainer>
   );
 };
