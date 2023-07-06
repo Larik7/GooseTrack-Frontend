@@ -50,10 +50,8 @@ export const UserForm = ({ theme = '' }) => {
       if (!values[key]) {
         return;
       }
-      if (key === 'birthday') {
+      if (key === 'birthday' && formData.get('birthday')) {
         formData.append('birthday', userData);
-        console.log(formData.get('birthday'));
-        return;
       }
       formData.append(key, values[key]);
     });
