@@ -1,11 +1,11 @@
 import css from './choosedMonth.module.css';
 import { CalendarTable } from './CalendarTable/CalendarTable';
 import { MonthCalendarHead } from './MonthCalendarHead/MonthCalendarHead';
-export const ChoosedMonth = () => {
+export const ChoosedMonth = ({ currentDate }) => {
   return (
     <div className={css.monthContainer}>
       <MonthCalendarHead />
-      <CalendarTable />
+      <CalendarTable currentDate={currentDate} />
     </div>
   );
 };
