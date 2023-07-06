@@ -25,6 +25,8 @@ export const TaskForm = ({ onClose, category, task }) => {
         start: '00:00',
         end: '00:00',
         priority: 'low',
+        category,
+        date: chooseDay,
       };
   const todoSchema = Yup.object().shape({
     title: Yup.string().max(250).required('Title is required'),
@@ -46,12 +48,12 @@ export const TaskForm = ({ onClose, category, task }) => {
     priority: Yup.string()
       .oneOf(['low', 'medium', 'high'])
       .required('Priority is required'),
-    // date: Yup.string()
-    //   .matches(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format')
-    //   .required('Date is required'),
-    // category: Yup.string()
-    //   .oneOf(['to-do', 'in-progress', 'done'], 'Invalid category')
-    //   .required('Category is required'),
+    date: Yup.string()
+      .matches(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format')
+      .required('Date is required'),
+    category: Yup.string()
+      .oneOf(['to-do', 'in-progress', 'done'], 'Invalid category')
+      .required('Category is required'),
   });
 
   const handleSubmit = (values, { resetForm }) => {
