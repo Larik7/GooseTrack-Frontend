@@ -15,8 +15,8 @@ export const UserForm = ({ theme = '' }) => {
   const userInfo = useSelector(selectUser);
   const [previewImageUrl, setPreviewImageUrl] = useState(null);
   const [file, setFile] = useState(null);
-
-  console.log('userInfo', userInfo);
+  const [userData, setUserData] = useState(null);
+  console.log(userInfo);
 
   const [avatar, setAvatar] = useState(null);
   useEffect(() => {
@@ -26,7 +26,6 @@ export const UserForm = ({ theme = '' }) => {
   }, [userInfo.avatarURL, userInfo.name]);
 
   const imgURL = userInfo.avatarURL ?? null;
-  // console.log(userInfo);
 
   let initialUserInfo = {
     phone: userInfo && userInfo.phone ? userInfo.phone : '',
@@ -37,18 +36,23 @@ export const UserForm = ({ theme = '' }) => {
     avatarURL: false,
   };
 
+  const updateDate = changeDate => {
+    const formattedDate = moment(changeDate).format('YYYY-MM-DD');
+    console.log(formattedDate);
+    setUserData(formattedDate);
+  };
+
   const submiting = values => {
     const formData = new FormData();
     const userInfoKeys = ['name', 'email', 'birthday', 'phone', 'skype'];
 
-    // console.log('<ka', formData);
     userInfoKeys.forEach(key => {
       if (!values[key]) {
         return;
       }
       if (key === 'birthday') {
-        const birthday = moment(values[key]).format('YYYY-MM-DD');
-        formData.append('birthday', birthday);
+        formData.append('birthday', userData);
+        console.log(formData.get('birthday'));
         return;
       }
       formData.append(key, values[key]);
@@ -56,7 +60,7 @@ export const UserForm = ({ theme = '' }) => {
     if (file) {
       formData.append('avatar', file);
     }
-    // console.log(formData);
+
     dispatch(updateUser(formData));
   };
 
@@ -150,6 +154,7 @@ export const UserForm = ({ theme = '' }) => {
                 >
                   Birthday:
                   <MyDatePicker
+                    updateDate={updateDate}
                     name="birthday"
                     birthday={formik.values.birthday}
                     className={css.my_date_picker}

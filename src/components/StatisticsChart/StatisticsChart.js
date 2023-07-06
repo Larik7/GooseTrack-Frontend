@@ -14,8 +14,8 @@ import { fetchTasks } from 'redux/tasks/taskOperation';
 import { useEffect } from 'react';
 import { selectAllTasks } from 'redux/tasks/selectors';
 
-const currentDay = '2023-06-30';
-const currentMonth = 5;
+const currentDay = '2023-07-06';
+const currentMonth = 6;
 // 5 - означает 6-ой месяц-июнь
 
 export const StatisticsChart = () => {
@@ -25,6 +25,8 @@ export const StatisticsChart = () => {
   useEffect(() => {
     dispatch(fetchTasks());
   }, [dispatch]);
+
+  //console.log(tasksBD);
 
   // Вычисляем ByDay
 
@@ -85,14 +87,17 @@ export const StatisticsChart = () => {
 
   const tasksForChart = [].concat(tasksToDo, tasksInProgress, tasksDone);
 
+  // console.log(tasksForChart);
   // Вычисляем ByDayPercent
 
   const arrayByDay = tasksForChart.map(task => task.ByDay);
   const allTasksByDay = arrayByDay.reduce((acc, number) => acc + number);
-
-  const ByDayPer = arrayByDay.map(
-    item => Math.round((item / allTasksByDay) * 100) + '%'
-  );
+  const ByDayPer = arrayByDay.map(item => {
+    if (allTasksByDay === 0) {
+      return '0%';
+    }
+    return Math.round((item / allTasksByDay) * 100) + '%';
+  });
 
   tasksToDo.ByDayPercent = ByDayPer[0];
   tasksInProgress.ByDayPercent = ByDayPer[1];
@@ -103,9 +108,12 @@ export const StatisticsChart = () => {
   const arrayByMonth = tasksForChart.map(task => task.ByMonth);
   const allTasksByMonth = arrayByMonth.reduce((acc, number) => acc + number);
 
-  const ByMonthPer = arrayByMonth.map(
-    item => Math.round((item / allTasksByMonth) * 100) + '%'
-  );
+  const ByMonthPer = arrayByMonth.map(item => {
+    if (allTasksByMonth === 0) {
+      return '0%';
+    }
+    return Math.round((item / allTasksByMonth) * 100) + '%';
+  });
 
   tasksToDo.ByMonthPercent = ByMonthPer[0];
   tasksInProgress.ByMonthPercent = ByMonthPer[1];

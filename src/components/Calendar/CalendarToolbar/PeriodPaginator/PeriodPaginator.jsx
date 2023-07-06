@@ -28,7 +28,6 @@ export const PeriodPaginator = ({
   const dayFormat = 'd MMM y';
 
   const formattedMonth = format(currentDate, monthFormat);
-
   let formattedDay = '';
   if (isValid(selectedDay)) {
     console.log('selectedDay', selectedDay);
