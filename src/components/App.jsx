@@ -1,11 +1,11 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { LoginPage } from '../pages/LoginPage/LoginPage';
 import { MainLayout } from '../pages/MainLayout/MainLayout';
 import { RegisterPage } from 'pages/Register/RegisterPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { currentPage } from 'redux/auth/authOperation';
-import { selectIsRefreshing } from 'redux/auth/selectors';
+import { selectedError, selectIsRefreshing } from 'redux/auth/selectors';
 import { RestrictedRoute } from '../helpers/RestrictedRoute';
 import { PrivateRoute } from '../helpers/PrivetRoute';
 import { Vortex } from 'react-loader-spinner';
@@ -16,14 +16,22 @@ import { ChoosedMonth } from '../pages/Calendar/ChoosedMonth/ChoosedMonth';
 import { ChoosedDay } from '../components/Calendar/ChoosedDay/ChoosedDay';
 import { Page404 } from 'pages/Page404/Page404';
 import { Account } from 'pages/Account/Account';
+import { resetAuth } from 'redux/auth/auth-slice';
 
 export const App = () => {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
+  const navigate = useNavigate();
+
+  const isError = useSelector(selectedError);
 
   useEffect(() => {
+    if (isError === 'Request failed with status code 401') {
+      dispatch(resetAuth());
+      navigate('/login');
+    }
     dispatch(currentPage());
-  }, [dispatch]);
+  }, [dispatch, isError, navigate]);
 
   return isRefreshing ? (
     <Vortex
