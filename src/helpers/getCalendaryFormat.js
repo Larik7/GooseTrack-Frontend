@@ -5,7 +5,7 @@ export const getCalendaryFormat = nowDate => {
   const monthFirstDay = new Date(year, month, 1);
   const monthLastDay = new Date(year, month + 1, 0);
   const daysForMonth = monthLastDay.getDate();
-  const startWeekDay = (monthFirstDay.getDay() + 6) % 7;
+  const startWeekDay = (monthFirstDay.getDay() + 7) % 7;
   const weeks = [];
   let currentWeek = [];
   const prevMonthLastDay = new Date(year, month, 0).getDate();
@@ -22,7 +22,7 @@ export const getCalendaryFormat = nowDate => {
     }
     currentWeek.push({ day: i, month: nowDate.slice(0, 7) });
   }
-  const lastWeekDay = (monthLastDay.getDay() + 6) % 7;
+  const lastWeekDay = (monthLastDay.getDay() + 7) % 7;
   for (let i = 1; i <= 7 - lastWeekDay; i++) {
     currentWeek.push({
       day: i,

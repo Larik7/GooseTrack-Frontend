@@ -2,10 +2,11 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import React, { useCallback, useState } from 'react';
 import { useField } from 'formik';
+import 'react-datepicker/dist/react-datepicker.css';
 // import css from './DatePicker.module.css';
 const today = new Date().toISOString().split('T')[0];
 
-export const MyDatePicker = ({ name = '', birthday }) => {
+export const MyDatePicker = ({ updateDate, name = '', birthday }) => {
   const [field, meta, helpers] = useField('date');
   const { value } = meta;
   const { setValue } = helpers;
@@ -49,7 +50,10 @@ export const MyDatePicker = ({ name = '', birthday }) => {
     <DatePicker
       {...field}
       selected={value || new Date(birthday || today)}
-      onChange={date => setValue(date)}
+      onChange={date => {
+        setValue(date);
+        updateDate(date);
+      }}
       onMonthChange={handleMonthChange}
       dayClassName={dayClassNames}
       calendarStartDay={1}
@@ -57,6 +61,8 @@ export const MyDatePicker = ({ name = '', birthday }) => {
       formatWeekDay={formatWeekDay}
       showPopperArrow={false}
       onCalendarClose={handleCloseDatePicker}
+      showYearDropdown
+      scrollableMonthYearDropdown
     />
   );
 };

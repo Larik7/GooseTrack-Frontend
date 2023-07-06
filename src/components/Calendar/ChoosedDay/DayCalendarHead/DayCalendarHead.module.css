@@ -33,12 +33,6 @@
   line-height: calc(18 / 16);
 }
 
-.week_item_day:hover,
-.week_item_day:focus {
-  color: var(--sidebar-background-color);
-  background-color: var(--nav-button-color-hover);
-}
-
 .current_item {
   display: flex;
   align-items: center;
@@ -46,9 +40,9 @@
   width: 27px;
   height: 26px;
   padding: 5px;
-  background: var(--sidebar-background-color);
+  background: var(--nav-button-color-hover);
   border-radius: 6px;
-  color: var(--calendar-digit-color);
+  color: var(--sidebar-background-color);
   font-family: 'Inter';
   font-weight: 600;
   font-size: 16px;
@@ -94,9 +88,15 @@
   color: inherit;
 }
 
-.week_item_day:disabled {
-  background-color: var(--nav-button-color-hover);
-  cursor: default;
-  border: none;
+.not_selected_day > .week_item_day:hover,
+.not_selected_day > .week_item_day:hover {
   color: var(--sidebar-background-color);
+  background-color: var(--nav-button-color-hover);
+}
+
+.not_selected_day:disabled > .week_item_day {
+  background-color: var(--task-item-background-color);
+  cursor: not-allowed;
+  border: none;
+  color: var(--calendar-digit-color);
 }
