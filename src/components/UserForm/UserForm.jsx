@@ -15,8 +15,8 @@ export const UserForm = ({ theme = '' }) => {
   const userInfo = useSelector(selectUser);
   const [previewImageUrl, setPreviewImageUrl] = useState(null);
   const [file, setFile] = useState(null);
-
-  console.log('userInfo', userInfo);
+  const [userData, setUserData] = useState(null);
+  console.log(userInfo);
 
   const [avatar, setAvatar] = useState(null);
   useEffect(() => {
@@ -26,7 +26,6 @@ export const UserForm = ({ theme = '' }) => {
   }, [userInfo.avatarURL, userInfo.name]);
 
   const imgURL = userInfo.avatarURL ?? null;
-  // console.log(userInfo);
 
   let initialUserInfo = {
     phone: userInfo && userInfo.phone ? userInfo.phone : '',
@@ -35,6 +34,12 @@ export const UserForm = ({ theme = '' }) => {
     email: userInfo ? userInfo.email : '',
     birthday: userInfo ? userInfo.birthday : '1999-12-31',
     avatarURL: false,
+  };
+
+  const updateDate = changeDate => {
+    const formattedDate = moment(changeDate).format('YYYY-MM-DD');
+    console.log(formattedDate);
+    setUserData(formattedDate);
   };
 
   const submiting = values => {
@@ -47,8 +52,9 @@ export const UserForm = ({ theme = '' }) => {
         return;
       }
       if (key === 'birthday') {
-        const birthday = moment(values[key]).format('YYYY-MM-DD');
-        formData.append('birthday', birthday);
+        // const birthday = moment(userData).format('YYYY-MM-DD');
+        formData.append('birthday', userData);
+        console.log(formData.get('birthday'));
         return;
       }
       formData.append(key, values[key]);
@@ -56,6 +62,12 @@ export const UserForm = ({ theme = '' }) => {
     if (file) {
       formData.append('avatar', file);
     }
+
+    // if(userData){
+    //   const userChangeValue = {...values, 'birthday': userData};
+    //   console.log('юзер зі зміненим днем народження',userChangeValue);
+    //   // formData.append('birthday', userData['birthday']);
+    // }
     // console.log(formData);
     dispatch(updateUser(formData));
   };
@@ -150,6 +162,7 @@ export const UserForm = ({ theme = '' }) => {
                 >
                   Birthday:
                   <MyDatePicker
+                    updateDate={updateDate}
                     name="birthday"
                     birthday={formik.values.birthday}
                     className={css.my_date_picker}
