@@ -19,6 +19,8 @@ export const TaskForm = ({ onClose, category, task }) => {
         start: task.start,
         end: task.end,
         priority: task.priority,
+        category: task.category,
+        date: task.date,
       }
     : {
         title: 'Enter text',
