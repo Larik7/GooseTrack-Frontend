@@ -19,7 +19,6 @@ export const PeriodPaginator = ({
 }) => {
   const params = useParams();
   const navigate = useNavigate();
-
   const { i18n } = useTranslation();
   const [language, setLanguage] = useState(i18n.language);
 
@@ -45,7 +44,6 @@ export const PeriodPaginator = ({
   const formattedMonth = format(currentDate, monthFormat, {
     locale: locales[language],
   });
-
   let formattedDay = '';
   if (isValid(selectedDay)) {
     console.log('selectedDay', selectedDay);
