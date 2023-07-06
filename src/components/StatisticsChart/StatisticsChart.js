@@ -11,20 +11,25 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { fetchTasks } from 'redux/tasks/taskOperation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { selectAllTasks } from 'redux/tasks/selectors';
 
-const currentDay = '2023-07-06';
-const currentMonth = 6;
-// 5 - означает 6-ой месяц-июнь
-
-export const StatisticsChart = () => {
+export const StatisticsChart = ({ selectedDate }) => {
   const dispatch = useDispatch();
   const tasksBD = useSelector(selectAllTasks);
+  const [currentDate, setCurrentDate] = useState(selectedDate);
+  const [currentDay, setCurrentDay] = useState(currentDate.toISOString().split('T')[0]);
+  const [currentMonth, setCurrentMonth] = useState(currentDate.getMonth());
 
   useEffect(() => {
     dispatch(fetchTasks());
-  }, [dispatch]);
+    setCurrentDate(selectedDate);
+    setCurrentDay(selectedDate.toISOString().split('T')[0]);
+    setCurrentMonth(selectedDate.getMonth());
+  }, [dispatch, selectedDate]);
+
+
+
 
   //console.log(tasksBD);
 
