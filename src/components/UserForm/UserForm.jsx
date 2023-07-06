@@ -46,13 +46,11 @@ export const UserForm = ({ theme = '' }) => {
     const formData = new FormData();
     const userInfoKeys = ['name', 'email', 'birthday', 'phone', 'skype'];
 
-    // console.log('<ka', formData);
     userInfoKeys.forEach(key => {
       if (!values[key]) {
         return;
       }
       if (key === 'birthday') {
-        // const birthday = moment(userData).format('YYYY-MM-DD');
         formData.append('birthday', userData);
         console.log(formData.get('birthday'));
         return;
@@ -63,12 +61,6 @@ export const UserForm = ({ theme = '' }) => {
       formData.append('avatar', file);
     }
 
-    // if(userData){
-    //   const userChangeValue = {...values, 'birthday': userData};
-    //   console.log('юзер зі зміненим днем народження',userChangeValue);
-    //   // formData.append('birthday', userData['birthday']);
-    // }
-    // console.log(formData);
     dispatch(updateUser(formData));
   };
 
