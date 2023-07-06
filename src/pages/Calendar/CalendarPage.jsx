@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 // import React, { Suspense } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { CalendarToolbar } from 'components/Calendar/CalendarToolbar';
@@ -12,7 +12,9 @@ export const CalendarPage = ({ selectedDay, setSelectedDay }) => {
   const dispatch = useDispatch();
   const params = useParams();
   const [currentDate, setCurrentDate] = useState(new Date());
-  dispatch(setActivedDate(new Date().toDateString().slice(0, 10)));
+  useEffect(() => {
+    dispatch(setActivedDate(new Date().toISOString().slice(0, 10)));
+  }, [dispatch]);
   return (
     <div>
       <Suspense fallback={null}>
