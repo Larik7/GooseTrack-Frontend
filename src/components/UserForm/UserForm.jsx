@@ -16,7 +16,6 @@ export const UserForm = ({ theme = '' }) => {
   const [previewImageUrl, setPreviewImageUrl] = useState(null);
   const [file, setFile] = useState(null);
   const [userData, setUserData] = useState(null);
-  console.log(userInfo);
 
   const [avatar, setAvatar] = useState(null);
   useEffect(() => {
@@ -38,14 +37,13 @@ export const UserForm = ({ theme = '' }) => {
 
   const updateDate = changeDate => {
     const formattedDate = moment(changeDate).format('YYYY-MM-DD');
-    console.log(formattedDate);
     setUserData(formattedDate);
   };
 
   const submiting = values => {
     const formData = new FormData();
     const userInfoKeys = ['name', 'email', 'birthday', 'phone', 'skype'];
-
+    console.log(file);
     userInfoKeys.forEach(key => {
       if (!values[key]) {
         return;
@@ -60,6 +58,7 @@ export const UserForm = ({ theme = '' }) => {
     }
 
     dispatch(updateUser(formData));
+    console.log(formData);
   };
 
   const handleAvatarChange = (e, setFieldValue) => {
@@ -86,7 +85,7 @@ export const UserForm = ({ theme = '' }) => {
       >
         {formik => {
           return (
-            <Form>
+            <Form encType="multipart/form-data">
               <div className={`${css.user_page__avatar_container} ${theme}`}>
                 <div className={css.user_page__avatar_box}>
                   {!imgURL ? (
