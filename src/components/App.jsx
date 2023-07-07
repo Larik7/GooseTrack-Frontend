@@ -72,10 +72,18 @@ export const App = () => {
           <PrivateRoute redirectTo="/login" component={<MainLayout />} />
         }
       >
-        <Route index element={<CalendarPage selectedDay={selectedDay}
-                      setSelectedDay={setSelectedDay}/>} />
-        <Route path="day/:currentDay" element={<ChoosedDay />} />
-        <Route path="mouth/:currentDay" element={<ChoosedMonth />} />
+        <Route
+          path="/calendar"
+          element={
+            <CalendarPage
+              selectedDay={selectedDay}
+              setSelectedDay={setSelectedDay}
+            />
+          }
+        >
+          <Route path="day/:currentDay" element={<ChoosedDay />} />
+          <Route path="mouth/:currentDay" element={<ChoosedMonth />} />
+        </Route>
         <Route path="/calendar/statistics" element={<StatisticsPage />} />
         <Route path="/calendar/userInfo" element={<Account />} />
       </Route>
