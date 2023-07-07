@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/GooseTrack-Frontend/static/css/main.b54d27d7.css",
-    "main.js": "/GooseTrack-Frontend/static/js/main.c66facab.js",
+    "main.css": "/GooseTrack-Frontend/static/css/main.1380c013.css",
+    "main.js": "/GooseTrack-Frontend/static/js/main.36fb2458.js",
     "static/media/tablet_calendar@2x.png": "/GooseTrack-Frontend/static/media/tablet_calendar@2x.844cff810c188f6f25a7.png",
     "static/media/desktop_calendar@2x.png": "/GooseTrack-Frontend/static/media/desktop_calendar@2x.511158f67c65ff6302fb.png",
     "static/media/Inter-Bold.eot": "/GooseTrack-Frontend/static/media/Inter-Bold.7e9fff4114e0ea385c94.eot",
@@ -67,11 +67,11 @@
     "index.html": "/GooseTrack-Frontend/index.html",
     "static/media/plus.svg": "/GooseTrack-Frontend/static/media/plus.f0087676f0974ccbb001.svg",
     "static/media/x-close.svg": "/GooseTrack-Frontend/static/media/x-close.cffc8a086992ad16f1f0db83c5a8a66f.svg",
-    "main.b54d27d7.css.map": "/GooseTrack-Frontend/static/css/main.b54d27d7.css.map",
-    "main.c66facab.js.map": "/GooseTrack-Frontend/static/js/main.c66facab.js.map"
+    "main.1380c013.css.map": "/GooseTrack-Frontend/static/css/main.1380c013.css.map",
+    "main.36fb2458.js.map": "/GooseTrack-Frontend/static/js/main.36fb2458.js.map"
   },
   "entrypoints": [
-    "static/css/main.b54d27d7.css",
-    "static/js/main.c66facab.js"
+    "static/css/main.1380c013.css",
+    "static/js/main.36fb2458.js"
   ]
 }
