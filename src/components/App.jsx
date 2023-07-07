@@ -3,10 +3,11 @@ import { LoginPage } from '../pages/LoginPage/LoginPage';
 import { MainLayout } from '../pages/MainLayout/MainLayout';
 import { RegisterPage } from 'pages/Register/RegisterPage';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { currentPage } from 'redux/auth/authOperation';
 import { selectedError, selectIsRefreshing } from 'redux/auth/selectors';
 import { RestrictedRoute } from '../helpers/RestrictedRoute';
+import { useValidation } from '../helpers/useValidation';
 import { PrivateRoute } from '../helpers/PrivetRoute';
 import { Vortex } from 'react-loader-spinner';
 import { MainPage } from 'pages/MainPage/MainPage';
@@ -22,6 +23,8 @@ export const App = () => {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
   const navigate = useNavigate();
+  const date = useValidation();
+  const [selectedDay, setSelectedDay] = useState(new Date(date));
 
   const isError = useSelector(selectedError);
 
@@ -69,13 +72,13 @@ export const App = () => {
           <PrivateRoute redirectTo="/login" component={<MainLayout />} />
         }
       >
-        <Route index element={<CalendarPage />} />
+        <Route index element={<CalendarPage selectedDay={selectedDay}
+                      setSelectedDay={setSelectedDay}/>} />
         <Route path="day/:currentDay" element={<ChoosedDay />} />
         <Route path="mouth/:currentDay" element={<ChoosedMonth />} />
         <Route path="/calendar/statistics" element={<StatisticsPage />} />
         <Route path="/calendar/userInfo" element={<Account />} />
       </Route>
-
       <Route path="*" element={<Page404 />} />
     </Routes>
   );
