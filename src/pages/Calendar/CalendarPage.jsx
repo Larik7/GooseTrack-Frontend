@@ -24,13 +24,15 @@ export const CalendarPage = ({ selectedDay, setSelectedDay }) => {
           selectedDay={selectedDay}
           setSelectedDay={setSelectedDay}
         />
-        {!params?.currentDay ? (
+        {!params.currentDay ? (
           <ChoosedMonth
             setCurrentDate={setCurrentDate}
             currentDate={currentDate}
             setSelectedDay={setSelectedDay}
           />
-        ) : (<ChoosedDay/>)}
+        ) : (
+          <></>
+        )}
         <Outlet />
       </Suspense>
     </div>
