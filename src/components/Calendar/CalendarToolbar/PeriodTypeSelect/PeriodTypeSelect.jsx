@@ -11,7 +11,6 @@ export const PeriodTypeSelect = ({
 }) => {
   const params = useParams();
   const parsedDate = parseDate(currentDate);
-
   return (
     <div className={css.tabs_flex}>
       <div className={css.types_tabs_container}>
