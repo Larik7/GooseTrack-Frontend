@@ -3,36 +3,50 @@ import { StatisticsChart } from 'components/StatisticsChart/StatisticsChart';
 import React, { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { AiOutlineLeft } from 'react-icons/ai';
+import moment from 'moment';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export const StatisticsPage = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [valueDatePicker, setValueDatePicker] = useState(new Date()); // записується сьогоднішня дата по дефолту
 
   const handlePrevClick = () => {
-    const prevDate = new Date(selectedDate);
+    const prevDate = new Date(valueDatePicker);
     prevDate.setDate(prevDate.getDate() - 1);
-    setSelectedDate(prevDate);
+    setValueDatePicker(prevDate);
   };
 
   const handleNextClick = () => {
-    const nextDate = new Date(selectedDate);
+    const nextDate = new Date(valueDatePicker);
     nextDate.setDate(nextDate.getDate() + 1);
-    setSelectedDate(nextDate);
+    setValueDatePicker(nextDate);
   };
 
-  const formattedDay = selectedDate.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  // const formattedDay = selectedDate.toLocaleDateString('en-US', {
+  //   year: 'numeric',
+  //   month: 'long',
+  //   day: 'numeric',
+  // });
 
-  
+  const getValueDate = changeDate => {
+    const formattedDate = moment(changeDate).format('YYYY-MM-DD');
+    console.log(formattedDate); // сюди вже виходить дата в форматі показаному вище
+  };
 
   return (
     <div className={css.mainComponent}>
       <Suspense fallback={null}>
         <div className={css.group_period}>
           <div className={css.period_view}>
-            {formattedDay}
+            {/* {formattedDay} */}
+            <DatePicker
+              selected={valueDatePicker} // записується значення яке відображається
+              dateFormat="dd/yyyy" // сюди треба правильний формат найти
+              onChange={date => {
+                setValueDatePicker(date); // оновлюється дата
+                getValueDate(date); // сюди відправляється дата в кол-бек функцію
+              }}
+            />
           </div>
           <div className={css.period_tabs_container}>
             <button className={css.period_tabs} onClick={handlePrevClick}>
@@ -54,7 +68,7 @@ export const StatisticsPage = () => {
           </ul>
         </div>
         <div className={css.chart}>
-          <StatisticsChart selectedDate={selectedDate} />
+          <StatisticsChart selectedDate={valueDatePicker} />
         </div>
         <Outlet />
       </Suspense>
