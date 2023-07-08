@@ -13,6 +13,7 @@ export const getCalendaryFormat = nowDate => {
     currentWeek.push({
       day: prevMonthLastDay - i,
       month: getPastandFutureMonths(nowDate).pastMonth,
+      disabled: true,
     });
   }
   for (let i = 1; i <= daysForMonth; i++) {
@@ -20,16 +21,18 @@ export const getCalendaryFormat = nowDate => {
       weeks.push(currentWeek);
       currentWeek = [];
     }
-    currentWeek.push({ day: i, month: nowDate.slice(0, 7) });
+    currentWeek.push({ day: i, month: nowDate.slice(0, 7), disabled: false });
   }
   const lastWeekDay = (monthLastDay.getDay() + 7) % 7;
   for (let i = 1; i <= 7 - lastWeekDay; i++) {
     currentWeek.push({
       day: i,
       month: getPastandFutureMonths(nowDate).futureMonth,
+      disabled: true,
     });
   }
   weeks.push(currentWeek);
+  console.log(weeks);
   return weeks;
 };
 function getPastandFutureMonths(monthString) {
