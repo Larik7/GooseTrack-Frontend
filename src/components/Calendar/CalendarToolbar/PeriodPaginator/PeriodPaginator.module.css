@@ -57,6 +57,7 @@
   cursor: pointer;
   background-color: var(--sidebar-background-color);
   border: 1px solid rgba(220, 227, 229, 0.5);
+  
   & > svg {
     stroke: currentColor;
     fill: transparent;

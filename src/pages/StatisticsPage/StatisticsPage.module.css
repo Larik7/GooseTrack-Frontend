@@ -1,8 +1,32 @@
 .mainComponent {
   background-color: var(--container-page-bacground);
   border-radius: 16px;
+      padding: 50px;
 }
 
+.suspenseContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.period_tabs_container {
+  margin-left: 20px;
+  display: flex;
+}
+.period_tabs{
+  width: 38px;
+  height: 34px;
+  border: 1px solid rgba(220, 227, 229, 0.5);
+  border-radius: 8px;
+  background-color: transparent;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+
+  &:hover{
+      box-shadow: 4px 2px 16px rgba(212, 212, 212, 0.48);
+
+}
+}
 .wrapper {
   border-radius: 16px;
   background: var(--container-page-bacground);
@@ -128,3 +152,14 @@
     height: 440px;
   }
 }
+
+.picker {
+  display: flex;
+}
+
+/* .group_periodSt{
+    height: 34px;
+      display: flex;
+      margin-bottom: 40px;
+      align-items: baseline;
+    } */
