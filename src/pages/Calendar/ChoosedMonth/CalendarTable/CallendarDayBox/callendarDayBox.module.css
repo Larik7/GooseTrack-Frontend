@@ -105,7 +105,7 @@
         top: 48px;
         overflow: auto;
         max-height: 72px;
-        scrollbar-width: thin;
+      scrollbar-width: thin;
   }
 }
 
