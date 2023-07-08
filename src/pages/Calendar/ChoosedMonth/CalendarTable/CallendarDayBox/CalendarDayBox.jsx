@@ -44,7 +44,7 @@ export const CallendarDayBox = ({
     >
       <div
         className={css.dayContainer}
-        style={disabled ? { background: 'grey' } : { background: '#ffffff' }}
+        style={disabled ? { background: 'var(--day-backgraund-color)' } : { background: 'var(--container-page-bacground)' }}
       >
         <div className={picked ? `${css[picked]}` : `${css.numberContainer}`}>
           <p className={picked ? `${css.day}` : `${css[picked]}`}>{date}</p>

@@ -18,6 +18,8 @@
 
   --modal-bg-color: #ffffff;
 
+  --day-backgraund-color:#ebebeb82;
+
   /* text colors */
   --primary-text-color: #111111;
   --secondary-text-color: #343434;
@@ -85,6 +87,7 @@
   --sidebar-background-color: #13151a;
   --tooltip-color: #1718207c;
 --container-page-bacground: #21222C;
+--day-backgraund-color: #13151a;
 
 --modal-bg-color: #171820;
   /* text colors */

@@ -41,7 +41,7 @@ export const StatisticsPage = () => {
           <div className={css.period_view}>
             {/* {formattedDay} */}
             <div className={css.picker}>
-            <DatePickerWrapper>
+            <DatePickerWrapper >
             <DatePickerCalendar
               selected={valueDatePicker} // записується значення яке відображається
               dateFormat="d MMM y" // сюди треба правильний формат найти
@@ -73,7 +73,7 @@ export const StatisticsPage = () => {
         </div>
       </div>
         <div className={css.chart}>
-          <StatisticsChart selectedDate={valueDatePicker} />
+          <StatisticsChart selectedDate={valueDatePicker}  />
         </div> 
           <Outlet />
          

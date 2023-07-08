@@ -124,6 +124,8 @@ export const StatisticsChart = ({ selectedDate }) => {
   tasksInProgress.ByMonthPercent = ByMonthPer[1];
   tasksDone.ByMonthPercent = ByMonthPer[2];
 
+  
+
   const strokeVar = 'var(--primary-text-color)';
   const backgraondColor = 'var(--tooltip-color)';
 
@@ -174,7 +176,7 @@ export const StatisticsChart = ({ selectedDate }) => {
             radius={[0, 0, 10, 10]}
           >
             <LabelList
-              dataKey="ByDayPercent"
+             dataKey="ByDayPercent"
               position="top"
               fill={strokeVar}
               fontWeight="lighter"
