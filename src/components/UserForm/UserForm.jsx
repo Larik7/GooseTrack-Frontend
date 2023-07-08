@@ -16,7 +16,6 @@ export const UserForm = ({ theme = '' }) => {
   const [previewImageUrl, setPreviewImageUrl] = useState(null);
   const [file, setFile] = useState(null);
   const [userData, setUserData] = useState(null);
-  // console.log(userInfo);
 
   const [avatar, setAvatar] = useState(null);
   useEffect(() => {
@@ -32,31 +31,28 @@ export const UserForm = ({ theme = '' }) => {
     skype: userInfo && userInfo.skype ? userInfo.skype : '',
     name: userInfo ? userInfo.name : '',
     email: userInfo ? userInfo.email : '',
-    birthday: userInfo ? userData : '1999-12-31',
-    avatarURL: false,
+    birthday: userInfo ? moment(userInfo).format('YYYY-MM-DD') : '1999-12-31',
   };
 
   const updateDate = changeDate => {
     const formattedDate = moment(changeDate).format('YYYY-MM-DD');
-    console.log(formattedDate);
     setUserData(formattedDate);
   };
 
   const submiting = values => {
     const formData = new FormData();
-    const userInfoKeys = ['name', 'email', 'birthday', 'phone', 'skype'];
+    const userInfoKeys = ['name', 'email', 'phone', 'skype'];
 
     userInfoKeys.forEach(key => {
-      if (!values[key]) {
-        return;
-      }
-      if (key === 'birthday' && formData.get('birthday')) {
-        formData.append('birthday', userData);
-      }
-      formData.append(key, values[key]);
+      const newValue = { ...userInfo, ...values };
+      formData.append(key, newValue[key]);
     });
     if (file) {
       formData.append('avatar', file);
+    }
+    if (userData) {
+      formData.append('birthday', `${userData}`);
+      setPreviewImageUrl(null)
     }
 
     dispatch(updateUser(formData));
@@ -89,11 +85,11 @@ export const UserForm = ({ theme = '' }) => {
             <Form>
               <div className={`${css.user_page__avatar_container} ${theme}`}>
                 <div className={css.user_page__avatar_box}>
-                  {!imgURL ? (
+                  {!imgURL && !previewImageUrl ? (
                     <p className={css.avatarWord}>{userInfo ? avatar : ''}</p>
                   ) : (
                     <img
-                      src={imgURL}
+                      src={previewImageUrl ? previewImageUrl : imgURL || imgURL ? imgURL : previewImageUrl}
                       alt="User avatar"
                       className={css.user_page__avatar}
                     />
