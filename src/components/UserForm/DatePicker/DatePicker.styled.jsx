@@ -88,6 +88,19 @@ export const DatePickerWrapper = styled.div`
   line-height: 24px;
   border: none;
 
+  &__year-dropdown{
+      background-color: #ffffff;
+   
+  }
+
+ &__year-option--selected_year {
+  color:#3e85f3;
+ }
+
+ &__year-read-view--selected-year {
+  color: #fff;
+ }
+
   &-wrapper:hover & {
     background-color: #ffffff;
     border-radius: 50%;
