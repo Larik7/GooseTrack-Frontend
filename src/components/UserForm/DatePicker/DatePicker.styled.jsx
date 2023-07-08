@@ -1,4 +1,54 @@
-.react-datepicker {
+import styled from '@emotion/styled';
+
+
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+
+export const StyledDatePicker = styled(DatePicker)`
+  margin-top: 8px;
+  width: 100%;
+  height: 42px;
+  margin-bottom: 18px;
+  padding: 14px 18px;
+  border: var(--border-account-input);
+  border-radius: 8px;
+  background: var(--primary-background-color);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--primary-text-color);
+  outline: none;
+
+  :hover,
+  :focus {
+  border: 2px solid var(--nav-button-color-hover);
+    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+  }
+
+  &.error {
+    border: 1px solid var(--text-error-color);
+  }
+
+  &.success {
+    border: 1px solid var(--text-correct-color);
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 299px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 24px;
+    width: 354px;
+    height: 46px;
+    font-size: 16px;
+    line-height: 1.13;
+  }
+`;
+
+export const DatePickerWrapper = styled.div`
+ .react-datepicker {
   * {
     margin: 0;
     padding: 0;
@@ -14,7 +64,9 @@
     background-color: #ffffff;
     border-radius: 50%;
   }
-
+   &_year-read-view--selected-year{
+    color: #ffff;
+   }
   &-popper {
     transform: translate(881.05px, 950.217px);
     inset: 0px auto auto 50px;
@@ -202,4 +254,4 @@
       }
     }
   }
-}
+} `;

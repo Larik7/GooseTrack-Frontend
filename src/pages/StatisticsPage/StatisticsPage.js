@@ -3,6 +3,7 @@ import { StatisticsChart } from 'components/StatisticsChart/StatisticsChart';
 import React, { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { AiOutlineLeft } from 'react-icons/ai';
+import style from 'components/Calendar/CalendarToolbar/PeriodPaginator/PeriodPaginator.module.css';
 
 export const StatisticsPage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -30,24 +31,25 @@ export const StatisticsPage = () => {
   return (
     <div className={css.mainComponent}>
       <Suspense fallback={null}>
-        <div className={css.group_period}>
-          <div className={css.period_view}>
+       
+        <div className={css.upperchart}>
+          <div className={css.group_periodSt}>
+          <div className={style.period_view}>
             {formattedDay}
           </div>
-          <div className={css.period_tabs_container}>
-            <button className={css.period_tabs} onClick={handlePrevClick}>
+          <div className={style.period_tabs_container}>
+            <button className={style.period_tabs} onClick={handlePrevClick}>
               <AiOutlineLeft className={css.icon} />
             </button>
             <button
-              className={css.period_tabs}
+              className={style.period_tabs}
               style={{ transform: 'rotate(180deg)' }}
               onClick={handleNextClick}
             >
-              <AiOutlineLeft className={css.icon} />
+              <AiOutlineLeft className={style.icon} />
             </button>
           </div>
         </div>
-        <div className={css.upperchart}>
           <ul className={css.list}>
             <li className={css.itemDay}>By Day</li>
             <li className={css.itemMonth}>By Month</li>

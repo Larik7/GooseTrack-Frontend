@@ -188,7 +188,7 @@
   color: var(--primary-text-color);
 
   border: 1px solid var(--feedback-border-color);
-
+  
   @media screen and (min-width: 1200px) {
     &:nth-of-type(1),
     &:nth-of-type(3) {
@@ -200,6 +200,12 @@
     border: 2px solid red;
   }
 }
+.username_form_input:hover,
+.username_form_input:focus {
+      border: 2px solid var(--nav-button-color-hover);
+      box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+}
+
 .username_form_input > :placeholder-shown {
   font-family: var(--button-font);
   font-style: normal;
@@ -219,7 +225,7 @@
   line-height: 18px;
   text-align: center;
 
-  color: var(--nav-button-color);
+  color: #fff;
   display: grid;
   grid-row: 5;
   justify-self: center;
@@ -231,7 +237,7 @@
   width: 195px;
   height: 46px;
 
-  background: var(--nav-button-background-hover);
+  background: var(--color-button-period-type);
   border-radius: 16px;
   border: none;
 
@@ -241,13 +247,12 @@
     opacity: 0.45;
   }
 
-  transition: box-shadow linear 350ms;
 
   cursor: pointer;
 
   &:hover {
-    border: 2px solid var(--nav-button-color-hover);
-    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+
+    box-shadow: 4px 2px 16px rgba(15, 28, 39, 0.48);
   }
 }
 

@@ -219,7 +219,7 @@ export const UserForm = ({ theme = '' }) => {
                 </label>
                 <button
                   type="submit"
-                  className={`${css.username_form__submit} ${theme}`}
+                  className={`${css.username_form__submit} `}
                   disabled={
                     formik.isSubmitting || !formik.touched || !formik.dirty
                   }

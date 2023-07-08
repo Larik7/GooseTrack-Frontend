@@ -1,6 +1,7 @@
 .mainComponent {
   background-color: var(--container-page-bacground);
   border-radius: 16px;
+      padding: 50px;
 }
 
 .wrapper {
@@ -75,7 +76,7 @@
 .upperchart {
   height: 34px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-bottom: 40px;
   align-items: baseline;
 }
@@ -128,3 +129,11 @@
     height: 440px;
   }
 }
+
+.group_periodSt{
+    height: 34px;
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 40px;
+      align-items: baseline;
+    }

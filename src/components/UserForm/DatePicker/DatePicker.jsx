@@ -1,9 +1,9 @@
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import React, { useCallback, useState } from 'react';
 import { useField } from 'formik';
 import 'react-datepicker/dist/react-datepicker.css';
-// import css from './DatePicker.module.css';
+import {StyledDatePicker, DatePickerWrapper} from './DatePicker.styled';
 const today = new Date().toISOString().split('T')[0];
 
 export const MyDatePicker = ({ updateDate, name = '', birthday }) => {
@@ -47,7 +47,8 @@ export const MyDatePicker = ({ updateDate, name = '', birthday }) => {
   }, [value, birthday]);
 
   return (
-    <DatePicker
+    <DatePickerWrapper>
+    <StyledDatePicker
       {...field}
       selected={value || new Date(birthday || today)}
       onChange={date => {
@@ -63,6 +64,6 @@ export const MyDatePicker = ({ updateDate, name = '', birthday }) => {
       onCalendarClose={handleCloseDatePicker}
       showYearDropdown
       scrollableMonthYearDropdown
-    />
+    /></DatePickerWrapper>
   );
 };
