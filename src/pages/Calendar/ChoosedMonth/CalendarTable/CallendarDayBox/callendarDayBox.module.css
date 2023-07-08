@@ -106,14 +106,17 @@
   }
 }
 .low {
-  color: var(--nav-button-color-hover);
+  color: #3E85F3;
   background-color: #ceeefd;
+  border-radius: 8px;
 }
 .medium {
   color: #f3b249;
   background-color: #fcf0d4;
+  border-radius: 8px;
 }
 .hard {
   color: #ea3d65;
   background-color: #ffd2dd;
+  border-radius: 8px;
 }

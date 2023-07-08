@@ -6,12 +6,13 @@
   bottom: 0;
   right: 0;
   gap: 12px;
+  
 }
 
 .toolbar_button {
   margin: 0;
   padding: 0;
-
+  background-color: var(--secondary-background-color);
   border: none;
   cursor: pointer;
 }

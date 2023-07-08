@@ -1,3 +1,7 @@
+.icon {
+  fill: var(--close-btn-color);
+}
+
 @media (max-width: 767px) {
   .head {
     display: flex;
@@ -27,12 +31,10 @@
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    transition: fill var(--animation-cubic);
+    transition: fill var(--close-btn-color);
   }
 
-  .icon:hover {
-    fill: var(--color-button-period-type);
-  }
+
 }
 
 @media (min-width: 768px) {
@@ -64,10 +66,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    transition: fill var(--animation-cubic);
   }
 
-  .icon:hover {
-    fill: var(--color-button-period-type);
-  }
+
 }

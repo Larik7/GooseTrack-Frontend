@@ -22,7 +22,7 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
     case '/calendar/statistics':
       title = 'Statistics';
       break;
-    case '/calendar/user':
+    case '/calendar/userInfo':
       title = 'User Profile';
       break;
     case '/calendar':

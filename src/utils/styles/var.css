@@ -16,6 +16,8 @@
 
   --container-page-bacground:#FFFFFF;
 
+  --modal-bg-color: #ffffff;
+
   /* text colors */
   --primary-text-color: #111111;
   --secondary-text-color: #343434;
@@ -70,6 +72,9 @@
   --log-btn-color:#3e85f3;
   --log-btn-hover: #2b78ef;
 
+  /*button-shadow */
+  --shadow-btn: rgba(212, 212, 212, 0.48);
+
 }
 
 [data-theme='dark'] {
@@ -78,9 +83,10 @@
   --primary-background-color: #21222c;
   --primary-text-color: #ffffff;
   --sidebar-background-color: #13151a;
-
   --tooltip-color: #1718207c;
 --container-page-bacground: #21222C;
+
+--modal-bg-color: #171820;
   /* text colors */
   --primary-text-color: #ffffff;
   --secondary-text-color: #ffffff;
@@ -115,4 +121,7 @@
   --hover-button-period-type: rgba(33, 34, 44, 0.6);
   --button-period-type: #21222c;
   --color-button-period-type: #3e85f3;
+  
+    /*button-shadow */
+      --shadow-btn: rgba(10, 10, 10, 0.48);
 }
