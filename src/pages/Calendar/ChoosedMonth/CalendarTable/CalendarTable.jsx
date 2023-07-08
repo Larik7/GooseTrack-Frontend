@@ -3,7 +3,11 @@ import { nanoid } from 'nanoid';
 import css from './callendarTable.module.css';
 import { CallendarDayBox } from './CallendarDayBox/CalendarDayBox';
 
-export const CalendarTable = ({ currentDate }) => {
+export const CalendarTable = ({
+  currentDate,
+  setCurrentDate,
+  setSelectedDay,
+}) => {
   const date = currentDate.toISOString().slice(0, 10);
 
   const callendaryBox = getCalendaryFormat(date);
@@ -17,6 +21,8 @@ export const CalendarTable = ({ currentDate }) => {
               date={day.day}
               month={day.month}
               currentMonth={currentDate}
+              setCurrentDate={setCurrentDate}
+              setSelectedDay={setSelectedDay}
               picked={
                 day.day === parseInt(date.slice(8, 10), 10) &&
                 day.month === date.slice(0, 7)

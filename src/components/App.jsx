@@ -25,7 +25,6 @@ export const App = () => {
   const navigate = useNavigate();
   const date = useValidation();
   const [selectedDay, setSelectedDay] = useState(new Date(date));
-
   const isError = useSelector(selectedError);
 
   useEffect(() => {
@@ -67,7 +66,7 @@ export const App = () => {
         }
       />
       <Route
-        path="/calendar"
+        path="/"
         element={
           <PrivateRoute redirectTo="/login" component={<MainLayout />} />
         }
@@ -81,11 +80,14 @@ export const App = () => {
             />
           }
         >
-          <Route path="day/:currentDay" element={<ChoosedDay />} />
+          <Route
+            path="day/:currentDay"
+            element={<ChoosedDay setSelectedDay={setSelectedDay} />}
+          />
           <Route path="mouth/:currentDay" element={<ChoosedMonth />} />
         </Route>
-        <Route path="/calendar/statistics" element={<StatisticsPage />} />
-        <Route path="/calendar/userInfo" element={<Account />} />
+        <Route path="statistics" element={<StatisticsPage />} />
+        <Route path="userInfo" element={<Account />} />
       </Route>
       <Route path="*" element={<Page404 />} />
     </Routes>

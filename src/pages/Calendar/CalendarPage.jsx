@@ -1,20 +1,24 @@
 import { Outlet } from 'react-router';
 import { useParams } from 'react-router-dom';
 import { useState, Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { CalendarToolbar } from 'components/Calendar/CalendarToolbar';
 import { ChoosedMonth } from 'pages/Calendar/ChoosedMonth/ChoosedMonth';
-import { ChoosedDay } from 'components/Calendar/ChoosedDay/ChoosedDay';
 import { setActivedDate } from 'redux/tasks/taskReducer';
+import { selectActiveDate } from 'redux/tasks/selectors';
 
 export const CalendarPage = ({ selectedDay, setSelectedDay }) => {
   const dispatch = useDispatch();
   const params = useParams();
   const [currentDate, setCurrentDate] = useState(new Date());
+  const currentMonth = useSelector(selectActiveDate);
   useEffect(() => {
+    if (currentDate.toISOString().slice(0, 10) === currentMonth) {
+      return;
+    }
     dispatch(setActivedDate(currentDate.toISOString().slice(0, 10)));
-  }, [currentDate, dispatch]);
+  }, [currentDate, currentMonth, dispatch]);
   return (
     <div>
       <Suspense fallback={null}>
