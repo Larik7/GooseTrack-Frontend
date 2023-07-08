@@ -1,6 +1,6 @@
 @media (max-width: 767px) {
   .item {
-    background-color: var(--task-item-background-color);
+    background-color: var(--secondary-background-color);
     margin-bottom: 14px;
 
     border-radius: 10px;
@@ -51,7 +51,7 @@
     border-radius: 4px;
     background: var(--high-color);
 
-    color: var(--primary-background-color);
+    color: var(--secondary-background-color);
     text-align: center;
     font-size: 10px;
     padding: 4px 12px;
@@ -63,7 +63,7 @@
     border-radius: 4px;
     background: var(--medium-color);
     padding: 4px 12px;
-    color: var(--primary-background-color);
+    color: var(--secondary-background-color);
     text-align: center;
     font-size: 10px;
 
@@ -75,7 +75,7 @@
     border-radius: 4px;
     background: var(--low-color);
     padding: 4px 12px;
-    color: var(--primary-background-color);
+    color: var(--secondary-background-color);
     text-align: center;
     font-size: 10px;
 
@@ -102,7 +102,7 @@
 
 @media (min-width: 768px) {
   .item {
-    background-color: var(--task-item-background-color);
+    background-color: var(--secondary-background-color);
     margin-bottom: 14px;
 
     border-radius: 10px;
@@ -143,6 +143,7 @@
     display: flex;
     align-items: flex-end;
     gap: 10px;
+    
   }
 
   .highPriority {
@@ -185,7 +186,7 @@
     align-items: center;
     justify-content: center;
     color: var(--primary-text-color);
-    background-color: var(--nav-button-color-hover);
+    background-color: #3e85f3;
     font-family: var(--button-font);
     font-weight: 700;
     overflow: hidden;

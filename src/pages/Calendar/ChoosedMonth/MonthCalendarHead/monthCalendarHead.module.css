@@ -1,11 +1,12 @@
 .monthHeadList {
   width: 100%;
+  height: 46px;
   border-radius: 8px;
+  padding: 0 20px 0 80px;
   border: 1px solid rgba(220, 227, 229, 0.8);
   background-color: var(--container-page-bacground);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+display: flex;
+  align-items: center;
   margin-bottom: 14px;
 }
 @media screen and (min-width: 768px) {

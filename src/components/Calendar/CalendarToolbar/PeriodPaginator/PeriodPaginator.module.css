@@ -1,71 +1,56 @@
+
 .icon {
-  transition: color var(--animation-cubic), fill var(--animation-cubic),
-    stroke var(--animation-cubic);
-
-  width: 16px;
-  height: 16px;
-
-  &:hover,
-  &:focus {
-    color: var(--color-button-period-type);
-    fill: var(--color-button-period-type);
-    stroke: var(--color-button-period-type);
-  }
+  fill: var(--primary-text-color);
 }
 
 .group_period {
   display: flex;
   gap: 8px;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 100%;
 
   @media screen and (min-width: 768px) {
     width: 260px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
 }
 
 .period_view {
+padding: 6px 12px;
+  width: 134px;
+  height: 34px;
   padding: 6px 12px;
   border-radius: 8px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.29;
-
+  outline: none;
+  border: none;
   text-align: center;
   text-transform: uppercase;
   background-color: var(--color-button-period-type);
-  color: var(--btn-text-color);
+  color: #fff;
   cursor: default;
 
-  @media screen and (min-width: 768px) {
-    padding: 8px 12px;
-    font-size: 16px;
-    line-height: 1.12;
+  :hover,
+  :focus {
+    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
   }
 }
 
 .period_tabs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 7px 10px;
-  border: 0px 0px 0px 8px;
-  color: var(--calendar-digit-color);
-  border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
-  cursor: pointer;
-  background-color: var(--sidebar-background-color);
+  width: 38px;
+  height: 34px;
   border: 1px solid rgba(220, 227, 229, 0.5);
-  
-  & > svg {
-    stroke: currentColor;
-    fill: transparent;
-  }
-  & > svg:hover,
-  & > svg:focus {
-    stroke: var(--color-button-period-type);
-    fill: transparent;
+  border-radius: 8px;
+  background-color: var(--container-page-bacground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    box-shadow: inset 4px 2px 16px var(--shadow-btn);
+
   }
 }
 
@@ -73,6 +58,7 @@
   display: flex;
   border-radius: 8px;
   overflow: hidden;
+  margin-left: 20px;
 }
 
 .period_container {

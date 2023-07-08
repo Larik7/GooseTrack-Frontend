@@ -1,4 +1,4 @@
-// Header.js
+
 import { useLocation } from 'react-router-dom';
 import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
 import cssLogo from '../SideBar/sideBar.module.css';
@@ -8,6 +8,7 @@ import { ThemeToggler } from './ThemeToggle/ThemeToggle';
 import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 import { Tour } from '../Tour/Tour';
 import { UserInfo } from './UserInfo/UserInfo';
+import { useEffect } from 'react';
 
 
 
@@ -16,21 +17,28 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
     setOpen(!openMenu);
   };
   const location = useLocation();
- let title = '';
+    let title = '';
 
-  switch (location.pathname) {
-    case '/calendar/statistics':
+
+   switch (location.pathname) {
+    case '/statistics':
       title = 'Statistics';
       break;
-    case '/calendar/user':
+    case '/userInfo':
       title = 'User Profile';
       break;
     case '/calendar':
+    case '/calendar/day/...':
       title = 'Calendar';
       break;
     default:
-      title = '';
+      if (location.pathname.startsWith('/calendar/day/')) {
+        title = 'Calendar';
+      }
+      break;
   }
+
+ 
 
   return (
     <header className={css.header}>

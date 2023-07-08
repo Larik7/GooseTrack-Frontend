@@ -27,6 +27,10 @@
 
 }
 }
+
+.icon {
+  fill: var(--primary-text-color);
+}
 .wrapper {
   border-radius: 16px;
   background: var(--container-page-bacground);

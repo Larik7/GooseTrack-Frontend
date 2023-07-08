@@ -5,7 +5,7 @@
   top: 0px;
   left: 0px;
   z-index: 20;
-  background-color: rgba(227, 243, 255, 0.8);
+  background-color: rgba(179, 180, 181, 0.8);
   overflow-y: auto;
 }
 
@@ -19,6 +19,6 @@
   max-height: 90%;
   padding: 40px 28px;
   border-radius: 8px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--modal-bg-color);
   box-shadow: rgba(17, 17, 17, 0.1) 0px 4px 16px 0px;
 }

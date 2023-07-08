@@ -57,7 +57,7 @@
     margin-top: 32px;
     width: 100%;
     height: 46px;
-    background: var(--nav-button-color-hover);
+    background: #3e85f3;
     box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
     border-radius: 16px;
 
@@ -255,7 +255,7 @@
     width: 100%;
     height: 46px;
     border-radius: 8px;
-    border: none;
+  border: 1px solid rgba(220, 227, 229, 0.5);
 
     font-size: 14px;
     line-height: 129%;
@@ -279,15 +279,14 @@
     margin-top: 32px;
     width: 100%;
     height: 46px;
-    background: var(--nav-button-color-hover);
     box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
     border-radius: 16px;
-
+  background: #3e85f3;
     font-weight: 600;
     font-size: 14px;
     line-height: 129%;
     letter-spacing: -0.02em;
-    color: var(--sidebar-background-color);
+    color: #fff;
   }
 
   .button:hover {
@@ -335,6 +334,7 @@
   .icon {
     width: 24px;
     height: 24px;
+    fill: var(--close-btn-color);
   }
 
   .icon_plus {
