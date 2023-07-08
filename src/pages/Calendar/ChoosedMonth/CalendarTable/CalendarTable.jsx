@@ -20,6 +20,7 @@ export const CalendarTable = ({
               key={nanoid()}
               date={day.day}
               month={day.month}
+              disabled={day.disabled}
               currentMonth={currentDate}
               setCurrentDate={setCurrentDate}
               setSelectedDay={setSelectedDay}
