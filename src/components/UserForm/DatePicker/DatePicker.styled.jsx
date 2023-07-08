@@ -6,11 +6,11 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 
 export const DatePickerCalendar = styled(DatePicker)`
-padding: 6px 12px;
 width: 134px;
   height: 34px; 
 padding: 6px 12px;
   border-radius: 8px;
+  margin-right: 25px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.29;
@@ -30,6 +30,7 @@ padding: 6px 12px;
     padding: 8px 12px;
     font-size: 16px;
     line-height: 1.12;
+    margin-right: 0px;
   }`;
 
 export const StyledDatePicker = styled(DatePicker)`
@@ -67,9 +68,9 @@ export const StyledDatePicker = styled(DatePicker)`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 24px;
-    width: 354px;
+    width: 290px;
     height: 46px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.13;
   }
 `;
@@ -86,6 +87,19 @@ export const DatePickerWrapper = styled.div`
   font-size: 18px;
   line-height: 24px;
   border: none;
+
+  &__year-dropdown{
+      background-color: #ffffff;
+   
+  }
+
+ &__year-option--selected_year {
+  color:#3e85f3;
+ }
+
+ &__year-read-view--selected-year {
+  color: #fff;
+ }
 
   &-wrapper:hover & {
     background-color: #ffffff;

@@ -4,6 +4,7 @@
   min-height: 94px;
   border: 1px solid rgba(220, 227, 229, 0.5);
   border-radius: 8px;
+  padding: 2px;
 }
 
 .dayContainer:hover,
@@ -20,6 +21,7 @@
 @media screen and (min-width: 1200px) {
   .dayContainer {
     min-height: 125px;
+  
   }
 }
 
@@ -143,6 +145,7 @@
   background-color: #ceeefd;
   border-radius: 8px;
   padding: 0 2px 0 10px;
+      margin-bottom: 3px;
 }
 
 .medium {
@@ -150,6 +153,7 @@
   background-color: #fcf0d4;
   border-radius: 8px;
   padding: 0 2px 0 10px;
+      margin-bottom: 3px;
 }
 
 .high {
@@ -157,4 +161,5 @@
   background-color: #ffd2dd;
   border-radius: 8px;
   padding: 0 2px 0 10px;
+      margin-bottom: 3px;
 }

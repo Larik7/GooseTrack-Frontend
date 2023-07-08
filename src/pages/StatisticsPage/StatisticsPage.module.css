@@ -1,13 +1,28 @@
+@media screen and (min-width: 375px) {
+.suspenseContainer {
+    display: grid;
+    justify-content: space-between;
+  }
+    .upperchart {
+      
+      margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+.suspenseContainer {
+      display: flex;
+    justify-content: space-between;
+  }
+}
+
 .mainComponent {
   background-color: var(--container-page-bacground);
   border-radius: 16px;
       padding: 50px;
 }
 
-.suspenseContainer {
-  display: flex;
-  justify-content: space-between;
-}
+
 .period_tabs_container {
   margin-left: 20px;
   display: flex;
@@ -69,6 +84,11 @@
     width: 704px;
     height: 854px;
   }
+     .upperchart {
+       display: flex;
+       justify-content: flex-end;
+      margin-top: 0;
+     }
 }
 
 @media (min-width: 1440px) {
@@ -102,10 +122,9 @@
 
 .upperchart {
   height: 34px;
-  display: flex;
-  justify-content: flex-end;
   margin-bottom: 40px;
   align-items: baseline;
+ 
 }
 
 .list {
