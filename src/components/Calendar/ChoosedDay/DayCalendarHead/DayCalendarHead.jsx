@@ -15,19 +15,25 @@ import { useSelector } from 'react-redux';
 import css from './DayCalendarHead.module.css';
 import { setActivedDate } from 'redux/tasks/taskReducer';
 import { useDispatch } from 'react-redux';
+import { selectActiveDate } from 'redux/tasks/selectors';
+import { relativeTimeRounding } from 'moment/moment';
 
-export const DayCalendarHead = () => {
+export const DayCalendarHead = ({ setSelectedDay }) => {
   const { currentDay: targetDate } = useParams();
   const navigate = useNavigate();
   const user = useSelector(selectUser);
   const formatofWeek = 'eeee';
   const [time, setTime] = useState(new Date());
   const dispatch = useDispatch();
+  const currentData = useSelector(selectActiveDate);
 
   useEffect(() => {
+    if (currentData === targetDate) {
+      return;
+    }
     const calendarDate = new Date(targetDate);
     setTime(calendarDate);
-  }, [targetDate]);
+  }, [targetDate, currentData]);
 
   const startDate = startOfWeek(time, { weekStartsOn: 1 });
   const endDate = lastDayOfWeek(time, { weekStartsOn: 1 });
@@ -49,6 +55,7 @@ export const DayCalendarHead = () => {
   const selectedDay = dayWeeks => formatDate(dayWeeks) === targetDate;
   const handleChangDay = dayData => {
     dispatch(setActivedDate(formatDate(dayData)));
+    setSelectedDay(dayData);
     navigate(`/calendar/day/${formatDate(dayData)}`);
   };
 

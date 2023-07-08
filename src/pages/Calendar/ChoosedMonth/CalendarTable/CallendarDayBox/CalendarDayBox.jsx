@@ -10,6 +10,8 @@ export const CallendarDayBox = ({
   month,
   picked = false,
   currentMonth,
+  setCurrentDate,
+  setSelectedDay,
 }) => {
   const dispatch = useDispatch();
 
@@ -27,6 +29,8 @@ export const CallendarDayBox = ({
     task => task.date.slice(0, 7) === month
   );
   const handleDayBox = () => {
+    setCurrentDate(new Date(dateForBox));
+    setSelectedDay(new Date(dateForBox));
     dispatch(setActivedDate(dateForBox));
   };
   return (

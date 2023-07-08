@@ -12,8 +12,9 @@ const emptySortedTask = {
   toDo: [],
 };
 
-export const ChoosedDay = () => {
+export const ChoosedDay = ({ setSelectedDay }) => {
   const { currentDay: targetDate } = useParams();
+  console.log(targetDate);
 
   const tasks = useSelector(selectAllTasks);
 
@@ -62,7 +63,7 @@ export const ChoosedDay = () => {
 
   return (
     <div className={css.container}>
-      <DayCalendarHead />
+      <DayCalendarHead setSelectedDay={setSelectedDay} />
       {sortedTasks && <TasksColumnsList sortedTasksData={sortedTasks} />}
     </div>
   );

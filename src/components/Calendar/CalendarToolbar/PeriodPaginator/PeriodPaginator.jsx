@@ -88,12 +88,12 @@ export const PeriodPaginator = ({
 }) => {
   const params = useParams();
   const navigate = useNavigate();
-
   useEffect(() => {
     if (!params.currentDay) {
       return;
     }
     const parsedDate = parseDate(selectedDay);
+
     navigate(`/calendar/day/${parsedDate}`);
   }, [selectedDay, navigate, params.currentDay]);
 
