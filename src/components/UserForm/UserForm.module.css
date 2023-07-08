@@ -202,8 +202,9 @@
 }
 .username_form_input:hover,
 .username_form_input:focus {
-      border: 2px solid var(--nav-button-color-hover);
-      box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+      border: 2px solid #3e85f3;
+      box-shadow: 4px 2px 16px rgba(78, 95, 109, 0.48);
+      outline: none;
 }
 
 .username_form_input > :placeholder-shown {

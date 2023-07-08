@@ -5,20 +5,24 @@
   border: 1px solid rgba(220, 227, 229, 0.5);
   border-radius: 8px;
 }
+
 .dayContainer:hover,
 .dayContainer:focus {
   box-shadow: rgba(54, 53, 53, 0.24) 0px 3px 8px;
 }
+
 @media screen and (min-width: 768px) {
   .dayContainer {
     min-height: 144px;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .dayContainer {
     min-height: 125px;
   }
 }
+
 .numberContainer {
   position: absolute;
   top: 8px;
@@ -26,22 +30,26 @@
   border-radius: 8px;
   padding: 4px 8px;
 }
+
 @media screen and (min-width: 768px) {
   .numberContainer {
     top: 18px;
     right: 22px;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .numberContainer {
     top: 14px;
     right: 14px;
   }
 }
+
 .link {
   width: 100%;
   height: 100%;
 }
+
 .true {
   position: absolute;
   top: 8px;
@@ -50,6 +58,7 @@
   padding: 4px 8px;
   background-color: var(--nav-button-color-hover);
 }
+
 .false {
   font-family: 'Inter';
   line-height: 1.2;
@@ -57,6 +66,7 @@
   text-transform: uppercase;
   color: var(--secondary-text-color);
 }
+
 .day {
   font-family: 'Inter';
   line-height: 1.2;
@@ -64,31 +74,48 @@
   text-transform: uppercase;
   color: var(--sidebar-background-color);
 }
+
 .taskContainer {
   width: 100%;
-  height: 72px;
   position: absolute;
   top: 48px;
-  overflow: scroll;
+  overflow: auto;
+  max-height: 72px;
+   scrollbar-width: thin; 
 }
+
 @media screen and (min-width: 768px) {
   .taskContainer {
-    height: 100px;
     top: 58px;
+    max-height: 100px;
+      position: absolute;
+        top: 48px;
+        overflow: auto;
+        max-height: 72px;
+        scrollbar-width: thin;
+          
   }
 }
+
 @media screen and (min-width: 1200px) {
   .taskContainer {
-    overflow: auto;
-    top: 67px;
+    top: 45px;
+    max-height: 100px;
+      position: absolute;
+        top: 48px;
+        overflow: auto;
+        max-height: 72px;
+        scrollbar-width: thin;
   }
 }
+
 .taskList {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
+
 .taskItem {
   margin: 2px;
   height: 22px;
@@ -100,23 +127,34 @@
   font-weight: 700;
   font-size: 10px;
 }
+
 @media screen and (min-width: 768px) {
   .taskItem {
     font-size: 14px;
   }
 }
+
+.taskContainer::-webkit-scrollbar {
+  width: 5px;
+}
+
 .low {
   color: #3E85F3;
   background-color: #ceeefd;
   border-radius: 8px;
+  padding: 0 2px 0 10px;
 }
+
 .medium {
   color: #f3b249;
   background-color: #fcf0d4;
   border-radius: 8px;
+  padding: 0 2px 0 10px;
 }
-.hard {
+
+.high {
   color: #ea3d65;
   background-color: #ffd2dd;
   border-radius: 8px;
+  padding: 0 2px 0 10px;
 }

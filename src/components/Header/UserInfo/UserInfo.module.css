@@ -10,7 +10,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--primary-text-color);
+	color: #fff;
 	background-color: #3e85f3;
 	font-family: var(--button-font);
 	font-weight: 700;
@@ -29,6 +29,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 8px;
+	
 }
 
 @media screen and (min-width: 767px) {
@@ -40,6 +41,7 @@
 		width: 44px;
 		height: 44px;
 		font-size: 18px;
+		
 	}
 
 }
