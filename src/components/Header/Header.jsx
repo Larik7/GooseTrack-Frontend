@@ -8,7 +8,7 @@ import { ThemeToggler } from './ThemeToggle/ThemeToggle';
 import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 import { Tour } from '../Tour/Tour';
 import { UserInfo } from './UserInfo/UserInfo';
-import { useEffect } from 'react';
+
 
 
 
