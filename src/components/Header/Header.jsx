@@ -19,10 +19,10 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
  let title = '';
 
   switch (location.pathname) {
-    case '/statistics':
+    case '/calendar/statistics':
       title = 'Statistics';
       break;
-    case '/user':
+    case '/calendar/user':
       title = 'User Profile';
       break;
     case '/calendar':

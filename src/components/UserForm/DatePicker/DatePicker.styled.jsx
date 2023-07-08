@@ -5,6 +5,33 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
+export const DatePickerCalendar = styled(DatePicker)`
+padding: 6px 12px;
+width: 134px;
+  height: 34px; 
+padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  outline: none;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--color-button-period-type);
+  color: #fff;
+  cursor: default;
+   :hover,
+  :focus {
+    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.12;
+  }`;
+
 export const StyledDatePicker = styled(DatePicker)`
   margin-top: 8px;
   width: 100%;
