@@ -44,7 +44,7 @@ export const TaskItem = ({ task }) => {
               src={user.avatarURL}
               alt="avatar"
               width={32}
-              style={{ borderRadius: '50%' }}
+              style={{ borderRadius: '50%', height: 32 }}
             />
           ) : (
             <p className={css.avatarWord}>{user ? avatar : 'l'}</p>
