@@ -23,7 +23,7 @@ export const UserInfo = toggleShowSideBar => {
 
   return (
     <NavLink
-      to="/calendar/userInfo"
+      to="/userInfo"
       style={{ textDecoration: 'none' }}
       onClick={() => toggleShowSideBar(false)}
     >
