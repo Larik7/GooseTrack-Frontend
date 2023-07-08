@@ -16,7 +16,7 @@ export const UserForm = ({ theme = '' }) => {
   const [previewImageUrl, setPreviewImageUrl] = useState(null);
   const [file, setFile] = useState(null);
   const [userData, setUserData] = useState(null);
-  console.log(userInfo);
+  // console.log(userInfo);
 
   const [avatar, setAvatar] = useState(null);
   useEffect(() => {
@@ -32,7 +32,7 @@ export const UserForm = ({ theme = '' }) => {
     skype: userInfo && userInfo.skype ? userInfo.skype : '',
     name: userInfo ? userInfo.name : '',
     email: userInfo ? userInfo.email : '',
-    birthday: userInfo ? userInfo.birthday : '1999-12-31',
+    birthday: userInfo ? userData : '1999-12-31',
     avatarURL: false,
   };
 
@@ -154,7 +154,7 @@ export const UserForm = ({ theme = '' }) => {
                   <MyDatePicker
                     updateDate={updateDate}
                     name="birthday"
-                    birthday={formik.values.birthday}
+                    birthday={userInfo.birthday}
                     className={css.my_date_picker}
                   />
                   <ErrorMessage

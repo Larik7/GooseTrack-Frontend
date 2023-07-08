@@ -110,16 +110,18 @@ export const updateUser = createAsyncThunk(
     const { auth } = thunkAPI.getState();
 
     const accessToken = auth.accessToken;
-
     if (accessToken === null) {
       return thunkAPI.rejectWithValue('We dont have a token');
     }
 
     try {
       setToken(accessToken);
-      const res = await axios.put('api/auth/user', data);
+      const res = await axios.put('api/auth/user', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
       // console.log(res.data.data);
-      console.log(res.data.data.updatedUser);
       return res.data.data.updatedUser;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

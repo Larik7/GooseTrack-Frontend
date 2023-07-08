@@ -11,14 +11,12 @@ export const PeriodTypeSelect = ({
 }) => {
   const params = useParams();
   const parsedDate = parseDate(currentDate);
-
   return (
     <div className={css.tabs_flex}>
       <div className={css.types_tabs_container}>
         <NavLink
           className={css.types_tabs}
           to="/calendar"
-          exact
           onClick={() => {
             setCurrentDate(selectedDay);
           }}
@@ -41,7 +39,6 @@ export const PeriodTypeSelect = ({
     </div>
   );
 };
-
 
 // import React from 'react';
 // import css from 'components/Calendar/CalendarToolbar/PeriodTypeSelect/PeriodTypeSelect.module.css';
@@ -193,4 +190,3 @@ export const PeriodTypeSelect = ({
 //     </div>
 //   );
 // };
-
