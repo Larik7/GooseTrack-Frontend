@@ -121,8 +121,12 @@ export const updateUser = createAsyncThunk(
           'Content-Type': 'multipart/form-data',
         },
       });
+      console.log(res)
       // console.log(res.data.data);
-      return res.data.data.updatedUser;
+      // return res.data.data.updatedUser;
+      const response = await axios.get('api/auth/current');
+
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
