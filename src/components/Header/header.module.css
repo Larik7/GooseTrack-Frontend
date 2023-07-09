@@ -14,17 +14,9 @@
   align-items: center;
 }
 
-.motivationTitle {font-size: 13px;}
-        
-.firstTwoWords{
+.firstTwoWords {
   color: #3e85f3;
 }
-@media (min-width: 1440px) {
-  .headerInfoBox {
-    width: 80%;
-  }
-}
-
 .conteinerBtn {
   display: flex;
 }
@@ -44,9 +36,6 @@
     padding: 32px 32px 32px 0;
     justify-content: space-between;
   }
-  .headerInfoBox {
-    width: 80%;
-  }
   .logoConteiner {
     padding: 32px 24px;
     background: var(--sidebar-background-color);
@@ -59,7 +48,7 @@
     justify-content: center;
   }
   .headerInfoBox {
-    padding: 0 32px;
+    /* padding: 0 32px; */
   }
 }
 
@@ -110,7 +99,7 @@
     line-height: 32px;
   }
   .conteinerBtn {
-    margin-left: 400px;
+    margin-left: 500px;
   }
 }
 
