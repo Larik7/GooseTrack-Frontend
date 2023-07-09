@@ -17,7 +17,7 @@ export const UserInfo = toggleShowSideBar => {
   }, [user.name]);
 
   const username = user.name ?? '';
-  const imgURL = user.imgURL ?? null;
+  const imgURL = user.avatarURL ?? null;
 
   return (
     <NavLink

@@ -14,6 +14,9 @@
   align-items: center;
 }
 
+.firstTwoWords {
+  color: #3e85f3;
+}
 .conteinerBtn {
   display: flex;
 }
@@ -45,7 +48,7 @@
     justify-content: center;
   }
   .headerInfoBox {
-    padding: 0 32px;
+    /* padding: 0 32px; */
   }
 }
 
@@ -85,6 +88,9 @@
   .feedbackBtn {
     margin-right: 24px;
   }
+     .conteinerBtn {
+       margin-left: 300px;
+     }
 }
 
 @media (min-width: 1440px) {
