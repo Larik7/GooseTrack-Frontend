@@ -88,6 +88,9 @@
   .feedbackBtn {
     margin-right: 24px;
   }
+     .conteinerBtn {
+       margin-left: 300px;
+     }
 }
 
 @media (min-width: 1440px) {

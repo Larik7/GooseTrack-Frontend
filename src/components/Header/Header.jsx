@@ -68,7 +68,7 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
     };
   }, []);
 
-  const shouldRenderImage = windowWidth > 1430;
+  const shouldRenderImage = windowWidth > 1400 ;
 
   return (
     <header className={css.header}>
@@ -83,17 +83,17 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
         <button className={css.burgerMenu} onClick={handlerMenu}>
           <RxHamburgerMenu size={32} />
         </button>
-        {isCalendarDayPage && hasInProgressTasks && shouldRenderImage && (
+        {isCalendarDayPage && (hasInProgressTasks || hasToDoTasks)  && shouldRenderImage && (
           <div className={css.motivationalGoose}>
             <img src={MotivationGoose} alt="Motivational Goose" />
           </div>
         )}
-        <div>        <p className={css.infoTitle}>{title}</p>
+        <div>       <p className={css.infoTitle}>{title}</p>
          {isCalendarDayPage && (hasInProgressTasks || hasToDoTasks)  && shouldRenderImage && (
          <p  className={css.motivationTitle}><span className={css.firstTwoWords}>Let go</span> of the past and focus on the present!</p>
           )}</div>
 
-        <div className={css.conteinerBtn}>
+        <div className={css.conteinerBtn} >
           <AddFeedbackBtn feedbackBtnStyle={css.feedbackBtn} />
           <div className={css.infoMenu}>
             <ThemeToggler />
