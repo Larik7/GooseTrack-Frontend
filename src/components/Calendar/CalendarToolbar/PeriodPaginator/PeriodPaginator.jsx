@@ -5,6 +5,9 @@ import css from './PeriodPaginator.module.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { parseDate } from 'helpers/parseDate';
 
+import { selectActiveDate } from 'redux/tasks/selectors';
+import { useSelector } from 'react-redux';
+
 export const PeriodPaginator = ({
   selectedDay,
   nextMonth,
@@ -13,16 +16,18 @@ export const PeriodPaginator = ({
   currentDate,
   nextDay,
 }) => {
-  const params = useParams();
+  const currentMonth = useSelector(selectActiveDate);
+  const { currentDay } = useParams();
+
   const navigate = useNavigate();
   useEffect(() => {
-    if (!params.currentDay) {
+    if (!currentDay) {
       return;
     }
     const parsedDate = parseDate(selectedDay);
 
     navigate(`/calendar/day/${parsedDate}`);
-  }, [selectedDay, navigate, params.currentDay]);
+  }, [selectedDay, navigate, currentMonth, currentDay]);
 
   const monthFormat = 'LLLL y';
   const dayFormat = 'd MMM y';
@@ -34,7 +39,7 @@ export const PeriodPaginator = ({
   }
 
   const handlePrevClick = () => {
-    if (params.currentDay) {
+    if (currentMonth) {
       prevDay();
     } else {
       prevMonth();
@@ -42,7 +47,7 @@ export const PeriodPaginator = ({
   };
 
   const handleNextClick = () => {
-    if (params.currentDay) {
+    if (currentMonth) {
       nextDay();
     } else {
       nextMonth();
@@ -52,7 +57,7 @@ export const PeriodPaginator = ({
   return (
     <div className={css.group_period}>
       <div className={css.period_view}>
-        {params.currentDay ? formattedDay : formattedMonth}
+        {currentMonth ? formattedDay : formattedMonth}
       </div>
       <div className={css.period_tabs_container}>
         <button className={css.period_tabs} onClick={handlePrevClick}>

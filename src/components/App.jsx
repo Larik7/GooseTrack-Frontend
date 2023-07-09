@@ -27,8 +27,6 @@ export const App = () => {
   const [selectedDay, setSelectedDay] = useState(new Date(date));
   const isError = useSelector(selectedError);
 
-  console.log(date);
-
   useEffect(() => {
     if (isError === 'Request failed with status code 401') {
       dispatch(resetAuth());
