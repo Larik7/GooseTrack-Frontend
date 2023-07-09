@@ -6,7 +6,7 @@ import { BiPencil as Pencil, BiTrash as Trash } from 'react-icons/bi';
 import { AiFillStar as Star } from 'react-icons/ai';
 
 import { useDispatch } from 'react-redux';
-// import { nanoid } from 'nanoid'; // якщо не використовуєш краще в комент заганяй.
+
 import {
   updateReview,
   addReview,

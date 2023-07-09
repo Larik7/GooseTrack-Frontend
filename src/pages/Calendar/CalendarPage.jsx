@@ -11,13 +11,14 @@ import { selectActiveDate } from 'redux/tasks/selectors';
 export const CalendarPage = ({ selectedDay, setSelectedDay }) => {
   const dispatch = useDispatch();
   const params = useParams();
-  const [currentDate, setCurrentDate] = useState(new Date());
+
   const currentMonth = useSelector(selectActiveDate);
+  const [currentDate, setCurrentDate] = useState(new Date());
   useEffect(() => {
     if (currentDate.toISOString().slice(0, 10) === currentMonth) {
       return;
     }
-    dispatch(setActivedDate(currentDate.toISOString().slice(0, 10)));
+    dispatch(setActivedDate(currentMonth));
   }, [currentDate, currentMonth, dispatch]);
   return (
     <div>

@@ -67,7 +67,7 @@ export const TaskToolbar = ({ task }) => {
                       ref={categoryRef}
                       key={item}
                       className={css.change_box_item}
-                      onClick={e => {
+                      onClick={async e => {
                         const newTaskData = {
                           category: item,
                           title,
@@ -76,7 +76,7 @@ export const TaskToolbar = ({ task }) => {
                           priority,
                           date,
                         };
-                        dispatch(
+                        await dispatch(
                           updateTask({ taskId: _id, task: newTaskData })
                         );
                         setIsChange(false);
