@@ -46,6 +46,8 @@ export const StyledDatePicker = styled(DatePicker)`
   line-height: 1.3;
   color: var(--primary-text-color);
   outline: none;
+  
+  
 
   :hover,
   :focus {
@@ -114,10 +116,31 @@ export const DatePickerWrapper = styled.div`
       inset: 0px auto auto 50px;
     }
 
-    &__navigation {
-      width: 18px;
-      height: 18px;
-      top: 24px;
+
+  &__month-container {
+    padding: 15px 18px;
+    background-color: #3e85f3;
+    border-radius: 16px;
+    position: absolut;
+   
+
+    & .react-datepicker__day-name,
+    & .react-datepicker__day {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1;
+      color: #ffffff;
+
+//     &__navigation {
+//       width: 18px;
+//       height: 18px;
+//       top: 24px;
+
 
       &--previous {
         left: 18px;
