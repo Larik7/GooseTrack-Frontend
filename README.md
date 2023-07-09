@@ -1,10 +1,8 @@
-<h1 align="center">Hi :wave:, GooseTrack we are the Team "BackToFront"</h1>
-<h2 align="center">this is our project
-  [**GooseTrack**](https://larik7.github.io/GooseTrack-Frontend/)</h2>
+<h1 align="center">Hi :wave:, we are the Team "BackToFront"</h1>
+<h2 align="center">this is our project <a href="https://larik7.github.io/GooseTrack-Frontend/">GooseTrack</a></h2>
 <p align="center"><img src="/src/images/Goose.png" alt="GooseTrack" border="0"></p>
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://react.dev/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="sass" width="40" height="40"/> </a> </p>
 
 <h3 align="center">This is our Back-end <a href="https://github.com/Larik7/GooseTrack-Backend">repository.</a></h3>
-<h3 align="center">this is our Swagger
-  [**Swagger**](https://goosetrackback.onrender.com/api-docs/)</h3>
+<h3 align="center">this is our <a href="https://goosetrackback.onrender.com/api-docs/">Swagger</a></h3>
