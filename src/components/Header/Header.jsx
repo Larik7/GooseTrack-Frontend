@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
 import cssLogo from '../SideBar/sideBar.module.css';
 import css from './header.module.css';
@@ -15,6 +15,7 @@ import { fetchTasks } from 'redux/tasks/taskOperation';
 
 export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
   const dispatch = useDispatch();
+   const { currentDay } = useParams();
   const tasks = useSelector(selectAllTasks);
 
   useEffect(() => {
@@ -46,25 +47,30 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
       break;
   }
 
-  // const toDoTasks = tasks.filter((task) => task.category === 'to-do');
-  // const hasToDoTasks = toDoTasks.length > 0;
-  const inProgressTasks = tasks.filter((task) => task.category === 'in-progress');
-  const hasInProgressTasks = inProgressTasks.length > 0;
-  // console.log(hasToDoTasks);
+  const toDoTasks = tasks.filter(task => task.category === 'to-do');
+  const sortByDayToDo = toDoTasks.filter(item => item.date === currentDay);
+  const hasToDoTasks = sortByDayToDo.length > 0;
 
+  console.log(hasToDoTasks);
+
+  const inProgressTasks = tasks.filter(task => task.category === 'in-progress');
+  const sortByDayProgress = inProgressTasks.filter(
+    item => item.date === currentDay
+  );
+  const hasInProgressTasks = sortByDayProgress.length > 0;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+ useEffect(() => {
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
 
-    window.addEventListener('resize', handleResize);
+  window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);
 
   const shouldRenderImage = windowWidth > 1430;
 
@@ -81,13 +87,18 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
         <button className={css.burgerMenu} onClick={handlerMenu}>
           <RxHamburgerMenu size={32} />
         </button>
-        {isCalendarDayPage && hasInProgressTasks && shouldRenderImage && (
+        {isCalendarDayPage && (hasInProgressTasks || hasToDoTasks)  && shouldRenderImage && (
           <div className={css.motivationalGoose}>
             <img src={MotivationGoose} alt="Motivational Goose" />
           </div>
         )}
+        <div>
         <p className={css.infoTitle}>{title}</p>
-        <div className={css.conteinerBtn}>
+          {isCalendarDayPage && (hasInProgressTasks || hasToDoTasks)  && shouldRenderImage && (
+         <p  className={css.motivationTitle}><span className={css.firstTwoWords}>Let go</span> of the past and focus on the present!</p>
+          )}</div>
+        <div className={css.conteinerBtn} style={{ marginLeft: shouldRenderImage && (hasInProgressTasks || hasToDoTasks) ? '400px' : '600px' }}>
+        
           <AddFeedbackBtn feedbackBtnStyle={css.feedbackBtn} />
           <div className={css.infoMenu}>
             <ThemeToggler />

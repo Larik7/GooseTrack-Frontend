@@ -19,7 +19,7 @@ export const UserInfo = toggleShowSideBar => {
   // console.log(user.imgURL);
 
   const username = user.name ?? '';
-  const imgURL = user.imgURL ?? null;
+  const imgURL = user.avatarURL ?? null;
 
   return (
     <NavLink

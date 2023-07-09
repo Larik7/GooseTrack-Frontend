@@ -84,17 +84,7 @@ export const UserForm = ({ theme = '' }) => {
           return (
             <Form>
               <div className={`${css.user_page__avatar_container} ${theme}`}>
-                <div className={css.user_page__avatar_box}>
-                  {!imgURL && !previewImageUrl ? (
-                    <p className={css.avatarWord}>{userInfo ? avatar : ''}</p>
-                  ) : (
-                    <img
-                      src={previewImageUrl ? previewImageUrl : imgURL || imgURL ? imgURL : previewImageUrl}
-                      alt="User avatar"
-                      className={css.user_page__avatar}
-                    />
-                  )}
-                  <div className={`${css.avatar_upload_container} ${theme}`}>
+                <div className={`${css.avatar_upload_container} ${theme}`}>
                     <Field
                       id="avatar-upload"
                       name="avatar"
@@ -107,9 +97,19 @@ export const UserForm = ({ theme = '' }) => {
                     />
                     <label
                       htmlFor="avatar-upload"
-                      className={`${css.avatar_upload_btn} ${theme}`}
+                      className={`${css.avatar_upload_btn} `}
                     ></label>
                   </div>
+                <div className={css.user_page__avatar_box}>
+                  {!imgURL && !previewImageUrl ? (
+                    <p className={css.avatarWord}>{userInfo ? avatar : ''}</p>
+                  ) : (
+                    <img
+                      src={previewImageUrl ? previewImageUrl : imgURL || imgURL ? imgURL : previewImageUrl}
+                      alt="User avatar"
+                      className={css.user_page__avatar}
+                    />
+                  )}
                 </div>
 
                 <h3 className={`${css.user_page__name} ${theme}`}>

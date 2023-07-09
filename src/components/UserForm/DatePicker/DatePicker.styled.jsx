@@ -65,11 +65,14 @@ export const StyledDatePicker = styled(DatePicker)`
   @media screen and (min-width: 375px) {
     width: 299px;
   }
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 24px;
+ @media screen and (min-width: 735px) {
     width: 290px;
-    height: 46px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    margin-bottom: 24px;
+    width: 354px;
+    height: 43px;
     font-size: 14px;
     line-height: 1.13;
   }
