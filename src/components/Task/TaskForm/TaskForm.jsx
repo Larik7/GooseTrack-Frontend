@@ -2,7 +2,7 @@ import css from './TaskForm.module.css';
 import * as Yup from 'yup';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { IoMdClose } from 'react-icons/io';
-// import { SlPencil } from 'react-icons/sl';
+
 import { useDispatch } from 'react-redux';
 import { addTask, fetchTasks, updateTask } from 'redux/tasks/taskOperation';
 import { FiPlus } from 'react-icons/fi';
@@ -96,7 +96,6 @@ export const TaskForm = ({ onClose, category, task }) => {
           handleChange,
           handleBlur,
           isSubmitting,
-          /* and other goodies */
         }) => (
           <Form className={css.form}>
             <div className={css.box}>

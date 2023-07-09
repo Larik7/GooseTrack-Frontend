@@ -1,4 +1,3 @@
-// Import
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
@@ -12,8 +11,6 @@ import {
 } from './ReviewsSlider.styled';
 import sprite from 'icons/sprite.svg';
 
-
-// SlickRight
 const SlickRight = ({ currentSlide, slideCount, ...props }) => (
   <div
     {...props}
@@ -28,8 +25,6 @@ const SlickRight = ({ currentSlide, slideCount, ...props }) => (
   </div>
 );
 
-
-// SlickLeft
 const SlickLeft = ({ currentSlide, slideCount, ...props }) => (
   <div
     {...props}
@@ -65,8 +60,6 @@ const settings = {
   prevArrow: <SlickLeft />,
 };
 
-
-// ReviewsSlider
 export const ReviewsSlider = () => {
   const reviews = useSelector(selectAllReviews);
   const dispatch = useDispatch();
@@ -106,13 +99,13 @@ export const ReviewsSlider = () => {
             GooseTrack is the worst project, I have ever seen.
           </ReviewCard>
           <ReviewCard src={''} num={3} name="Volker Hofmann">
-          GooseTrack ist beeindruckend, die Kalenderansicht und die Filteroptionen machen es möglich
-          Es ist einfach, organisiert und konzentriert zu bleiben. sehr empfehlenswert.
+            GooseTrack ist beeindruckend, die Kalenderansicht und die
+            Filteroptionen machen es möglich Es ist einfach, organisiert und
+            konzentriert zu bleiben. sehr empfehlenswert.
           </ReviewCard>
           <ReviewCard src={''} num={2} name="Huang Yongrui">
-          GooseTrack 非常有用，帶有帳戶的側邊欄
-             管理、日曆和過濾器選項使導航變得無縫。
-             非常適合保持井井有條。
+            GooseTrack 非常有用，帶有帳戶的側邊欄
+            管理、日曆和過濾器選項使導航變得無縫。 非常適合保持井井有條。
           </ReviewCard>
         </Slider>
         <ArrowContainer />
