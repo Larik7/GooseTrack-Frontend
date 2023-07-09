@@ -16,7 +16,7 @@ import css from './DayCalendarHead.module.css';
 import { setActivedDate } from 'redux/tasks/taskReducer';
 import { useDispatch } from 'react-redux';
 import { selectActiveDate } from 'redux/tasks/selectors';
-import { relativeTimeRounding } from 'moment/moment';
+// import { relativeTimeRounding } from 'moment/moment';
 
 export const DayCalendarHead = ({ setSelectedDay }) => {
   const { currentDay: targetDate } = useParams();
@@ -54,6 +54,7 @@ export const DayCalendarHead = ({ setSelectedDay }) => {
   const curenttDayStyle = cureDayStyl => formatDate(cureDayStyl) === targetDate;
   const selectedDay = dayWeeks => formatDate(dayWeeks) === targetDate;
   const handleChangDay = dayData => {
+    console.log('dayData', formatISO(dayData).slice(0, 10));
     dispatch(setActivedDate(formatDate(dayData)));
     setSelectedDay(dayData);
     navigate(`/calendar/day/${formatDate(dayData)}`);

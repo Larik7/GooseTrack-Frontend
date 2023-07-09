@@ -13,8 +13,8 @@ const emptySortedTask = {
 };
 
 export const ChoosedDay = ({ setSelectedDay }) => {
-  const { currentDay: targetDate } = useParams();
-  console.log(targetDate);
+  const { currentDay } = useParams();
+  // console.log(currentDay);
 
   const tasks = useSelector(selectAllTasks);
 
@@ -26,13 +26,13 @@ export const ChoosedDay = ({ setSelectedDay }) => {
   }
 
   // Функція для фільтрації масиву об'єктів за конкретним днем
-  function filterByDate(array, targetDate) {
-    return array.filter(item => item.date === targetDate);
+  function filterByDate(array, currentDay) {
+    return array.filter(item => item.date === currentDay);
   }
   useEffect(() => {
     // Оновлена функція для отримання трьох масивів об'єктів за категорією та відсортованих за датою
-    function getCategorizedArrays(data, targetDate) {
-      const filteredData = filterByDate(data, targetDate);
+    function getCategorizedArrays(data, currentDay) {
+      const filteredData = filterByDate(data, currentDay);
 
       const doneArray = [];
       const inProgressArray = [];
@@ -56,10 +56,10 @@ export const ChoosedDay = ({ setSelectedDay }) => {
     }
 
     if (tasks) {
-      const categorizedArrays = getCategorizedArrays(tasks, targetDate);
+      const categorizedArrays = getCategorizedArrays(tasks, currentDay);
       setSortedTasks(categorizedArrays);
     }
-  }, [targetDate, tasks]);
+  }, [currentDay, tasks]);
 
   return (
     <div className={css.container}>
