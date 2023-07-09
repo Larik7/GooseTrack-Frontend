@@ -1,26 +1,35 @@
-
 import { useLocation } from 'react-router-dom';
 import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
 import cssLogo from '../SideBar/sideBar.module.css';
 import css from './header.module.css';
+import React, { useEffect, useState } from 'react';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { ThemeToggler } from './ThemeToggle/ThemeToggle';
 import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 import { Tour } from '../Tour/Tour';
 import { UserInfo } from './UserInfo/UserInfo';
-
-
-
+import { useSelector, useDispatch } from 'react-redux';
+import { selectAllTasks } from '../../redux/tasks/selectors';
+import MotivationGoose from '../../images/MotivationGoose.png'
+import { fetchTasks } from 'redux/tasks/taskOperation';
 
 export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
+  const dispatch = useDispatch();
+  const tasks = useSelector(selectAllTasks);
+
+  useEffect(() => {
+    dispatch(fetchTasks());
+  }, [dispatch]);
+
   const handlerMenu = () => {
     setOpen(!openMenu);
   };
+
   const location = useLocation();
-    let title = '';
+  const isCalendarDayPage = location.pathname.includes('/calendar/day');
+  let title = '';
 
-
-   switch (location.pathname) {
+  switch (location.pathname) {
     case '/statistics':
       title = 'Statistics';
       break;
@@ -28,7 +37,6 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
       title = 'User Profile';
       break;
     case '/calendar':
-    case '/calendar/day/...':
       title = 'Calendar';
       break;
     default:
@@ -38,7 +46,27 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
       break;
   }
 
- 
+  // const toDoTasks = tasks.filter((task) => task.category === 'to-do');
+  // const hasToDoTasks = toDoTasks.length > 0;
+  const inProgressTasks = tasks.filter((task) => task.category === 'in-progress');
+  const hasInProgressTasks = inProgressTasks.length > 0;
+  // console.log(hasToDoTasks);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const shouldRenderImage = windowWidth > 1430;
 
   return (
     <header className={css.header}>
@@ -53,6 +81,11 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
         <button className={css.burgerMenu} onClick={handlerMenu}>
           <RxHamburgerMenu size={32} />
         </button>
+        {isCalendarDayPage && hasInProgressTasks && shouldRenderImage && (
+          <div className={css.motivationalGoose}>
+            <img src={MotivationGoose} alt="Motivational Goose" />
+          </div>
+        )}
         <p className={css.infoTitle}>{title}</p>
         <div className={css.conteinerBtn}>
           <AddFeedbackBtn feedbackBtnStyle={css.feedbackBtn} />

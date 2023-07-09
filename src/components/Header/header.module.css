@@ -65,7 +65,7 @@
 
 @media (min-width: 375px) {
   .burgerMenu {
-    margin-right: 80px;
+  margin-right: 25px;
     
   }
   .imgBox {
@@ -168,4 +168,8 @@ margin-top: 6px;
   background-color: transparent;
   padding: 10px;
   cursor: pointer;
+}
+
+.motivationalGoose{
+  border: none;
 }
