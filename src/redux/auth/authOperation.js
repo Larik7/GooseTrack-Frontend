@@ -116,14 +116,12 @@ export const updateUser = createAsyncThunk(
 
     try {
       setToken(accessToken);
-      const res = await axios.put('api/auth/user', data, {
+      await axios.put('api/auth/user', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-      console.log(res)
-      // console.log(res.data.data);
-      // return res.data.data.updatedUser;
+
       const response = await axios.get('api/auth/current');
 
       return response.data;

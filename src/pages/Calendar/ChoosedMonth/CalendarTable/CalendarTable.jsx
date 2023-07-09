@@ -11,6 +11,7 @@ export const CalendarTable = ({
   const date = currentDate.toISOString().slice(0, 10);
 
   const callendaryBox = getCalendaryFormat(date);
+
   return (
     <div className={css.callendarContainer}>
       {callendaryBox.map(week => (
@@ -18,7 +19,7 @@ export const CalendarTable = ({
           {week.map(day => (
             <CallendarDayBox
               key={nanoid()}
-              date={day.day}
+              day={day.day}
               month={day.month}
               disabled={day.disabled}
               currentMonth={currentDate}

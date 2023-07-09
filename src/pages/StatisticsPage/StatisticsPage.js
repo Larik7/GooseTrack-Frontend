@@ -5,7 +5,10 @@ import { Outlet } from 'react-router-dom';
 import { AiOutlineLeft } from 'react-icons/ai';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
-import {DatePickerCalendar, DatePickerWrapper} from 'components/UserForm/DatePicker/DatePicker.styled';
+import {
+  DatePickerCalendar,
+  DatePickerWrapper,
+} from 'components/UserForm/DatePicker/DatePicker.styled';
 
 export const StatisticsPage = () => {
   const [valueDatePicker, setValueDatePicker] = useState(new Date()); // записується сьогоднішня дата по дефолту
@@ -29,54 +32,55 @@ export const StatisticsPage = () => {
   // });
 
   const getValueDate = changeDate => {
-    const formattedDate = moment(changeDate).format('YYYY-MM-DD');
-    console.log(formattedDate); // сюди вже виходить дата в форматі показаному вище
+    moment(changeDate).format('YYYY-MM-DD');
   };
 
   return (
     <div className={css.mainComponent}>
-      <Suspense fallback={null} >
-      
-        <div className={css.group_period}>  <div className={css.suspenseContainer}>
-          <div className={css.period_view}>
-            {/* {formattedDay} */}
-            <div className={css.picker}>
-            <DatePickerWrapper >
-            <DatePickerCalendar
-              selected={valueDatePicker} // записується значення яке відображається
-              dateFormat="d MMM y" // сюди треба правильний формат найти
-              onChange={date => {
-                setValueDatePicker(date); // оновлюється дата
-                getValueDate(date); // сюди відправляється дата в кол-бек функцію
-              }}
-            /></DatePickerWrapper>
-            <div className={css.period_tabs_container}>
-            <button className={css.period_tabs} onClick={handlePrevClick}>
-              <AiOutlineLeft className={css.icon} />
-            </button>
-            <button
-              className={css.period_tabs}
-              style={{ transform: 'rotate(180deg)' }}
-              onClick={handleNextClick}
-            >
-              <AiOutlineLeft className={css.icon} />
-            </button></div>
+      <Suspense fallback={null}>
+        <div className={css.group_period}>
+          {' '}
+          <div className={css.suspenseContainer}>
+            <div className={css.period_view}>
+              {/* {formattedDay} */}
+              <div className={css.picker}>
+                <DatePickerWrapper>
+                  <DatePickerCalendar
+                    selected={valueDatePicker} // записується значення яке відображається
+                    dateFormat="d MMM y" // сюди треба правильний формат найти
+                    onChange={date => {
+                      setValueDatePicker(date); // оновлюється дата
+                      getValueDate(date); // сюди відправляється дата в кол-бек функцію
+                    }}
+                  />
+                </DatePickerWrapper>
+                <div className={css.period_tabs_container}>
+                  <button className={css.period_tabs} onClick={handlePrevClick}>
+                    <AiOutlineLeft className={css.icon} />
+                  </button>
+                  <button
+                    className={css.period_tabs}
+                    style={{ transform: 'rotate(180deg)' }}
+                    onClick={handleNextClick}
+                  >
+                    <AiOutlineLeft className={css.icon} />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className={css.upperchart}>
+              <ul className={css.list}>
+                <li className={css.itemDay}>By Day</li>
+                <li className={css.itemMonth}>By Month</li>
+              </ul>
+            </div>
           </div>
-          </div>
-          
-          <div className={css.upperchart}>
-          <ul className={css.list}>
-            <li className={css.itemDay}>By Day</li>
-            <li className={css.itemMonth}>By Month</li>
-          </ul>
         </div>
-        </div>
-      </div>
         <div className={css.chart}>
-          <StatisticsChart selectedDate={valueDatePicker}  />
-        </div> 
-          <Outlet />
-         
+          <StatisticsChart selectedDate={valueDatePicker} />
+        </div>
+        <Outlet />
       </Suspense>
     </div>
   );

@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { selectAllTasks } from 'redux/tasks/selectors';
+import { selectAllTasks, selectActiveDate } from 'redux/tasks/selectors';
 import { DayCalendarHead } from './DayCalendarHead/DayCalendarHead';
 import { TasksColumnsList } from '../../Task/TasksColumnsList/TasksColumnsList';
-import { useParams } from 'react-router-dom';
+
 import css from './ChoosedDay.module.css';
 
 const emptySortedTask = {
@@ -13,26 +13,21 @@ const emptySortedTask = {
 };
 
 export const ChoosedDay = ({ setSelectedDay }) => {
-  const { currentDay } = useParams();
-  // console.log(currentDay);
-
   const tasks = useSelector(selectAllTasks);
+  const isDate = useSelector(selectActiveDate);
 
   const [sortedTasks, setSortedTasks] = useState(emptySortedTask);
 
-  // Функція для сортування масиву за полем "start time"
   function sortByStartTime(array) {
     return array.sort((a, b) => b.start.localeCompare(a.start));
   }
 
-  // Функція для фільтрації масиву об'єктів за конкретним днем
-  function filterByDate(array, currentDay) {
-    return array.filter(item => item.date === currentDay);
+  function filterByDate(array, isDate) {
+    return array.filter(item => item.date === isDate);
   }
   useEffect(() => {
-    // Оновлена функція для отримання трьох масивів об'єктів за категорією та відсортованих за датою
-    function getCategorizedArrays(data, currentDay) {
-      const filteredData = filterByDate(data, currentDay);
+    function getCategorizedArrays(data, isDate) {
+      const filteredData = filterByDate(data, isDate);
 
       const doneArray = [];
       const inProgressArray = [];
@@ -56,10 +51,10 @@ export const ChoosedDay = ({ setSelectedDay }) => {
     }
 
     if (tasks) {
-      const categorizedArrays = getCategorizedArrays(tasks, currentDay);
+      const categorizedArrays = getCategorizedArrays(tasks, isDate);
       setSortedTasks(categorizedArrays);
     }
-  }, [currentDay, tasks]);
+  }, [isDate, tasks]);
 
   return (
     <div className={css.container}>

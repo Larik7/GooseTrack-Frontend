@@ -1,4 +1,3 @@
-// import { Octokit } from 'octokit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -28,7 +27,6 @@ export const fetchTasks = createAsyncThunk(
 export const addTask = createAsyncThunk(
   'task/add',
   async (task, { rejectWithValue, getState }) => {
-    console.log(task);
     const { auth } = getState();
     const accessToken = auth.accessToken;
     if (accessToken === null) {
@@ -37,7 +35,7 @@ export const addTask = createAsyncThunk(
     try {
       setToken(accessToken); // Розкоментуйте цей рядок
       const response = await axios.post('api/tasks', task);
-      console.log(response);
+
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);

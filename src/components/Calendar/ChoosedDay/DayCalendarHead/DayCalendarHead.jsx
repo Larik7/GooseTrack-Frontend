@@ -31,7 +31,7 @@ export const DayCalendarHead = ({ setSelectedDay }) => {
     if (currentData === targetDate) {
       return;
     }
-    const calendarDate = new Date(targetDate);
+    const calendarDate = new Date(currentData);
     setTime(calendarDate);
   }, [targetDate, currentData]);
 
@@ -51,10 +51,10 @@ export const DayCalendarHead = ({ setSelectedDay }) => {
 
   const formatDate = date => formatISO(date).slice(0, 10);
 
-  const curenttDayStyle = cureDayStyl => formatDate(cureDayStyl) === targetDate;
-  const selectedDay = dayWeeks => formatDate(dayWeeks) === targetDate;
+  const curenttDayStyle = cureDayStyl =>
+    formatDate(cureDayStyl) === currentData;
+  const selectedDay = dayWeeks => formatDate(dayWeeks) === currentData;
   const handleChangDay = dayData => {
-    console.log('dayData', formatISO(dayData).slice(0, 10));
     dispatch(setActivedDate(formatDate(dayData)));
     setSelectedDay(dayData);
     navigate(`/calendar/day/${formatDate(dayData)}`);

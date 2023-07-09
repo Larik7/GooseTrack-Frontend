@@ -7,7 +7,7 @@ import { setActivedDate } from 'redux/tasks/taskReducer';
 // import { grey } from '@mui/material/colors';
 
 export const CallendarDayBox = ({
-  date,
+  day,
   month,
   picked = false,
   currentMonth,
@@ -17,7 +17,7 @@ export const CallendarDayBox = ({
 }) => {
   const dispatch = useDispatch();
 
-  const dateForBox = `${month}-${date.toString().padStart(2, 0)}`;
+  const dateForBox = `${month}-${day.toString().padStart(2, 0)}`;
 
   const allTasks = useSelector(selectAllTasks);
   const activeDate = currentMonth.toISOString().slice(0, 8);
@@ -25,7 +25,7 @@ export const CallendarDayBox = ({
   const tasksForThisMonth = allTasks?.filter(
     task =>
       task.date.slice(0, 10) ===
-      `${activeDate.slice(0, 8)}${date.toString().padStart(2, 0)}`
+      `${activeDate.slice(0, 8)}${day.toString().padStart(2, 0)}`
   );
   const tasksForThisMonthsWeek = tasksForThisMonth.filter(
     task => task.date.slice(0, 7) === month
@@ -51,7 +51,7 @@ export const CallendarDayBox = ({
         }
       >
         <div className={picked ? `${css[picked]}` : `${css.numberContainer}`}>
-          <p className={picked ? `${css.day}` : `${css[picked]}`}>{date}</p>
+          <p className={picked ? `${css.day}` : `${css[picked]}`}>{day}</p>
         </div>
         <div className={css.taskContainer}>
           <ul className={css.taskList}>

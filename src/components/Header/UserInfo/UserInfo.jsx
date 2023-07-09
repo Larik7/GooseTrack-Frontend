@@ -16,10 +16,8 @@ export const UserInfo = toggleShowSideBar => {
     }
   }, [user.name]);
 
-  // console.log(user.imgURL);
-
   const username = user.name ?? '';
-  const imgURL = user.imgURL ?? null;
+  const imgURL = user.avatarURL ?? null;
 
   return (
     <NavLink
@@ -33,7 +31,13 @@ export const UserInfo = toggleShowSideBar => {
           {!imgURL ? (
             <p className={css.avatarWord}>{user ? avatar : ''}</p>
           ) : (
-            <img src={imgURL} alt="User avatar" width="28" height="28" />
+            <img
+              src={imgURL}
+              alt="User avatar"
+              width="44"
+              height="44"
+              style={{ borderRadius: '50%', height: 44 }}
+            />
           )}
         </div>
       </section>
