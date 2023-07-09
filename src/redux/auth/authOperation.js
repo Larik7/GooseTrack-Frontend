@@ -93,10 +93,8 @@ export const refreshToken = createAsyncThunk(
       const response = await axios.post('api/auth/refresh', { data });
       const { accessToken, refreshToken } = response.data;
 
-      // Оновлення токенів на фронтенді
       setToken(refreshToken);
 
-      // Повернення оновлених токенів
       return { accessToken, refreshToken };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -116,14 +114,12 @@ export const updateUser = createAsyncThunk(
 
     try {
       setToken(accessToken);
-      const res = await axios.put('api/auth/user', data, {
+      await axios.put('api/auth/user', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-      console.log(res)
-      // console.log(res.data.data);
-      // return res.data.data.updatedUser;
+
       const response = await axios.get('api/auth/current');
 
       return response.data;

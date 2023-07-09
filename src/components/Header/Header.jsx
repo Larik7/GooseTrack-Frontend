@@ -1,4 +1,3 @@
-
 import { useLocation, useParams } from 'react-router-dom';
 import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
 import cssLogo from '../SideBar/sideBar.module.css';

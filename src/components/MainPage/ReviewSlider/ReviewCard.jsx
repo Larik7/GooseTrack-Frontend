@@ -1,4 +1,3 @@
-// Import
 import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import { Modal } from 'components/Modal/Modal';
@@ -13,8 +12,6 @@ import {
 } from './ReviewCard.styled';
 import sprite from 'icons/sprite.svg';
 
-
-// ReviewCard
 export const ReviewCard = props => {
   const { isMobile } = useResponse();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,7 +31,6 @@ export const ReviewCard = props => {
 
   const formattedComment = shortenComment(props.children);
 
-  // Return
   return (
     <ReviewCardContainer>
       <HeaderContainer>

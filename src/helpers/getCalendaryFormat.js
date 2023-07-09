@@ -32,7 +32,7 @@ export const getCalendaryFormat = nowDate => {
     });
   }
   weeks.push(currentWeek);
-  console.log(weeks);
+
   return weeks;
 };
 function getPastandFutureMonths(monthString) {
