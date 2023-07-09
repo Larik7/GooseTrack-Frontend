@@ -24,6 +24,12 @@
 
 }
 
+.avatar {
+	width:32px; 
+	height:32px;
+	border-radius: 50px;
+	border: 1.8px solid var(--nav-button-color-hover);
+}
 .UserInfoSection {
 	display: flex;
 	justify-content: center;
@@ -43,6 +49,10 @@
 		font-size: 18px;
 		
 	}
+		.avatar {
+			width: 44px;
+			height: 44px;
+		}
 
 }
 
