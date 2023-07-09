@@ -11,7 +11,6 @@ import { UserInfo } from './UserInfo/UserInfo';
 import { useSelector } from 'react-redux';
 import { selectAllTasks } from '../../redux/tasks/selectors';
 import MotivationGoose from '../../images/MotivationGoose.png';
-// import { fetchTasks } from 'redux/tasks/taskOperation';
 
 export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
   const tasks = useSelector(selectAllTasks);

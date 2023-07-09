@@ -28,16 +28,15 @@ export const fetchTasks = createAsyncThunk(
 export const addTask = createAsyncThunk(
   'task/add',
   async (task, { rejectWithValue, getState }) => {
-    console.log(task);
     const { auth } = getState();
     const accessToken = auth.accessToken;
     if (accessToken === null) {
       return rejectWithValue('We dont have a token');
     }
     try {
-      setToken(accessToken); // Розкоментуйте цей рядок
+      setToken(accessToken);
       const response = await axios.post('api/tasks', task);
-      console.log(response);
+
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);

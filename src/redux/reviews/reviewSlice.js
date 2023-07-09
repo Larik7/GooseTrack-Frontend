@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { logOut } from 'redux/auth/operations';
+
 import {
   fetchReviews,
   addReview,
