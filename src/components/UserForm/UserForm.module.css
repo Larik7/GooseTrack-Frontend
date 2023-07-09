@@ -188,7 +188,7 @@
   color: var(--primary-text-color);
 
   border: 1px solid var(--feedback-border-color);
-  
+
   @media screen and (min-width: 1200px) {
     &:nth-of-type(1),
     &:nth-of-type(3) {
@@ -202,9 +202,9 @@
 }
 .username_form_input:hover,
 .username_form_input:focus {
-      border: 2px solid #3e85f3;
-      box-shadow: 4px 2px 16px rgba(78, 95, 109, 0.48);
-      outline: none;
+  border: 2px solid #3e85f3;
+  box-shadow: 4px 2px 16px rgba(78, 95, 109, 0.48);
+  outline: none;
 }
 
 .username_form_input > :placeholder-shown {
@@ -248,11 +248,9 @@
     opacity: 0.45;
   }
 
-
   cursor: pointer;
 
   &:hover {
-
     box-shadow: 4px 2px 16px rgba(15, 28, 39, 0.48);
   }
 }
