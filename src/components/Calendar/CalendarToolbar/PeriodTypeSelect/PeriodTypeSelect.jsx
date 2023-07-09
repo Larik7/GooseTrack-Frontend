@@ -2,6 +2,8 @@ import React from 'react';
 import css from 'components/Calendar/CalendarToolbar/PeriodTypeSelect/PeriodTypeSelect.module.css';
 import { parseDate } from 'helpers/parseDate';
 import { useParams, NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectActiveDate } from 'redux/tasks/selectors';
 
 export const PeriodTypeSelect = ({
   setSelectedDay,
@@ -9,7 +11,8 @@ export const PeriodTypeSelect = ({
   currentDate,
   setCurrentDate,
 }) => {
-  const params = useParams();
+  const currentMonth = useSelector(selectActiveDate);
+  // const params = useParams();
   const parsedDate = parseDate(currentDate);
   return (
     <div className={css.tabs_flex}>
@@ -31,7 +34,7 @@ export const PeriodTypeSelect = ({
           onClick={() => {
             setSelectedDay(currentDate);
           }}
-          disabled={params.currentDay ? true : false}
+          disabled={currentMonth ? true : false}
         >
           Day
         </NavLink>
