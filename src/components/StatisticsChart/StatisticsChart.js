@@ -18,7 +18,9 @@ export const StatisticsChart = ({ selectedDate }) => {
   const dispatch = useDispatch();
   const tasksBD = useSelector(selectAllTasks);
   const [currentDate, setCurrentDate] = useState(selectedDate);
-  const [currentDay, setCurrentDay] = useState(currentDate.toISOString().split('T')[0]);
+  const [currentDay, setCurrentDay] = useState(
+    currentDate.toISOString().split('T')[0]
+  );
   const [currentMonth, setCurrentMonth] = useState(currentDate.getMonth());
 
   useEffect(() => {
@@ -27,11 +29,6 @@ export const StatisticsChart = ({ selectedDate }) => {
     setCurrentDay(selectedDate.toISOString().split('T')[0]);
     setCurrentMonth(selectedDate.getMonth());
   }, [dispatch, selectedDate]);
-
-
-
-
-  //console.log(tasksBD);
 
   // Вычисляем ByDay
 
@@ -67,8 +64,6 @@ export const StatisticsChart = ({ selectedDate }) => {
     task => task.category === 'done'
   ).length;
 
-  //Создаем объкты tasksToDo, tasksInProgress, tasksDone => в массив tasksForChart, который будет использовыть график
-
   const tasksToDo = {};
   tasksToDo.name = 'To Do';
   tasksToDo.ByDay = sumTasksToDoDay;
@@ -92,7 +87,6 @@ export const StatisticsChart = ({ selectedDate }) => {
 
   const tasksForChart = [].concat(tasksToDo, tasksInProgress, tasksDone);
 
-  // console.log(tasksForChart);
   // Вычисляем ByDayPercent
 
   const arrayByDay = tasksForChart.map(task => task.ByDay);
@@ -123,8 +117,6 @@ export const StatisticsChart = ({ selectedDate }) => {
   tasksToDo.ByMonthPercent = ByMonthPer[0];
   tasksInProgress.ByMonthPercent = ByMonthPer[1];
   tasksDone.ByMonthPercent = ByMonthPer[2];
-
-  
 
   const strokeVar = 'var(--primary-text-color)';
   const backgraondColor = 'var(--tooltip-color)';
@@ -176,7 +168,7 @@ export const StatisticsChart = ({ selectedDate }) => {
             radius={[0, 0, 10, 10]}
           >
             <LabelList
-             dataKey="ByDayPercent"
+              dataKey="ByDayPercent"
               position="top"
               fill={strokeVar}
               fontWeight="lighter"

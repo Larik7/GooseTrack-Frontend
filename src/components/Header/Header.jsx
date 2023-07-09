@@ -10,7 +10,7 @@ import { Tour } from '../Tour/Tour';
 import { UserInfo } from './UserInfo/UserInfo';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAllTasks } from '../../redux/tasks/selectors';
-import MotivationGoose from '../../images/MotivationGoose.png'
+import MotivationGoose from '../../images/MotivationGoose.png';
 import { fetchTasks } from 'redux/tasks/taskOperation';
 
 export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
@@ -46,11 +46,8 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
       break;
   }
 
-  // const toDoTasks = tasks.filter((task) => task.category === 'to-do');
-  // const hasToDoTasks = toDoTasks.length > 0;
-  const inProgressTasks = tasks.filter((task) => task.category === 'in-progress');
+  const inProgressTasks = tasks.filter(task => task.category === 'in-progress');
   const hasInProgressTasks = inProgressTasks.length > 0;
-  // console.log(hasToDoTasks);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
