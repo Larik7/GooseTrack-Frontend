@@ -1,4 +1,3 @@
-
 import { useLocation, useParams } from 'react-router-dom';
 import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
 import cssLogo from '../SideBar/sideBar.module.css';
@@ -79,7 +78,7 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
         </div>
       </div>
 
-      <div className={css.headerInfoBox}>
+      {/* <div className={css.headerInfoBox}> */}
         <button className={css.burgerMenu} onClick={handlerMenu}>
           <RxHamburgerMenu size={32} />
         </button>
@@ -101,7 +100,7 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
             <UserInfo toggleShowSideBar={toggleShowSideBar} />
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </header>
   );
 };

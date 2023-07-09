@@ -47,6 +47,8 @@ export const StyledDatePicker = styled(DatePicker)`
   line-height: 1.3;
   color: var(--primary-text-color);
   outline: none;
+  
+  
 
   :hover,
   :focus {
@@ -140,6 +142,8 @@ export const DatePickerWrapper = styled.div`
     padding: 15px 18px;
     background-color: #3e85f3;
     border-radius: 16px;
+    position: absolut;
+   
 
     & .react-datepicker__day-name,
     & .react-datepicker__day {
