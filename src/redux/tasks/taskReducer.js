@@ -5,7 +5,7 @@ import { fetchTasks, addTask, updateTask, deleteTask } from './taskOperation';
 const taskReducer = createSlice({
   name: 'task',
   initialState: {
-    activeDate: '',
+    activeDate: new Date().toISOString().slice(0, 10),
     tasks: {
       allTasks: [],
       isLoading: false,
@@ -29,7 +29,6 @@ const taskReducer = createSlice({
   },
   reducers: {
     setActivedDate(state, { payload }) {
-      console.log(payload);
       state.activeDate = payload;
     },
     updateColumns: (state, action) => {
