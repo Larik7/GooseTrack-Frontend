@@ -7,7 +7,6 @@ import { FcOk } from 'react-icons/fc';
 import css from './LoginForm.module.css';
 import { ButtonNavigation } from 'components/AuthNavigate/AuthNavigate';
 
-// Компонент форми для входу
 export const LoginForm = ({ handleSumbit }) => {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -28,15 +27,7 @@ export const LoginForm = ({ handleSumbit }) => {
           onSubmit={handleSumbit}
           validationSchema={validationSchema}
         >
-          {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            isSubmitting,
-            /* and other goodies */
-          }) => (
+          {({ values, errors, touched, handleChange, handleBlur }) => (
             <Form className={css.form}>
               <div className={css.email_box}>
                 <label
@@ -110,11 +101,7 @@ export const LoginForm = ({ handleSumbit }) => {
                   className={css.error_message}
                 />
               </div>
-              <button
-                type="submit"
-                // disabled={isSubmitting}
-                className={css.button}
-              >
+              <button type="submit" className={css.button}>
                 Log in{<MdOutlineLogin className={css.logIn} />}
               </button>
               <a

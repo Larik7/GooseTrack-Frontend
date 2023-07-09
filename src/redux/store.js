@@ -19,19 +19,12 @@ import taskReducer from './tasks/taskReducer';
 const persistConfig = {
   key: 'auth',
   storage,
-  // whitelist: ['token'],
 };
 
 const persistConfigTask = {
   key: 'task',
   storage,
-  // whitelist: ['token'],
 };
-// const persistConfigReviews = {
-//   key: 'reviews',
-//   storage,
-//   // whitelist: ['token'],
-// };
 
 export const store = configureStore({
   reducer: {
