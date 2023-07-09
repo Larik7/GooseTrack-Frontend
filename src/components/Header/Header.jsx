@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
 import cssLogo from '../SideBar/sideBar.module.css';
 import css from './header.module.css';
@@ -8,18 +8,13 @@ import { ThemeToggler } from './ThemeToggle/ThemeToggle';
 import AddFeedbackBtn from 'components/AddFeedbackBtn/AddFeedbackBtn';
 import { Tour } from '../Tour/Tour';
 import { UserInfo } from './UserInfo/UserInfo';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectAllTasks } from '../../redux/tasks/selectors';
 import MotivationGoose from '../../images/MotivationGoose.png';
-import { fetchTasks } from 'redux/tasks/taskOperation';
 
 export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
-  const dispatch = useDispatch();
   const tasks = useSelector(selectAllTasks);
-
-  useEffect(() => {
-    dispatch(fetchTasks());
-  }, [dispatch]);
+  const { currentDay } = useParams();
 
   const handlerMenu = () => {
     setOpen(!openMenu);
@@ -46,8 +41,17 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
       break;
   }
 
+  const toDoTasks = tasks.filter(task => task.category === 'to-do');
+  const sortByDayToDo = toDoTasks.filter(item => item.date === currentDay);
+  const hasToDoTasks = sortByDayToDo.length > 0;
+
+  console.log(hasToDoTasks);
+
   const inProgressTasks = tasks.filter(task => task.category === 'in-progress');
-  const hasInProgressTasks = inProgressTasks.length > 0;
+  const sortByDayProgress = inProgressTasks.filter(
+    item => item.date === currentDay
+  );
+  const hasInProgressTasks = sortByDayProgress.length > 0;
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
