@@ -151,6 +151,7 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
           <Field
             className={css.textInput}
             type="text"
+            as="textarea"
             required
             value={message}
             onChange={event => setMessage(event.currentTarget.value)}

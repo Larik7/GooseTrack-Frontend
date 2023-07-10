@@ -15,7 +15,7 @@ export const AddFeedbackModal = ({ onCloseModal }) => {
   }
   return (
     <Modal onClose={handleCloseModal}>
-      <FeedbackForm reviewOwn={review} onClose={handleCloseModal} />
+      <kForm reviewOwn={review} onClose={handleCloseModal} />
     </Modal>
   );
 };
