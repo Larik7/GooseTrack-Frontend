@@ -21,6 +21,9 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
   };
 
   const location = useLocation();
+
+const isUserInfoPage = location.pathname === '/userInfo';
+
   const isCalendarDayPage = location.pathname.includes('/calendar/day');
   let title = '';
 
@@ -78,7 +81,7 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
         </div>
       </div>
 
-      {/* <div className={css.headerInfoBox}> */}
+      <div className={css.headerInfoBox}>
         <button className={css.burgerMenu} onClick={handlerMenu}>
           <RxHamburgerMenu size={32} />
         </button>
@@ -87,12 +90,14 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
             <img src={MotivationGoose} alt="Motivational Goose" />
           </div>
         )}
-        <div>       <p className={css.infoTitle}>{title}</p>
+      <div>
+        
+        <p className={css.infoTitle}>{title}</p>
          {isCalendarDayPage && (hasInProgressTasks || hasToDoTasks)  && shouldRenderImage && (
          <p  className={css.motivationTitle}><span className={css.firstTwoWords}>Let go</span> of the past and focus on the present!</p>
           )}</div>
 
-        <div className={css.conteinerBtn} >
+        <div className={`${css.conteinerBtn} ${isUserInfoPage ? css.userInfoMargin : ''} ${(hasInProgressTasks || hasToDoTasks) ? css.titleGoose : ''}`}>
           <AddFeedbackBtn feedbackBtnStyle={css.feedbackBtn} />
           <div className={css.infoMenu}>
             <ThemeToggler />
@@ -100,7 +105,7 @@ export const Header = ({ openMenu, setOpen, toggleShowSideBar }) => {
             <UserInfo toggleShowSideBar={toggleShowSideBar} />
           </div>
         </div>
-      {/* </div> */}
+      </div>
     </header>
   );
 };

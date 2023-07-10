@@ -40,6 +40,19 @@
   }
 }
 
+@media (min-width: 1439px) {
+  .conteinerBtn {
+      margin-left: 580px;
+    }
+  
+    .userInfoMargin {
+      margin-left: 530px;
+    }
+    .titleGoose {
+      margin-left: 500px;
+    }
+}
+
 @media (min-width: 1440px) {
   .header {
     padding: 32px 32px 32px 0;
@@ -68,6 +81,7 @@
   .infoTitle {
     display: none;
   }
+  
 }
 
 .burgerMenu {
@@ -103,8 +117,6 @@
   .feedbackBtn {
     margin-right: 24px;
   }
-
-
 }
 
 @media (min-width: 1440px) {
@@ -116,10 +128,9 @@
     line-height: 32px;
   }
 
-  .conteinerBtn {
-    margin-left: 500px;
-  }
 }
+
+
 
 .feedbackBtn {
   border-style: none;
