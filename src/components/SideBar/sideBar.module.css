@@ -10,6 +10,14 @@
   padding: 24px 20px;
 }
 
+.containerSideBarSt{
+    width: 225px;
+      background-color: var(--sidebar-background-color);
+      display: flex;
+      flex-direction: column;
+      padding: 24px 20px;
+}
+
 .logoBox {
   display: flex;
   align-items: center;
@@ -33,6 +41,7 @@
    height: 950px;
   }
   .containerSideBarSt {
+    width: 290px;
       height: 850px;
   }
   .logoImg {
@@ -52,14 +61,33 @@
     transition: transform 500ms linear;
     position: absolute;
     top: 0;
-  }
-  .open {
+    &.open {
+            transform: translateX(0);
+            position: absolute;
+            top: 0;
+            z-index: 10;
+            height: 1090px;
+        
+          }
+        }
+  
+
+ .containerSideBarSt {
+      transform: translateX(-130%);
+        transition: transform 500ms linear;
+        position: absolute;
+        top: 0; 
+        
+      &.open {
     transform: translateX(0);
     position: absolute;
     top: 0;
     z-index: 10;
+    height: 990px;}
+    }
+ 
   }
-}
+
 
 @media (min-width: 1440px) {
   .logoImg {
