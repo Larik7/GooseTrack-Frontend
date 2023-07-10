@@ -89,6 +89,8 @@ export const DatePickerWrapper = styled.div`
       padding: 0;
     }
 
+
+
     background-color: inherit;
     font-family: 'Inter';
     font-size: 18px;
@@ -129,7 +131,7 @@ export const DatePickerWrapper = styled.div`
    & .react-datepicker__header  {
    background-color: #3e85f3;
 }
-    
+
    
 
     & .react-datepicker__day-name,
@@ -143,10 +145,10 @@ export const DatePickerWrapper = styled.div`
       font-size: 18px;
       line-height: 1;
       color: #ffffff;
+      border-radius: 50%;
 
       &--keyboard-selected {
         border-radius: 50%;
-        
       }
 
     &__navigation {
@@ -203,6 +205,8 @@ export const DatePickerWrapper = styled.div`
         &.highlighted-weekend {
           opacity: 0.35;
         }
+
+    
         &:hover,
         &:focus {
           color: #3e85f3;
@@ -215,10 +219,12 @@ export const DatePickerWrapper = styled.div`
         font-size: 24px;
         line-height: 28px;
         color: #ffffff;
-       
+
+      
       }
     }
     
+      
   }
 
   @media screen and (max-width: 768px) {
@@ -268,6 +274,7 @@ export const DatePickerWrapper = styled.div`
       font-size: 14px;
       line-height: 1;
 
+    
       &__month-container {
         padding: 0 0 20px 0;
 
