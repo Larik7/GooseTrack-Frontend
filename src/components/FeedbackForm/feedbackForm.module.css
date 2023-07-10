@@ -70,7 +70,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: calc(18 / 14);
-  background: var(--nav-button-color);
+  background: var(--button-color-hover);
   color: var(--sidebar-background-color);
   cursor: pointer;
   width: 198px;
@@ -78,7 +78,7 @@
 }
 .btnSaveOrEdit:hover,
 .btnSaveOrEdit:focus {
-  background-color: var(--button-color-hover);
+  box-shadow: 4px 2px 16px rgba(87, 96, 104, 0.48);
 }
 @media screen and (min-width: 768px) {
   .btnSaveOrEdit {

@@ -123,7 +123,7 @@ export const UserForm = ({ theme = '' }) => {
                   htmlFor="Name"
                   className={`${css.username_form__label} ${theme}`}
                 >
-                  Name
+                  User Name
                   <Field
                     name="name"
                     type="text"
@@ -141,46 +141,11 @@ export const UserForm = ({ theme = '' }) => {
                     className={css.invalid_feedback}
                   />
                 </label>
-
-                <label
-                  htmlFor="birthday"
-                  className={`${css.username_form__label} ${theme}`}
-                >
-                  Birthday:
-                  <MyDatePicker
-                    updateDate={updateDate}
-                    name="birthday"
-                    birthday={userInfo.birthday}
-                    className={css.my_date_picker}
-                  />
-                  <ErrorMessage
-                    name="birthday"
-                    component="div"
-                    className={css.invalid_feedback}
-                  />
-                </label>
-
-                <label
-                  htmlFor="email"
-                  className={`${css.username_form__label} ${theme}`}
-                >
-                  Email Address
-                  <Field
-                    name="email"
-                    type="email"
-                    className={`${css.username_form_input} ${theme}`}
-                  />
-                  <ErrorMessage
-                    name="email"
-                    component="div"
-                    className={css.invalid_feedback}
-                  />
-                </label>
                 <label
                   htmlFor="phone"
                   className={`${css.username_form__label} ${theme}`}
                 >
-                  Phone:
+                  Phone
                   <Field
                     className={`${css.username_form_input} ${theme}`}
                     id="phone"
@@ -196,10 +161,29 @@ export const UserForm = ({ theme = '' }) => {
                 </label>
 
                 <label
+                  htmlFor="birthday"
+                  className={`${css.username_form__label} ${theme}`}
+                >
+                  Birthday
+                  <MyDatePicker
+                    updateDate={updateDate}
+                    name="birthday"
+                    birthday={userInfo.birthday}
+                    className={css.my_date_picker}
+                  />
+                  <ErrorMessage
+                    name="birthday"
+                    component="div"
+                    className={css.invalid_feedback}
+                  />
+                </label>
+                
+
+                <label
                   htmlFor="skype"
                   className={`${css.username_form__label} ${theme}`}
                 >
-                  Skype:
+                  Skype
                   <Field
                     className={`${css.username_form_input} ${theme}`}
                     id="skype"
@@ -209,6 +193,23 @@ export const UserForm = ({ theme = '' }) => {
                   />
                   <ErrorMessage
                     name="skype"
+                    component="div"
+                    className={css.invalid_feedback}
+                  />
+                </label>
+                
+                <label
+                  htmlFor="email"
+                  className={`${css.username_form__label} ${theme}`}
+                >
+                  Email 
+                  <Field
+                    name="email"
+                    type="email"
+                    className={`${css.username_form_input} ${theme}`}
+                  />
+                  <ErrorMessage
+                    name="email"
                     component="div"
                     className={css.invalid_feedback}
                   />

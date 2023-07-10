@@ -30,6 +30,8 @@ export const DatePickerCalendar = styled(DatePicker)`
     line-height: 1.12;
     margin-right: 0px;
   }
+
+  
 `;
 
 export const StyledDatePicker = styled(DatePicker)`
@@ -55,6 +57,7 @@ export const StyledDatePicker = styled(DatePicker)`
     box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
   }
 
+  
   &.error {
     border: 1px solid var(--text-error-color);
   }
@@ -116,12 +119,17 @@ export const DatePickerWrapper = styled.div`
       inset: 0px auto auto 50px;
     }
 
-
   &__month-container {
     padding: 15px 18px;
     background-color: #3e85f3;
     border-radius: 16px;
     position: absolut;
+
+      
+   & .react-datepicker__header  {
+   background-color: #3e85f3;
+}
+    
    
 
     & .react-datepicker__day-name,
@@ -136,10 +144,15 @@ export const DatePickerWrapper = styled.div`
       line-height: 1;
       color: #ffffff;
 
-//     &__navigation {
-//       width: 18px;
-//       height: 18px;
-//       top: 24px;
+      &--keyboard-selected {
+        border-radius: 50%;
+        
+      }
+
+    &__navigation {
+      width: 18px;
+      height: 18px;
+      top: 24px;
 
 
       &--previous {
@@ -152,7 +165,7 @@ export const DatePickerWrapper = styled.div`
     }
 
     &__header {
-      background-color: inherit;
+       background-color: #3e85f3;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       padding: 0;
     }
@@ -202,8 +215,10 @@ export const DatePickerWrapper = styled.div`
         font-size: 24px;
         line-height: 28px;
         color: #ffffff;
+       
       }
     }
+    
   }
 
   @media screen and (max-width: 768px) {
@@ -274,7 +289,7 @@ export const DatePickerWrapper = styled.div`
           }
           &__header {
             height: 100px;
-            background-color: inherit;
+            background-color: #3e85f3;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             padding: 0;
           }
