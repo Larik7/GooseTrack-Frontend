@@ -12,15 +12,19 @@ export const MyDatePicker = ({ updateDate, name = '', birthday }) => {
   return (
     <DatePickerWrapper>
       <StyledDatePicker
-        {...field}
-        selected={value || new Date(birthday || today)}
-        onChange={date => {
-          setValue(date);
-          updateDate(date);
-        }}
-        showYearDropdown
+
+      
+      {...field}
+      selected={value || new Date(birthday || today)}
+      onChange={date => {
+        setValue(date);
+        updateDate(date);
+      }}
+      showYearDropdown
+      scrollableYearDropdown={true}
+      yearDropdownItemNumber={25} 
         scrollableMonthYearDropdown
-      />
-    </DatePickerWrapper>
+        
+    /></DatePickerWrapper>
   );
 };

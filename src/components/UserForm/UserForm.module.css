@@ -93,12 +93,10 @@
 }
 .avatar_upload_btn {
   position: absolute;
-
   width: 14px;
   height: 14px;
   left: 52%;
-  /* top: 40%; */
-  z-index: 100;
+  z-index: 2;
   background-size: cover;
   margin: 20px 0 0 10px;
   background-image: url(./plus.svg);

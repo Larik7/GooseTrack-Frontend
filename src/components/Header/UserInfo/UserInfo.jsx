@@ -31,7 +31,7 @@ export const UserInfo = toggleShowSideBar => {
           {!imgURL ? (
             <p className={css.avatarWord}>{user ? avatar : ''}</p>
           ) : (
-            <img src={imgURL} alt="User avatar" width="28" height="28" />
+              <img src={imgURL} alt="User avatar" className={css.avatar } />
           )}
         </div>
       </section>
