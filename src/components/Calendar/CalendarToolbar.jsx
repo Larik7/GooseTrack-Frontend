@@ -3,6 +3,8 @@ import { addMonths, subMonths, addDays, subDays } from 'date-fns';
 import { PeriodPaginator } from 'components/Calendar/CalendarToolbar/PeriodPaginator/PeriodPaginator';
 import css from 'components/Calendar/CalendarToolbar/PeriodPaginator/PeriodPaginator.module.css';
 import { PeriodTypeSelect } from 'components/Calendar/CalendarToolbar/PeriodTypeSelect/PeriodTypeSelect';
+import { useDispatch } from 'react-redux';
+import { setActivedDate } from 'redux/tasks/taskReducer';
 
 export const CalendarToolbar = ({
   setCurrentDate,
@@ -10,6 +12,7 @@ export const CalendarToolbar = ({
   selectedDay,
   setSelectedDay,
 }) => {
+  const dispatch = useDispatch();
   const nextMonth = () => {
     setCurrentDate(addMonths(currentDate, 1));
   };
@@ -17,9 +20,13 @@ export const CalendarToolbar = ({
     setCurrentDate(subMonths(currentDate, 1));
   };
   const nextDay = () => {
+    const dateObject = addDays(selectedDay, 1);
+    dispatch(setActivedDate(dateObject.toISOString().split('T')[0]));
     setSelectedDay(addDays(selectedDay, 1));
   };
   const prevDay = () => {
+    const dateObject = subDays(selectedDay, 1);
+    dispatch(setActivedDate(dateObject.toISOString().split('T')[0]));
     setSelectedDay(subDays(selectedDay, 1));
   };
   return (
