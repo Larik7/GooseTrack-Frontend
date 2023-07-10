@@ -47,6 +47,8 @@ export const logIn = createAsyncThunk(
 
       return res.data;
     } catch (error) {
+      alert('Incorrect email or password');
+
       return thunkAPI.rejectWithValue(error.message);
     }
   }

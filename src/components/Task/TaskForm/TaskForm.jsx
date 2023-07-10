@@ -23,7 +23,7 @@ export const TaskForm = ({ onClose, category, task }) => {
         date: task.date,
       }
     : {
-        title: 'Enter text',
+        title: '',
         start: '00:00',
         end: '00:00',
         priority: 'low',
@@ -109,6 +109,7 @@ export const TaskForm = ({ onClose, category, task }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.title}
+                placeholder="Enter text"
               />
               <ErrorMessage
                 className={css.error}
@@ -130,7 +131,7 @@ export const TaskForm = ({ onClose, category, task }) => {
                   value={values.start}
                 />
                 <ErrorMessage
-                  className={css.error}
+                  className={css.error_time}
                   name="start"
                   component="div"
                 />
@@ -148,7 +149,7 @@ export const TaskForm = ({ onClose, category, task }) => {
                   value={values.end}
                 />
                 <ErrorMessage
-                  className={css.error}
+                  className={css.error_time}
                   name="end"
                   component="div"
                 />
