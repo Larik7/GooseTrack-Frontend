@@ -104,7 +104,7 @@ export const LoginForm = ({ handleSumbit }) => {
               <button type="submit" className={css.button}>
                 Log in{<MdOutlineLogin className={css.logIn} />}
               </button>
-              <a
+              {/* <a
                 href="https://goosetrackback.onrender.com/api/auth/google"
                 className={css.button_google}
                 type="submit"
@@ -115,7 +115,7 @@ export const LoginForm = ({ handleSumbit }) => {
                   alt="google-logo"
                 />
                 Sign Up With Google
-              </a>
+              </a> */}
               <ButtonNavigation
                 route="/register"
                 btnText="Sign Up"
