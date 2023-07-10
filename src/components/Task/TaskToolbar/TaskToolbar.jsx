@@ -27,7 +27,6 @@ export const TaskToolbar = ({ task }) => {
       categoryName: 'Done',
     },
   ];
-  console.log(task);
 
   const otherCategory = categoryList.filter(
     item => item.categoryData !== category
