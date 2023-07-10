@@ -189,7 +189,7 @@ export const RegisterForm = () => {
               Sign Up
               <RxEnter className={css.signup_image} />
             </button>
-            <a
+            {/* <a
               href="https://goosetrackback.onrender.com/api/auth/google"
               className={css.register_button_google}
               type="submit"
@@ -200,7 +200,7 @@ export const RegisterForm = () => {
                 alt="google-logo"
               />
               Sign Up With Google
-            </a>
+            </a> */}
             {isSubmitting && (
               <Vortex
                 visible={true}
