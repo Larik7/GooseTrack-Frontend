@@ -53,8 +53,8 @@
     background-color: var(--secondary-background-color);
   }
   .main {
-    float: right;
-    width: 80%;
+    /* float: right; */
+    /* width: 80%; */
     padding: 0 32px 32px 32px;
     padding: 40px 20px;
   }
@@ -64,7 +64,7 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 0;
     left: 0;
 

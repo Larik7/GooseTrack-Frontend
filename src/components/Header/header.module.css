@@ -42,7 +42,7 @@
 
 @media (min-width: 1439px) {
   .conteinerBtn {
-      margin-left: 580px;
+      margin-left: 550px;
     }
   
     .userInfoMargin {
@@ -73,7 +73,7 @@
   }
 
   .headerInfoBox {
-    /* padding: 0 32px; */
+    padding: 0 32px;
   }
 }
 

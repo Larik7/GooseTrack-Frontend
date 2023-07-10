@@ -10,7 +10,9 @@
         margin-left: 27px; */
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0);
+        outline: none;
 }
+
 
 .buttonTour svg {
   width: 26px;
@@ -21,7 +23,7 @@
 }
 
 
-@media(max-width: 767px) {
+@media(max-width: 1440px) {
   .buttonTour {
     display: none;
   }
