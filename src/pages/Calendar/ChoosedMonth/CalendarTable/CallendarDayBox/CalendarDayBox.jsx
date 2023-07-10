@@ -4,7 +4,7 @@ import { selectAllTasks } from 'redux/tasks/selectors';
 import css from './callendarDayBox.module.css';
 import { nanoid } from 'nanoid';
 import { setActivedDate } from 'redux/tasks/taskReducer';
-import { grey } from '@mui/material/colors';
+// import { grey } from '@mui/material/colors';
 
 export const CallendarDayBox = ({
   date,
@@ -44,7 +44,11 @@ export const CallendarDayBox = ({
     >
       <div
         className={css.dayContainer}
-        style={disabled ? { background: 'var(--day-backgraund-color)' } : { background: 'var(--container-page-bacground)' }}
+        style={
+          disabled
+            ? { background: 'var(--day-backgraund-color)' }
+            : { background: 'var(--container-page-bacground)' }
+        }
       >
         <div className={picked ? `${css[picked]}` : `${css.numberContainer}`}>
           <p className={picked ? `${css.day}` : `${css[picked]}`}>{date}</p>

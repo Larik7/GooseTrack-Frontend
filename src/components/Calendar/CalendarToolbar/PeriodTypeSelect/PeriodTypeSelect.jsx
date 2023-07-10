@@ -1,7 +1,7 @@
 import React from 'react';
 import css from 'components/Calendar/CalendarToolbar/PeriodTypeSelect/PeriodTypeSelect.module.css';
 import { parseDate } from 'helpers/parseDate';
-import { useParams, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectActiveDate } from 'redux/tasks/selectors';
 

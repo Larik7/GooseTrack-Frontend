@@ -29,8 +29,8 @@
 @media (min-width: 767px) {
   .columns_section {
     overflow-x: scroll;
-    margin-left: 20px;
-    margin-right: 32px;
+    /* margin-left: 20px;
+    margin-right: 32px; */
     margin-top: 16px;
   }
 

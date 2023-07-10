@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from 'react';
+// import React, { useCallback, useState } from 'react';
 import { useField } from 'formik';
 import 'react-datepicker/dist/react-datepicker.css';
-import {StyledDatePicker, DatePickerWrapper} from './DatePicker.styled';
+import { StyledDatePicker, DatePickerWrapper } from './DatePicker.styled';
 const today = new Date().toISOString().split('T')[0];
 
 export const MyDatePicker = ({ updateDate, name = '', birthday }) => {
@@ -12,6 +12,7 @@ export const MyDatePicker = ({ updateDate, name = '', birthday }) => {
   return (
     <DatePickerWrapper>
       <StyledDatePicker
+
       
       {...field}
       selected={value || new Date(birthday || today)}
