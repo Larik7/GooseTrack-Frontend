@@ -38,7 +38,7 @@
   }
 
   .inside_container {
-    background: var(--log-background-color);
+    background: #FFFFFF;
     border-radius: 8px;
     width: 375px;
     height: 388px;
@@ -272,7 +272,7 @@
   }
 
   .inside_container {
-    background-color: var(--sidebar-background-color);
+  background: #FFFFFF;
     border-radius: 8px;
     width: 480px;
     height: 424px;
@@ -498,7 +498,7 @@
   }
 
   .inside_container {
-    background-color: var(--sidebar-background-color);
+    background: #FFFFFF;
     border-radius: 8px;
     width: 480px;
     height: 424px;
@@ -574,7 +574,7 @@
     width: 400px;
     height: 46px;
 
-    background-color: var(--sidebar-background-color);
+    
     border: 1px solid rgba(220, 227, 229, 0.6);
     border-radius: 8px;
 
