@@ -48,7 +48,6 @@ const isUserInfoPage = location.pathname === '/userInfo';
   const sortByDayToDo = toDoTasks.filter(item => item.date === currentDay);
   const hasToDoTasks = sortByDayToDo.length > 0;
 
-  console.log(hasToDoTasks);
 
   const inProgressTasks = tasks.filter(task => task.category === 'in-progress');
   const sortByDayProgress = inProgressTasks.filter(
