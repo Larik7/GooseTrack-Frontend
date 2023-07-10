@@ -46,7 +46,7 @@
     }
   
     .userInfoMargin {
-      margin-left: 530px;
+      margin-left: 540px;
     }
     .titleGoose {
       margin-left: 500px;
@@ -73,7 +73,7 @@
   }
 
   .headerInfoBox {
-    /* padding: 0 32px; */
+    padding: 0 32px;
   }
 }
 
