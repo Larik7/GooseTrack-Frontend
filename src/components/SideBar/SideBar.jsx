@@ -6,14 +6,11 @@ import css from './sideBar.module.css';
 import { MdClose } from 'react-icons/md';
 
 export const SideBar = ({ openMenu, onClose }) => {
+  const isStatisticsPage = window.location.pathname.includes('statistics');
+  const containerClass = isStatisticsPage ? `${css.conteinerSideBar} ${openMenu ? css.open : ''} ${css.containerSideBarSt}` : css.conteinerSideBar;
+
   return (
-    <div
-      className={
-        !openMenu
-          ? `${css.conteinerSideBar} ${css.open}`
-          : `${css.conteinerSideBar}`
-      }
-    >
+    <div className={containerClass}>
       <div className={css.logoBox}>
         <img className={css.logoImg} src={Logo} alt="Goose_logo" />
         <p className={css.logoTitle}>GooseTrack</p>

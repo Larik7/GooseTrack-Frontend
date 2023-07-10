@@ -36,7 +36,7 @@
     display: flex;
     background-color: var(--secondary-background-color);
     /*   display: block; */
-    padding: 40px 0px;
+    /* padding: 40px 0px; */
     justify-content: center;
   }
 }
@@ -52,12 +52,12 @@
     width: 20%;
     background-color: var(--secondary-background-color);
   }
-  .main {
-    /* float: right; */
-    /* width: 80%; */
+  /* .main {
+    float: right;
+    width: 80%;
     padding: 0 32px 32px 32px;
     padding: 40px 20px;
-  }
+  } */
 }
 @media (max-width: 1439px) {
   .backDrop {

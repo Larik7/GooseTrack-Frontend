@@ -42,7 +42,7 @@ export const StyledDatePicker = styled(DatePicker)`
   padding: 14px 18px;
   border: var(--border-account-input);
   border-radius: 8px;
-  background: var(--primary-background-color);
+  background: var(--container-page-bacground);
   font-weight: 600;
   font-size: 14px;
   line-height: 1.3;

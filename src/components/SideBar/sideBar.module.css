@@ -1,6 +1,6 @@
 .conteinerSideBar {
   width: 225px;
-  height: 1050px;
+  /* height: 1050px; */
   
   /* outline: 1px solid red; */
   background-color: var(--sidebar-background-color);
@@ -30,7 +30,10 @@
 @media (min-width: 768px) {
   .conteinerSideBar {
     width: 290px;
-   /* height: 1200px; */
+   height: 950px;
+  }
+  .containerSideBarSt {
+      height: 850px;
   }
   .logoImg {
     width: 60px;
