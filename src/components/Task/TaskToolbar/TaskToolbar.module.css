@@ -1,12 +1,10 @@
 .toolbar_list {
   height: 100%;
   display: flex;
-  position: relative;
   align-items: flex-end;
   bottom: 0;
   right: 0;
   gap: 12px;
-  
 }
 
 .toolbar_button {
@@ -15,6 +13,7 @@
   background-color: var(--secondary-background-color);
   border: none;
   cursor: pointer;
+  position: relative;
 }
 
 .toolbar_svg {
@@ -38,9 +37,10 @@
   width: 147px;
   height: 90px;
   justify-content: space-between;
-  top: 30px;
-  right: -20px;
+  top: -70px;
+  right: -70px;
   z-index: 100;
+  overflow-block: visible;
 }
 
 .change_box_item {
@@ -49,7 +49,6 @@
   justify-content: space-between;
   flex-direction: row;
   padding: 4px;
-  position: relative;
   cursor: pointer;
   border-radius: 8px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);

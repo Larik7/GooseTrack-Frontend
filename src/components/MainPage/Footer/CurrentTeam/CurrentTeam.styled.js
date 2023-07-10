@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CurrentTeamContainer = styled.div`
-  width: 450px;
+  // width: 450px;
   height: 600px;
   padding-top: 15px;
   display: flex;

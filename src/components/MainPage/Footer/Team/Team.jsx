@@ -18,7 +18,7 @@ const Team = ({ onCloseModal }) => {
   return (
     <ModalFooter onCloseModal={onCloseModal}>
       <FooterModalContainer>
-        <FooterModalTeam>Team&amp;Dream</FooterModalTeam>
+        <FooterModalTeam>BackToFront</FooterModalTeam>
         <Swiper
           effect={'coverflow'}
           breakpoints={{

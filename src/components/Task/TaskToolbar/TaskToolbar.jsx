@@ -12,9 +12,25 @@ export const TaskToolbar = ({ task }) => {
   const { category, _id, title, start, end, priority, date } = task;
   const [isChange, setIsChange] = useState(false);
 
-  const categoryList = ['to-do', 'in-progress', 'done'];
+  const categoryList = [
+    {
+      categoryData: 'to-do',
+      categoryName: 'To Do',
+    },
+    {
+      categoryData: 'in-progress',
+      categoryName: 'In Progress',
+    },
 
-  const otherCategory = categoryList.filter(item => item !== category);
+    {
+      categoryData: 'done',
+      categoryName: 'Done',
+    },
+  ];
+
+  const otherCategory = categoryList.filter(
+    item => item.categoryData !== category
+  );
 
   const handleToggleModal = () => {
     setIsOpened(!isOpened);
@@ -65,11 +81,11 @@ export const TaskToolbar = ({ task }) => {
                   {otherCategory.map(item => (
                     <li
                       ref={categoryRef}
-                      key={item}
+                      key={item.categoryData}
                       className={css.change_box_item}
                       onClick={async e => {
                         const newTaskData = {
-                          category: item,
+                          category: item.categoryData,
                           title,
                           start,
                           end,
@@ -84,7 +100,7 @@ export const TaskToolbar = ({ task }) => {
                       }}
                     >
                       <p className={css.change_box_text}>
-                        {item}
+                        {item.categoryName}
                         <svg
                           className={css.toolbar_svg}
                           width="14px"
