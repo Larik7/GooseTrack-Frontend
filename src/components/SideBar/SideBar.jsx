@@ -1,6 +1,6 @@
 import { UserNav } from './UserNav/UserNav';
 import { LogoutBtn } from './LogoutBtn/LogoutBtn ';
-import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
+import Logo from '../../images/sideBar/Goose_logo_SideBar@2x.png';
 import css from './sideBar.module.css';
 
 import { MdClose } from 'react-icons/md';
