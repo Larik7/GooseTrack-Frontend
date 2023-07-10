@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectActiveDate, selectAllTasks } from 'redux/tasks/selectors';
+import { selectAllTasks } from 'redux/tasks/selectors';
 import css from './callendarDayBox.module.css';
 import { nanoid } from 'nanoid';
 import { setActivedDate } from 'redux/tasks/taskReducer';
@@ -18,14 +18,14 @@ export const CallendarDayBox = ({
   const dispatch = useDispatch();
 
   const dateForBox = `${month}-${date.toString().padStart(2, 0)}`;
-  const dayPicked = useSelector(selectActiveDate);
+
   const allTasks = useSelector(selectAllTasks);
-  // const activeDate = currentMonth.toISOString().slice(0, 8);
+  const activeDate = currentMonth.toISOString().slice(0, 8);
 
   const tasksForThisMonth = allTasks?.filter(
     task =>
       task.date.slice(0, 10) ===
-      `${dayPicked.slice(0, 8)}${date.toString().padStart(2, 0)}`
+      `${activeDate.slice(0, 8)}${date.toString().padStart(2, 0)}`
   );
   const tasksForThisMonthsWeek = tasksForThisMonth.filter(
     task => task.date.slice(0, 7) === month
