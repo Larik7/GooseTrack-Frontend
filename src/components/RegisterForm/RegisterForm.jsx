@@ -9,7 +9,7 @@ import { register, resendVerify } from 'redux/auth/authOperation';
 import { useState } from 'react';
 import RegisterVerifyModal from './RegisterVerifyModal/RegisterVerifyModal';
 import { Toaster } from 'react-hot-toast';
-import { Rings } from 'react-loader-spinner';
+import { Vortex } from 'react-loader-spinner';
 
 const PASSWORD_REGEXP = /([a-zA-z_\d]){6,}/;
 const EMAIL_REGEXP = /(^[\w.]+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})$/;
@@ -202,15 +202,19 @@ export const RegisterForm = () => {
               Sign Up With Google
             </a>
             {isSubmitting && (
-              <Rings
+              <Vortex
+                visible={true}
                 height="80"
                 width="80"
-                color="#2b78ef"
-                radius="6"
-                wrapperStyle={{ display: 'flex', justifyContent: 'center' }}
-                wrapperClass=""
-                visible={true}
-                ariaLabel="rings-loading"
+                ariaLabel="vortex-loading"
+                wrapperStyle={{
+                  position: 'fixed',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                }}
+                wrapperClass="vortex-wrapper"
+                colors={['blue', 'blue', 'blue', 'yellow', 'yellow', 'yellow']}
               />
             )}
             {isOpened && (
