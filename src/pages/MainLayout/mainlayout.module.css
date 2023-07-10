@@ -7,14 +7,8 @@
   background: var(--secondary-background-color);
 }
 
-@media screen and (min-width: 1158px) {
-}
-
 .mainComponent {
   border-radius: 16px;
-}
-
-@media (min-width: 1440px) {
 }
 
 .main {
@@ -23,7 +17,6 @@
   /*   display: block; */
   padding: 40px 20px;
   justify-content: center;
-  
 }
 
 @media (min-width: 375px) {
@@ -42,6 +35,10 @@
 
   .main {
     display: flex;
+    background-color: var(--secondary-background-color);
+    /*   display: block; */
+    padding: 40px 0px;
+    justify-content: center;
   }
 }
 
@@ -72,6 +69,5 @@
     left: 0;
 
     backdrop-filter: blur(2px);
-
   }
 }
