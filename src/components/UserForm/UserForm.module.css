@@ -185,7 +185,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
-  background-color: var(--primary-background-color);
+  background-color: var(--container-page-bacground);
   color: var(--primary-text-color);
 
   border: 1px solid var(--feedback-border-color);

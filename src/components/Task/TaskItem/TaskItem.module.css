@@ -150,7 +150,7 @@
     border-radius: 4px;
     background: var(--high-color);
 
-    color: var(--primary-background-color);
+    color: var(--container-page-bacground);
     text-align: center;
     font-size: 10px;
     padding: 4px 12px;
@@ -162,7 +162,7 @@
     border-radius: 4px;
     background: var(--medium-color);
     padding: 4px 12px;
-    color: var(--primary-background-color);
+    color: var(--container-page-bacground);
     text-align: center;
     font-size: 10px;
 
@@ -174,7 +174,7 @@
     border-radius: 4px;
     background: var(--low-color);
     padding: 4px 12px;
-    color: var(--primary-background-color);
+    color: var(--container-page-bacground);
     text-align: center;
     font-size: 10px;
 

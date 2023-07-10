@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FooterWrapper = styled.footer`
   display: flex;
   justify-content: center;
-  background: var(--primary-background-color);
+  background: var(--container-page-bacground);
   padding-top: 29px;
   padding-bottom: 29px;
   border-top: var(--border);
