@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store} >
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="/GooseTrack-Frontend">
-          <TourProvider steps={steps}>
+          <TourProvider steps={steps} startAt={0}>
             <App />
           </TourProvider>
         </BrowserRouter>
