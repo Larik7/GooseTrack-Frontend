@@ -12,7 +12,6 @@ export const PeriodTypeSelect = ({
   setCurrentDate,
 }) => {
   const currentMonth = useSelector(selectActiveDate);
-  // const params = useParams();
   const parsedDate = parseDate(currentDate);
   return (
     <div className={css.tabs_flex}>
