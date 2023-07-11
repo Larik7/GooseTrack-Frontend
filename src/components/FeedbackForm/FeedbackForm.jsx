@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'; // useEffect
 import { Formik, Form, Field } from 'formik';
 import { object, string } from 'yup';
+import { Notify } from 'notiflix';
 import css from './feedbackForm.module.css';
 import { BiPencil as Pencil, BiTrash as Trash } from 'react-icons/bi';
 import { AiFillStar as Star } from 'react-icons/ai';
@@ -40,12 +41,17 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
     e.preventDefault();
     const currentMessage = message;
     if (!rating) {
+      Notify.failure(
+        'Sorry, the rating fild cannot be empty . Please try again.'
+      );
       return;
     }
-    if (message.length <= 6) {
+    if (message.length <= 6 || !message) {
+      Notify.failure('Sorry, minimal length 6 letters. Please try again.');
       return;
     }
-    if (message.length >= 300) {
+    if (message.length >= 300 || !message) {
+      Notify.failure('Sorry, maximal length 300 letters. Please try again.');
       return;
     }
     if (editReview) {
@@ -56,10 +62,6 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
       reset();
       onClose();
       return;
-    } else {
-      dispatch(addReview({ rating, comment: message }));
-      reset();
-      onClose();
     }
     dispatch(addReview({ rating, comment: message }));
     reset();
@@ -150,7 +152,7 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
           </div>
           <Field
             className={css.textInput}
-            type="text"
+            type="textarea"
             as="textarea"
             required
             value={message}
@@ -167,8 +169,7 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
             }
           />
         </div>
-        {reviewOwn === null ||
-        (reviewOwn.rating !== rating && reviewOwn.comment !== message) ? (
+        {reviewOwn === null || editReview === true ? (
           <div className={css.btnWrap}>
             {editReview === true ? (
               <button
@@ -183,6 +184,7 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
                 className={css.btnSaveOrEdit}
                 type="submit"
                 onClick={handleSubmit}
+                disabled={!rating && !message}
               >
                 Save
               </button>
