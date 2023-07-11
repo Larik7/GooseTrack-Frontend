@@ -28,7 +28,7 @@
   text-transform: uppercase;
   background-color: var(--color-button-period-type);
   color: #fff;
-  cursor: default;
+  cursor: pointer;
 
   :hover,
   :focus {
@@ -45,6 +45,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: var(--animation-cubic);
 
   &:hover {
     box-shadow: inset 4px 2px 16px var(--shadow-btn);
