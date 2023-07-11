@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'; // useEffect
 import { Formik, Form, Field } from 'formik';
 import { object, string } from 'yup';
+import { Notify } from 'notiflix';
 import css from './feedbackForm.module.css';
 import { BiPencil as Pencil, BiTrash as Trash } from 'react-icons/bi';
 import { AiFillStar as Star } from 'react-icons/ai';
@@ -40,12 +41,17 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
     e.preventDefault();
     const currentMessage = message;
     if (!rating) {
+      Notify.failure(
+        'Sorry, the rating fild cannot be empty . Please try again.'
+      );
       return;
     }
-    if (message.length <= 6) {
+    if (message.length <= 6 || !message) {
+      Notify.failure('Sorry, minimal length 6 letters. Please try again.');
       return;
     }
-    if (message.length >= 300) {
+    if (message.length >= 300 || !message) {
+      Notify.failure('Sorry, maximal length 300 letters. Please try again.');
       return;
     }
     if (editReview) {
@@ -178,6 +184,7 @@ export const FeedbackForm = ({ reviewOwn, onClose }) => {
                 className={css.btnSaveOrEdit}
                 type="submit"
                 onClick={handleSubmit}
+                disabled={!rating && !message}
               >
                 Save
               </button>

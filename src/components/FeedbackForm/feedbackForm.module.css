@@ -70,8 +70,8 @@
   font-weight: 600;
   font-size: 14px;
   line-height: calc(18 / 14);
-  background: var(--button-color-hover);
-  color: var(--sidebar-background-color);
+  background: var(--feedback-btnCancel-background);
+
   cursor: pointer;
   width: 198px;
   height: 42px;
@@ -79,6 +79,8 @@
 .btnSaveOrEdit:hover,
 .btnSaveOrEdit:focus {
   box-shadow: 4px 2px 16px rgba(87, 96, 104, 0.48);
+  background: var(--button-color-hover);
+  color: var(--sidebar-background-color);
 }
 @media screen and (min-width: 768px) {
   .btnSaveOrEdit {
@@ -108,6 +110,7 @@
 .btnCancel:hover,
 .btnCancel:focus {
   background: var(--button-color-hover);
+  color: var(--sidebar-background-color);
 }
 @media screen and (min-width: 768px) {
   .btnCancel {
