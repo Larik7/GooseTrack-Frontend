@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/GooseTrack-Frontend/static/css/main.25cda9bc.css",
-    "main.js": "/GooseTrack-Frontend/static/js/main.639fdb5c.js",
+    "main.js": "/GooseTrack-Frontend/static/js/main.4b0ba099.js",
     "static/media/tablet_calendar@2x.png": "/GooseTrack-Frontend/static/media/tablet_calendar@2x.844cff810c188f6f25a7.png",
     "static/media/desktop_calendar@2x.png": "/GooseTrack-Frontend/static/media/desktop_calendar@2x.511158f67c65ff6302fb.png",
     "static/media/Inter-Bold.eot": "/GooseTrack-Frontend/static/media/Inter-Bold.7e9fff4114e0ea385c94.eot",
@@ -57,6 +57,7 @@
     "static/media/Павло_Зюськин.jpg": "/GooseTrack-Frontend/static/media/Павло_Зюськин.8f142c2a97541630635e.jpg",
     "static/media/Фролова_Валерія.jpg": "/GooseTrack-Frontend/static/media/Фролова_Валерія.1097f0df90a27b7122dd.jpg",
     "static/media/Мельниченко_Лариса.jpg": "/GooseTrack-Frontend/static/media/Мельниченко_Лариса.24f162b1e6501f865e76.jpg",
+    "static/media/Goose_logo_SideBar@2x.png": "/GooseTrack-Frontend/static/media/Goose_logo_SideBar@2x.3c0470b19aa18aaef0d8.png",
     "static/media/Goose.png": "/GooseTrack-Frontend/static/media/Goose.cf97a81d5acf2bc6829f.png",
     "static/media/Станков_Максим.jpg": "/GooseTrack-Frontend/static/media/Станков_Максим.830ec60b704c9051b7bc.jpg",
     "static/media/Жовновський_Дмитро.jpg": "/GooseTrack-Frontend/static/media/Жовновський_Дмитро.7c24fded77cb5a45266b.jpg",
@@ -68,10 +69,10 @@
     "static/media/plus.svg": "/GooseTrack-Frontend/static/media/plus.f0087676f0974ccbb001.svg",
     "static/media/x-close.svg": "/GooseTrack-Frontend/static/media/x-close.cffc8a086992ad16f1f0db83c5a8a66f.svg",
     "main.25cda9bc.css.map": "/GooseTrack-Frontend/static/css/main.25cda9bc.css.map",
-    "main.639fdb5c.js.map": "/GooseTrack-Frontend/static/js/main.639fdb5c.js.map"
+    "main.4b0ba099.js.map": "/GooseTrack-Frontend/static/js/main.4b0ba099.js.map"
   },
   "entrypoints": [
     "static/css/main.25cda9bc.css",
-    "static/js/main.639fdb5c.js"
+    "static/js/main.4b0ba099.js"
   ]
 }
