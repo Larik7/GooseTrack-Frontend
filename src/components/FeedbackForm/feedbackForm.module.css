@@ -91,6 +91,7 @@
   padding: 0;
   border-radius: 8px;
   border: none;
+  cursor: pointer;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
@@ -125,7 +126,7 @@
 
   padding: 8px;
   background: var(--feedback-editBtn-background);
-
+  cursor: pointer;
   border-radius: 50%;
 }
 .editBtn:hover,
@@ -138,7 +139,7 @@
   fill: #ea3d65;
   width: 30px;
   height: 30px;
-
+  cursor: pointer;
   padding: 8px;
   background: var(--feedback-cancelMini-background);
 
@@ -153,4 +154,5 @@
 .starBtn {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
