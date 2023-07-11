@@ -60,7 +60,9 @@
     transform: translateX(-130%);
     transition: transform 500ms linear;
     position: absolute;
+    z-index: 10;
     top: 0;
+    height: 1090px;
     &.open {
             transform: translateX(0);
             position: absolute;
