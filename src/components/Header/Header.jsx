@@ -1,5 +1,5 @@
 import { useLocation, useParams } from 'react-router-dom';
-import Logo from '../../images/sideBar/Goose_logo_SideBar.png';
+import Logo from '../../images/sideBar/Goose_logo_SideBar@2x.png';
 import cssLogo from '../SideBar/sideBar.module.css';
 import css from './header.module.css';
 import React, { useEffect, useState } from 'react';
